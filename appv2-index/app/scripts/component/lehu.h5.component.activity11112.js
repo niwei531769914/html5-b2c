@@ -73,27 +73,27 @@ define('lehu.h5.component.activity11112', [
       },
 
       '.activity_msg click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1175|1176&pageIndex=1&flag=2";
+        window.location.href = "http://wap.lehumall.com/prefecture.do?id=2123&flag=1";
       },
 
       '.activity_box_01 .activity_box_top click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1272|1273|1274|1275|1276|1277&pageIndex=1&flag=2";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1378|1379|1380|1381|1382&pageIndex=1&flag=2";
       },
 
       '.activity_box_02 .activity_box_top click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1278|1279|1280|1281|1282|1283&pageIndex=1&flag=2";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1383|1384|1385|1386|1387|1388&pageIndex=1&flag=2";
       },
 
       '.activity_box_03 .activity_box_top click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1284|1285|1286|1287|1288|1289&pageIndex=1&flag=2";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1389|1390|1391|1392|1393&pageIndex=1&flag=2";
       },
 
       '.activity_box_04 .activity_box_top click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1302|1303|1304|1305|1306|1307&pageIndex=1&flag=2";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1400|1401|1402|1403|1404|1405&pageIndex=1&flag=2";
       },
 
       '.activity_box_05 .activity_box_top click': function(element, event) {
-        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1290|1291|1292|1293|1294|1295&pageIndex=1&flag=2";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1394|1395|1396|1397|1398|1399&pageIndex=1&flag=2";
       },
 
       '.back click': function() {
