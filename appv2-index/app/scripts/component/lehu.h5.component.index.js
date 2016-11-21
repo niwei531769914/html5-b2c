@@ -37,7 +37,7 @@ define('lehu.h5.component.index', [
           that.sendRequest.apply(that);
         }, 0);
 
-        // this.shouldShowCoupon();
+        this.shouldShowCoupon();
       },
 
       shouldShowCoupon: function() {
@@ -181,8 +181,8 @@ define('lehu.h5.component.index', [
 
             // 执行倒计时
             that.timer = setInterval(function() {
-              that.countDown();
-            }, 1000);
+                 that.countDown();
+               }, 1000);
 
             that.doOther(data);
           })
