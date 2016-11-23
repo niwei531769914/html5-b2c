@@ -568,7 +568,8 @@ define('lehu.h5.component.index', [
       renderHotRecommendation: function(data) {
         var that = this;
 
-        var html = "<div class='ntuijian_top'><span><em>" + "热销单品" + "</em></span></div>";
+        var html = "";
+        html += "<div class='ntuijian_top' style='width: 100%; height: .6rem; float: left; display: block'><span><em>" + "热销单品" + "</em></span></div>";
         var hotRecommendation = data.hotRecommendation;
 
         if (hotRecommendation && hotRecommendation.length > 0) {
