@@ -73,7 +73,7 @@ define('lehu.h5.component.activity11112', [
       },
 
       '.activity_msg click': function(element, event) {
-        window.location.href = "http://wap.lehumall.com/prefecture.do?id=2123&flag=1";
+        window.location.href = "http://app.lehumall.com/html5/app/activities.html?ids=1179|976&pageIndex=1&flag=2";
       },
 
       '.activity_box_01 .activity_box_top click': function(element, event) {
