@@ -37,11 +37,9 @@ define('lehu.h5.page.index', [
              */
             init: function(element, options) {
                 var index = new LHIndex("#index");
-
                 new LHFooter();
 
                 var param = can.deparam(window.location.search.substr(1));
-
                 if (!param.version) {
                     new LHDownload(null, {
                         "position": "bottom"

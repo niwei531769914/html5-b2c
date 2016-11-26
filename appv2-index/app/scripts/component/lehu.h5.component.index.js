@@ -25,24 +25,20 @@ define('lehu.h5.component.index', [
        * @override
        * @description 初始化方法
        */
+
       init: function() {
         var that = this;
-
         this.juli = null;
         this.shengyu = null;
-
         this.initData();
-
         setTimeout(function() {
           that.sendRequest.apply(that);
         }, 0);
-
         this.shouldShowCoupon();
       },
 
       shouldShowCoupon: function() {
         var that = this;
-
         var activeIds = $(".index_popup_box_get").attr("data-acitveIds");
 
         this.userId = busizutil.getUserId();
@@ -51,14 +47,11 @@ define('lehu.h5.component.index', [
           this.bindEvent();
           return false;
         }
-
         this.param = {
           "userId": this.userId,
           "acitveIds": activeIds
         };
-
         busizutil.encription(this.param);
-
         var api = new LHAPI({
           url: this.URL.SERVER_URL + "judgeLHTicketReceived.do",
           data: this.param,
@@ -66,7 +59,6 @@ define('lehu.h5.component.index', [
         });
         api.sendRequest()
           .done(function(data) {
-
             if (data.hasReceived) {
               $(".index_popup").hide();
             } else {
@@ -99,7 +91,6 @@ define('lehu.h5.component.index', [
         var activeIds = $(".index_popup_box_get").attr("data-acitveIds");
 
         var param = can.deparam(window.location.search.substr(1));
-
         this.userId = busizutil.getUserId();
         if (!this.userId) {
           $(".index_popup_box_get").removeClass("disabled");
@@ -127,7 +118,6 @@ define('lehu.h5.component.index', [
         };
 
         busizutil.encription(this.param);
-
         var api = new LHAPI({
           url: this.URL.SERVER_URL + "getMultipleLHTicket.do",
           data: this.param,
@@ -154,7 +144,6 @@ define('lehu.h5.component.index', [
         });
         api.sendRequest()
           .done(function(data) {
-
             // 设置数据类型
             $("html").attr("data_type", data.type);
 
@@ -902,21 +891,7 @@ define('lehu.h5.component.index', [
         LHHybrid.nativeFun(jsonParams);
       },
 
-      '.nindex_sousuo click': function() {
-        var jsonParams = {
-          'funName': 'search_fun',
-          'params': {}
-        };
-        LHHybrid.nativeFun(jsonParams);
-      },
 
-      '.nindex_xiaoxi click': function() {
-        var jsonParams = {
-          'funName': 'message_fun',
-          'params': {}
-        };
-        LHHybrid.nativeFun(jsonParams);
-      },
 
       '.ajax_noload click': function() {
         var jsonParams = {
