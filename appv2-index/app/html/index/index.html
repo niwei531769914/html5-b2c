@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>B2B-App首页</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="css/global_m.css" rel="stylesheet">
+    <link href="css/layout_2015.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="../common/js/jquery-1.8.3.min.js"></script>
+    <script src="js/coupons.js"></script>
+    <style type="text/css">
+        html {
+            -webkit-overflow-scrolling:touch;
+        }
+        body {
+            -webkit-overflow-scrolling:touch;
+        }
+
+        ::-webkit-scrollbar{display:none}
+        ::-webkit-scrollbar{width:1px;height:1px}
+        ::scrollbar{width:1px;height:1px}
+        #ajax_prommotionLayout .swiper-wrapper {
+            font-size: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-right: -20.48px;
+            padding-right: 20.48px;
+        }
+        #ajax_specialZone .swiper-wrapper {
+            font-size: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-right: -20.48px;
+            padding-right: 20.48px;
+        }
+        .swiper-pagination {
+            width: 100%;
+        }
+        .swiper-pagination span{
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="index" class="nwrapper" style="-webkit-overflow-scrolling:touch">
+    <div>
+        <div class="ajax_noload" style="display: none"><img src="images/wifi.png">网络请求失败，请稍候再试<span><img src="images/sx.png"></span></div>
+
+        <!--顶部-->
+        <div class="nheader">
+            <div class="nindex_sousuo" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;"><em></em>搜索商品</div>
+            <div class="nindex_xiaoxi"></div>
+        </div>
+        <!--/顶部-->
+
+        <!--banner-->
+        <div class="nbanner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="ajax_banner">
+                    <ul data-slide-ul='firstUl'>
+                        <li style='height:100%' data-ul-child='child'  class='slide-li swiper-slide'><img style='width:100%; height: 3.25rem;' src="img/banner_02.jpg"></li>
+                    </ul>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--/banner-->
+
+        <!--标签-->
+        <div class="ntag" id="ajax_fastList">
+            <a href='javascript:;'><img class='lazyload' src="img/quan.png"><span>领券中心</span></a>
+            <a href='javascript:;'><img class='lazyload' src="img/like.png"><span>猜你喜欢</span></a>
+            <a href='javascript:;'><img class='lazyload' src="img/order.png"><span>我的订单</span></a>
+        </div>
+        <!--/标签-->
+
+        <!-- 头条-->
+        <div class="news-msg">
+            <img src="img/promt.png" class="lazyload news-msg-img">
+            <div class="news-msg-box">
+                <ul>
+                    <li><a href="javascript:;"><span class="">双十一大1促销</span><em><i>|</i>详情</em></a></li>
+                    <li><a href="javascript:;"><span class="">双十一大2促销</span><em><i>|</i>详情</em></a></li>
+                    <li><a href="javascript:;"><span class="">双十一大3促销</span><em><i>|</i>详情</em></a></li>
+                    <li><a href="javascript:;"><span class="">双十一大4促销</span><em><i>|</i>详情</em></a></li>
+                    <li><a href="javascript:;"><span class="">双十一大5促销</span><em><i>|</i>详情</em></a></li>
+                    <li><a href="javascript:;"><span class="">双十一大6促销</span><em><i>|</i>详情</em></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头条-->
+
+        <div class="nhr"></div>
+        <!--分类楼层-->
+        <div id="ajax_prommotionLayout">
+            <div class='ntuijian cms-module-fillprice'>
+            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
+            <div class='ntuijian_main'>
+                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
+                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_05.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="nhr"></div>
+            <div class='ntuijian cms-module-fillprice'>
+            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
+            <div class='ntuijian_main'>
+                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
+                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_05.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="nhr"></div>
+            <div class='ntuijian cms-module-fillprice'>
+            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
+            <div class='ntuijian_main'>
+                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
+                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_05.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_04.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                            <img class='lazyload' src="img/goods_03.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="nhr"></div>
+        </div>
+
+  <!--      &lt;!&ndash; 精选专区&ndash;&gt;
+        <div id="ajax_selectZone">
+            <div class="highQuality">
+                <div class="quality-hightprice-left"><img src="img/goods_06.png"></div>
+                <div class="quality-hightprice-right">
+                    <a href="javascript:;" class="hightprice-item"><img src="img/goods_07.png"></a>
+                    <div class="hightprice-otem">
+                        <a href="javascript:;" class="hightprice-otem-fc"><img src="img/goods_09.png"></a>
+                        <a href="javascript:;" class="hightprice-otem-tc"><img src="img/goods_11.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nhr"></div>
+        &lt;!&ndash;特价专区&ndash;&gt;
+        <div id="ajax_specialZone" >
+            <div class='ntuijian cms-module-fillprice'>
+                <div class='ntuijian_top'><span><em>特价专区</em></span><i>更多></i></div>
+                <div class='ntuijian_main'>
+                    <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
+                        <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
+                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                                <img class='lazyload' src="img/goods_03.jpg">
+                            </a>
+                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                                <img class='lazyload' src="img/goods_05.jpg">
+                            </a>
+                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                                <img class='lazyload' src="img/goods_05.jpg">
+                            </a>
+                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                                <img class='lazyload' src="img/goods_05.jpg">
+                            </a>
+                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
+                                <img class='lazyload' src="img/goods_05.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nhr"></div>
+        &lt;!&ndash;工厂直供专区&ndash;&gt;
+        <div id="ajax_straightFor">
+             <div class="straught-total">
+                 <img src="img/goods_03.png" class="straught-total-for">
+                 <div class="nhr"></div>
+                 <img src="img/goods_12.png" class="straught-total-for">
+                 <div class="nhr"></div>
+                 <div class="straught-total-list">
+                     <div class='ntuijian_top'><span><em>森马服饰专柜</em></span></div>
+                     <div class="straught-total-fenlei">
+                         <a href="javascript:;"><img src="img/good_2_03.png"></a>
+                         <a href="javascript:;"><img src="img/good_2_05.png"></a>
+                         <a href="javascript:;"><img src="img/good_2_07.png"></a>
+                     </div>
+                 </div>
+                 <div class="nhr"></div>
+                 <img src="img/goods_12.png" class="straught-total-for">
+             </div>
+        </div>
+-->
+    </div>
+
+</div>
+
+<div id="download">
+
+</div>
+
+<div id="footer">
+
+</div>
+</body>
+<script type="text/javascript">
+        /*信息滚动*/
+        var $this = $(".news-msg-box");
+        var scrollTimer = setInterval(function() {
+            scrollNews($this);
+        }, 2000);
+
+        function scrollNews(obj) {
+            var $self = obj.find("ul");
+            var lineHeight = $self.find("li").eq(0).height();
+            $self.animate({
+                "margin-top": -lineHeight + "px"
+            }, 400, function() {
+                $self.css({
+                    "margin-top": "0px"
+                }).find("li:first").appendTo($self);
+            })
+        };
+</script>
+</html>

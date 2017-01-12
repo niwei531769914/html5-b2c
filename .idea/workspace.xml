@@ -2,8 +2,518 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ebaccd-12a6-4f32-a821-d86e6c51a472" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tv/index.html" afterPath="$PROJECT_DIR$/tv/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/404_index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activities.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activity.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activity1111.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activity11112.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activityreward.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activityzhongqiu.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/activityzhongqiu2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/carousel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/comment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/coupon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/coupondetail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/activity1111.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/activity11112.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/activityreward.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/carousel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/coupon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/coupondetail.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/group.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/zhongqiu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/css/zhongqiu2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/details.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/error.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/forgetpassword.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/generator.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/group.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/groupdetail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/groupsuccess.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/activity11112.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/css/activity11112.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_02(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_02(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_02(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_02(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_03(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_03(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_03(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_03(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_04(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_04(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_04(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_04(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_05(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_05(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_05(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_05(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_06(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_06(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_06(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_06(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(5).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_07(6).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/img/activity_08.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/activity11112/js/activity11112.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon/coupons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon/css/coupon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon/img/coupons_bj.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon/js/coupons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/coupons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/css/coupon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/css/coupondetail.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/img/bj.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/img/bj_end.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/img/get.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/img/get_end.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/coupon11/js/coupons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/css/coupon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/css/wheel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/dial.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/d.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_07.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/dial_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/lp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/img/z_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/dial11/js/coupons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/css/activityreward.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/css/group.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/img/mz_bt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/img/mz_listimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/img/mz_topimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/fullgive11/js/coupons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/css/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/findpwd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_guan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_kai.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_mei.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_mima.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_shouji.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_yanzm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/img/login_zhong.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/js/findpwd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/js/login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/js/reg.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/login/reg.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/pcindex/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/burst.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/css/burst.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/css/burst副本.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/css/sales.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/a01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/a02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/a03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/b01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/b02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/b03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_a1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_a2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_a3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_b1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_b2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_b3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_c1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_c2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_c3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_d1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_d2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_d3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_e1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_e2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_e3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_q01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_q02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_t01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_t02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_t03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_t04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_t05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/burst/burst_top.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/c01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/c02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/c03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/d01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/d02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/d03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/e01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/e02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/e03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/list_ad.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/list_goods.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/list_title.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/q01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/q02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/title.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/img/top.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/js/sales.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales/list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/css/activity1111.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/css/coupon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_03_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_03_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_03_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_03_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_04_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_04_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_04_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_04_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_05_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_05_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_05_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_05_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_06_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_06_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_06_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_06_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_07.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_07_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_07_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_07_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_07_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_09.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/img/sale_f06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/js/coupons.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/html/sales11/sales.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/1111/popup_bj.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/1111/popup_bj2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/1111/popup_bj_v1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/1111/popup_box.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_03_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_03_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_03_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_03_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_04_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_04_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_04_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_04_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_05_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_05_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_05_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_05_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_06_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_06_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_06_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_06_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_07.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_07_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_07_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_07_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_07_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_09.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity1111/sale_f06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_02(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_02(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_02(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_02(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_03(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_03(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_03(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_03(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_04(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_04(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_04(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_04(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_05(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_05(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_05(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_05(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_06(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_06(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_06(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_06(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_06.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(2).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(3).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(4).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(5).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_07(6).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activity11112/activity_08.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activityreward/mz_bt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activityreward/mz_listimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/activityreward/mz_topimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/d.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_07.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/dial_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/lp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/carousel/z_06.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupon/coupons_bj.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupon/share.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupon/sharetip.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupondetail/bj.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupondetail/bj_end.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupondetail/get.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/coupondetail/get_end.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fanhui.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_07.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/fx_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/good.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/gouwuche.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_js.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_jt.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_listimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_nav.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_ok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_postimg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_q.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_q.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_qz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_top.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_topok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/group/pt_tx.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/guanbi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/iconfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/iconfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/iconfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/iconfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/index_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/j00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/j01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/j02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/jia.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/jian.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/jiantou.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/list01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/list02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/list_mr.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_guan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_kai.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_mei.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_mima.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_shouji.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_yanzm.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/login/login_zhong.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/moren.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/n01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/n02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/no.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/noloading.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/nomore.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/post_fanghui.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/post_fenxiang.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/shangping.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/shaoyishao.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/shaoyishao2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/shaoyishao3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/soshuo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/soshuo0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/soshuo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/soshuo3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/toast-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/xiaoxi2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/xiaoxi3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhici.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/a01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/a02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/a03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/b01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/b02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/b03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/c01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/c02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/c03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/d01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/d02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/d03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/e01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/e02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/e03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/list_title.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/q01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/q02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/title.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu/top.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_a1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_a2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_a3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_b1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_b2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_b3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_c1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_c2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_c3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_d1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_d2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_d3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_e1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_e2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_e3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_q01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_q02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_t01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_t02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_t03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_t04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_t05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/zhongqiu2/burst_top.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/首页_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/首页_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/首页_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/images/首页_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/registerhelp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activity1111.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activity11112.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activityreward.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activityzhongqiu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activityzhongqiu2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.comment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.coupon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.coupondetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.forgetpassword.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.group.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.groupdetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.groupsuccess.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.register.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/header/lehu.h5.header.header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.404.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.404index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activities.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activity.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activity1111.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activity11112.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activityreward.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activityzhongqiu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activityzhongqiu2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.carousel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.comment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.coupon.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.coupondetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.forgetpassword.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.group.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.groupdetail.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.groupsuccess.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.login.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.register.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.registerhelp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activities.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activity.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activity1111.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activity11112.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activityreward.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activityzhongqiu.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activityzhongqiu2.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.carousel.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.comment.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.coupon.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.coupondetail.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.forgetpassword.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.group.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.groupdetail.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.groupsuccess.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.indexpopup.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.list.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.login.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.register.mustache" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/images/Shortcut_114_114.png" afterPath="$PROJECT_DIR$/appv2-index/app/images/Shortcut_114_114.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/images/kefu.png" afterPath="$PROJECT_DIR$/appv2-index/app/images/kefu.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/images/xiaoxi.png" afterPath="$PROJECT_DIR$/appv2-index/app/images/xiaoxi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/images/xing.png" afterPath="$PROJECT_DIR$/appv2-index/app/images/xing.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js" afterPath="$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.hybrid.js" afterPath="$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.hybrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/Gruntfile.js" afterPath="$PROJECT_DIR$/appv2-index/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/app.manifest" afterPath="$PROJECT_DIR$/appv2-index/app/app.manifest" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/css/global_m.css" afterPath="$PROJECT_DIR$/appv2-index/app/css/global_m.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/css/layout_2015.css" afterPath="$PROJECT_DIR$/appv2-index/app/css/layout_2015.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/css/plus/swiper.min.css" afterPath="$PROJECT_DIR$/appv2-index/app/css/plus/swiper.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/html/group11/index.html" afterPath="$PROJECT_DIR$/appv2-index/app/html/group11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/index.html" afterPath="$PROJECT_DIR$/appv2-index/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/common/lehu.h5.common.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/common/lehu.h5.common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/header/lehu.h5.header.download.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/header/lehu.h5.header.download.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/lehu.h5.require.config.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/lehu.h5.require.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.detail.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.index.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/scripts/utils/lehu.utils.busizutil.js" afterPath="$PROJECT_DIR$/appv2-index/app/scripts/utils/lehu.utils.busizutil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.detail.mustache" afterPath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.detail.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache" afterPath="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache" />
     </list>
     <ignored path="html5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,114 +533,45 @@
     <favorites_list name="html5" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="lehu.h5.components.index.mustache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appv2-index/app/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+            <state vertical-scroll-proportion="-9.892858">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lehu.h5.components.index.mustache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-index/dist/templates/components/lehu.h5.components.index.mustache">
+      <file leaf-file-name="lehu.h5.component.detail.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="96" selection-start-line="34" selection-start-column="96" selection-end-line="34" selection-end-column="111" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lehu.h5.component.index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="379" column="29" selection-start-line="379" selection-start-column="29" selection-end-line="379" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.5902778">
+              <caret line="649" column="40" selection-start-line="649" selection-start-column="40" selection-end-line="649" selection-end-column="40" />
               <folding>
-                <marker date="1478830930172" expanded="true" signature="21381:21413" placeholder="..." />
-                <marker date="1478830930172" expanded="true" signature="21450:21482" placeholder="..." />
+                <element signature="e#4456#6957#0" expanded="false" />
+                <element signature="e#7011#7891#0" expanded="false" />
+                <element signature="e#10514#10954#0" expanded="false" />
+                <element signature="e#10997#14857#0" expanded="false" />
+                <element signature="e#14942#19137#0" expanded="false" />
+                <element signature="e#19208#19448#0" expanded="false" />
+                <element signature="e#19536#19589#0" expanded="false" />
+                <element signature="e#19648#19699#0" expanded="false" />
+                <element signature="e#19794#22219#0" expanded="false" />
+                <element signature="e#22298#24079#0" expanded="false" />
+                <element signature="e#24174#27695#0" expanded="false" />
+                <marker date="1484104796032" expanded="true" signature="7658:7672" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lehu.h5.framework.comm.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js">
+      <file leaf-file-name="lehu.h5.components.detail.mustache" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.detail.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lehu.h5.business.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/lehu.h5.business.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="h5.require.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/h5.require.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lehu.util.fn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.util.fn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
-              <folding>
-                <marker date="1477898116265" expanded="true" signature="5079:5092" placeholder="..." />
-                <marker date="1477898116265" expanded="true" signature="5132:5162" placeholder="..." />
-                <marker date="1477898116265" expanded="true" signature="5174:5193" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/appv2-index/Gruntfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36963695">
-              <caret line="568" column="0" selection-start-line="568" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#16804#17060#0" expanded="false" />
-                <element signature="e#17113#32693#0" expanded="false" />
-                <element signature="e#32824#33199#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="apigen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-index/apigen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appv2-index/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-5.142857">
+              <caret line="75" column="103" selection-start-line="75" selection-start-column="85" selection-end-line="75" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -149,17 +590,18 @@
         <option value="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activity11112.mustache" />
         <option value="$PROJECT_DIR$/appv2-index/app/css/layout_2015.css" />
         <option value="$PROJECT_DIR$/appv2-index/app/css/global_m.css" />
-        <option value="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js" />
         <option value="$PROJECT_DIR$/appv2-index/Gruntfile.js" />
+        <option value="$PROJECT_DIR$/appv2-index/app/index.html" />
+        <option value="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js" />
+        <option value="$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.detail.mustache" />
+        <option value="$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-  </component>
-  <component name="NamedScopeManager">
-    <order />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -194,8 +636,12 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -210,7 +656,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html5" />
+              <option name="myItemId" value="b2b" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -220,7 +666,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html5" />
+              <option name="myItemId" value="b2b" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -228,23 +674,136 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b2b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appv2-index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b2b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appv2-index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b2b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appv2-index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b2b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appv2-index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b2b" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appv2-index" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="component" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
@@ -252,13 +811,6 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
-      <setting name="configLocationType" value="CONFIG_FILE" />
-      <setting name="settingsFile" value="" />
-      <setting name="serverType" value="INTERNAL" />
-      <setting name="preferredDebugBrowser" value="Chrome" />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
@@ -279,6 +831,24 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -297,23 +867,23 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25036603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.112737924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -341,10 +911,115 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.groupdetail.js">
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.867987">
-          <caret line="445" column="0" selection-start-line="445" selection-start-column="0" selection-end-line="445" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="28" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4456#6957#0" expanded="false" />
+            <element signature="e#7011#7891#0" expanded="false" />
+            <element signature="e#10514#10954#0" expanded="false" />
+            <element signature="e#10997#14857#0" expanded="false" />
+            <element signature="e#14942#19137#0" expanded="false" />
+            <element signature="e#19208#19448#0" expanded="false" />
+            <element signature="e#19536#19589#0" expanded="false" />
+            <element signature="e#19648#19699#0" expanded="false" />
+            <element signature="e#19794#22219#0" expanded="false" />
+            <element signature="e#22298#24079#0" expanded="false" />
+            <element signature="e#24174#27695#0" expanded="false" />
+            <marker date="1484104796032" expanded="true" signature="7658:7672" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="191" column="6" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="325" column="0" selection-start-line="325" selection-start-column="0" selection-end-line="325" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/lehu.h5.business.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/h5.require.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.util.fn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#16804#17060#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/apigen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -353,49 +1028,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="40" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.groupdetail.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/carousel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/html/pcindex/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31683168">
-          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/首页_12.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/首页_14.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/xiaoxi3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appv2-index/app/images/shouchang.png">
@@ -408,62 +1040,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/shaoyishao2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/shangping.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/n02.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/moren.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/loading.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/list01.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appv2-index/app/images/more.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/no.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/noloading.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/nomore.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/post_fenxiang.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/images/post_fanghui.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -472,14 +1049,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/html/dial11/js/coupons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -487,13 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/html/activity11112/js/activity11112.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32673267">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -518,57 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.activity11112.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.503268">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/page/lehu.h5.page.activity11112.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2277228">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/activity11112.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.activity11112.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9584775">
-          <caret line="49" column="171" selection-start-line="49" selection-start-column="171" selection-end-line="49" selection-end-column="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/dist/activity11112.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -576,58 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/dist/templates/components/lehu.h5.components.index.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="96" selection-start-line="34" selection-start-column="96" selection-end-line="34" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/lehu.h5.business.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="379" column="29" selection-start-line="379" selection-start-column="29" selection-end-line="379" selection-end-column="29" />
-          <folding>
-            <marker date="1478830930172" expanded="true" signature="21381:21413" placeholder="..." />
-            <marker date="1478830930172" expanded="true" signature="21450:21482" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/h5.require.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.util.fn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
-          <folding>
-            <marker date="1477898116265" expanded="true" signature="5079:5092" placeholder="..." />
-            <marker date="1477898116265" expanded="true" signature="5132:5162" placeholder="..." />
-            <marker date="1477898116265" expanded="true" signature="5174:5193" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,15 +1098,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.4982699">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +1112,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -667,7 +1119,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11881188">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/framework/lehu.h5.framework.comm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/h5.require.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-common/app/scripts/util/lehu.util.fn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="201" column="21" selection-start-line="201" selection-start-column="21" selection-end-line="201" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="568" column="0" selection-start-line="568" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#16804#17060#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -675,19 +1158,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5625">
+          <caret line="54" column="30" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4340278">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appv2-index/Gruntfile.js">
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.index.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36963695">
-          <caret line="568" column="0" selection-start-line="568" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.892858">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/templates/components/lehu.h5.components.detail.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.142857">
+          <caret line="75" column="103" selection-start-line="75" selection-start-column="85" selection-end-line="75" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appv2-index/app/scripts/component/lehu.h5.component.detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5902778">
+          <caret line="649" column="40" selection-start-line="649" selection-start-column="40" selection-end-line="649" selection-end-column="40" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#16804#17060#0" expanded="false" />
-            <element signature="e#17113#32693#0" expanded="false" />
-            <element signature="e#32824#33199#0" expanded="false" />
+            <element signature="e#4456#6957#0" expanded="false" />
+            <element signature="e#7011#7891#0" expanded="false" />
+            <element signature="e#10514#10954#0" expanded="false" />
+            <element signature="e#10997#14857#0" expanded="false" />
+            <element signature="e#14942#19137#0" expanded="false" />
+            <element signature="e#19208#19448#0" expanded="false" />
+            <element signature="e#19536#19589#0" expanded="false" />
+            <element signature="e#19648#19699#0" expanded="false" />
+            <element signature="e#19794#22219#0" expanded="false" />
+            <element signature="e#22298#24079#0" expanded="false" />
+            <element signature="e#24174#27695#0" expanded="false" />
+            <marker date="1484104796032" expanded="true" signature="7658:7672" placeholder="..." />
           </folding>
         </state>
       </provider>

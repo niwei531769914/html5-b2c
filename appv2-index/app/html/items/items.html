@@ -1,0 +1,426 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商品详情</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/items.css" rel="stylesheet">
+    <script src="js/coupons.js"></script>
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <style type="text/css">
+        /*swiper轮播插件*/
+        .swiper-container {
+            width: 100%; background: #fff; margin: 0 auto; height: 7.6rem;
+        }
+        .swiper-slide {
+            text-align: center;
+            height: 7.6rem;
+            font-size: 18px;
+            background: #fff;
+            margin-top: .2rem ;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img{ height: 100%}
+        html {
+            -webkit-overflow-scrolling:touch;
+        }
+        body {
+            -webkit-overflow-scrolling:touch;
+        }
+
+        ::-webkit-scrollbar{display:none}
+        ::-webkit-scrollbar{width:1px;height:1px}
+        ::scrollbar{width:1px;height:1px}
+        .swiper-pagination {
+            width: 100%;
+        }
+        .swiper-pagination span{
+            margin: 0 5px;
+        }
+        .goods{ position: relative; margin: .88rem 0 1rem 0 !important;width: 100%;
+            height: auto;
+            float: left;}
+        .nwrapper_silder{ width: 100%; height: 100%; position: relative}
+    </style>
+</head>
+
+<body>
+
+<!-- 中部-->
+<div class="nwrapper">
+    <!-- 顶部-->
+    <div class="header_list">
+        <div class="back"></div>
+        <div class="tabs">
+            <a href="javascript:;" class="tabs_label active" data-value="0" ><span>商品</span></a>
+            <a href="javascript:;" class="tabs_label" data-value="1"><span>详情</span></a>
+            <a href="javascript:;" class="tabs_label" data-value="2"><span>评价</span></a>
+        </div>
+        <div class="share"></div>
+    </div>
+    <!--购物车弹出层-->
+    <div class="gouwu">
+
+        <div class="gouwu_goods">
+            <!-- 商品详情-->
+            <div class="goods_introduction">
+                <span class="goods_introduction_ph"><img src="img/clock.png"></span>
+                <span class="goods_introduction_title">
+                <em class="introduction_title_tp">[瑞士进口]正品瑞士进口AGELOCER艾戈勒手表 男士手表 全自动机械表 男表 商务防水皮带金表</em>
+                <em  class="introduction_title_ft">商品编码：5100011122</em></span>
+                <span class="goods_introduction_close"></span>
+            </div>
+
+            <div class="gouwu_goods_dell">
+
+                <!-- 规格分类-->
+                <div class="goods_detail">
+                    <div id="goods_attr1" class="goods_detail_guige">
+                        <h1>颜色分类</h1>
+                        <button type="button" class="active_guige">本色白面</button>
+                        <button type="button">间金白面</button>
+                        <button type="button">尖玫黑面</button>
+                        <button type="button">全金黑面</button>
+                        <button type="button">本色白面</button>
+                        <button type="button">花色白面</button>
+                    </div>
+                    <div id="goods_attr2" class="goods_detail_guige">
+                        <h1>颜色分类</h1>
+                        <button type="button">本色白面</button>
+                        <button type="button">间金白面</button>
+                        <button type="button">尖玫黑面</button>
+                        <button type="button">全金黑面</button>
+                        <button type="button">本色白面</button>
+                        <button type="button">花色白面</button>
+                    </div>
+                </div>
+
+                <!--商品规格价格展示-->
+                <div class="goods_jiage">
+                    <!--规格价格-->
+               <!--     <p class="goods_jiage_canshu">
+                        <span class="jiage_ago">原价&nbsp;:<em>￥160</em></span>
+                        <span class="jiage_cuxiao">单品促销价&nbsp;:<em>￥150元</em></span>
+                        <span class="jiage_guige">规格&nbsp;:<em>黑色+128G</em></span>
+                      <span class="jiage_time">活动结束时间&nbsp;:<em>2016-12-23<i>17:00:00</i></em><em>价格为&nbsp;:<i>153213213213210元</i></em></span>
+                    </p>-->
+                    <!--阶梯价格-->
+                    <table class="goods_jieti" cellpadding="0">
+                        <tr class="goods_jieti_jiage">
+                            <td>价格</td>
+                            <td>￥160</td>
+                            <td>￥150</td>
+                            <td>￥120</td>
+
+                        </tr>
+                        <tr class="goods_jieti_single">
+                            <td>单品促销价</td>
+                            <td class="jieti_single_jiege" style="color: #ff2d2d ">￥150</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr class="goods_jieti_guige">
+                            <td>规格</td>
+                            <td>黑色+128G</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr class="goods_jieti_btw">
+                            <td>区间</td>
+                            <td>10-100</td>
+                            <td>100-200</td>
+                            <td>200-800</td>
+
+                        </tr>
+                    </table>
+                    <p class="goods_jieti_acy">
+                        <span class="jiage_time">活动结束时间&nbsp;:<em>2016-12-23<i>17:00:00</i></em><em>价格为&nbsp;:<i>150元</i></em></span>
+                    </p>
+                </div>
+
+                <!-- 增加商品个数-->
+                <div class="goods_number">
+                    <span class="goods_number_left">购买数量</span>
+                    <div class="goods_number_btn">
+                        <div class="number_btn">
+                            <input type="button" class="number_btn_jian" value="-"><input type="text" class="number_btn_shumu" value="1"><input type="button" class="number_btn_jia" value="+">
+                        </div>
+                        <span class="number_btn_cukun">库存：<em>22</em></span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 购买栏目-->
+            <div class="npost_gouwu">
+                <a href="javascript:;" class="npost_gouwu_put">加入购物车</a>
+                <a href="javascript:;" class="npost_gouwu_buy">立即购买</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="goods">
+    <!-- 商品页面-->
+    <div id="dsa"  class="nwrapper_silder">
+
+        <!-- 商品轮播图-->
+        <div class="swiper-container">
+           <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/good_02.png">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/good_02.png">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/good_02.png">
+            </div>
+        </div>
+        <!-- Add Pagination -->
+           <div class="swiper-pagination"></div>
+         </div>
+
+        <!-- 商品detail-->
+        <div class="npost_titlel">
+            <span class="npost_direct"><em>自营</em><i>新品上架</i><i>单品促销</i></span>
+            <span class="npost_jieshao">[韩国直邮]it's skin伊恩蜗牛水乳套装1号清爽型（美白补水保湿防晒）</span>
+        </div>
+
+        <div class="npost_price">
+           <!-- <p class="npost_price_guige">
+                <span class="price_guige_fc"><em>￥79.00元-￥178.00元</em><i>20件起批</i></span>
+            </p>-->
+            <p class="npost_price_shoujia">
+                <span class="price_shoujia_fc"><em>￥79.00</em><i>2件起批</i></span>
+                <span class="price_shoujia_fc"><em>￥78.00</em><i>5到9件</i></span>
+                <span class="price_shoujia_fc"><em>￥76.00</em><i>≥10件</i></span>
+            </p>
+        </div>
+
+        <div class="nhr"></div>
+
+        <!-- 商品规格-->
+        <div class="npost_fications">
+            <span class="fications_chose">选择<em>商品规格</em></span>
+            <span class="fications_title"><em class="facations_guige">本色白面</em><em><i class="facations_shuliang">1</i>件</em></span>
+        </div>
+
+        <div class="nhr"></div>
+
+        <div class="npost_switch">上拉展示图文详情</div>
+    </div>
+
+    <!-- 详情页面-->
+    <div class="nwrapper_silder" style=" display: none">
+      <img src="img/detail_03.png" class="silder_detail">
+    </div>
+
+    <!-- 评价页面-->
+    <div style="display: none" class="nwrapper_silder"  >
+      <div class="ncomment_top">
+          <span class="active">全部评价</br>2584</span>
+          <span>好评</br><em>2034</em></span>
+          <span>中评</br><em>43</em></span>
+          <span>差评</br><em>41</em></span>
+      </div>
+      <!-- 评论列表-->
+      <div class="ncomment_list">
+          <div class="npost_pinglun_box">
+          <div class="nhr"></div>
+          <div class="pinglun_box">
+              <span class="real-star"><img src="img/touxiang.png"><em class="ee">137****9099</em></span>
+              <span class="npost_pinglun_msg">2016-05-21</span>
+          </div>
+          <div class="npost_pinglun_text">
+              <div class="pinglun_text_xing"><img src="img/xing.png"></div>
+              <div class="pinglun_text_npost">[韩国直邮]It's伊恩蜗牛水乳套装1号清爽型（美白补水保湿）强效恢复年轻</div>
+              <div class="pinglun_text_photo">
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+              </div>
+              <div class="npost_pinglun_tiame">
+                  商家回复：<span>茶，要喝浓的，直到淡而无味；酒，要喝醉的，永远不想醒来的；人，要深爱的，要下辈子还能接着爱的；朋友，要永远的，永远不会忘记的！愿点点的思念和惦记，化作丝丝的甜蜜与温柔，缠绕在您心头，万国汇祝您生活愉快！</span>
+              </div>
+          </div>
+      </div>
+          <div class="npost_pinglun_box">
+          <div class="nhr"></div>
+          <div class="pinglun_box">
+              <span class="real-star"><img src="img/touxiang.png"><em class="ee">137****9099</em></span>
+              <span class="npost_pinglun_msg">2016-05-21</span>
+          </div>
+          <div class="npost_pinglun_text">
+              <div class="pinglun_text_xing"><img src="img/xing.png"></div>
+              <div class="pinglun_text_npost">[韩国直邮]It's伊恩蜗牛水乳套装1号清爽型（美白补水保湿）强效恢复年轻</div>
+              <div class="pinglun_text_photo">
+
+              </div>
+              <div class="npost_pinglun_tiame">
+                  商家回复：<span>茶，要喝浓的，直到淡而无味；酒，要喝醉的，永远不想醒来的；人，要深爱的，要下辈子还能接着爱的；朋友，要永远的，永远不会忘记的！愿点点的思念和惦记，化作丝丝的甜蜜与温柔，缠绕在您心头，万国汇祝您生活愉快！</span>
+              </div>
+          </div>
+      </div>
+          <div class="npost_pinglun_box">
+          <div class="nhr"></div>
+          <div class="pinglun_box">
+              <span class="real-star"><img src="img/touxiang.png"><em class="ee">137****9099</em></span>
+              <span class="npost_pinglun_msg">2016-05-21</span>
+          </div>
+          <div class="npost_pinglun_text">
+              <div class="pinglun_text_xing"><img src="img/xing.png"><img src="img/xing.png"><img src="img/xing.png"><img src="img/xing.png"></div>
+              <div class="pinglun_text_npost">[韩国直邮]It's伊恩蜗牛水乳套装1号清爽型（美白补水保湿）强效恢复年轻</div>
+              <div class="pinglun_text_photo">
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+                  <a href="javascript:;"><img src="img/photo_03.jpg"></a>
+              </div>
+              <div class="npost_pinglun_tiame">
+                  商家回复：<span>茶，要喝浓的，直到淡而无味；酒，要喝醉的，永远不想醒来的；人，要深爱的，要下辈子还能接着爱的；朋友，要永远的，永远不会忘记的！愿点点的思念和惦记，化作丝丝的甜蜜与温柔，缠绕在您心头，万国汇祝您生活愉快！</span>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div>
+    </div>
+
+    <!--客服、收藏、购物车底部-->
+    <div class="npost_foot">
+        <div class="npost_foot_main">
+            <div class="npost_foot_left">
+                <!-- 客服-->
+                <a class="npost_foot_kefu">
+                    <em class="btm-act-icn"></em>
+                    <span class="focus-info">客服</span>
+                </a>
+
+                <!-- 收藏-->
+                <a class="npost_foot_shouchang">
+                    <em class="btm-act-icn"></em>
+                    <span class="focus-info">收藏</span>
+                </a>
+            </div>
+            <div class="npost_foot_go">马上结算</div>
+            <div class="npost_foot_add"  id="nadd_cart">加入购物车</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //商品、详情、评价页面切换
+        $('.tabs_label').click(function(){
+            $('.tabs_label').removeClass('active');
+            $(this).addClass('active');
+            var value=$(this).attr('data-value');
+            $('.nwrapper_silder').hide();
+            $('.nwrapper_silder').eq(value).show();
+        });
+
+        //规格页面的隐藏与显示
+        $('.npost_fications').click(function(){
+            $('.gouwu').show();
+        });
+        $('.goods_introduction_close').click(function(){
+            $('.gouwu').hide();
+        });
+
+        //选择规格编号及商品数量
+        var n = $('.goods_detail_guige').length;
+        var m;
+        for( m = 0; m <n ; m++){
+
+            $('.goods_detail_guige').eq(m).find('a').bind('click',function(){
+
+            })
+        }
+
+        $('.number_btn_jian').click(function(){
+            var shuliang;
+             shuliang = parseInt($('.number_btn_shumu').val());
+            if( shuliang == 1 ){
+                alert(1);
+                return false;
+            }
+            shuliang = shuliang - 1;
+            $('.number_btn_shumu').val(shuliang);
+            $('.facations_shuliang').text(shuliang)
+        });
+
+        $('.number_btn_jia').click(function(){
+            var shuliang,kucun;
+            shuliang = parseInt($('.number_btn_shumu').val());
+            shuliang = parseInt(shuliang + 1);
+            kucun = parseInt($('.number_btn_cukun em').text());
+
+            if( shuliang > kucun){
+                alert(5);
+                return false;
+            }
+            $('.number_btn_shumu').val(shuliang);
+            $('.facations_shuliang').text(shuliang);
+        });
+
+
+        //收藏
+         $('.back').click(function(){
+             alert(3);
+         });
+
+         $('.npost_foot_shouchang').click(function(){
+
+             $(this).find('.btm-act-icn').addClass('btm-active');
+             alert(3);
+         });
+
+        $(window).scroll(function(){
+            var _documentHeight = ($(document).height());
+            var  totalheight = $(this).height() +$(this).scrollTop();
+            if(_documentHeight == totalheight){
+                   $('#dsa').swiperUp(function(){
+                       alert(2);
+                   })
+            }
+        });
+
+    });
+</script>
+</html>

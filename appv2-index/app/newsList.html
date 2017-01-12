@@ -1,0 +1,85 @@
+<!doctype html>
+<html manifest="app.manifest" style='-webkit-overflow-scrolling:touch'>
+<head>
+    <meta charset="utf-8">
+    <title>B2B</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+
+    <link href="images/Shortcut_114_114.png" rel="apple-touch-icon-precomposed">
+    <link href="images/Shortcut_114_114.png" rel="Shortcut Icon" type="image/x-icon">
+
+    <!-- build:css({app, .tmp}) styles/lehu.h5.newsList.css -->
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/newsList.css" rel="stylesheet">
+    <!-- endbuild -->
+    <style type="text/css">
+        html {
+            -webkit-overflow-scrolling:touch;
+        }
+        body {
+            -webkit-overflow-scrolling:touch;
+        }
+
+        ::-webkit-scrollbar{display:none}
+        ::-webkit-scrollbar{width:1px;height:1px}
+        ::scrollbar{width:1px;height:1px}
+    </style>
+    <style type="text/css">
+        .dialog-cart {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 999; }
+
+        .dialog-cart-inner {
+            position: relative;
+            left: -50%;
+            color: #fff;
+            background: #333;
+            background: rgba(51, 51, 51, 0.9);
+            font-size: 14px;
+            line-height: 21px;
+            padding: 20px 82px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            text-align: center; }
+
+        .dialog-cart .icon {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            margin-left: -25px; }
+    </style>
+</head>
+<body style='-webkit-overflow-scrolling:touch'>
+
+
+
+<div id="newsList" class="nwrapper">
+
+
+</div>
+
+
+<div id="footer">
+
+</div>
+
+
+<script src="scripts/common/require.min.js"></script>
+<script src="scripts/common/lehu.h5.common.js"></script>
+
+<!-- build:js({app, .tmp}) scripts/lehu.h5.page.newsList.js -->
+<script src="scripts/lehu.h5.require.config.js"></script>
+<script type="text/javascript">
+    require(['lehu.h5.page.newsList']);
+</script>
+<!-- endbuild -->
+</body>
+</html>

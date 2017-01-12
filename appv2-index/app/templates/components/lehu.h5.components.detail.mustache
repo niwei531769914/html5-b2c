@@ -1,156 +1,119 @@
-
-<!--banner-->
-<div class="npost_top">
-    <!--返回 分享按钮-->
-    <img  data-original="images/post_fanghui.png" class="npost_top_fanhui lazyload">
-    <img data-original="images/post_fenxiang.png" class="npost_top_fenxiang lazyload">
-    
-	<div class="swiper-container">
-        <div class="swiper-wrapper"></div>
-        <div class="swiper-pagination"></div>
+<!-- 顶部-->
+<div class="header_list">
+    <a class="back"></a>
+    <div class="tabs">
+        <a href="javascript:;" class="active" ><span>商品</span></a>
+        <a href="javascript:;" ><span>详情</span></a>
+        <a href="javascript:;" ><span>评价</span></a>
     </div>
+    <!--<a  class="share"></a>-->
 </div>
-<!--/banner-->
 
-<div class="npost_title"></div>
+<!--购物车弹出层-->
+<div style="display: none" class="gouwu">
 
-<div class="npost_jieshao"></div>
+    <div class="gouwu_goods">
+        <!-- 商品详情-->
+        <div class="goods_introduction">
+        </div>
 
-<div class="npost_jiage"></div>
+        <div class="gouwu_goods_dell">
 
-<div class="nhr"></div>
+            <!-- 规格分类-->
+            <div class="goods_detail">
 
+            </div>
 
-<div class="npost_xinxi" id="npost_dizhi"><span>送至</span><b class="provinceName"></b> > <b class="cityName"></b><em></em><i class="postage"></i> <img class="lazyload" data-original="images/jiantou.png"></div>
-<div class="nxhr"></div>
-<div class="npost_xinxi" id="npost_container"><span>已选</span>棕色&nbsp;&nbsp;5片装&nbsp;&nbsp;1件 <img class="lazyload" data-original="images/jiantou.png"></div>
-<div class="nxhr"></div>
-<div class="npost_xinxi_zhiyou"><p><em>海外直邮</em>本商品为海外直邮商品，购买须实名认证</p></div>
+            <!--商品规格价格展示-->
+            <div class="goods_jiage">
 
-<div class="npost_xinxi"><span>服务</span>由<b class="dianpu"></b>&nbsp;发货并提供售后服务</div>
+            </div>
 
-<div class="npost_xinxi_fuwu"><p>
-    <span><img class="lazyload" data-original="images/zhici.png">服务</span>
-    <span><img class="lazyload" data-original="images/zhici.png">自提</span>
-    <span><img class="lazyload" data-original="images/zhici.png">七天内无条件退货</span>
-</p></div>
+            <!-- 增加商品个数-->
+            <div class="goods_number">
+                <span class="goods_number_left">购买数量</span>
+                <div class="goods_number_btn">
+                    <div class="number_btn">
+                        <span class="number_btn_jian">-</span><input type="text" class="number_btn_shumu" value=""><span class="number_btn_jia">+</span>
+                    </div>
+                    <span class="number_btn_cukun">库存：<em></em></span>
+                </div>
+            </div>
 
-<div class="nhr"></div>
-<div class="nhr"></div>
+        </div>
+        <!-- 购买栏目-->
+        <div class="npost_gouwu">
+            <a href="javascript:;" class="npost_gouwu_put" id="nadd_cart">加入进货单</a>
+            <a href="javascript:;" class="npost_gouwu_buy npost_foot_go" >立即购买</a>
+        </div>
+    </div>
 
-<div class="npost_pinglun_top">评价晒单<em>(<b class="REVIEW_NUMBER"></b>人)</em><img class="lazyload" data-original="images/jiantou.png"><i>好评率：<b  class="REVIEW_PERCENT"></b>%</i></div>
-<div class="nxhr"></div>
+</div>
+<div class="goods">
+<!-- 商品页面-->
+<div  class="nwrapper_silder" id="goodsDetail">
 
-<div class="npost_pinglun_list"></div>
+    <!-- 商品轮播图-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" style="position: relative; top: -1rem"></div>
+    </div>
 
+    <!-- 商品detail-->
+    <div class="npost_titlel">
+    </div>
 
-<!--<div class="npost_pinglun_box">
-    <span class="product-item-star"><span class="real-star comment-stars-width4"></span></span>
-    <span class="npost_pinglun_msg">130****1036&nbsp;2016-05-21&nbsp;13:33:29</span>
-    
-    <span class="npost_pinglun_text">东西很棒！</span>
-    
-    <span class="npost_pinglun_img">
-    <img class="lazyload" data-original="images/shangping.jpg"><img class="lazyload" data-original="images/shangping.jpg">
-    </span>
-</div>-->
+    <div class="npost_price">
+    </div>
 
-<div class="npost_pinglun_more">查看全部评价</div>
+    <div class="nhr"></div>
 
-<div class="nhr"></div>
-<div class="nhr"></div>
+    <!-- 商品规格-->
+    <div class="npost_fications">
+        <span class="fications_chose">选择<em>商品规格</em></span>
+        <span class="fications_title"><em class="facations_guige"></em><em><i class="facations_shuliang"></i>件</em></span>
+    </div>
 
-<div class="npost_xiangqing"></div>
+    <div class="nhr"></div>
 
+    <div class="npost_switch">点击进入图文详情</div>
+</div>
 
-<!--底部-->
+<!-- 详情页面-->
+<div class="nwrapper_silder"  id="goodsInfor" style=" display: none">
+
+</div>
+
+<!-- 评价页面-->
+<div style="display: none" class="nwrapper_silder"  id="goodsPinglun">
+     <div class="ncomment_top">
+
+     </div>
+     <!-- 评论列表-->
+     <div class="ncomment_list">
+     </div>
+</div>
+
+</div>
+<!--客服、收藏、购物车底部-->
 <div class="npost_foot">
     <div class="npost_foot_main">
-    <div class="npost_foot_left">
-        <a class="npost_foot_kefu">
-           <em class="btm-act-icn"></em>
-           <span class="focus-info">客服</span>
-        </a>
-    
-        <a class="npost_foot_cart">
-           <em class="btm-act-icn order-numbers-cont"></em>
-           <span class="focus-info">购物车</span>
-        </a>
-        
-        <a class="npost_foot_shouchang"></a>
+        <div class="npost_foot_left">
+            <!-- 客服-->
+            <a class="npost_foot_kefu">
+                <em class="btm-act-icn"></em>
+                <span class="focus-info">客服</span>
+            </a>
+
+            <!-- 收藏-->
+            <a class="npost_foot_shouchang">
+                <em class="btm-act-icn"></em>
+                <span class="focus-info">收藏</span>
+            </a>
+        </div>
+        <div class="npost_foot_go">马上结算</div>
+        <div class="npost_foot_add"  id="nadd_cart">加入进货单</div>
     </div>
-    <div class="npost_foot_go">马上结算</div>
-    <div class="npost_foot_add"  id="nadd_cart">加入购物车</div>
-    <div class="npost_foot_kill">立即抢购</div>
-    </div>
-</div>
-<!--/底部-->
-
-
-
-<div class="mui-cover">
- <div class="ncs_top">
-     <img src="images/shangping.jpg">
-     <div class="ncs_top_name">美迪惠尔（原可莱丝）营养修护面膜(5片装）</div>
-     <i class="ncs_top_close"></i>
-     <div class="ncs_top_jiage">￥78.<em>00</em></div>
-     <div class="ncs_top_zhiyou">海外直邮</div>
- </div> 
- 
-  <div class="ncs_main">
-  	<div class="ncs_main_title">颜色</div>
-    <div class="ncs_main_changshu"><span class="active">棕色</span><span>蓝色</span><span>绿色</span></div>
-    <div class="ncs_main_title">型号</div>
-    <div class="ncs_main_changshu"><span>1片装</span><span class="active">5片装</span><span>10片装</span></div>
-    <div class="ncs_main_title">颜色</div>
-    <div class="ncs_main_changshu"><span class="active">棕色</span><span>蓝色</span><span>绿色</span></div>
-    <div class="ncs_main_title">型号</div>
-    <div class="ncs_main_changshu"><span>1片装</span><span class="active">5片装</span><span>10片装</span></div>
-    <div class="ncs_main_title">颜色</div>
-    <div class="ncs_main_changshu"><span class="active">棕色</span><span>蓝色</span><span>绿色</span></div>
-    <div class="ncs_main_title">型号</div>
-    <div class="ncs_main_changshu"><span>1片装</span><span class="active">5片装</span><span>10片装</span></div>
-  </div>
-  
-  <div class="ncs_shuliang">
-      <div class="ncs_sl_title">购买数量</div>
-      <div class="ncs_sl">
-          <span class="ncs_sl_jian no"></span>
-          <input name="" type="tel" value="1" maxlength="3">
-          <span class="ncs_sl_jia"></span>
-      </div>
-  </div>
- 
-  <div class="ncs_foot" >
-    <a class="ncs_foot_cart">加入购物车</a>
-    <a class="ncs_foot_buy">马上结算</a>
-    <a class="ncs_foot_kill">立即抢购</a>
-  </div>
-  
-</div>
-
-<div class="mui-dizhi">
-	<div class="ndz_top">选择地址 <i class="ndz_top_close"></i></div>
-    
-    <div class="ndz_nav"><Span class="active ndz_nav01"></Span><Span class="ndz_nav02"></Span></div>
-    
-    <div class="ndz_nav_li">
-       <!-- <Span>北京</Span>
-        <Span class="active">江苏</Span>-->
-       
-    </div>
-    
-    
-</div>
-
-<div class="mui-share">
-	<div class="nshare_main">
-    <a href=""><img src="images/fx_03.png"><span>微信好友</span></a>
-    <a href=""><img src="images/fx_05.png"><span>微信朋友圈</span></a>
-    <a href=""><img src="images/fx_07.png"><span>新浪微博</span></a>
-    <a href=""><img src="images/fx_12.png"><span>QQ好友</span></a>
-    <a href=""><img src="images/fx_13.png"><span>QQ空间</span></a>
-    <a href=""><img src="images/fx_14.png"><span>复制链接</span></a>
-    </div>
-	<div class="nshare_close">取消分享</div>
 </div>

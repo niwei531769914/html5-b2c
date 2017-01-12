@@ -60,10 +60,7 @@ define(
         params = JSON.stringify(params);
         JSInterface.nativeFunction(params);
       } else if (LHUtil.isMobile.iOS()) {
-        // alert("版本号:" + param.version);
 
-        if (param.version && param.version >= '1.4.1') {
-          // alert("进入新版本");
           // 新版本
           setupWebViewJavascriptBridge(function(bridge) {
 
@@ -72,10 +69,6 @@ define(
               console.log("JS received response:", responseData)
             })
           })
-        } else {
-          // 老版本
-          WebViewJavascriptBridge.send(params)
-        }
       }
     };
 

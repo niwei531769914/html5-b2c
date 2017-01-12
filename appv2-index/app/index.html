@@ -1,178 +1,170 @@
 <!doctype html>
 <html manifest="app.manifest" style='-webkit-overflow-scrolling:touch'>
 <head>
-<meta charset="utf-8">
-<title>汇银乐虎全球家|汇集全球海外进口商品，进口食品，进口零食，进口母婴，进口美妆，海外原产地直采。</title>
-<meta name="description" content="汇银乐虎全球家（www.lehumall.com）汇集全球进口商品、进口零食、进口母婴，进口美妆，买进口商品，何须海外代购。">
-<meta name="Keywords" content="进口商品,进口食品,进口零食,汇银乐虎,汇银乐虎全球家,乐虎,汇银乐虎,扬州电商,扬州O2O,扬州B2C,扬州B2B2C，江苏汇银电子商务有限公司,智慧社区">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="format-detection" content="telephone=no,email=no">
+    <meta charset="utf-8">
+    <title>汇银乐虎全球家|汇集全球海外进口商品，进口食品，进口零食，进口母婴，进口美妆，海外原产地直采。</title>
+    <meta name="description" content="汇银乐虎全球家（www.lehumall.com）汇集全球进口商品、进口零食、进口母婴，进口美妆，买进口商品，何须海外代购。">
+    <meta name="Keywords" content="进口商品,进口食品,进口零食,汇银乐虎,汇银乐虎全球家,乐虎,汇银乐虎,扬州电商,扬州O2O,扬州B2C,扬州B2B2C，江苏汇银电子商务有限公司,智慧社区">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
 
-<link href="images/Shortcut_114_114.png" rel="apple-touch-icon-precomposed">
-<link href="images/Shortcut_114_114.png" rel="Shortcut Icon" type="image/x-icon">
+    <link href="images/Shortcut_114_114.png" rel="apple-touch-icon-precomposed">
+    <link href="images/Shortcut_114_114.png" rel="Shortcut Icon" type="image/x-icon">
 
-<!-- build:css({app, .tmp}) styles/lehu.h5.index.css -->
-<link href="css/global_m.css" rel="stylesheet">
-<link href="css/layout_2015.css" rel="stylesheet">
-<link rel="stylesheet" href="css/plus/swiper.min.css">
-<!-- endbuild -->
+    <!-- build:css({app, .tmp}) styles/lehu.h5.index.css -->
+    <link href="css/global_m.css" rel="stylesheet">
+    <link href="css/layout_2015.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/plus/swiper.min.css">
+    <!-- endbuild -->
+    <style type="text/css">
+        html {
+            -webkit-overflow-scrolling:touch;
+        }
+        body {
+            -webkit-overflow-scrolling:touch;
+        }
 
-<style type="text/css">
-    html {
-        -webkit-overflow-scrolling:touch;
-    }
-    body {
-        -webkit-overflow-scrolling:touch;
-    }
+        ::-webkit-scrollbar{display:none}
+        ::-webkit-scrollbar{width:1px;height:1px}
+        ::scrollbar{width:1px;height:1px}
+        #ajax_prommotionLayout .swiper-wrapper {
+            font-size: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-right: -20.48px;
+            padding-right: 20.48px;
+        }
+        #ajax_specialZone .swiper-wrapper {
+            font-size: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin-right: -20.48px;
+            padding-right: 20.48px;
+        }
+        .swiper-pagination {
+            width: 100%;
+        }
+        .swiper-pagination span{
+            margin: 0 5px;
+        }
+    </style>
+    <style type="text/css">
+        ul, ol, li {
+            list-style: none outside none;
+        }
 
-	::-webkit-scrollbar{display:none}
-	::-webkit-scrollbar{width:1px;height:1px}
-	::scrollbar{width:1px;height:1px}
-	#ajax_prommotionLayout .swiper-wrapper {
-	    font-size: 0;
-	    white-space: nowrap;
-	    overflow-x: auto;
-	    overflow-y: hidden;
-	    margin-right: -20.48px;
-	    padding-right: 20.48px;
-	}
-	.swiper-pagination {
-		width: 100%;
-	}
-	.swiper-pagination span{
-		margin: 0 5px;
-	}
-</style>
+        .focus-btn {
+            overflow: hidden;
+            text-align: center;
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            z-index: 11;
+            width: 100%;
+        }
 
-<style type="text/css">
-    ul, ol, li {
-        list-style: none outside none;
-    }
+        .focus-btn .active {
+            border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -ms-border-radius: 7px;
+            height: 6px;
+            width: 6px;
+            border: 1px solid #fff;
+            margin: 0 4px;
+            display: inline-block;
+            background: #FFF;
+        }
 
-    .focus-btn {
-    overflow: hidden;
-    text-align: center;
-    position: absolute;
-    bottom: 8px;
-    left: 0;
-    z-index: 11;
-    width: 100%;
-}
+        .focus-btn span {
+            border-radius: 7px;
+            -webkit-border-radius: 7px;
+            -ms-border-radius: 7px;
+            height: 6px;
+            width: 6px;
+            border: 1px solid #fff;
+            margin: 0 4px;
+            display: inline-block;
+            opacity: 1;
+        }
+    </style>
+    <style type="text/css">
+        .dialog-cart {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            z-index: 999; }
 
-.focus-btn .active {
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -ms-border-radius: 7px;
-    height: 6px;
-    width: 6px;
-    border: 1px solid #fff;
-    margin: 0 4px;
-    display: inline-block;
-    background: #FFF;
-}
+        .dialog-cart-inner {
+            position: relative;
+            left: -50%;
+            color: #fff;
+            background: #333;
+            background: rgba(51, 51, 51, 0.9);
+            font-size: 14px;
+            line-height: 21px;
+            padding: 20px 82px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            text-align: center; }
 
-.focus-btn span {
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -ms-border-radius: 7px;
-    height: 6px;
-    width: 6px;
-    border: 1px solid #fff;
-    margin: 0 4px;
-    display: inline-block;
-    opacity: 1;
-}
-</style>
-
+        .dialog-cart .icon {
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            margin-left: -25px; }
+    </style>
 </head>
-
-<body class="" style='-webkit-overflow-scrolling:touch'>
-
-<!--弹出层-->
-<div class="index_popup" style="display: none">
-    <div class="index_popup_box">
-        <!--关闭-->
-        <div class="index_popup_box_close"></div>
-        <div class="index_popup_box_main">
-            <p><em>¥</em><i>5</i><span>乐虎券</span></p>
-            <p><em>¥</em><i>50</i><span>乐虎券</span></p>
-            <p><em>¥</em><i>100</i><span>乐虎券</span></p>
-        </div>
-        <!--领取-->
-        <a class="index_popup_box_get" onclick="" href="javascript:;" data-acitveIds="4779,4780,4781" style="cursor:pointer;"></a>
-    </div>
-</div>
-<!--/弹出层-->
-
+<body  style='-webkit-overflow-scrolling:touch'>
 <div id="index" class="nwrapper" style="-webkit-overflow-scrolling:touch">
     <div>
-<div class="ajax_noload"><img src="images/wifi.png">网络请求失败，请稍候再试<span><img src="images/sx.png"></span></div>
+        <div class="ajax_noload" style="display: none"><img src="images/wifi.png">网络请求失败，请稍候再试<span><img src="images/sx.png"></span></div>
 
-    <!--顶部-->
-    <div class="nheader">
-    <div class="nheader_cover"></div>
-        <div class="nindex_shaomiao"></div>
-        <div class="nindex_sousuo" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;"><em></em>全球购，找到好口碑</div>
-        <div class="nindex_xiaoxi"></div>
-    </div>
-    <!--/顶部-->
+        <!--顶部-->
+        <div class="nheader">
+            <div class="nindex_sousuo" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;"><em></em>搜索商品</div>
+        </div>
+        <!--/顶部-->
 
-    <!--banner-->
-    <div class="nbanner">
-        <div class="swiper-container">
-            <div class="swiper-wrapper" id="ajax_banner">
+        <!--banner-->
+        <div class="nbanner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="ajax_banner">
 
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-    <!--/banner-->
+        <!--/banner-->
 
-    <!--标签-->
-    <div class="ntag" id="ajax_fastList">
-
-    </div>
-    <!--/标签-->
-
-    <div class="nhr nmiaosha_nhr" style="background-color: #f5f5f5;"></div>
-
-    <!--秒杀-->
-    <div class="nmiaosha" >
-        <div class="nmiaosha_top">
-            <img src="images/index_28.png" >&nbsp;<b class="ajax_timetext">距离开始</b><span class="getting-started"><em>00</em>:<em>00</em>:<em>00</em></span>&nbsp;<i class="ajax_REMARK"></i>
-            <a href="javascript:;" data-title="nmiaosha_more" data-url="">更多>></a></div>
-            <div class="nmiaosha_main" id="ajax_seckillList">
+        <!--标签-->
+        <div class="ntag" id="ajax_fastList">
+            <a href='javascript:;' class="ntag_coupon"><img class='lazyload' src="images/quan.png"><span>领券中心</span></a>
+            <a href='javascript:;' class="ntag_like"><img class='lazyload' src="images/like.png"><span>我的收藏</span></a>
+            <a href='javascript:;'  class="ntag_order"><img class='lazyload' src="images/order.png"><span>我的进货单</span></a>
         </div>
-    </div>
-    <!--/秒杀-->
+        <!--/标签-->
 
-    <div class="nhr"></div>
-
-    <!--广告位-->
-    <div class="nindex_ad" id="ajax_hotRecommendation">
-
-    </div>
-    <!--/广告位-->
-    <div class="nhr"></div>
-
-    <!--分类楼层-->
-    <div id="ajax_prommotionLayout">
-    </div>
-
-    <!--发现-->
-    <div class="nfaxian">
-     <div class="ajax_nfaxian_top"></div>
-
-        <div class="nfaxian_main" id="ajax_showList">
+        <!-- 头条-->
+        <div class="news-msg">
+            <img src="images/goodsdetail/promt.png" class="lazyload news-msg-img">
+            <div class="news-msg-box"  id="ajax_news">
+            </div>
         </div>
+        <!-- 头条-->
+
+        <div class="nhr"></div>
+
+        <!--分类楼层-->
+        <div id="ajax_prommotionLayout">
+
+        </div>
+
     </div>
-    <!--/发现-->
-    <!--底部没有更多商品提示-->
-    <div style="width:100%; height:.8rem; font-size:.28rem; display:block; float:left; text-align:center; line-height:.8rem; color:#000000; background-color:#ecebf2">亲，没有更多了！</div>
-</div>
 
 </div>
 
@@ -183,90 +175,17 @@
 <div id="footer">
 
 </div>
+
 <script src="scripts/common/require.min.js"></script>
-<!-- build:js({app, .tmp}) scripts/lehu.h5.page.indexpre.js -->
-<script src="scripts/lehu.h5.require.config.js"></script>
-<script type="text/javascript">
-require(['lehu.h5.page.indexpre']);
-</script>
-<!-- endbuild -->
+
 <script src="scripts/common/lehu.h5.common.js"></script>
+
 
 <!-- build:js({app, .tmp}) scripts/lehu.h5.page.index.js -->
 <script src="scripts/lehu.h5.require.config.js"></script>
 <script type="text/javascript">
-require(['lehu.h5.page.index']);
+    require(['lehu.h5.page.index']);
 </script>
 <!-- endbuild -->
-<style type="text/css">
-    /*首页弹出层*/
-/*.index_popup{ width:100%; height:100%; position:fixed; z-index:999; background:rgba(0,0,0,.7);}
-.index_popup_box{ width:83%; height:7.86rem; display: block; float:left; margin:1.2rem 8.5% 0; background: url(images/1111/popup_bj.png) no-repeat; background-size:100%; position:relative;}
-.index_popup_box_close{ width:.8rem; height:.8rem;position:absolute; top:0; right:0;}
-.index_popup_box_get{ width:3.2rem; height:1.2rem;position:absolute; bottom:.2rem; left:1.1rem;}
-.index_popup_box_main{ width:4.6rem; height:4.3rem; display:block; float:left; margin:1.9rem .37rem 0;}
-.index_popup_box_main p{ width:100%; height:1.2rem;  display:block; float:left;}
-.index_popup_box_main p em{ font-size:.2rem; color:#ff0000; font-weight:bold;font-family:arial;display:block;float: left;margin: .5rem 0 0 1.2rem;}
-.index_popup_box_main p i{ font-size:.6rem; color:#ff002d; font-weight:bold;margin:0 .1rem;}
-.index_popup_box_main p span{ font-size:.3rem; color:#333333; font-weight:bold; margin-top:-1rem;}*/
-
-/*首页弹出层*/
-.index_popup{ width:100%; height:100%; position:fixed; z-index:999; background:rgba(0,0,0,.7);}
-.index_popup_box{ width:83%; height:9.21rem; display: block; float:left; margin:1.2rem 8.5% 0; background: url(images/1111/popup_bj2.png) no-repeat; background-size:100%; position:relative;animation:zoomIn 1s forwards;-webkit-animation:zoomIn 1s forwards;}
-@-webkit-keyframes zoomIn {0%{opacity: 0;-webkit-transform: scale3d(.3, .3, .3);transform: scale3d(.3, .3, .3);}50% {opacity: 1;}}
-@keyframes zoomIn {0% {opacity: 0;-webkit-transform: scale3d(.3, .3, .3);transform: scale3d(.3, .3, .3);}50% {opacity: 1;}}
-.index_popup_box_close{ width:.8rem; height:.8rem;position:absolute; top:0; right:0;}
-.index_popup_box_get{ width:3.2rem; height:1.2rem;position:absolute; bottom: 1.6rem; left: 1.1rem;}
-.index_popup_box_main{ width:75%; height:4.64rem; display:block; float:left; margin:2.0rem 12.5% 0; background: url(images/1111/popup_box.png) no-repeat; background-size:100%;opacity:0;animation:move 1.5s ease forwards 1s;-webkit-animation:move 1.5s ease forwards 1s; }
-@-webkit-keyframes move{0%{height:0;opacity:0;}100%{height:50%;opacity:1;}}
-@keyframes move{0%{height:0;opacity:0;}100%{height:50%;opacity:1;}}
-.index_popup_box_main p{ width:100%; height:1.23rem;  display:block; float:left;}
-.index_popup_box_main p em{ font-size:.2rem; color:#ff0000; font-weight:bold;font-family:arial;display:block;float: left;margin: .45rem 0 0 1rem;}
-.index_popup_box_main p i{ font-size:.6rem; color:#ff002d; margin:0 .1rem;}
-.index_popup_box_main p span{ font-size:.23rem; color:#333333; margin-top:-1rem;}
-</style>
-
-<style type="text/css">
-    .dialog-cart {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 999; }
-
-.dialog-cart-inner {
-  position: relative;
-  left: -50%;
-  color: #fff;
-  background: #333;
-  background: rgba(51, 51, 51, 0.9);
-  font-size: 14px;
-  line-height: 21px;
-  padding: 20px 82px;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  text-align: center; }
-
-.dialog-cart .icon {
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  margin-left: -25px; }
-</style>
-
-<script src="https://s.mlinks.cc/scripts/dist/mlink.min.js"></script>
-<script type="text/javascript">
-    // if (document.querySelector("a#btnOpenApp")) {
-        setTimeout(function() {
-            new Mlink({
-                mlink : "http://a.mlinks.cc/AAwR",
-                button : document.querySelector("a#btnOpenApp"),
-                autoRedirect : false,    //自动打开App, 此配置在Android Chrome 35以上版本, 部分其他Android机型和浏览器, iOS 9.0以上系统无效;
-                autoRedirectToDownloadUrl: true // 默认true, 当用户设备上未安装应用时自动打开下载地址; 如果您不希望直接打开下载地址, 设为false即可;
-            });
-        }, 0)
-
-    // }
-</script>
-
 </body>
 </html>

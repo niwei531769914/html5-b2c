@@ -7,7 +7,7 @@ define('lehu.h5.header.download', [
     'lehu.h5.api',
     'lehu.hybrid',
 
-    'imagelazyload',
+   /* 'imagelazyload',*/
 
     'text!template_header_download'
   ],

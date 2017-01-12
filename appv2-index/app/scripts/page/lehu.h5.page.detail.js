@@ -11,7 +11,7 @@ define('lehu.h5.page.detail', [
     ],
 
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid,
-        LHDetail) {
+             LHDetail) {
         'use strict';
 
         Fastclick.attach(document.body);

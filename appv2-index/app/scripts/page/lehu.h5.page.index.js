@@ -1,50 +1,42 @@
 define('lehu.h5.page.index', [
-        'can',
-        'zepto',
-        'fastclick',
-        'lehu.util',
-        'lehu.h5.framework.comm',
-        'lehu.h5.business.config',
-        'lehu.env.switcher',
-        'lehu.hybrid',
+    'can',
+    'zepto',
+    'fastclick',
+    'lehu.util',
+    'lehu.h5.framework.comm',
+    'lehu.h5.business.config',
+    'lehu.env.switcher',
+    'lehu.hybrid',
 
-        'lehu.h5.header.footer',
-        'lehu.h5.header.download',
+    'lehu.h5.header.footer',
+    'lehu.h5.header.download',
 
-        'lehu.h5.component.index'
-    ],
-
+    'lehu.h5.component.index'
+],
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHSwitcher, LHHybrid,
-        LHFooter, LHDownload,
-        LHIndex) {
+             LHFooter, LHDownload,
+             LHIndex) {
         'use strict';
 
         Fastclick.attach(document.body);
 
-        // window.onerror = function(msg, url, l) {
-        //     var txt = "Error: " + msg + "\n"
-        //     txt += "URL: " + url + "\n"
-        //     txt += "Line: " + l + "\n\n";
-        //     alert(txt);
-        // };
-
         var Index = can.Control.extend({
 
             /**
-             * [init 鍒濆鍖朷
-             * @param  {[type]} element 鍏冪礌
-             * @param  {[type]} options 閫夐」
+             * [init 初始化]
+             * @param  {[type]} element 元素
+             * @param  {[type]} options 选项
              */
             init: function(element, options) {
                 var index = new LHIndex("#index");
                 new LHFooter();
 
-                var param = can.deparam(window.location.search.substr(1));
+              /*  var param = can.deparam(window.location.search.substr(1));
                 if (!param.version) {
                     new LHDownload(null, {
                         "position": "bottom"
                     });
-                }
+                }*/
             }
         });
 

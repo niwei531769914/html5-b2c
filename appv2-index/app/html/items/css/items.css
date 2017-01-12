@@ -1,0 +1,175 @@
+
+
+
+/*header顶部样式*/
+.header_list{ width: 100%; height: .88rem;background: #fff; color: #323232; line-height: .88rem; font-size: .34rem; ; max-width: 750px; border-bottom: 1px solid #e5e5e5; position: fixed; z-index: 9; top: 0 }
+.back{ background: url(../img/login_04.png) no-repeat center center; width: .33rem; height: .33rem; display: block; padding: .275rem; float: left;  background-size: .33rem }
+.share{background: url(../img/share.png) no-repeat center center; width: .33rem; height: .33rem; display: block; padding: .275rem; float: right;    background-size: .33rem }
+
+.tabs{overflow: hidden;text-align: center;width: calc(100% - 1.82rem); height: .88rem; color: #323232;text-overflow: ellipsis; white-space: nowrap; font-size: .34rem; line-height: .88rem; float: left}
+.tabs a{ padding: 0 .26rem .2rem .26rem}
+.active{ border-bottom: .04rem solid #779e27; color: #779e27}
+
+.npost_titlel{ width: 96%; height: auto;margin: 0 2%; float: left}
+.npost_direct{ display: block; float: left; margin: .2rem 0 0 0}
+.npost_direct em{ padding: .03rem .11rem; background: #779f24; border-radius: 2px; font-size: .22rem; color: #ffffff; border: 1px solid #779f24; display: block; float: left}
+.npost_direct i{ padding: .03rem .11rem; border-radius: 2px; font-size: .22rem; color: #779f24; border: 1px solid #779f24; margin-left: .2rem; display: block; float: left}
+
+
+
+.npost_jieshao{ font-size: .32rem;  width: 100%; height: auto; overflow: hidden; display: block; float: left; margin: .16rem 0; line-height: .5rem}
+.npost_price{ width: 100%; margin: 0 auto; margin-top: .2rem; float: left}
+.npost_price .npost_price_guige{ width: 100%; height: auto; float: left }
+.npost_price .npost_price_guige .price_guige_fc{ display: block; float: left; margin-left: 2%; width: 100%; height: auto }
+.npost_price .npost_price_guige .price_guige_fc em{ font-size: .36rem; color:#ff312e; display: block; float: left; width: 100%; height: auto }
+.npost_price .npost_price_guige .price_guige_fc i{ color: #323232; display: block; margin: .08rem 0 .25rem 0; font-size: .2rem; margin-top: .1rem; display: block; float: left}
+
+.npost_price .npost_price_shoujia{ width: 100%; height: auto; border-bottom: 1px solid #e6e6e6; float: left}
+.npost_price .npost_price_shoujia .price_shoujia_fc{ display: block; float: left; margin-left: 2%; margin-right: .65rem}
+.npost_price .npost_price_shoujia .price_shoujia_fc em{ color: #ff312e; display: block; font-size: .36rem}
+.npost_price .npost_price_shoujia .price_shoujia_fc i{ color: #323232; display: block; margin: .08rem 0 .25rem 0; font-size: .2rem }
+
+
+.nhr{ width: 100%; height: .2rem; background: #f5f5f5; float: left}
+
+.npost_fications{ width: 96%; margin: 0 2%; height: 1rem; font-size: .28rem; color: #323232; line-height: 1rem; float: left}
+.npost_fications .fications_chose{ float: left}
+.npost_fications .fications_chose em{ padding-left: .24rem}
+.npost_fications .fications_title{ width: auto; overflow-x: hidden; float: right}
+.npost_fications .fications_title em{ padding-right: .24rem}
+.npost_pinglun_top{width:93%; height:.7rem; line-height:.7rem; padding:0 2% 0 3.5%; display:block; float:left; font-size:.26rem; color:#535353; cursor:pointer;}
+.npost_pinglun_top em{ color:#aaaaaa; font-size:.2rem;}
+.npost_pinglun_top i{ color:#f51449; font-size:.2rem; display:block; float:right; margin-right:.2rem;}
+.npost_pinglun_top img{ width:.14rem; height:.26rem; display:block; float:right; margin:.2rem 0 0;}
+.npost_pinglun_more{ width:100%; height:.8rem;line-height:.8rem; display: block; float:left; text-align:center; font-size:.24rem; color:#535353; font-weight:bold; cursor:pointer;}
+.npost_switch{ width: 93%; height: .8rem; line-height: .8rem; padding: 0 3.5%; font-size: .26rem; text-align: center; float: left}
+.nwrapper_silder img{ width: 100%}
+
+/*评论头部样式*/
+.ncomment_top{ width:100%; height:1rem; border-bottom:1px solid #e5e5e5; border-top:1px solid #bfbfbf; display:block; background:#ffffff; position:relative; z-index:999; float: left}
+.ncomment_top span{ width:25%; height:.78rem; color:#535353; font-size:.28rem; line-height:.4rem;display:block; float:left; text-align:center; padding:.1rem 0;}
+.ncomment_top span em{ font-size: .24rem !important;}
+.ncomment_top span.active{ color:#779f24;}
+
+/*评论专区*/
+.ncomment_list{ width:100%; height:auto; display:block; float: left}
+.npost_pinglun_box{ width:100%; height: auto; display:block; padding: 0 0 .2rem 0; float: left}
+.pinglun_box{ width: 94%; border-bottom: .02rem solid #e0e0e0; display: flex; justify-content: space-between; padding: .2rem 3%}
+.pinglun_box .real-star{ font-size: .3rem;  margin-left: .1rem}
+.pinglun_box .real-star img{ display: inline-block; width: .7rem; height: .7rem; border-radius: 50%}
+.npost_pinglun_msg{display: inline-block; font-size: .3rem; height: auto; line-height: .7rem }
+.npost_pinglun_box .npost_pinglun_text{ clear: both }
+.npost_pinglun_text{width: 94%;padding: .2rem 3% 0}
+.npost_pinglun_text .pinglun_text_xing{ width: 100%; height: .3rem; padding-bottom:.2rem }
+.npost_pinglun_text .pinglun_text_xing img{ width: auto;display: block; height: 100%; float: left; margin-right: .16rem}
+.npost_pinglun_text .pinglun_text_npost{ width: 100%; height: auto; font-size: .26rem; color: #323232; line-height: .4rem}
+.pinglun_text_photo{ width: 100%; height: auto; margin: 0 auto; float: left}
+.pinglun_text_photo a{ width: 23%; height: auto; float: left; margin-right: 2%; border-radius: 4px; overflow: hidden; margin-top: .16rem}
+.pinglun_text_photo a img{ width: 100%; height: auto}
+
+.npost_pinglun_text .npost_pinglun_tiame{ font-size: .22rem; color: #323232; padding: 0 .2rem .16rem 0; background: #f5f5f5; float: left; margin-top: .2rem}
+.npost_pinglun_text .npost_pinglun_tiame span{ color: #646464}
+
+
+
+
+/*商品详情页底部样式*/
+.npost_foot{ width:100%; height:1rem; position:fixed; left:0; bottom:0; z-index:4;}
+.npost_foot_main{ width:100%; height:1rem; border-top:1px solid #d2d2d2; background:#f8f8f8; margin:0 auto;}
+.npost_foot_add{ width:31.25%; height:1rem; display:block; float:right; line-height:1rem; color:#779f24; text-align:center; font-size:.3rem; cursor:pointer;}
+.npost_foot_go{ width:31.25%; height:1rem; display:block; float:right; line-height:1rem; color:#ffffff; text-align:center; font-size:.3rem; cursor:pointer;}
+.npost_foot_add{ background:#dff2b8;}
+.npost_foot_go{ background:#779f24;}
+
+.npost_foot_left{ width:37.5%; height:1rem; display:block; float:left;}
+.npost_foot_left a{ width:50%; height:1rem; display:block; float:left; cursor:pointer;}
+.npost_foot_left .focus-info{ width:100%; height:.3rem; display:block; float:left; text-align:center; font-size:.2rem; color:#959595;}
+.order-numbers{display:inline-block;position:absolute;top:-.1rem;background-color:#f51449;line-height:.3rem;font-style:normal;border-radius:100%;padding:.05rem;font-size:.2rem;color:#fff;right:-.2rem;border:1px solid #fff; width:auto;min-width: .25rem; height:.25rem;text-align:center;}
+.bottom-focus-icon,.btm-act-icn{position:relative;display:block;margin:0 auto;margin-top:.1rem;margin-bottom:.05rem;width:.44rem;height:.44rem;background-size:100%}
+.npost_foot_kefu .btm-act-icn{background-image:url(../img/kefu.png)}
+.npost_foot_shouchang .btm-act-icn{background-image:url(../img/shouchang.png)}
+.npost_foot_shouchang .btm-active{ background-position: 0 100%}
+
+/*商品规格弹出层样式*/
+.gouwu{ width: 100%; height: 100%; position: fixed; background: rgba(0,0,0,.7); z-index: 999; top:0}
+.gouwu .gouwu_goods{ width: 100%; height: 70%; background: #ffffff; position: absolute; bottom: 0; display: block; float: left;}
+
+.gouwu .gouwu_goods .goods_introduction{ width: 96%; height: 1.9rem; margin: 0 auto; border-bottom: 1px solid #e1e1e1; padding: .2rem 2% 0 }
+.gouwu_goods .goods_introduction .goods_introduction_ph{ width: 2rem; height: 2rem; float: left; border: .01rem solid #e1e1e1; border-radius: 4px; overflow: hidden; position: relative; top: -.4rem}
+.gouwu_goods .goods_introduction .goods_introduction_ph img{ width: 100%}
+
+.gouwu_goods .goods_introduction .goods_introduction_title{ width: calc( 100% - 3.05rem); height: 1.9rem; font-size: .28rem; line-height: .38rem; float: left; display: block; margin:0 .2rem; overflow: hidden}
+.goods_introduction_title .introduction_title_tp{ color: #323232; display: block; width: 100%; height: 1.20rem; overflow: hidden}
+.goods_introduction_title .introduction_title_ft{ color: #646464; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-top: .04rem; display: block}
+
+.gouwu_goods .goods_introduction .goods_introduction_close{ width: .38rem; height: .38rem; float: right; background: url(../img/close.png) no-repeat; background-size: 100%}
+
+.gouwu_goods .gouwu_goods_dell{ width: 100%; height: calc(100% - 3rem); overflow: auto}
+
+.gouwu_goods .goods_detail{ float: left; width: 96%; height: auto; margin: 0 auto; border-bottom: 1px solid #e1e1e1; padding: 0 2% .3rem}
+.gouwu_goods .goods_detail .goods_detail_guige{ float: left; margin-top: .16rem; width: 100%; height: auto}
+.gouwu_goods .goods_detail h1{  font-size: .28rem; color: #323232}
+
+.gouwu_goods .goods_detail button{ width: 1.46rem; height: .6rem; text-align: center; line-height: .6rem; font-size: .26rem; float: left; border: 1px solid #999999; margin-right: .2rem; margin-top: .2rem; border-radius: 4px; color: #999999; background: #ffffff; padding: 0}
+.gouwu_goods .goods_detail .active_guige{ color: #779f24; border: 1px solid #779f24; }
+
+/*规格价格参数*/
+.goods_jiage{ width: 96%; height: auto; float: left; font-size: .3rem; padding: .2rem 2%; border-bottom:1px solid #e1e1e1  }
+.goods_jiage .goods_jiage_canshu{ width: 100%; height: auto; float: left}
+.goods_jiage .goods_jiage_canshu span{ display: block; padding: .1rem 0;  }
+.goods_jiage .goods_jiage_canshu .jiage_ago{ color: #323232;}
+.goods_jiage .goods_jiage_canshu .jiage_ago em{ color: #999999; text-decoration: line-through; margin-left: .12rem }
+.goods_jiage .goods_jiage_canshu .jiage_cuxiao{ color: #323232}
+.goods_jiage .goods_jiage_canshu .jiage_cuxiao em{ color: #ff2d2d ; margin-left: .12rem }
+.goods_jiage .goods_jiage_canshu .jiage_guige{ color: #323232}
+.goods_jiage .goods_jiage_canshu .jiage_guige em{  margin-left: .12rem }
+.goods_jiage .goods_jiage_canshu .jiage_time{ color: #ff2d2d; line-height: .36rem}
+.goods_jiage .goods_jiage_canshu .jiage_time em{  margin-left: .12rem}
+.goods_jiage .goods_jiage_canshu .jiage_time em i{ margin-left: .1rem}
+
+/*阶梯价格参数*/
+.goods_jiage .goods_jieti{ border: 1px solid #999999; font-size: .28rem; width: 100%; height: auto; float: left; border-collapse: collapse}
+.goods_jiage .goods_jieti tr td { border-left: 1px solid #999999; border-right: 1px solid #999999; text-align: center; padding: .16rem 0}
+
+
+
+
+.goods_jiage .goods_jieti_acy .jiage_time{ color: #ff2d2d; padding-top: .15rem; float: left; font-size: .24rem}
+.goods_jiage .goods_jieti_acy .jiage_time em{  margin-left: .12rem}
+.goods_jiage .goods_jieti_acy .jiage_time em i{ margin-left: .1rem}
+
+
+.gouwu_goods .goods_number{ width: 96%; height: 1.74rem; padding: 0 2%; float: left;border-bottom: 1px solid #e1e1e1  }
+.gouwu_goods .goods_number .goods_number_left{ font-size: .3rem; float: left; display: block; margin-top: .26rem}
+.gouwu_goods .goods_number .goods_number_btn{  float: right; width: 2.3rem; height: auto; margin-top: .2rem}
+.goods_number .goods_number_btn .number_btn{ width: auto; height: auto; margin-top: .02rem ; float: right}
+.goods_number_btn .number_btn .number_btn_jian{ font-size: .6rem;display: block; float: left; color: #999999; background: #f5f5f5; width: .6rem ; height: auto; margin-right: .02rem; text-align: center; line-height: .6rem}
+.goods_number_btn .number_btn .number_btn_shumu{ width: .9rem; height: auto ;font-size: .28rem; display: block; float: left; line-height: .6rem; color: #323232; text-align: center; background: #f5f5f5; margin-right: .02rem}
+.goods_number_btn .number_btn .number_btn_jia{ font-size: .6rem; display: block; float: left; color: #999999; background: #f5f5f5; width: .6rem ; height: auto; text-align: center; line-height: .6rem}
+
+.goods_number .goods_number_btn .number_btn_cukun{ font-size: .2rem; color: #999999; display: block; float: right; text-align: right; width: 2rem; margin-top: .2rem}
+
+
+
+.gouwu_goods .npost_gouwu{ width: 100%; height: 1rem; position: absolute; bottom: 0; float: left}
+.gouwu_goods .npost_gouwu .npost_gouwu_put{ width: 50%; height: 1rem; display: block; background: #dff2b8; font-size: .3rem; float: left; text-align: center; line-height: 1rem; color: #779f24 }
+.gouwu_goods .npost_gouwu .npost_gouwu_buy{ width: 50%; height: 1rem; display: block; background: #779f24; font-size: .3rem ; float: right; text-align: center; line-height: 1rem; color: #ffffff }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

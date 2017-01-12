@@ -79,16 +79,15 @@ body { visibility: hidden; /* display:none;*/ background-color:#ffffff;}
 
 /* 布局grid 头部、主体、主栏、侧栏、尾部 rgba(255,255,255,.7)*/
 /** 顶部导航 **/
-.nheader{position:fixed;top:0rem;z-index:99;height:1.1rem;width:100%; float:left;max-width:100%; padding-top:.3rem;}
-.nindex_shaomiao{ background-image:url(../images/shaoyishao.png); background-repeat: no-repeat; background-size:100%; width:8.5%; height:.51rem; display:block; float:left; margin:.22rem 0 0 1.5%;}
-.nindex_sousuo{ width:75%; height:.65rem; display:block; float:left; background: rgba(255,255,255,.7); border-radius:.1rem; line-height:.72rem; font-size:.26rem; color:#a0a0a0; margin:.1rem 0 0 2.5%;}
-.nindex_sousuo em{ background-image: url(../images/soshuo.png); background-repeat: no-repeat; background-size:100%; width:.3rem; height:.3rem; display:block; float:left; margin:.18rem .15rem 0rem .15rem;}
-.nindex_xiaoxi{background-image: url(../images/xiaoxi.png); background-repeat: no-repeat; background-size:.37rem; width:5.7%; height:.52rem; display:block; float:right;margin: .15rem 0 0 0;padding:0 2% 0 1.5%;}
+.nheader{position:fixed;top:0rem;z-index:99;height:44px;width:100%; float:left;max-width:100%; background: #ffffff }
+.nindex_sousuo{ width:95%; height:30px; display:block; float:left; background: rgba(245,245,249,1); border-radius:6px; line-height:30px; font-size:12px; color:#a0a0a0; margin:6px 0 0 2.5%;}
+.nindex_sousuo em{ background-image: url(../images/sousuo.png); background-repeat: no-repeat; background-size:100%; width:20px; height:20px; display:block; float:left; margin:6px 14px 0px 12px;}
+/*.nindex_xiaoxi{background-image: url(../images/xiaoxi.png); background-repeat: no-repeat; background-size:.4rem; width:5.7%; height:.52rem; display:block; float:right;margin: .26rem 0 0 0;padding:0 2% 0 1.5%;}*/
 .nheader_list{ position:relative;height:.8rem;width:100%; float:left;max-width: 100%; padding:.1rem 0; background:#ffffff; overflow:hidden;}
 .nindex_fanhui{ background:url(../images/fanhui.png) no-repeat center center; background-size:.18rem; width:.55rem; height:.51rem; display:block; float:left; margin:.15rem 0 0 .1rem;}
 .nheader_list .nindex_sousuo{ background-color:#eeeeee;}
 .nindex_text{ width:5.4rem; margin:0 auto; text-align:center; font-size:.3rem; color:#434343;height:.8rem;line-height:.8rem;}
-.nhr{width:100%; height:.1rem; background:#ecebf2; display:block; float:left;}
+.nhr{width:100%; height:.2rem; background:#ecebf2; display:block; float:left;}
 .nxhr{width:100%; height:1px; border-bottom:1px solid #eeeeee; display:block; float:left;}
 
 /*中间框架*/

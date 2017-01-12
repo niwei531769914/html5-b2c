@@ -1,0 +1,43 @@
+/*header¶¥²¿ÑùÊ½*/
+.header_list{ width: 100%; height: .88rem;background: #fff; color: #323232; line-height: .88rem; font-size: .34rem; ; max-width: 750px; border-bottom: 1px solid #e5e5e5; position: fixed; z-index: 9; top: 0 }
+.back{ background: url(../images/login_04.png) no-repeat center center; width: .33rem; height: .33rem; display: block; padding: .275rem; float: left;  background-size: .33rem; z-index: 3 }
+.header_list h2{overflow: hidden;padding: 0 20%;text-align: center;margin: auto;width: 60%;  position: absolute; z-index: -1; height: .88rem; color: #323232; text-overflow: ellipsis;
+    white-space: nowrap; font-size: .34rem; line-height: .88rem;}
+
+
+/*AC¹«¸æÁÐ±í*/
+.nwrapper .ac_list_title{ width: 100%; height: auto; padding-top:.98rem; float: left }
+.ac_list_title .ac_list_fenlei{ width: 100%; height: .71rem; font-size: .3rem; float: left; border-bottom: 1px solid #e1e1e1}
+.ac_list_title .ac_list_fenlei a{ width: 20%; height: .71rem; display: inline-block; text-align: center; float: left; margin: 0 15%;line-height: .7rem; color: #323232}
+.ac_list_title .ac_list_fenlei .list_fenlei_active{ color: #779f24; border-bottom: .03rem solid #779f24}
+
+.ac_list_title .ac_list_name{ font-size: .28rem; width: 100%; height: auto; float: left}
+.ac_list_title .ac_list_name a{ width: 92%; height: 1rem; display: block; line-height: 1rem; padding: 0 4%; border-bottom: 1px solid #e1e1e1}
+.ac_list_title .ac_list_name .list_now_biaoti{ float: left; color: #323232;    width: 72%; height: 1rem; line-height: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.ac_list_title .ac_list_name .list_now_time{ float: right; color: #999999;     width: 26%; height: 1rem; text-align: right;}
+
+
+/*AC¹«¸æÁÐ±íÄÚÈÝ*/
+
+.nwrapper .ac_list_neirong{ width: 94%; height: auto; font-size: .3rem; padding:.98rem 3% 0 3%; line-height: .4rem; padding-bottom: .4rem}
+
+.nwrapper .ac_list_neirong p { text-indent: 2em; padding-top: .2rem }
+
+.nwrapper .ac_list_neirong img { width: 100%; height: auto; padding-top: 0.2rem}
+
+/* 会员章程样式 */
+.nwrapper .ag_list_neirong{ width: 94%; height: auto; font-size: .3rem; padding:.98rem 3% 0 3%; line-height: .4rem; padding-bottom: .4rem}
+.nwrapper .ag_list_neirong h3{ font-size: .32rem }
+
+.nwrapper .ag_list_neirong h5{ font-size: .3rem }
+
+.nwrapper .ag_list_neirong p { text-indent: 2em; padding-top: .2rem; font-size: .28rem }
+
+.nwrapper .ag_list_neirong img { width: 100%; height: auto; padding-top: 0.2rem}
+
+
+
+
+
+
+
