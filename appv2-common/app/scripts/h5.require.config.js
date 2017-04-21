@@ -19,7 +19,7 @@ requirejs.config({
     },
 
     paths: {
-        'zepto': 'scripts/vendor/zepto.min',
+        'zepto': 'scripts/vendor/zepto',
         'can': 'scripts/vendor/can.zepto',
         'store': 'bower_components/store/store',
         'underscore': 'bower_components/underscore/underscore',

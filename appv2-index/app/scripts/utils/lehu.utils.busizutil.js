@@ -102,12 +102,12 @@ define('lehu.utils.busizutil', [
 
   var getUserId = function() {
     var param = can.deparam(window.location.search.substr(1));
-    var userId = param.token;
+    var userId = param.userid;
     if (userId) {
       return userId;
     }
 
-    var user = store.get("token");
+    var user = store.get("user");
     if (user) {
       userId = user.userId;
     }

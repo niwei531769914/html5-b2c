@@ -1,35 +1,29 @@
 CACHE MANIFEST
-#v1.4.11
+
+#v1.4.01
+
 
 CACHE:
-styles/lehu.h5.index.css
-styles/lehu.h5.detail.css
+styles/lehu.h5.login.css
+styles/lehu.h5.coupon.css
+
 scripts/common/lehu.h5.common.js
 scripts/common/require.min.js
-scripts/lehu.h5.page.index.js
-scripts/lehu.h5.page.detail.js
-scripts/lehu.h5.page.newsList.js
-scripts/lehu.h5.page.newsdetail.js
-scripts/lehu.h5.page.userAgreement.js
-images/wifi.png
-images/sx.png
-images/close.png
-images/share.png
-images/sousuo.png
-images/xiaoxi.png
-images/dingbu.png
-images/like.png
-images/order.png
-images/quan.png
-images/dingbu.png
-images/kefu.png
-images/shouchang.png
-images/login_04.png
-images/Shortcut_114_114.png
-index.html
+scripts/lehu.h5.page.login.js
+scripts/lehu.h5.page.forgetpassword.js
+scripts/lehu.h5.page.register.js
+scripts/lehu.h5.page.registerhelp.js
+scripts/lehu.h5.page.coupon.js
+scripts/lehu.h5.page.carousel.js
+scripts/lehu.h5.page.servers.js
 
+
+images/Shortcut_114_114.png
+images/dingbu.png
+images/login/login_04.png
+
+ 
 NETWORK:
 *
  
 FALLBACK:
-404.html

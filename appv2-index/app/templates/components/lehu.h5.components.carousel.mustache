@@ -1,0 +1,112 @@
+
+<!--顶部-->
+<header class="header" style="border-bottom: 0px;">
+    <a href="javascript:;" class="back"></a>
+    <h2>幸运大转盘</h2>
+    <a href="javascript:;" class="rightlink" id="share"><img src="images/share.png" style="
+    height: 0.33rem;
+    width: 0.33rem;
+    padding: 0.275rem 0rem 0.275rem 0.275rem;
+"></a>
+</header>
+
+<div class="nwrapper">
+        <!--顶部-->
+        <div class="dial_top">
+
+        </div>
+        
+        <!--转盘-->
+        <div class="dial_main">
+            <div id="lottery">
+                <table>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-0">
+                            {{{lehu-lottery luckProbabilityList 0}}}
+                        </td>
+                        <td class="lottery-unit lottery-unit-1">
+                            {{{lehu-lottery luckProbabilityList 1}}}
+                        </td>
+                        <td class="lottery-unit lottery-unit-2">
+                            {{{lehu-lottery luckProbabilityList 2}}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-7">
+                            {{{lehu-lottery luckProbabilityList 7}}}
+                        </td>
+                        <td class="lottery-bt">
+                            <a href="javascript:;"></a>
+                        </td>
+                        <td class="lottery-unit lottery-unit-3">
+                            {{{lehu-lottery luckProbabilityList 3}}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lottery-unit lottery-unit-6">
+                            {{{lehu-lottery luckProbabilityList 6}}}
+                        </td>
+                        <td class="lottery-unit lottery-unit-5">
+                            {{{lehu-lottery luckProbabilityList 5}}}
+                        </td>
+                        <td class="lottery-unit lottery-unit-4">
+                            {{{lehu-lottery luckProbabilityList 4}}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="dial_top_box" id="nologin">
+                请先点此<span id="login">登录</span>
+            </div>
+            <div class="dial_top_box" id="alreadylogin" style="display: none">
+                剩余<span id="login">{{data.lasttimes}}</span>次机会
+            </div>
+        </div>
+        
+        
+        <!--名单-->
+        <div class="dial_msg">
+            <div class="dial_msg_box">
+                <ul>
+                {{#each zhongJiangJiLu}}
+                    <li><em>{{USER_NAME}}</em><span>中了{{PRIZE}}</span><i>{{lehu-shorttime ADDTIME}}</i></li>
+                {{/each}}
+                </ul>
+            </div>
+        </div>
+        
+        <!--说明-->
+        <div class="dial_footer">
+            <span>活动规则</span>
+            <ul>
+                <li>1. 11.6-11.14期间每人共有三次抽奖机会；</li>
+                <li>2. 分享到朋友圈可再得一次抽奖机会（最多再得两次）；</li>
+                <li>3. 抽到的优惠券与账户绑定，限11月11-14日使用；</li>
+                <li>4. 免单券为200元全场通用券。</li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+<div id="sharetip" style="width: 100%; height: 100%; position: fixed; top: 0px; display:none">
+  <div class="mask" style="background: rgba(0,0,0,0.6);height: 100%;"></div>
+  <div class="share" style="z-index:999"></div>
+</div>
+
+<style type="text/css">
+.share {
+    background: url(images/coupon/sharetip.png) no-repeat;
+    background-size: 270px;
+    width: 270px;
+    height: 308px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    position: fixed;
+    z-index: 1111;
+}
+.mask{
+    background:rgba(0,0,0,0.8)
+}
+</style>

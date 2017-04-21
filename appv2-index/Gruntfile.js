@@ -244,7 +244,7 @@ module.exports = function(grunt) {
     useminPrepare: {
       options: {
         dest: '<%= config.dist %>'
-      },
+    },
       html: [
         '<%= config.app %>/*.html',
       ]
@@ -496,7 +496,7 @@ module.exports = function(grunt) {
       html: {
         expand: true,
         dot: true,
-        timestamp: true,
+        timedstamp: true,
         cwd: '<%= config.app %>',
         dest: '<%= config.dist %>',
         src: [
@@ -643,12 +643,12 @@ module.exports = function(grunt) {
 
     // @todo 需要修改，自动找到并配置requirejs
     requirejs: {
-      index: {
+      login: {
         options: {
           optimize: 'none',
           preserveLicenseComments: false,
           baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.index.js',
+          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.login.js',
           mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
           paths: {
             'moment': '../bower_components/momentjs/min/moment.min',
@@ -656,18 +656,17 @@ module.exports = function(grunt) {
           },
           include: [
             'lehu.helpers',
-            'lehu.h5.component.index',
-            'lehu.h5.page.index'
+            'lehu.h5.page.login'
           ],
-          insertRequire: ['lehu.h5.page.index']
+          insertRequire: ['lehu.h5.page.login']
         }
       },
-      indexpre: {
+      forgetpassword: {
         options: {
           optimize: 'none',
           preserveLicenseComments: false,
           baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.indexpre.js',
+          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.forgetpassword.js',
           mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
           paths: {
             'moment': '../bower_components/momentjs/min/moment.min',
@@ -675,17 +674,17 @@ module.exports = function(grunt) {
           },
           include: [
             'lehu.helpers',
-            'lehu.h5.page.indexpre'
+            'lehu.h5.page.forgetpassword'
           ],
-          insertRequire: ['lehu.h5.page.indexpre']
+          insertRequire: ['lehu.h5.page.forgetpassword']
         }
       },
-      detail: {
+      register: {
         options: {
           optimize: 'none',
           preserveLicenseComments: false,
           baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.detail.js',
+          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.register.js',
           mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
           paths: {
             'moment': '../bower_components/momentjs/min/moment.min',
@@ -693,18 +692,17 @@ module.exports = function(grunt) {
           },
           include: [
             'lehu.helpers',
-            'lehu.h5.component.detail',
-            'lehu.h5.page.detail'
+            'lehu.h5.page.register'
           ],
-          insertRequire: ['lehu.h5.page.detail']
+          insertRequire: ['lehu.h5.page.register']
         }
       },
-      newsList: {
+      registerhelp: {
         options: {
           optimize: 'none',
           preserveLicenseComments: false,
           baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.newsList.js',
+          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.registerhelp.js',
           mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
           paths: {
             'moment': '../bower_components/momentjs/min/moment.min',
@@ -712,18 +710,71 @@ module.exports = function(grunt) {
           },
           include: [
             'lehu.helpers',
-            'lehu.h5.component.newsList',
-            'lehu.h5.page.newsList'
+            'lehu.h5.page.registerhelp'
           ],
-          insertRequire: ['lehu.h5.page.newsList']
+          insertRequire: ['lehu.h5.page.registerhelp']
         }
       },
-      newsdetail: {
+      headlines: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.headlines.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.headlines'
+                ],
+                insertRequire: ['lehu.h5.page.headlines']
+            }
+        },
+      stores: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.stores.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.stores'
+                ],
+                insertRequire: ['lehu.h5.page.stores']
+            }
+        },
+      graphicdetails: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.graphicdetails.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.graphicdetails'
+                ],
+                insertRequire: ['lehu.h5.page.graphicdetails']
+            }
+        },
+      coupon: {
         options: {
           optimize: 'none',
           preserveLicenseComments: false,
           baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.newsdetail.js',
+          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.coupon.js',
           mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
           paths: {
             'moment': '../bower_components/momentjs/min/moment.min',
@@ -731,31 +782,83 @@ module.exports = function(grunt) {
           },
           include: [
             'lehu.helpers',
-            'lehu.h5.component.newsdetail',
-            'lehu.h5.page.newsdetail'
+            'lehu.h5.page.coupon'
           ],
-          insertRequire: ['lehu.h5.page.newsdetail']
+          insertRequire: ['lehu.h5.page.coupon']
         }
       },
-      userAgreement: {
-        options: {
-          optimize: 'none',
-          preserveLicenseComments: false,
-          baseUrl: './app/',
-          out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.userAgreement.js',
-          mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
-          paths: {
-            'moment': '../bower_components/momentjs/min/moment.min',
-            'fastclick': '../bower_components/fastclick/lib/fastclick'
-          },
-          include: [
-            'lehu.helpers',
-            'lehu.h5.component.userAgreement',
-            'lehu.h5.page.userAgreement'
-          ],
-          insertRequire: ['lehu.h5.page.userAgreement']
-        }
-      }
+      carousel: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.carousel.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.carousel'
+                ],
+                insertRequire: ['lehu.h5.page.carousel']
+            }
+        },
+      group: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.group.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.group'
+                ],
+                insertRequire: ['lehu.h5.page.group']
+            }
+        },
+      timeLimit: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.timeLimit.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.timeLimit'
+                ],
+                insertRequire: ['lehu.h5.page.timeLimit']
+            }
+        },
+      servers: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.servers.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.servers'
+                ],
+                insertRequire: ['lehu.h5.page.servers']
+            }
+        },
     }
   });
 

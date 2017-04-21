@@ -1,113 +1,239 @@
 <!doctype html>
-<html>
 <head>
-<meta charset="utf-8">
-<title>拼团</title>
-<meta name="description" content="">
-<meta name="Keywords" content="">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="format-detection" content="telephone=no,email=no">
-<script src="../common/js/zepto.min.js"></script>
-<script src="js/coupons.js"></script>
-<link href="../common/css/common.css" rel="stylesheet">
-<link href="css/group.css" rel="stylesheet">
-<script src="../../../../app/js/plus/swiper.jquery.min.js"></script>
-<link rel="stylesheet" href="../../../../app/css/plus/swiper.min.css">
+    <meta charset="utf-8">
+    <title>拼团</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/coupons.js"></script>
+    <link href="../common/css/common.css" rel="stylesheet">
+    <link href="css/group.css" rel="stylesheet">
+    <script src="../../../../app/js/plus/swiper.jquery.min.js"></script>
+    <link rel="stylesheet" href="../../../../app/css/plus/swiper.min.css">
+    <style type="text/css">
+        html {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        ::-webkit-scrollbar {
+            display: none
+        }
+
+        ::-webkit-scrollbar {
+            width: 1px;
+            height: 1px
+        }
+
+        ::scrollbar {
+            width: 1px;
+            height: 1px
+        }
+    </style>
 </head>
 
-<body>
-    <div class="nwrapper">
-    <!--顶部-->	
-    	<div class="tabs">
-			<a href="#" class="active"><span>团长</span></a> 
-			<a href="#" ><span>团参</span></a> 
-			<a href="#" ><span>成功团</span></a>
-		</div>
-        
-    <!--列表-->   
-        <div class="swiper-container group_main">
-            <div class="swiper-wrapper">
-        
-              <div class="swiper-slide">
-              
-              	<!--商品-->   
-                <div class="group_main_box">
-                    <a href="" class="group_main_img"><img src="img/pt_listimg.jpg"></a>
-                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
-                    <div class="group_main_msg">
-                        <em><i>¥</i>79.00</em><del>¥99.00</del>
-                        <span><img src="img/pt_q.png">12人可成团</span>
-                        <a href="" class="group_main_bt">去开团</a>
-                    </div>
-                </div>
-                <!--/商品-->   
-                
-              </div>
-          
-              <div class="swiper-slide">
-              
-                <div class="group_main_box">
-                    <a href="" class="group_main_img"><img src="img/pt_listimg.jpg"></a>
-                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
-                    <div class="group_main_msg">
-                        <em><i>¥</i>79.00</em><del>¥99.00</del>
-                        <span><img src="img/pt_q.png">12人可成团<i>11人已参团</i></span>
-                        <a href="" class="group_main_bt">参团</a>
-                    </div>
-                </div>
-                
-              </div>
-              
-              <div class="swiper-slide">
-              
-                <div class="group_main_box">
-                    <a href="" class="group_main_img"><img src="img/pt_listimg.jpg"></a>
-                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
-                    <div class="group_main_msg">
-                        <em><i>¥</i>79.00</em><del>¥99.00</del>
-                        <span><img src="img/pt_q.png">12人可成团<i>团购成功</i></span>
-                        <a href="" class="group_main_bt">拼团详情</a>
-                    </div>
-                </div>
-                
-              </div>
-          
-            </div>
-        </div>
-        
-        
+<body style="">
+<div class="nwrapper">
+
+    <!--顶部-->
+    <div class="tabs">
+        <a href="javascript:;" class="active"><span>开团</span></a>
+        <a href="javascript:;"><span>参团</span></a>
+        <a href="javascript:;"><span>成功团</span></a>
     </div>
-    
+
+    <!--列表-->
+    <div class="swiper-container group_main">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+
+                <!--商品-->
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>团购价<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_bt">去开团</a>
+                    </div>
+                </div>
+                <!--/商品-->
+
+            </div>
+
+            <div class="swiper-slide">
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>限时购<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_ct">11人已参团</a>
+                    </div>
+                </div>
+
+                <div class="group_main_box">
+                    <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                    <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                    <div class="group_main_msg">
+                        <em>限时购<i>¥79.00</i>
+                            <del>¥99.00</del>
+                        </em>
+                        <span><img src="img/group_people.png">12人团</span>
+                        <a href="javascript:;" class="group_main_ct">11人已参团</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="swiper-slide">
+
+                <div class="group_main_box">
+                    <div class="group_main_list">
+                        <a href="" class="group_main_img"><img src="img/goods_03.jpg"></a>
+                        <a href="" class="group_main_title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                        <div class="group_main_msg">
+                            <em>限时购<i>¥79.00</i>
+                                <del>¥99.00</del>
+                            </em>
+                            <span><img src="img/group_people.png">12人可成团</span>
+                            <a href="javascript:;" class="group_main_st">11人已成功团</a>
+                        </div>
+                    </div>
+                    <div class="group_main_sc">
+                        <div class="group_main_name">
+                            <img src="img/name_03.jpg" class="group_main_head">
+                            <a href="javascript:;" class="group_main_ds">
+                                <span class="group_main_ph">18912412239</span>
+                                <span class="group_main_tm">2017-01-05<em>10:32</em></span>
+                            </a>
+                            <a href="javascript:;" class="group_main_sk">开团</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
 <script type="text/javascript">
-		window.onload = function() {
-			var tabsSwiper = new Swiper('.group_main', {
-				speed : 500,
-				onSlideChangeStart : function() {
-					$(".tabs .active").removeClass('active');
-					$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
-				}
-			});
+    window.onload = function () {
+        var tabsSwiper = new Swiper('.group_main', {
+            speed: 500,
+            onSlideChangeStart: function () {
+                $(".tabs .active").removeClass('active');
+                $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')
+            }
+        });
 
-			$(".tabs a").on('touchstart mousedown', function(e) {
-				e.preventDefault();
-				$(".tabs .active").removeClass('active');
-				$(this).addClass('active');
-				tabsSwiper.slideTo($(this).index());
-			});
+        $(".tabs a").on('touchstart mousedown', function (e) {
+            e.preventDefault();
+            $(".tabs .active").removeClass('active');
+            $(this).addClass('active');
+            tabsSwiper.slideTo($(this).index());
+        });
 
-			$(".tabs a").click(function(e) {
-				e.preventDefault();
-			});
-		};
+        $(".tabs a").click(function (e) {
+            e.preventDefault();
+        });
+    };
 
-		var wheight = $(window).height();
-		var theight = $(".tabs").height();
-		var h = wheight - theight;
-		$(".swiper-slide").css("height", h);
-		$(".swiper-slide").css("overflow-y", "scroll");
+    var wheight = $(window).height();
+    var theight = $(".tabs").height();
+    var h = wheight - theight;
+    $(".swiper-slide").css("height", h);
+    $(".swiper-slide").css("overflow-y", "scroll");
 </script>
 </body>
 </html>

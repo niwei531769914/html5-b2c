@@ -105,7 +105,6 @@ define([
        */
       request: function(data, method, isForceUserLogin) {
         var def = can.Deferred();
-
         var that = this;
 
         var successCallback = function(response) {
@@ -122,7 +121,6 @@ define([
             contentType: method == 'get' ? "text/x-json;charset=UTF-8" : "application/x-www-form-urlencoded; charset=UTF-8",
             data: data,
             success: function(response) {
-
               var result = JSON.parse(response);
               if (result.type === 1) {
                 successCallback(result);

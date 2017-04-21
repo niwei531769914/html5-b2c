@@ -489,7 +489,7 @@ module.exports = function(grunt) {
           mainConfigFile: './<%= config.app %>/scripts/h5.require.config.js',
           paths: {
             'can': '../bower_components/canjs/can.zepto',
-            'zepto': '../bower_components/zeptojs/dist/zepto.min',
+         //   'zepto': '../bower_components/zeptojs/dist/zepto.min',
             'fastclick': '../bower_components/fastclick/lib/fastclick',
             'underscore': '../bower_components/underscore/underscore-min',
             'underscore.string': '../bower_components/underscore.string/dist/underscore.string.min',

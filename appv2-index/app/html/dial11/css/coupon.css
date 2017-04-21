@@ -1,0 +1,55 @@
+.dial_bj{ background:-webkit-gradient(linear, 0% 100%, 100% 100%,from(#ff1f3f), to(#e80a29));;}
+.dial_top{ width:100%; background:url(../img/dial_02.jpg) no-repeat; height:3.65rem; background-size:100%; display:block; float:left;}
+.dial_main{ width:100%;background-size:100%; display:block; float:left;}
+.dial_main_box{ width:auto; margin:.32rem auto 0; line-height:.5rem; height:.5rem; color:#ffffff; font-size:.3rem; display: table; padding-right:.2rem;}
+.dial_main_box span{ font-size:.34rem; color:#ffe800; font-weight:bold;}
+#lottery{
+	width: 6.7rem; height:5.2rem;
+	margin: 0 0 0 .5rem;
+}
+
+#lottery table td{
+	width: 2.12rem;
+	height: 1.68rem;
+	text-align: center;
+	vertical-align: middle;
+	background: #ffffff;
+	background-size:100% ;
+	font-size: .4rem;
+	border-radius: .14rem;
+	color: #e72920;
+	line-height:1.68rem;
+	margin:.04rem 0 0 .03rem; display:block; float:left; font-weight:bold;
+}
+
+#lottery table td a{
+	width:100%;
+	height:100%;
+	display: block;
+	text-decoration: none;
+	background: #ff9800;
+	border-radius: .14rem;
+	color: #ffffff;
+	font-size: .34rem;
+}
+.dial_main #lottery .active{ background: #fedd2e}
+#lottery td span{ width:100%; font-size:.24rem; height:.35rem; display:block; float:left; line-height: .4rem;}
+#lottery td p{ width:1.9rem; height:.8rem; display:block; float:left; margin:.18rem 0 .05rem .13rem; background-size:100%; line-height:.2rem; color:#ffffff; font-size:.16rem; background-repeat:no-repeat;}
+#lottery td p em{ width:auto; font-size:.18rem; line-height:.3rem; height:.3rem; display:table; border-bottom:1px dashed #ffffff; margin:.08rem auto;}
+#lottery td p em b{ font-size:.35rem; font-weight:bold;}
+#lottery td p.lottery-bg01{ background-image:url(../img/z_01.png);}
+#lottery td p.lottery-bg02{ background-image:url(../img/z_02.png);}
+#lottery td p.lottery-bg03{ background-image:url(../img/z_03.png);}
+#lottery td p.lottery-bg04{ background-image:url(../img/z_04.png);}
+#lottery td p.lottery-bg05{ background-image:url(../img/z_05.png);}
+#lottery td p.lottery-bg06{ background-image:url(../img/z_06.png);}
+.dial_msg{ width:100%; height:auto; display:block; float:left; margin:.32rem 0;}
+.dial_msg_box{ width:80%; height:.74rem; overflow:hidden;display:block; background: rgba(0,0,0,.4); border-radius: .74rem; margin: 0 10%}
+.dial_msg_box li{ width:80%; height:.74rem; display:block; float:left; margin:0 10%; line-height:.74rem; font-size:.28rem; color:#ffffff; padding:0 10%; }
+.dial_msg_box li span{ width:40%; display:block; float:left;text-align:center; margin-left:2%;}
+.dial_msg_box li em{display:block; float:left;}
+
+.dial_footer{ width:86%; height:auto; margin:0 5% 1rem;float:left; background: rgba(0,0,0,.2); padding: .2rem 2%}
+.dial_footer span{ width:1.62rem; height:.42rem; display:block; float:left;  background: #f5a623; color: #ffffff; font-size: .28rem; text-align: center; line-height: .42rem; position: relative; left: -4%}
+.dial_footer ul{font-size:.26rem; color:#ffffff; line-height:.4rem; display:block; float:left; margin-top: .1rem}
+.dial_footer ul li{ width: 100%; height: auto; }

@@ -1,8 +1,7 @@
 <!doctype html>
-<html>
 <head>
     <meta charset="utf-8">
-    <title>B2B-App首页</title>
+    <title>汇银乐虎 首页配置</title>
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
@@ -10,11 +9,10 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no,email=no">
-    <link href="css/global_m.css" rel="stylesheet">
-    <link href="css/layout_2015.css" rel="stylesheet">
+    <link href="../common/css/common.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
-    <script src="../common/js/jquery-1.8.3.min.js"></script>
-    <script src="js/coupons.js"></script>
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/index.js"></script>
     <style type="text/css">
         html {
             -webkit-overflow-scrolling:touch;
@@ -51,245 +49,304 @@
     </style>
 </head>
 <body>
-<div id="index" class="nwrapper" style="-webkit-overflow-scrolling:touch">
-    <div>
-        <div class="ajax_noload" style="display: none"><img src="images/wifi.png">网络请求失败，请稍候再试<span><img src="images/sx.png"></span></div>
 
-        <!--顶部-->
-        <div class="nheader">
-            <div class="nindex_sousuo" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;"><em></em>搜索商品</div>
-            <div class="nindex_xiaoxi"></div>
+<div class="nwrapper" style="-webkit-overflow-scrolling: touch">
+    <!--顶部-->
+    <div class="nheader">
+        <div class="nindex-shaomiao"></div>
+        <div class="nindex-sousuo" unselectable="on" style="-moz-user-select: none; -webkit-user-select: none" onselectstart="return false;"><em></em>年终最强年货清单</div>
+        <div class="nindex-xiaoxi"></div>
+    </div>
+    <!--/顶部-->
+    <!--功能tap-->
+    <div class="tap">
+        <a href="javascript:;" class="tap-tuijian tag fixed">推荐</a>
+        <a href="javascript:;" class="tap-btn fixed">母婴</a>
+        <a href="javascript:;" class="tap-btn fixed">护肤</a>
+        <a href="javascript:;" class="tap-btn fixed">日化</a>
+        <a href="javascript:;" class="tap-btn fixed">服饰</a>
+    </div>
+    <!--/功能tap-->
+    <!--轮播图开始-->
+    <div class="swiper">
+        <div class="taner"></div>
+        <div class="swiper-container"><img src="img/appshouye_03.jpg"></div>
+    </div>
+    <!--/轮播图开始 -->
+
+    <!--咨询头条-->
+    <div class="news-msg">
+        <img src="img/promt.png" class="lazyload news-msg-img">
+        <div class="news-msg-box">
+            <ul>
+                <li><a href="javascript:;"><span class="">双十一大1促销</span><em><i>|</i>详情</em></a></li>
+                <li><a href="javascript:;"><span class="">双十一大2促销</span><em><i>|</i>详情</em></a></li>
+                <li><a href="javascript:;"><span class="">双十一大3促销</span><em><i>|</i>详情</em></a></li>
+                <li><a href="javascript:;"><span class="">双十一大4促销</span><em><i>|</i>详情</em></a></li>
+                <li><a href="javascript:;"><span class="">双十一大5促销</span><em><i>|</i>详情</em></a></li>
+                <li><a href="javascript:;"><span class="">双十一大6促销</span><em><i>|</i>详情</em></a></li>
+            </ul>
         </div>
-        <!--/顶部-->
+    </div>
+    <!--/咨询头条-->
 
-        <!--banner-->
-        <div class="nbanner">
-            <div class="swiper-container">
-                <div class="swiper-wrapper" id="ajax_banner">
-                    <ul data-slide-ul='firstUl'>
-                        <li style='height:100%' data-ul-child='child'  class='slide-li swiper-slide'><img style='width:100%; height: 3.25rem;' src="img/banner_02.jpg"></li>
-                    </ul>
+    <div class="nhr"></div>
+
+    <!--功能标签 start-->
+    <div class="ntag">
+        <a href="javascript:;" class="ntag-limit">
+            <div class="hightprice-item">
+                <div class="hightprice-item-name">
+                    <p class="item-name">限时折扣</p>
+                    <p class="item-timer"><span>03</span><em>:</em><span>20</span><em>:</em><span>07</span></p>
+                    <p class="item-title">分分钟最低折扣</p>
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        <!--/banner-->
-
-        <!--标签-->
-        <div class="ntag" id="ajax_fastList">
-            <a href='javascript:;'><img class='lazyload' src="img/quan.png"><span>领券中心</span></a>
-            <a href='javascript:;'><img class='lazyload' src="img/like.png"><span>猜你喜欢</span></a>
-            <a href='javascript:;'><img class='lazyload' src="img/order.png"><span>我的订单</span></a>
-        </div>
-        <!--/标签-->
-
-        <!-- 头条-->
-        <div class="news-msg">
-            <img src="img/promt.png" class="lazyload news-msg-img">
-            <div class="news-msg-box">
-                <ul>
-                    <li><a href="javascript:;"><span class="">双十一大1促销</span><em><i>|</i>详情</em></a></li>
-                    <li><a href="javascript:;"><span class="">双十一大2促销</span><em><i>|</i>详情</em></a></li>
-                    <li><a href="javascript:;"><span class="">双十一大3促销</span><em><i>|</i>详情</em></a></li>
-                    <li><a href="javascript:;"><span class="">双十一大4促销</span><em><i>|</i>详情</em></a></li>
-                    <li><a href="javascript:;"><span class="">双十一大5促销</span><em><i>|</i>详情</em></a></li>
-                    <li><a href="javascript:;"><span class="">双十一大6促销</span><em><i>|</i>详情</em></a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- 头条-->
-
-        <div class="nhr"></div>
-        <!--分类楼层-->
-        <div id="ajax_prommotionLayout">
-            <div class='ntuijian cms-module-fillprice'>
-            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
-            <div class='ntuijian_main'>
-                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
-                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_05.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                    </div>
+                <div class="item-banner">
+                    <img src="img/goods_02.jpg">
                 </div>
             </div>
-        </div>
-            <div class="nhr"></div>
-            <div class='ntuijian cms-module-fillprice'>
-            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
-            <div class='ntuijian_main'>
-                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
-                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_05.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                    </div>
+        </a>
+        <a href="javascript:;" class="ntag-coupon">
+            <div class="ntag-common">
+                <div class="hightprice-item-name">
+                    <p class="item-name">拼团大促</p>
+                    <p class="item-title">分分钟最低折扣</p>
+                </div>
+                <div class="item-banner">
+                    <img src="img/goods_04.jpg">
                 </div>
             </div>
-        </div>
-            <div class="nhr"></div>
-            <div class='ntuijian cms-module-fillprice'>
-            <div class='ntuijian_ad'><a href='javascript:;'class='prommotionLayout_ad'><img class='lazyload' src="img/jinkou_02.jpg"><p class="ntuijian_ad_title"><span >源头好货</span><em >产地货源直达</em></p></a><span class='triangle_ad'></span><span class="arrow_ad"><img src="img/jiantou.png"></span></div>
-            <div class='ntuijian_main'>
-                <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
-                    <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_05.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_04.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                        <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                            <img class='lazyload' src="img/goods_03.jpg">
-                        </a>
-                    </div>
+        </a>
+        <a href="javascript:;" class="ntag-carousl">
+            <div class="ntag-common">
+                <div class="hightprice-item-name">
+                    <p class="item-name">拼团大促</p>
+                    <p class="item-title">分分钟最低折扣</p>
+                </div>
+                <div class="item-banner">
+                    <img src="img/goods_04.jpg">
                 </div>
             </div>
-        </div>
-            <div class="nhr"></div>
-        </div>
+        </a>
+        <a href="javascript:;" class="ntag-stores">
+            <div class="ntag-common">
+                <div class="hightprice-item-name">
+                    <p class="item-name">拼团大促</p>
+                    <p class="item-title">分分钟最低折扣</p>
+                </div>
+                <div class="item-banner">
+                    <img src="img/goods_04.jpg">
+                </div>
+            </div>
+        </a>
+        <a href="javascript:;" class="ntag-gift">
+            <div class="ntag-common">
+                <div class="hightprice-item-name">
+                    <p class="item-name">拼团大促</p>
+                    <p class="item-title">分分钟最低折扣</p>
+                </div>
+                <div class="item-banner">
+                    <img src="img/goods_04.jpg">
+                </div>
+            </div>
+        </a>
+    </div>
+    <!--功能标签 end-->
 
-  <!--      &lt;!&ndash; 精选专区&ndash;&gt;
-        <div id="ajax_selectZone">
-            <div class="highQuality">
-                <div class="quality-hightprice-left"><img src="img/goods_06.png"></div>
-                <div class="quality-hightprice-right">
-                    <a href="javascript:;" class="hightprice-item"><img src="img/goods_07.png"></a>
-                    <div class="hightprice-otem">
-                        <a href="javascript:;" class="hightprice-otem-fc"><img src="img/goods_09.png"></a>
-                        <a href="javascript:;" class="hightprice-otem-tc"><img src="img/goods_11.png"></a>
-                    </div>
-                </div>
+    <div class="nhr"></div>
+
+    <!--热销单品-->
+
+    <div class="ntuijian">
+        <!--头部-->
+        <div class="ntuijian_ad">
+            <div class="prommotionLayout_ad">
+                <h2>热销单品</h2>
+                <p>每日秒杀日常直供</p>
+            </div>
+            <div class="triangle_ad">
+                <p>查看全部<em></em></p>
             </div>
         </div>
 
-        <div class="nhr"></div>
-        &lt;!&ndash;特价专区&ndash;&gt;
-        <div id="ajax_specialZone" >
-            <div class='ntuijian cms-module-fillprice'>
-                <div class='ntuijian_top'><span><em>特价专区</em></span><i>更多></i></div>
-                <div class='ntuijian_main'>
-                    <div class='swiper-container' style='-webkit-overflow-scrolling:touch'>
-                        <div class='swiper-wrapper' style='-webkit-overflow-scrolling:touch'>
-                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                                <img class='lazyload' src="img/goods_03.jpg">
-                            </a>
-                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                                <img class='lazyload' src="img/goods_05.jpg">
-                            </a>
-                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                                <img class='lazyload' src="img/goods_05.jpg">
-                            </a>
-                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                                <img class='lazyload' src="img/goods_05.jpg">
-                            </a>
-                            <a href='javascript:;'class='swiper-slide prommotionLayout_detail'>
-                                <img class='lazyload' src="img/goods_05.jpg">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!--主体-->
+        <div class="ntuijian_mement">
+            <a href="javascript:;">
+                <img src="img/goods_03.jpg" class="lazyload">
+                <p>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</p>
+                <span class="price">￥80</span>
+                <span class="sales-promotion">￥120</span>
+            </a>
+            <a href="javascript:;">
+                <img src="img/goods_03.jpg" class="lazyload">
+                <p>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</p>
+                <span class="price">￥80</span>
+                <span class="sales-promotion">￥120</span>
+            </a>
+            <a href="javascript:;">
+                <img src="img/goods_03.jpg" class="lazyload">
+                <p>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</p>
+                <span class="price">￥80</span>
+                <span class="sales-promotion">￥120</span>
+            </a>
+            <a href="javascript:;">
+                <img src="img/goods_03.jpg" class="lazyload">
+                <p>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</p>
+                <span class="price">￥80</span>
+                <span class="sales-promotion">￥120</span>
+            </a>
         </div>
 
-        <div class="nhr"></div>
-        &lt;!&ndash;工厂直供专区&ndash;&gt;
-        <div id="ajax_straightFor">
-             <div class="straught-total">
-                 <img src="img/goods_03.png" class="straught-total-for">
-                 <div class="nhr"></div>
-                 <img src="img/goods_12.png" class="straught-total-for">
-                 <div class="nhr"></div>
-                 <div class="straught-total-list">
-                     <div class='ntuijian_top'><span><em>森马服饰专柜</em></span></div>
-                     <div class="straught-total-fenlei">
-                         <a href="javascript:;"><img src="img/good_2_03.png"></a>
-                         <a href="javascript:;"><img src="img/good_2_05.png"></a>
-                         <a href="javascript:;"><img src="img/good_2_07.png"></a>
-                     </div>
-                 </div>
-                 <div class="nhr"></div>
-                 <img src="img/goods_12.png" class="straught-total-for">
-             </div>
+        <!--广告-->
+        <div class="ntuijian-ad-hot">
+            <img src="img/ad_03.jpg">
         </div>
--->
     </div>
 
+    <!--商品楼层-->
+    <div id="ajax_prommotionLayout">
+        <div class="ntuijian">
+            <!--头部-->
+            <div class="ntuijian_ad">
+                <div class="prommotionLayout_ad">
+                    <h2>冬天一床暖被不想出门</h2>
+                    <p>冬日标配专场</p>
+                </div>
+                <div class="triangle_ad">
+                    <p>查看全部<em></em></p>
+                </div>
+            </div>
+
+            <!--分类商品-->
+            <div class="ntuijian_main">
+                <div class="swiper-container" style="-webkit-overflow-scrolling:touch">
+                    <div class="swiper-wrapper" style="-webkit-overflow-scrolling:touch">
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="nhr"></div>
+        <div class="ntuijian">
+            <!--头部-->
+            <div class="ntuijian_ad">
+                <div class="prommotionLayout_ad">
+                    <h2>冬天一床暖被不想出门</h2>
+                    <p>冬日标配专场</p>
+                </div>
+                <div class="triangle_ad">
+                    <p>查看全部<em></em></p>
+                </div>
+            </div>
+
+            <!--分类商品-->
+            <div class="ntuijian_main">
+                <div class="swiper-container" style="-webkit-overflow-scrolling:touch">
+                    <div class="swiper-wrapper" style="-webkit-overflow-scrolling:touch">
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                            <title>家庭挂画这样挂才美-荔枝米甜甜美美和满满荔枝米甜甜美美和满满荔枝米甜甜美美和满满</title>
+                            <span><i>￥80</i><em>￥120</em></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="nhr"></div>
+        <!--单品推荐-->
+        <div class="ntuijian">
+            <!--头部-->
+            <div class="ntuijian_ad">
+                <div class="prommotionLayout_ad">
+                    <h2>冬天一床暖被不想出门</h2>
+                    <p>冬日标配专场</p>
+                </div>
+                <div class="triangle_ad">
+                    <p>查看全部<em></em></p>
+                </div>
+            </div>
+
+            <!--分类商品-->
+            <div class="ntuijian_main">
+                <div class="swiper-container" style="-webkit-overflow-scrolling:touch">
+                    <div class="swiper-wrapper" style="-webkit-overflow-scrolling:touch">
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                        <a href="javascript:;" class="swiper-slide prommotionLayout_detail">
+                            <img src="img/goods_03.jpg" class="lazyload">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/单品推荐-->
+    </div>
+    <!--/商品楼层-->
+    <!--/热销单品-->
 </div>
 
-<div id="download">
-
-</div>
-
-<div id="footer">
-
-</div>
 </body>
-<script type="text/javascript">
-        /*信息滚动*/
-        var $this = $(".news-msg-box");
-        var scrollTimer = setInterval(function() {
-            scrollNews($this);
-        }, 2000);
-
-        function scrollNews(obj) {
-            var $self = obj.find("ul");
-            var lineHeight = $self.find("li").eq(0).height();
-            $self.animate({
-                "margin-top": -lineHeight + "px"
-            }, 400, function() {
-                $self.css({
-                    "margin-top": "0px"
-                }).find("li:first").appendTo($self);
-            })
-        };
-</script>
 </html>
