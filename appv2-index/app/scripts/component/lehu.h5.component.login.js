@@ -19,7 +19,7 @@ define('lehu.h5.component.login', [
     template_components_login) {
     'use strict';
 
-    var DEFAULT_GOTO_URL = "http://app.lehumall.com/html5/app/index.html";
+    //var DEFAULT_GOTO_URL = "http://app.lehumall.com/html5/app/index.html";
 
     return can.Control.extend({
 
@@ -213,8 +213,8 @@ define('lehu.h5.component.login', [
         });
         api.sendRequest()
           .done(function(data) {
-            store.set("user", data.user);
-            location.href = that.from || DEFAULT_GOTO_URL;
+            store.set("user", data.response.userVO);
+            location.href = that.from;
           })
           .fail(function(error) {
             $(".err-msg").text(error.msg).parent().css("display", "block")
@@ -262,8 +262,8 @@ define('lehu.h5.component.login', [
         });
         api.sendRequest()
           .done(function(data) {
-            localStorage.setItem("user", data.);
-            location.href = that.from || DEFAULT_GOTO_URL;
+            store.set("user", data.response.userVO);
+            location.href = that.from;
             return false;
           })
           .fail(function(error) {

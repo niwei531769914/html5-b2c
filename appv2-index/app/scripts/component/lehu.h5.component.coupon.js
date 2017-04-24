@@ -149,7 +149,6 @@ define('lehu.h5.component.coupon', [
             },
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
-                util.tip("恭喜你获得优惠券！",60000000);
 
                 var couponid = element.attr("data-id");
 
@@ -179,7 +178,32 @@ define('lehu.h5.component.coupon', [
             },
 
             uesCoupon:function (userId,couponid) {
+                var that = this;
 
+                this.param = {
+                    "userId": userId,
+                    "activityId": couponid
+                };
+
+                var api = new LHAPI({
+                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    data: JSON.stringify(this.param),
+                    method: 'post'
+                });
+                api.sendRequest()
+                    .done(function(data) {
+
+                        if(data.code == 1){
+
+                        }
+                        else {
+                            //code不为1
+                            util.tip(data.msg,3000);
+                        }
+                    })
+                    .fail(function(error) {
+                        util.tip(error.msg);
+                    });
             },
 
             '.enter_coupon click': function () {

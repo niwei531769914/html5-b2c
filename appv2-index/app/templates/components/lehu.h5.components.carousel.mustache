@@ -3,11 +3,6 @@
 <header class="header" style="border-bottom: 0px;">
     <a href="javascript:;" class="back"></a>
     <h2>幸运大转盘</h2>
-    <a href="javascript:;" class="rightlink" id="share"><img src="images/share.png" style="
-    height: 0.33rem;
-    width: 0.33rem;
-    padding: 0.275rem 0rem 0.275rem 0.275rem;
-"></a>
 </header>
 
 <div class="nwrapper">
@@ -36,7 +31,7 @@
                             {{{lehu-lottery luckProbabilityList 7}}}
                         </td>
                         <td class="lottery-bt">
-                            <a href="javascript:;"></a>
+                            <a href="javascript:;">点击开始</a>
                         </td>
                         <td class="lottery-unit lottery-unit-3">
                             {{{lehu-lottery luckProbabilityList 3}}}
@@ -55,21 +50,20 @@
                     </tr>
                 </table>
             </div>
-            <div class="dial_top_box" id="nologin">
-                请先点此<span id="login">登录</span>
+            <div class="dial_main_box" id="nologin">
+                先<span id="login">登录</span>再抽奖哦!
             </div>
             <div class="dial_top_box" id="alreadylogin" style="display: none">
                 剩余<span id="login">{{data.lasttimes}}</span>次机会
             </div>
         </div>
-        
-        
+
         <!--名单-->
         <div class="dial_msg">
             <div class="dial_msg_box">
                 <ul>
                 {{#each zhongJiangJiLu}}
-                    <li><em>{{USER_NAME}}</em><span>中了{{PRIZE}}</span><i>{{lehu-shorttime ADDTIME}}</i></li>
+                    <li><em>{{userPhone}}</em><span>中了{{prizeName}}</span></li>
                 {{/each}}
                 </ul>
             </div>
@@ -79,10 +73,7 @@
         <div class="dial_footer">
             <span>活动规则</span>
             <ul>
-                <li>1. 11.6-11.14期间每人共有三次抽奖机会；</li>
-                <li>2. 分享到朋友圈可再得一次抽奖机会（最多再得两次）；</li>
-                <li>3. 抽到的优惠券与账户绑定，限11月11-14日使用；</li>
-                <li>4. 免单券为200元全场通用券。</li>
+               {{data.activeRule}}
             </ul>
         </div>
 

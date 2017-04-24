@@ -106,17 +106,13 @@ define('lehu.h5.component.carousel', [
           }
         },
 
-        "lehu-shorttime": function(time) {
-          return time.substr(0, 10);
-        },
-
         "lehu-lottery": function(list, index) {
           var lottery = list[index];
 
           // 谢谢参与
-          if (!lottery.TYPE) {
-            return lottery.PRIZENAME;
-          } else if (lottery.TYPE == "2") { // 优惠券
+          if (!lottery.prizeType) {
+            return lottery.prizeName;
+          } else if (lottery.prizeType == "2") { // 优惠券
             var map = {
               "5": "lottery-bg05",
               "8": "lottery-bg01",
@@ -128,11 +124,11 @@ define('lehu.h5.component.carousel', [
             if (lottery.TICKET_INFO) {
               return '<p class="' + (map[lottery.TICKET_INFO.PRICE] || "lottery-bg01") + '"><em><b>' + lottery.TICKET_INFO.PRICE + '</b>元优惠券</em>(全场通用)</p><span>通用券' + lottery.TICKET_INFO.PRICE + '元</span>'
             } else {
-              return lottery.PRIZENAME;
+              return lottery.prizeName;
             }
 
           } else {
-            return lottery.PRIZENAME;
+            return lottery.prizeName;
           }
         }
       },
@@ -163,32 +159,40 @@ define('lehu.h5.component.carousel', [
         var that = this;
 
         var api = new LHAPI({
-          url: "http://app.lehumall.com/singlesDayInit.do",
-         // data: params,
+          url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+          data: JSON.stringify(params),
           method: 'post'
         });
         api.sendRequest()
           .done(function(data) {
             console.log(2);
+
+            if(data.code !== 1){
+                util.tip(data.msg,3000);
+                return false;
+            }
+
             // 中奖纪录
-            that.options.zhongJiangJiLu = data.zhongJiangJiLu;
+            that.options.zhongJiangJiLu = data.response.recordList;
 
             // 奖品
-            that.options.luckProbabilityList = data.luckProbabilityList;
+            that.options.luckProbabilityList = data.response.prizeList;
 
+            //判断当抽奖奖品少于8个，自动添加谢谢参与
             if (that.options.luckProbabilityList.length < 8) {
               var length = 8 - that.options.luckProbabilityList.length;
               for (var i = 0; i < length; i++) {
                 that.options.luckProbabilityList.push({
-                  "PRIZENAME": "谢谢参与",
-                  "TYPE": ""
+                  "prizeName": "谢谢参与",
+                  "prizeType": ""
                 })
               }
             }
 
-            // 剩余次数
+            // 剩余次数规则
             that.options.data = new can.Map({
-              "lasttimes": data.num
+              "lasttimes": data.num,
+               "activeRule": data.response.activeRule
             });
 
             // luck_id
@@ -197,7 +201,7 @@ define('lehu.h5.component.carousel', [
             var renderList = can.mustache(template_components_carousel);
             var html = renderList(that.options, that.helpers);
             that.element.html(html);
-
+            console.log(that.options);
             lottery.init('lottery');
             that.scrollZhongjiangjilu();
 
@@ -240,9 +244,7 @@ define('lehu.h5.component.carousel', [
         this.param = {
           "userId": this.userId + "",
           "luckId": this.luckId + ""
-        }
-
-        busizutil.encription(this.param);
+        };
 
         // util.tip("人气太旺,请耐心等待结果", 1000);
 

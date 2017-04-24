@@ -859,6 +859,24 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.servers']
             }
         },
+        activityreward: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activityreward.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.activityreward'
+                ],
+                insertRequire: ['lehu.h5.page.activityreward']
+            }
+        }
     }
   });
 
