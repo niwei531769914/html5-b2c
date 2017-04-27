@@ -153,7 +153,9 @@ define('lehu.h5.component.carousel', [
         var params = {};
 
         if (this.userId) {
-          params.userId = this.userId
+          params.userId = this.userId;
+        }else {
+          params.userId = "";
         }
 
         var that = this;
@@ -165,7 +167,6 @@ define('lehu.h5.component.carousel', [
         });
         api.sendRequest()
           .done(function(data) {
-            console.log(2);
 
             if(data.code !== 1){
                 util.tip(data.msg,3000);
@@ -191,12 +192,12 @@ define('lehu.h5.component.carousel', [
 
             // 剩余次数规则
             that.options.data = new can.Map({
-              "lasttimes": data.num,
+              "lasttimes": data.response.drawedTimes,
                "activeRule": data.response.activeRule
             });
 
             // luck_id
-            that.luckId = that.options.luckProbabilityList[0].LUCK_ID;
+            that.luckId = that.options.luckProbabilityList[0].probability;
 
             var renderList = can.mustache(template_components_carousel);
             var html = renderList(that.options, that.helpers);
@@ -204,6 +205,9 @@ define('lehu.h5.component.carousel', [
             console.log(that.options);
             lottery.init('lottery');
             that.scrollZhongjiangjilu();
+
+              //  去除导航事件
+            that.deleteNav();
 
             if (!that.userId) {
               $("#nologin").show();
@@ -246,11 +250,9 @@ define('lehu.h5.component.carousel', [
           "luckId": this.luckId + ""
         };
 
-        // util.tip("人气太旺,请耐心等待结果", 1000);
-
         var api = new LHAPI({
-          url: "http://app.lehumall.com/singlesDayInit.do",
-          data: this.param,
+          url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+          data: JSON.stringify(this.param),
           method: 'post'
         });
         api.sendRequest()
@@ -311,12 +313,11 @@ define('lehu.h5.component.carousel', [
 
         $(".lottery-bt").addClass("disable");
 
-
         var param = can.deparam(window.location.search.substr(1));
 
         this.userId = busizutil.getUserId();
         if (!this.userId) {
-          if (util.isMobile.WeChat() || !param.version) {
+          if (util.isMobile.WeChat() || param.from == "share") {
             location.href = "login.html?from=" + escape(location.href);
             return false;
           } else {
@@ -338,7 +339,7 @@ define('lehu.h5.component.carousel', [
       "#login click": function(element, event) {
         var param = can.deparam(window.location.search.substr(1));
 
-        if (util.isMobile.WeChat() || !param.version) {
+        if (util.isMobile.WeChat() || param.from == "share") {
           location.href = "login.html?from=carousel.html";
           return false;
         } else {
@@ -393,7 +394,7 @@ define('lehu.h5.component.carousel', [
 
         this.userId = busizutil.getUserId();
         if (!this.userId) {
-          if (util.isMobile.WeChat() || param.from == 'share' || !param.appinner) {
+          if (util.isMobile.WeChat() || param.from == 'share') {
             location.href = "login.html?from=" + escape(location.href);
             return false;
           } else {
@@ -413,8 +414,6 @@ define('lehu.h5.component.carousel', [
           "userId": this.userId + ""
         }
 
-        busizutil.encription(this.param);
-
         var api = new LHAPI({
           url: this.URL.SERVER_URL + "addShareHistory.do",
           data: this.param,
@@ -429,20 +428,16 @@ define('lehu.h5.component.carousel', [
           });
       },
 
-      '.back click': function() {
-        // temp begin  
-        // 在app外部使用 点击返回 如果没有可返回则关闭掉页面
-        var param = can.deparam(window.location.search.substr(1));
-        if (!param.version) {
-          if (history.length == 1) {
-            window.opener = null;
-            window.close();
-          } else {
-            history.go(-1);
+        deleteNav:function () {
+          var param = can.deparam(window.location.search.substr(1));
+          console.log(param.from);
+          if(param.from == "share"){
+            $('.header').hide();
+            return false;
           }
-          return false;
-        }
-        // temp end
+        },
+
+      '.back click': function() {
 
         if (util.isMobile.Android() || util.isMobile.iOS()) {
           var jsonParams = {

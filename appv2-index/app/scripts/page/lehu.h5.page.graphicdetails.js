@@ -34,10 +34,12 @@ define('lehu.h5.page.graphicdetails', [
                 this.element.html(html);
 
                 var param = can.deparam(window.location.search.substr(1));
-
+                var params = {
+                    goodsId : param.goodsId
+                }
                 var api = new LHAPI({
                     url: 'http://118.178.227.135/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
-                    data: JSON.stringify(param),
+                    data: JSON.stringify(params),
                     method: 'post'
                 });
                 api.sendRequest()

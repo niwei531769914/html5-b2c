@@ -103,7 +103,9 @@ define('lehu.h5.component.activityreward', [
                 });
                 api.sendRequest()
                     .done(function (data) {
-                        that.paint(data);
+                        if(data.code == 1) {
+                            that.paint(data);
+                        }
                     })
             },
 

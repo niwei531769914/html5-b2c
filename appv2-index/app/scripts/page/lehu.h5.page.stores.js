@@ -40,6 +40,9 @@ define('lehu.h5.page.stores', [
                 var html = renderList(this.options);
                 this.element.html(html);
 
+                //去除导航
+                this.deleteNav();
+
                 var api = new LHAPI({
                     url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
                     data: {},
@@ -60,6 +63,15 @@ define('lehu.h5.page.stores', [
                         util.tip(error.msg);
                     });
                 new LHFooter();
+            },
+
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if (param.from == "app") {
+                    $('.header').hide();
+                    return false;
+                }
             },
 
             '.stores-list img click': function (element,event) {

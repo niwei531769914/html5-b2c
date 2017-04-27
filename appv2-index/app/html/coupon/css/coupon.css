@@ -46,3 +46,8 @@
 .enter_coupon_me img{ width: .4rem; height: auto; margin-right: .1rem; position: relative; top: -.02rem}
 .enter_coupon_te{float: right; line-height: .5em}
 .enter_coupon_te img{ width: .4rem; height: auto;}
+
+/*无券状态*/
+.coupons_box_null{ width: 80%; margin: .5rem 10%; font-size: .28rem; text-align: center}
+.coupons_box_null img{ width: 3rem; height: auto; display: block; margin: .24rem auto}
+

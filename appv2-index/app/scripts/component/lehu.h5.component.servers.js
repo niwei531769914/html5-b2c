@@ -32,7 +32,6 @@ define('lehu.h5.component.servers', [
 
             initData: function() {
                 this.URL = LHHybrid.getUrl();
-                this.URL.SERVER_URL = 'http://app.lehumall.com/'
             },
 
             render: function() {
@@ -40,22 +39,22 @@ define('lehu.h5.component.servers', [
                 var html = renderFn(this.options.data, this.helpers);
                 this.element.html(html);
 
+            //    去除导航
+                this.deleteNav();
+
             },
 
-            '.back click': function() {
-                // temp begin
-                // 在app外部使用 点击返回 如果没有可返回则关闭掉页面
+            deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (!param.version) {
-                    if (history.length == 1) {
-                        window.opener = null;
-                        window.close();
-                    } else {
-                        history.go(-1);
-                    }
+                console.log(param.from);
+                if(param.from == "app"){
+                    $('.header').hide();
                     return false;
                 }
-                // temp end
+            },
+
+
+            '.back click': function() {
 
                 if (util.isMobile.Android() || util.isMobile.iOS()) {
                     var jsonParams = {

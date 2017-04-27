@@ -30,40 +30,43 @@ define('lehu.h5.component.coupon', [
                 var html = renderList(this.options);
                 this.element.html(html);
 
+                //  去除导航事件
+                this.deleteNav();
+
                 //渲染页面
                 this.render();
             },
 
-            "#sharetip click": function (element, event) {
-                $("#sharetip").hide();
-            },
+            // "#sharetip click": function (element, event) {
+            //     $("#sharetip").hide();
+            // },
 
-            "#share click": function (element, event) {
-                var param = can.deparam(window.location.search.substr(1));
-                var version = param.version;
-                if (!version && !util.isMobile.WeChat()) {
-                    util.tip("请升级app到最新版本后使用!");
-                    return false;
-                }
-
-                if (util.isMobile.WeChat()) {
-                    $("#sharetip").show();
-                    return false;
-                }
-
-                var jsonParams = {
-                    'funName': 'share_fun',
-                    'params': {
-                        'title': "汇银乐虎全球购-领券中心",
-                        'type': "1",
-                        'video_img': "",
-                        'shareUrl': 'http://' + window.location.host + "/html5/app/coupon.html?from=share",
-                        'shareImgUrl': "http://app.lehumall.com/html5/app/images/Shortcut_114_114.png",
-                        'text': "汇银乐虎全球购，赶紧领取优惠券吧，手慢无！"
-                    }
-                };
-                LHHybrid.nativeFun(jsonParams);
-            },
+            // "#share click": function (element, event) {
+            //     var param = can.deparam(window.location.search.substr(1));
+            //     var version = param.version;
+            //     if (!version && !util.isMobile.WeChat()) {
+            //         util.tip("请升级app到最新版本后使用!");
+            //         return false;
+            //     }
+            //
+            //     if (util.isMobile.WeChat()) {
+            //         $("#sharetip").show();
+            //         return false;
+            //     }
+            //
+            //     var jsonParams = {
+            //         'funName': 'share_fun',
+            //         'params': {
+            //             'title': "汇银乐虎全球购-领券中心",
+            //             'type': "1",
+            //             'video_img': "",
+            //             'shareUrl': 'http://' + window.location.host + "/html5/app/coupon.html?from=share",
+            //             'shareImgUrl': "http://app.lehumall.com/html5/app/images/Shortcut_114_114.png",
+            //             'text': "汇银乐虎全球购，赶紧领取优惠券吧，手慢无！"
+            //         }
+            //     };
+            //     LHHybrid.nativeFun(jsonParams);
+            // },
 
             initData: function () {
                 this.URL = LHHybrid.getUrl();
@@ -121,6 +124,7 @@ define('lehu.h5.component.coupon', [
                             }
                             else if (COUPONLIST && COUPONLIST.length == 0) {
                                 $('.coupons_box_null').show();
+                                $('.enter_coupon').show();
                             }
                         }
 
@@ -194,7 +198,7 @@ define('lehu.h5.component.coupon', [
                     .done(function(data) {
 
                         if(data.code == 1){
-
+                            util.tip("领取成功！",3000);
                         }
                         else {
                             //code不为1
@@ -214,6 +218,15 @@ define('lehu.h5.component.coupon', [
                 };
                 LHHybrid.nativeFun(jsonParams);
 
+            },
+
+            deleteNav:function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if(param.from == "share"){
+                    $('.header').hide();
+                    return false;
+                }
             },
 
             '.back click': function () {

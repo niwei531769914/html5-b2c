@@ -13,16 +13,16 @@ define('lehu.h5.page.registerhelp', [
         'text!template_page_registerhelp'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
-        LHFooter,
-        template_page_registerhelp) {
+    function (can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
+              LHFooter,
+              template_page_registerhelp) {
         'use strict';
 
         Fastclick.attach(document.body);
 
         var RegisterHelp = can.Control.extend({
 
-            initData: function() {
+            initData: function () {
                 this.URL = LHHybrid.getUrl();
             },
 
@@ -31,33 +31,26 @@ define('lehu.h5.page.registerhelp', [
              * @param  {[type]} element 元素
              * @param  {[type]} options 选项
              */
-            init: function(element, options) {
+            init: function (element, options) {
                 var that = this;
 
                 this.initData();
 
-                // var api = new LHAPI({
-                //     url: this.URL.SERVER_URL + LHConfig.setting.action.queryRegistrationAgreement,
-                //     data: {
-                //         "flag": 362
-                //     },
-                //     method: 'post'
-                // });
-                // api.sendRequest()
-                //     .done(function(data) {
-                        var renderList = can.mustache(template_page_registerhelp);
-
-                      //  var html = renderList(data);
-                        that.element.html(renderList);
-                    // })
-                    // .fail(function(error) {
-                    //
-                    // });
-
+                var renderList = can.mustache(template_page_registerhelp);
+                that.element.html(renderList);
+                that.deleteNav();
                 new LHFooter();
             },
-
-            '.back click': function() {
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if (param.from == "app") {
+                    $('.header').hide();
+                    $('.login_main').css('margin-top',0);
+                    return false;
+                }
+            },
+            '.back click': function () {
 
                 if (util.isMobile.Android() || util.isMobile.iOS()) {
                     var jsonParams = {
