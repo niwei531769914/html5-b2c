@@ -19,8 +19,6 @@ define('lehu.h5.component.register', [
     template_components_register) {
     'use strict';
 
-    var DEFAULT_GOTO_URL = "http://app.lehumall.com/html5/app/index.html";
-
     return can.Control.extend({
 
       param: {},
@@ -166,43 +164,6 @@ define('lehu.h5.component.register', [
           })
       },
 
-      /**
-       * 获取密码强度  
-       * @param password
-       * @return 1弱  2中  3强
-       */
-      //getPasswordSafe: function(password) {
-      //  if (!password) {
-      //    return "1"
-      //  }
-      //
-      //  //数字，字母，特殊符号
-      //  var hasNumber = 0;
-      //  var hasZimu = 0;
-      //  var hasOther = 0;
-      //
-      //  var arr = password.split("");
-      //
-      //  for (var i = 0; i < arr.length; i++) {
-      //    var item = arr[i];
-      //    if (item >= '0' && item <= '9') {
-      //      //0-9数字
-      //      hasNumber = 1;
-      //      continue;
-      //    }
-      //
-      //    //65-90, 97-122
-      //    if ((item >= 'A' && item <= 'Z') || (item >= 'a' && item <= 'z')) {
-      //      hasZimu = 1;
-      //      continue;
-      //    } else {
-      //      //其他字符都算为特殊字符
-      //      hasOther = 1;
-      //    }
-      //  }
-      //  return "" + (hasNumber | hasZimu | hasOther);
-      //},
-
       '.btn-login click': function(element, event) {
         var that = this;
 
@@ -237,11 +198,9 @@ define('lehu.h5.component.register', [
           'password': passWord,
           'identifyingcode': captcha,
           'phoneToken':'',
-          //'pwdSafe': passWord,
           'origin': '5'
         };
 
-       // busizutil.encription(this.param);
 
         var api = new LHAPI({
           url: 'http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/register',
@@ -251,8 +210,8 @@ define('lehu.h5.component.register', [
         api.sendRequest()
           .done(function(data) {
             if (data.code == 1) {
-              store.set("user", data.user);
-              location.href = that.from || DEFAULT_GOTO_URL;
+              store.set("user", data.response);
+              location.href = that.from;
             } else {
               $(".err-msg").text(data.msg).parent().css("display", "block");
             }

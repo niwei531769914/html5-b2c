@@ -95,7 +95,6 @@ define('lehu.h5.component.coupon', [
                 });
                 api.sendRequest()
                     .done(function (data) {
-                        console.log(3);
                         if (data.code == 1) {
                             var COUPONLIST = data.response.list;
                             if (COUPONLIST && COUPONLIST.length > 0) {
@@ -118,11 +117,12 @@ define('lehu.h5.component.coupon', [
                                             COUPONLIST[i].useEndTime + '前使用</p></div><div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span>立即领取<i>&gt;</i></span></div></div>';
                                     }
                                 }
-
+                                $('.coupons_box_null').hide();
                                 $('.coupons_main').empty().append(html);
                                 $('.enter_coupon').show();
                             }
-                            else if (COUPONLIST && COUPONLIST.length == 0) {
+                            else if (COUPONLIST && COUPONLIST == "") {
+                                $('.coupons_main').empty();
                                 $('.coupons_box_null').show();
                                 $('.enter_coupon').show();
                             }
@@ -143,11 +143,9 @@ define('lehu.h5.component.coupon', [
 
                 if (element.index() == 1) {
                     that.getCoupon(1);
-                    console.log(1);
                 }
                 else if (element.index() == 0) {
                     that.getCoupon(0);
-                    console.log(0);
                 }
 
             },
@@ -163,19 +161,23 @@ define('lehu.h5.component.coupon', [
                 console.log(this.userId);
 
                 if (!this.userId) {
-                    if (util.isMobile.WeChat() || param.from == 'share') {
-                        location.href = "login.html?from=coupon.html";
-                        return false;
-                    } else {
+                    if (param.from == 'app' ) {
+                        alert(2);
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
-                                "backurl": "index"
+                                //"backurl": "index"
                             }
                         };
                         LHHybrid.nativeFun(jsonParams);
 
                         return false;
+
+                    } else if( util.isMobile.WeChat() || param.from == 'share'){
+
+                        location.href = "login.html?from=coupon.html";
+                        return false;
+
                     }
                 }
                 this.uesCoupon(this.userId, couponid);
@@ -223,7 +225,7 @@ define('lehu.h5.component.coupon', [
             deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
                 console.log(param.from);
-                if(param.from == "share"){
+                if(param.from == "app"){
                     $('.header').hide();
                     return false;
                 }

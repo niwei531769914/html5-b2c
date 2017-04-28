@@ -100,7 +100,7 @@ define('lehu.utils.busizutil', [
     return "" + (hasNumber | hasZimu | hasOther);
   };
 
-  var getUserId = function() {
+    var getUserId = function() {
     var param = can.deparam(window.location.search.substr(1));
     var userId = param.userid;
     if (userId) {

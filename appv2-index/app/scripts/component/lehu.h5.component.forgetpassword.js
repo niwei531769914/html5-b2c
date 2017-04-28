@@ -135,14 +135,10 @@ define('lehu.h5.component.forgetpassword', [
 
         this.param = {
           'phoneCode': userName,
-         //'password': md5(passWord),
           'newpassword': passWord,
           'identifyingcode': captcha,
-          //'pwdSafe': busizutil.getPasswordSafe(passWord),
           'origin': '5'
         };
-
-        //busizutil.encription(this.param);
 
         var api = new LHAPI({
           url: 'http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/findpassword',
