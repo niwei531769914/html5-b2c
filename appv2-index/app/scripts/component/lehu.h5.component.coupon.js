@@ -37,36 +37,6 @@ define('lehu.h5.component.coupon', [
                 this.render();
             },
 
-            // "#sharetip click": function (element, event) {
-            //     $("#sharetip").hide();
-            // },
-
-            // "#share click": function (element, event) {
-            //     var param = can.deparam(window.location.search.substr(1));
-            //     var version = param.version;
-            //     if (!version && !util.isMobile.WeChat()) {
-            //         util.tip("请升级app到最新版本后使用!");
-            //         return false;
-            //     }
-            //
-            //     if (util.isMobile.WeChat()) {
-            //         $("#sharetip").show();
-            //         return false;
-            //     }
-            //
-            //     var jsonParams = {
-            //         'funName': 'share_fun',
-            //         'params': {
-            //             'title': "汇银乐虎全球购-领券中心",
-            //             'type': "1",
-            //             'video_img': "",
-            //             'shareUrl': 'http://' + window.location.host + "/html5/app/coupon.html?from=share",
-            //             'shareImgUrl': "http://app.lehumall.com/html5/app/images/Shortcut_114_114.png",
-            //             'text': "汇银乐虎全球购，赶紧领取优惠券吧，手慢无！"
-            //         }
-            //     };
-            //     LHHybrid.nativeFun(jsonParams);
-            // },
 
             initData: function () {
                 this.URL = LHHybrid.getUrl();

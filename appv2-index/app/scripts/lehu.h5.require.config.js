@@ -54,6 +54,7 @@ requirejs.config({
         "lehu.h5.page.headlines": "scripts/page/lehu.h5.page.headlines",
         "lehu.h5.page.stores": "scripts/page/lehu.h5.page.stores",
         "lehu.h5.page.graphicdetails": "scripts/page/lehu.h5.page.graphicdetails",
+        "lehu.h5.page.activityreducelist": "scripts/page/lehu.h5.page.activityreducelist",
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
         "lehu.h5.component.register": "scripts/component/lehu.h5.component.register",
@@ -88,6 +89,7 @@ requirejs.config({
         "template_components_headlines": "templates/components/lehu.h5.components.headlines.mustache",
         "template_components_stores": "templates/components/lehu.h5.components.stores.mustache",
         "template_components_graphicdetails": "templates/components/lehu.h5.components.graphicdetails.mustache",
+        "template_components_activityreducelist": "templates/components/lehu.h5.components.activityreducelist.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 
