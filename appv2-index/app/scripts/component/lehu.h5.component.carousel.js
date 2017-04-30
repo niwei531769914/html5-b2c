@@ -202,7 +202,7 @@ define('lehu.h5.component.carousel', [
             var renderList = can.mustache(template_components_carousel);
             var html = renderList(that.options, that.helpers);
             that.element.html(html);
-            console.log(that.options);
+
             lottery.init('lottery');
             that.scrollZhongjiangjilu();
 
@@ -246,8 +246,8 @@ define('lehu.h5.component.carousel', [
         var that = this;
 
         this.param = {
-          "userId": this.userId + "",
-          "luckId": this.luckId + ""
+          "userId": this.userId,
+          "luckActiveId": this.luckId
         };
 
         var api = new LHAPI({
@@ -257,6 +257,14 @@ define('lehu.h5.component.carousel', [
         });
         api.sendRequest()
           .done(function(data) {
+
+            //如果返回code不等于1
+            if(data.code !== 1){
+              util.tip(data.msg,3000);
+              $(".lottery-bt").removeClass("disable");
+              click = true;
+              return false;
+            }
 
             //重置抽奖次数
             that.options.data.attr("lasttimes", data.surplusNum);
@@ -299,9 +307,7 @@ define('lehu.h5.component.carousel', [
             // util.tip(tip);
           })
           .fail(function(error) {
-            click = true;
-            $(".lottery-bt").removeClass("disable");
-            util.tip(error.msg);
+            util.tip("服务器错误！",3000);
           });
       },
 
@@ -355,82 +361,9 @@ define('lehu.h5.component.carousel', [
         }
       },
 
-      "#sharetip click": function(element, event) {
-        $("#sharetip").hide();
-      },
-
-      "#share click": function(element, event) {
-        var param = can.deparam(window.location.search.substr(1));
-        var version = param.version;
-        if (!version && !util.isMobile.WeChat()) {
-          util.tip("请升级app到最新版本后使用!");
-          return false;
-        }
-
-        if (util.isMobile.WeChat()) {
-          $("#sharetip").show();
-          this.shareLog();
-          return false;
-        }
-
-        var jsonParams = {
-          'funName': 'share_fun',
-          'params': {
-            'title': "汇银乐虎全球购-幸运大转盘",
-            'type': "1",
-            'video_img': "",
-            'shareUrl': 'http://' + window.location.host + "/html5/app/carousel.html?from=share",
-            'shareImgUrl': "http://app.lehumall.com/html5/app/images/Shortcut_114_114.png",
-            'text': "汇银乐虎全球购，幸运大转盘，奖品抽到你手软！"
-          }
-        };
-        LHHybrid.nativeFun(jsonParams);
-
-        this.shareLog();
-      },
-
-      shareLog: function() {
-        var that = this;
-
-        this.userId = busizutil.getUserId();
-        if (!this.userId) {
-          if (util.isMobile.WeChat() || param.from == 'share') {
-            location.href = "login.html?from=" + escape(location.href);
-            return false;
-          } else {
-            var jsonParams = {
-              'funName': 'login',
-              'params': {
-                "backurl": "index"
-              }
-            };
-            LHHybrid.nativeFun(jsonParams);
-
-            return false;
-          }
-        }
-
-        this.param = {
-          "userId": this.userId + ""
-        }
-
-        var api = new LHAPI({
-          url: this.URL.SERVER_URL + "addShareHistory.do",
-          data: this.param,
-          method: 'post'
-        });
-        api.sendRequest()
-          .done(function(data) {
-            console.log("分享成功")
-          })
-          .fail(function(error) {
-            util.tip(error.msg);
-          });
-      },
 
         deleteNav:function () {
           var param = can.deparam(window.location.search.substr(1));
-          console.log(param.from);
           if(param.from == "app"){
             $('.header').hide();
             return false;

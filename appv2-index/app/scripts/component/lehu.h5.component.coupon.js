@@ -193,7 +193,6 @@ define('lehu.h5.component.coupon', [
 
             deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
                 if(param.from == "app"){
                     $('.header').hide();
                     return false;

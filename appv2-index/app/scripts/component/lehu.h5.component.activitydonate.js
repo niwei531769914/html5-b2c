@@ -1,4 +1,4 @@
-define('lehu.h5.component.activityreward', [
+define('lehu.h5.component.activitydonate', [
         'zepto',
         'can',
         'lehu.h5.business.config',
@@ -11,12 +11,12 @@ define('lehu.h5.component.activityreward', [
         'imagelazyload',
         'lehu.utils.busizutil',
 
-        'text!template_components_activityreward'
+        'text!template_components_activitydonate'
     ],
 
     function ($, can, LHConfig, util, LHAPI, LHHybrid, md5, store,
               imagelazyload, busizutil,
-              template_components_activityreward) {
+              template_components_activitydonate) {
         'use strict';
 
         var DEFAULT_PAGE_INDEX = 1;
@@ -97,7 +97,7 @@ define('lehu.h5.component.activityreward', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -112,7 +112,7 @@ define('lehu.h5.component.activityreward', [
             paint: function (data) {
 
                 var ACTIVITYLIST = data.response.promotionInfo;
-                var renderFn = can.view.mustache(template_components_activityreward);
+                var renderFn = can.view.mustache(template_components_activitydonate);
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
                 };

@@ -859,12 +859,12 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.servers']
             }
         },
-        activityreward: {
+        activityreduce: {
             options: {
                 optimize: 'none',
                 preserveLicenseComments: false,
                 baseUrl: './app/',
-                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activityreward.js',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activityreduce.js',
                 mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
                 paths: {
                     'moment': '../bower_components/momentjs/min/moment.min',
@@ -872,11 +872,65 @@ module.exports = function(grunt) {
                 },
                 include: [
                     'lehu.helpers',
-                    'lehu.h5.page.activityreward'
+                    'lehu.h5.page.activityreduce'
                 ],
-                insertRequire: ['lehu.h5.page.activityreward']
+                insertRequire: ['lehu.h5.page.activityreduce']
             }
-        }
+        },
+        activitydonate: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activitydonate.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.activitydonate'
+                ],
+                insertRequire: ['lehu.h5.page.activitydonate']
+            }
+        },
+        activityreducelist: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activityreducelist.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.activityreducelist'
+                ],
+                insertRequire: ['lehu.h5.page.activityreducelist']
+            }
+        },
+        activitydonatelist: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activitydonatelist.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.activitydonatelist'
+                ],
+                insertRequire: ['lehu.h5.page.activitydonatelist']
+            }
+        },
     }
   });
 

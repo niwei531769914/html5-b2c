@@ -1,4 +1,4 @@
-define('lehu.h5.page.coupon', [
+define('lehu.h5.page.activitydonate', [
         'can',
         'zepto',
         'fastclick',
@@ -8,20 +8,19 @@ define('lehu.h5.page.coupon', [
         'lehu.hybrid',
 
         'lehu.h5.header.footer',
-
         'lehu.h5.header.download',
 
-        'lehu.h5.component.coupon'
+        'lehu.h5.component.activitydonate'
     ],
 
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid,
-        LHFooter,LHDownload,
-        LHCoupon) {
+        LHFooter, LHDownload,
+        LHActivitydonate) {
         'use strict';
 
         Fastclick.attach(document.body);
 
-        var Coupon = can.Control.extend({
+        var List = can.Control.extend({
 
             /**
              * [init 初始化]
@@ -29,7 +28,7 @@ define('lehu.h5.page.coupon', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var coupon = new LHCoupon("#content");
+                var activityreward = new LHActivitydonate("#content");
                 new LHFooter();
 
                 var param = can.deparam(window.location.search.substr(1));
@@ -39,9 +38,8 @@ define('lehu.h5.page.coupon', [
                         "position":"bottom"
                     });
                 }
-
             }
         });
 
-        new Coupon('#content');
+        new List('#content');
     });
