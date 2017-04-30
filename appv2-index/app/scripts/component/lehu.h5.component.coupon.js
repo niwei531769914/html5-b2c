@@ -162,7 +162,6 @@ define('lehu.h5.component.coupon', [
 
                 if (!this.userId) {
                     if (param.from == 'app' ) {
-                        alert(2);
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
