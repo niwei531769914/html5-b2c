@@ -1,4 +1,4 @@
-define('lehu.h5.page.activityreward', [
+define('lehu.h5.page.activityreduce', [
         'can',
         'zepto',
         'fastclick',
@@ -10,12 +10,12 @@ define('lehu.h5.page.activityreward', [
         'lehu.h5.header.footer',
         'lehu.h5.header.download',
 
-        'lehu.h5.component.activityreward'
+        'lehu.h5.component.activityreduce'
     ],
 
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid,
         LHFooter, LHDownload,
-        LHActivityreward) {
+        LHActivityreduce) {
         'use strict';
 
         Fastclick.attach(document.body);
@@ -28,8 +28,15 @@ define('lehu.h5.page.activityreward', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var activityreward = new LHActivityreward("#content");
+                var activityreward = new LHActivityreduce("#content");
                 new LHFooter();
+                var param = can.deparam(window.location.search.substr(1));
+
+                if(param.from == "share"){
+                    new LHDownload(null,{
+                        "position":"bottom"
+                    });
+                }
             }
         });
 

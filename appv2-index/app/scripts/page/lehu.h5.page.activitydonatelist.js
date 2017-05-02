@@ -1,4 +1,4 @@
-define('lehu.h5.page.activityreducelist', [
+define('lehu.h5.page.activitydonatelist', [
         'can',
         'zepto',
         'fastclick',
@@ -11,12 +11,12 @@ define('lehu.h5.page.activityreducelist', [
         'lehu.h5.header.footer',
         'lehu.h5.header.download',
 
-        'text!template_components_activityreducelist'
+        'text!template_components_activitydonatelist'
     ],
 
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
         LHFooter,LHDownload,
-        template_page_activityreducelist) {
+        template_page_activitydonatelist) {
         'use strict';
 
         Fastclick.attach(document.body);
@@ -37,7 +37,7 @@ define('lehu.h5.page.activityreducelist', [
 
                 this.initData();
 
-                var renderList = can.mustache(template_page_activityreducelist);
+                var renderList = can.mustache(template_page_activitydonatelist);
                 var html = renderList(this.options);
                 this.element.html(html);
 
@@ -50,7 +50,7 @@ define('lehu.h5.page.activityreducelist', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/reduceList',
+                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -88,7 +88,7 @@ define('lehu.h5.page.activityreducelist', [
                 var ACTIVITY = element.attr('data-activityId');
                 var STOREACTIVITY = element.attr('data-storeActivityId');
 
-                window.location.href = "activityreward.html?" + ACTIVITY +"&" + STOREACTIVITY;
+                window.location.href = "activitydonate.html?" + ACTIVITY +"&" + STOREACTIVITY;
 
                 return false;
             },
@@ -109,10 +109,8 @@ define('lehu.h5.page.activityreducelist', [
         });
 
         new RegisterHelp('#content');
-        new LHFooter();
-
         var param = can.deparam(window.location.search.substr(1));
-
+        new LHFooter();
         if(param.from == "share"){
             new LHDownload(null,{
                 "position":"bottom"

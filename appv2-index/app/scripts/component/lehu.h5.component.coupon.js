@@ -184,7 +184,7 @@ define('lehu.h5.component.coupon', [
             '.enter_coupon click': function () {
 
                 var jsonParams = {
-                    'funName': 'back_coupons',
+                    'funName': 'back_coupon',
                     'params': {}
                 };
                 LHHybrid.nativeFun(jsonParams);
@@ -193,7 +193,6 @@ define('lehu.h5.component.coupon', [
 
             deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
                 if(param.from == "app"){
                     $('.header').hide();
                     return false;

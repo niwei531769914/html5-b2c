@@ -13,7 +13,6 @@ define('lehu.h5.header.download', [
   ],
 
   function($, can, store, LHConfig, util, LHAPI, LHHybrid,
-    imagelazyload,
     template_header_download) {
     'use strict';
 

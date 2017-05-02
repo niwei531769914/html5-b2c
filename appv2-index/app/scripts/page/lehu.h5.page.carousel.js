@@ -9,11 +9,13 @@ define('lehu.h5.page.carousel', [
 
         'lehu.h5.header.footer',
 
+        'lehu.h5.header.download',
+
         'lehu.h5.component.carousel'
     ],
 
     function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid,
-        LHFooter,
+        LHFooter,LHDownload,
         LHCarousel) {
         'use strict';
 
@@ -30,6 +32,13 @@ define('lehu.h5.page.carousel', [
             init: function(element, options) {
                 var wheel = new LHCarousel("#content");
                 new LHFooter();
+                var param = can.deparam(window.location.search.substr(1));
+
+                if(param.from == "share"){
+                    new LHDownload(null,{
+                        "position":"bottom"
+                    });
+                }
             }
         });
 

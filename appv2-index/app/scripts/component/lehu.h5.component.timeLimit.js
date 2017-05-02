@@ -1,205 +1,232 @@
 define('lehu.h5.component.timeLimit', [
-    'zepto',
-    'can',
-    'lehu.h5.business.config',
-    'lehu.util',
-    'lehu.h5.api',
-    'lehu.hybrid',
-    'md5',
-    'store',
+		'zepto',
+		'can',
+		'lehu.h5.business.config',
+		'lehu.util',
+		'lehu.h5.api',
+		'lehu.hybrid',
+		'md5',
+		'store',
+		'imagelazyload',
+		'lehu.utils.busizutil',
+		'text!template_components_timeLimit'
+	],
 
-    'imagelazyload',
-    'lehu.utils.busizutil',
+	function($, can, LHConfig, util, LHAPI, LHHybrid, md5, store, imagelazyload, busizutil, template_components_timeLimit) {
+		'use strict';
+		return can.Control.extend({
+			/**
+			 * @override
+			 * @description 初始化方法
+			 */
+			init: function() {
+				var renderList = can.mustache(template_components_timeLimit);
+				var html = renderList(this.options);
+				this.element.html(html);
+				//渲染页面
+				this.render();
+			},
+			render: function() {
+				var that = this;
+				//busizutil.encription(this.param);
+				var api = new LHAPI({
+					url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+					data: {},
+					method: 'post'
+				});
+				api.sendRequest()
+					.done(function(data) {
+						if(data.code == 1) {
+							var TABLIST = data.response;
+							var html = "";
+							var activityId = "";
+							var status = "";
+							for(var i = 0; i < TABLIST.length; i++) {
+								//判断抢购时间
+								if(TABLIST[i].dateStr) {
+									if(TABLIST[i].status == 1) {
+										activityId = TABLIST[i].activityId;
+										status = TABLIST[i].status
+										html += " <a class='active' status = " + TABLIST[i].status + "  activityid = " + TABLIST[i].activityId + ">正在抢购</a>";
+									} else {
+										html += " <a status = " + TABLIST[i].status + "  activityid = " + TABLIST[i].activityId + ">" + TABLIST[i].dateStr + "点场</a>";
+									}
+								};
+							};
+							$(".tabs").append(html);
+ 						};
+ 						 
+						that.sendRequestNav(status);
+						
+						that.renderSecondkillList(data);
+						
+						that.countDown();
+						
+						// 执行倒计时
+						that.timer = setInterval(function() {
+							that.countDown();
+						}, 1000);
+						
+						that.sendRequest(activityId, status);
+						
+					})
+					.fail(function(error) {
+						util.tip(error.msg);
+					})
+			},
 
-    'text!template_components_timeLimit'
-  ],
+			".tabs a click": function(element, event) {
+				var that = this;
+				$(".tabs .active").removeClass('active');
+				element.addClass('active');
+				that.sendRequest(event.target.getAttribute("activityid"), event.target.getAttribute("status"));
+				that.sendRequestNav(event.target.getAttribute("status"));
+			},
 
-  function($, can, LHConfig, util, LHAPI, LHHybrid, md5, store,
-    imagelazyload, busizutil,
-    template_components_timeLimit) {
-    'use strict';
+			renderSecondkillList: function(data) {
+				if(data.response) {
+					var TABLIST = data.response;
+					for(var i = 0; i < TABLIST.length; i++) {
+						if(TABLIST[i].status == 1) {
+							var endtime = TABLIST[i].endTime;
+							var nowtime = data.nowTime;
+							this.shengyu = endtime - nowtime; //剩余时间
+						}
+					}
+				}
+			},
 
-    return can.Control.extend({
+			countDown: function() {
+				var hours;
+				var minutes;
+				var seconds;
 
-      /**
-       * @override
-       * @description 初始化方法
-       */
-      init: function() {
-        this.initData();
-          var renderList = can.mustache(template_components_timeLimit);
-          var html = renderList(this.options);
-          this.element.html(html);
+				hours = Math.floor(this.shengyu / 3600);
+				minutes = Math.floor((this.shengyu % 3600) / 60);
+				seconds = Math.floor(this.shengyu % 60);
 
-          //渲染页面
-          this.render();
-      },
+				if(hours < 10) hours = '0' + hours;
+				if(minutes < 10) minutes = '0' + minutes;
+				if(seconds < 10) seconds = '0' + seconds;
 
-      initData: function() {
-        this.URL = LHHybrid.getUrl();
-        // this.URL.SERVER_URL_NJ = 'http://172.16.201.68:8083/ptapp/';
+				$(".time-title-count-1").empty().append("本场结束还剩<em>" + hours + "</em>:<em>" + minutes + "</em>:<em>" + seconds + "</em>");
+				--this.shengyu;
 
-        this.options.data = new can.Map({
-          "grouplist": null,
-          "joinlist": null,
-          "successlist": null,
-          "imgprefix": null
-        });
-      },
+				if(this.shengyu < 0) {
+					clearInterval(this.timer);
+					window.location.reload();
+				}
+			},
 
-      render: function() {
-        var that = this;
+			sendRequestNav: function(status) {
 
-        // busizutil.encription(this.param);
+				if(status == 1) {
 
-        var api = new LHAPI({
-          url:"http://118.178.227.135/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
-          data: {},
-          method: 'post'
-        });
-        api.sendRequest()
-          .done(function(data) {
+					$(".time-title-count-1").css("display", "block").siblings().css("display", "none");
+				};
 
-            if(data.code == 1){
+				if(status == 2) {
 
-              var TABLIST = data.response;
+					$(".time-title-count-2").css("display", "block").siblings().css("display", "none");
+				};
 
-              var html = "";
-              for(var i = 0; i<TABLIST.length; i++){
+				if(status == 3) {
 
-              //  判断开场
-                  if(TABLIST[i].flag){
-                    html += " <a href='javascript:;' class='active'><span>" + TABLIST[i]  +"点场</span></a>";
-                  }
-                  else {
+					$(".time-title-count-3").css("display", "block").siblings().css("display", "none");
+				};
+			},
 
-                  }
+			sendRequest: function(activityId, status) {
+				var that = this;
 
-              }
+				var param = {
+					"activityId": activityId
+				}
+				var api = new LHAPI({
+					url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+					data: JSON.stringify(param),
+					method: 'post'
+				});
+				api.sendRequest()
+					.done(function(data) {
+						if(data.code == 1) {
+							var BOXLIST = data.response;
+							if(BOXLIST == "") {
+								return false;
+							}
+							var HTML = "";
+							for(var i = 0; i < BOXLIST.length; i++) {
 
+								if(status == 1) {
 
+									if(BOXLIST[i].status == 1) {
 
-            }
+										HTML += "<div class='time-sale-box'><a href='' class='time-sale-img'><img src='" + BOXLIST[i].imgUrl + "'></a><a href='' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
+											"<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><span><em class='time-sale-active'>还剩" + BOXLIST[i].total + "件</em></span><a href='javascript:;' class='time-sale-bt'>立即抢</a></div></div></div>"
 
+									} else {
 
-           // that.dealhash();
-          })
-          .fail(function(error) {
-            var renderList = can.mustache(template_components_group);
-            var html = renderList(that.options, that.helpers);
-            that.element.html(html);
-            util.tip(error.msg);
-          })
-      },
+										HTML += "<div class='time-sale-box'><div class='time-sale-img'><img src='" + BOXLIST[i].imgUrl + "'><b><img src='images/673261975475219410.png'/></b></div><a href='' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
+											"<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>"
+									}
+								};
 
-      ".tabs a click": function(element, event) {
-        $(".tabs .active").removeClass('active');
-        element.addClass('active');
-        var currentdetail = $(".swiper-slide").eq(element.index());
-        $(currentdetail).show().siblings().hide();
+								if(status == 3) {
 
-        store.set("groupselectedindex", element.index());
+									if(BOXLIST[i].total == 0) {
 
-        var action = null;
-        var status = null;
-        if (element.index() == 1) {
-          action = "queryUserAcPageList.do";
-          status = 0;
+										HTML += "<div class='time-sale-box'><div class='time-sale-img'><img src='" + BOXLIST[i].imgUrl + "'><b><img src='images/673261975475219410.png'/></b></div><a href='' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
+											"<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>"
 
-          if (!this.options.data.attr("joinlist")) {
-            this.sendRequest(action, status);
-          }
+									} else {
 
-        } else if (element.index() == 2) {
-          action = "queryUserAcPageList.do";
-          status = 1;
+										HTML += "<div class='time-sale-box'><div class='time-sale-img'><img src='" + BOXLIST[i].imgUrl + "'></div><a href='' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
+											"<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>"
+									}
 
-          if (!this.options.data.attr("successlist")) {
-            this.sendRequest(action, status);
-          }
-        }
-      },
+								};
 
-      sendRequest: function(action, status) {
-        var that = this;
+								if(status == 2) {
 
-        var param = {
-          "page": 1,
-          "pageNum": "20",
-          "status": status
-        }
+									HTML += "<div class='time-sale-box'><a href='' class='time-sale-img'><img src='" + BOXLIST[i].imgUrl + "'></a><a href='' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
+										"<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em></span><a href='javascript:;' class='time-sale-st'>即将开始</a></div></div></div>"
+								};
 
-        var api = new LHAPI({
-          url: this.URL.SERVER_URL + action,
-          data: param,
-          method: 'post'
-        });
+								$(".swiper-slide").empty().append(HTML);
+							};
+						};
+					})
+					.fail(function(error) {
+						util.tip(error.msg);
+					})
+			},
 
-        api.sendRequest()
-          .done(function(data) {
+			'.back click': function() {
+				// temp begin  
+				// 在app外部使用 点击返回 如果没有可返回则关闭掉页面
+				var param = can.deparam(window.location.search.substr(1));
+				if(!param.version) {
+					if(history.length == 1) {
+						window.opener = null;
+						window.close();
+					} else {
+						history.go(-1);
+					}
+					return false;
+				}
+				// temp end
 
-            if (status == 0) {
-              that.options.data.attr("joinlist", data.list);
-            } else if (status == 1) {
-              that.options.data.attr("successlist", data.list);
-            }
+				if(util.isMobile.Android() || util.isMobile.iOS()) {
+					var jsonParams = {
+						'funName': 'back_fun',
+						'params': {}
+					};
+					LHHybrid.nativeFun(jsonParams);
+					console.log('back_fun');
+				} else {
+					history.go(-1);
+				}
+			}
+		});
 
-          })
-          .fail(function(error) {
-            util.tip(error.msg);
-          })
-      },
-
-      dealhash: function() {
-        var selectedIndex = store.get("groupselectedindex");
-
-        // ios
-        if (typeof selectedIndex != 'undefined') {
-          $(".tabs a").eq(selectedIndex).click()
-        } else {
-          var hash = location.hash;
-          if (hash == "#open" || hash == "") {
-            $(".tabs a").eq(0).click()
-          } else if (hash == "#join") {
-            $(".tabs a").eq(1).click()
-          } else if (hash == "#success") {
-            $(".tabs a").eq(2).click()
-          }
-        }
-      },
-
-      '.group_main_box click': function(element, event) {
-        var href = element.attr("data-href");
-        location.href = href;
-        return false;
-      },
-
-      '.back click': function() {
-        // temp begin  
-        // 在app外部使用 点击返回 如果没有可返回则关闭掉页面
-        var param = can.deparam(window.location.search.substr(1));
-        if (!param.version) {
-          if (history.length == 1) {
-            window.opener = null;
-            window.close();
-          } else {
-            history.go(-1);
-          }
-          return false;
-        }
-        // temp end
-
-        if (util.isMobile.Android() || util.isMobile.iOS()) {
-          var jsonParams = {
-            'funName': 'back_fun',
-            'params': {}
-          };
-          LHHybrid.nativeFun(jsonParams);
-          console.log('back_fun');
-        } else {
-          history.go(-1);
-        }
-      }
-    });
-
-  });
+	});
