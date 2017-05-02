@@ -127,9 +127,9 @@ define('lehu.h5.component.coupon', [
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
-
-                console.log(this.userId);
-
+                alert(2);
+                alert(this.userId);
+                alert(3);
                 if (!this.userId) {
                     if (param.from == 'app' ) {
                         var jsonParams = {
@@ -184,7 +184,7 @@ define('lehu.h5.component.coupon', [
             '.enter_coupon click': function () {
 
                 var jsonParams = {
-                    'funName': 'back_coupon',
+                    'funName': 'back_coupons',
                     'params': {}
                 };
                 LHHybrid.nativeFun(jsonParams);

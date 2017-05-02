@@ -25,6 +25,9 @@ define('lehu.h5.component.timeLimit', [
 				this.element.html(html);
 				//渲染页面
 				this.render();
+
+			//	去除导航条
+				this.deleteNav();
 			},
 			render: function() {
 				var that = this;
@@ -200,21 +203,17 @@ define('lehu.h5.component.timeLimit', [
 						util.tip(error.msg);
 					})
 			},
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if (param.from == "app") {
+                    $('.header').hide();
+                    $('.tabs').css('top',0);
+                    return false;
+                }
+            },
 
 			'.back click': function() {
-				// temp begin  
-				// 在app外部使用 点击返回 如果没有可返回则关闭掉页面
-				var param = can.deparam(window.location.search.substr(1));
-				if(!param.version) {
-					if(history.length == 1) {
-						window.opener = null;
-						window.close();
-					} else {
-						history.go(-1);
-					}
-					return false;
-				}
-				// temp end
 
 				if(util.isMobile.Android() || util.isMobile.iOS()) {
 					var jsonParams = {

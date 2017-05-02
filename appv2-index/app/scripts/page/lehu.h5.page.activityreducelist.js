@@ -63,7 +63,7 @@ define('lehu.h5.page.activityreducelist', [
                             }
                             var html = "";
                             for(var i = 0; i< CONTENT.length; i++){
-                                html += '<div class="fullgive_adList"><img src="' + CONTENT[i].img + '"  data-url="' + CONTENT[i].url + '" data-activity="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].title + '</p></div>';
+                                html += '<div class="fullgive_adList"><img src="https://img11.360buyimg.com/jshopm/s640x260_jfs/t4816/166/2569546069/92243/9c24ffa1/5903161fN235bee6b.jpg!q70.jpg"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].activityName + '</p></div>';
                             }
                             $('.fullgive_ads').empty().append(html);
                         }
@@ -79,16 +79,22 @@ define('lehu.h5.page.activityreducelist', [
                 console.log(param.from);
                 if (param.from == "app") {
                     $('.header').hide();
+                    $('.fullgive_ad').css('top',0);
                     return false;
                 }
             },
 
-            '.stores-list img click': function (element,event) {
-
+            '.fullgive_adList img click': function (element,event) {
                 var ACTIVITY = element.attr('data-activityId');
                 var STOREACTIVITY = element.attr('data-storeActivityId');
 
-                window.location.href = "activityreward.html?" + ACTIVITY +"&" + STOREACTIVITY;
+                var param = can.deparam(window.location.search.substr(1));
+                if(param.from == "app"){
+                    window.location.href = "activityreduce.html?from=app&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                }
+                else if(param.from == "share"){
+                    window.location.href = "activityreduce.html?from=share&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                }
 
                 return false;
             },

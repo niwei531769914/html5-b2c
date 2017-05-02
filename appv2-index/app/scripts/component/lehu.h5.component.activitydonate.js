@@ -68,6 +68,7 @@ define('lehu.h5.component.activitydonate', [
                 this.initData();
                 console.log(1);
                 this.render();
+
             },
 
             initData: function () {
@@ -117,13 +118,14 @@ define('lehu.h5.component.activitydonate', [
                     onLoadingData: false
                 };
                 this.options.data = new can.Map(ACTIVITYLIST);
-                this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
+                //this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
                 this.options.data.attr("pageIndex", this.pageIndex);
 
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
                 this.element.html(html);
-                console.log(this.options.data);
+                //    去导航条
+                this.deleteNav();
 
                 this.initLoadDataEvent();
             },
@@ -275,6 +277,15 @@ define('lehu.h5.component.activitydonate', [
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);
+            },
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if (param.from == "app") {
+                    $('.header').hide();
+                    $('.fullgive_ad').css('top',0);
+                    return false;
+                }
             },
 
             '.back click': function () {

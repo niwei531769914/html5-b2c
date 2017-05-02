@@ -27,35 +27,35 @@ define('lehu.h5.component.activityreduce', [
         return can.Control.extend({
 
             helpers: {
-                'lehu-img': function (imgprefix, img) {
-                    if (_.isFunction(img)) {
-                        img = img();
-                    }
+                // 'lehu-img': function (imgprefix, img) {
+                //     if (_.isFunction(img)) {
+                //         img = img();
+                //     }
+                //
+                //     if (_.isFunction(imgprefix)) {
+                //         imgprefix = imgprefix();
+                //     }
+                //
+                //     if (img.indexOf("http://") > -1) {
+                //         return img;
+                //     }
+                //
+                //     return imgprefix + img;
+                // },
 
-                    if (_.isFunction(imgprefix)) {
-                        imgprefix = imgprefix();
-                    }
-
-                    if (img.indexOf("http://") > -1) {
-                        return img;
-                    }
-
-                    return imgprefix + img;
-                },
-
-                'lehu-showDis': function (discount, price, options) {
-                    if (_.isFunction(discount)) {
-                        discount = discount();
-                    }
-                    if (_.isFunction(price)) {
-                        price = price();
-                    }
-                    if (parseFloat(discount) < parseFloat(price) && discount != 0) {
-                        return options.fn(options.contexts || this);
-                    } else {
-                        return options.inverse(options.contexts || this);
-                    }
-                }
+                // 'lehu-showDis': function (discount, price, options) {
+                //     if (_.isFunction(discount)) {
+                //         discount = discount();
+                //     }
+                //     if (_.isFunction(price)) {
+                //         price = price();
+                //     }
+                //     if (parseFloat(discount) < parseFloat(price) && discount != 0) {
+                //         return options.fn(options.contexts || this);
+                //     } else {
+                //         return options.inverse(options.contexts || this);
+                //     }
+                // }
             },
 
             param: {},
@@ -66,7 +66,6 @@ define('lehu.h5.component.activityreduce', [
              */
             init: function () {
                 this.initData();
-                console.log(1);
                 this.render();
             },
 
@@ -103,7 +102,7 @@ define('lehu.h5.component.activityreduce', [
                 });
                 api.sendRequest()
                     .done(function (data) {
-                        if(data.code == 1) {
+                        if (data.code == 1) {
                             that.paint(data);
                         }
                     })
@@ -116,15 +115,23 @@ define('lehu.h5.component.activityreduce', [
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
                 };
+                if (ACTIVITYLIST.activityImg == "") {
+                    ACTIVITYLIST.activityImg = "https://m.360buyimg.com/mobilecms/s720x322_jfs/t5380/53/518840503/167832/4849cc1b/5901bc2eNbed21d23.jpg!q70.jpg";
+                }
+                else {
+                    ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
+                }
                 this.options.data = new can.Map(ACTIVITYLIST);
-                this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
+                // this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
                 this.options.data.attr("pageIndex", this.pageIndex);
 
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
                 this.element.html(html);
-                console.log(this.options.data);
-
+                console.log(ACTIVITYLIST);
+                //    去导航条
+                this.deleteNav();
+                //下拉刷新
                 this.initLoadDataEvent();
             },
 
@@ -137,7 +144,7 @@ define('lehu.h5.component.activityreduce', [
                 var renderData = this.options.data;
                 //节流阀
                 var loadingDatas = function () {
-                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData")) {
+                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData")|| that.options.data.attr("goods").length<10) {
                         return false;
                     }
                     var srollPos = $(window).scrollTop(); //滚动条距离顶部的高度
@@ -194,15 +201,25 @@ define('lehu.h5.component.activityreduce', [
             ".fullgive_list img click": function (element, event) {
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
-                var storeid = element.attr("data-storeid");
-
-                this.toDetail(storeid, goodsitemid, goodsid);
+                this.toDetail(goodsitemid, goodsid);
             },
 
-            isLogin: function () {
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                console.log(param.from);
+                if (param.from == "app") {
+                    $('.header').hide();
+                    $('.fullgive_ad').css('margin-top', 0);
+                    return false;
+                }
+            },
+
+            //加入购物车
+            ".fullgive-sale-ct click": function (element, event) {
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
+                alert(this.userId);
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == 'share') {
                         location.href = "login.html?from=" + escape(location.href);
@@ -210,68 +227,60 @@ define('lehu.h5.component.activityreduce', [
                     } else {
                         var jsonParams = {
                             'funName': 'login',
-                            'params': {
-                                "backurl": "index"
-                            }
+                            'params': {}
                         };
                         LHHybrid.nativeFun(jsonParams);
-
                         return false;
                     }
                 }
-
-                return true;
-            },
-
-            //加入购物车
-            ".fullgive-sale-ct click": function (element, event) {
-                if (!this.isLogin()) {
-                    return false;
-                }
-                this.userId = busizutil.getUserId();
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
-                var storeid = element.attr("data-storeid");
+                var stroeId = element.attr("data-storeid");
+
+                var query = {
+                    userId: this.userId,
+                    goodsId: goodsid,
+                    storeId: stroeId,
+                    goodsItemId: goodsitemid,
+                    quantity: 0
+                }
 
                 var api = new LHAPI({
-                    url:'http://118.178.227.135/mobile-web-trade/ws/mobile/v1/cart/add',
-                    data:JSON.stringify({
-                        userId:this.userId,
-                        storeId: storeid,
-                        goodsId : goodsid,
-                        goodsItemId: goodsitemid,
-                        quantity : 1
-                    })
+                    url: 'http://118.178.227.135/mobile-web-trade/ws/mobile/v1/cart/add',
+                    data: JSON.stringify(query),
+                    method: 'post'
                 });
 
                 api.sendRequest()
                     .done(function (data) {
-                        util.tip("成功加入购物车！",3000);
+                        if (data.code == 1) {
+                            util.tip("成功加入购物车！", 3000);
+                        }
+                        else {
+                            util.tip(data.msg, 3000);
+                        }
                     })
                     .fail(function (error) {
-                        util.tip(error.msg,3000);
+                        util.tip("服务器错误！", 3000);
                     });
-
-                util.tip("成功加入购物车",3000);
             },
 
             //去购物车
-            "#gotocart click": function (element, event) {
+            // "#gotocart click": function (element, event) {
+            //
+            //     var jsonParams = {
+            //         'funName': 'goto_shopping_cart',
+            //         'params': {}
+            //     };
+            //     LHHybrid.nativeFun(jsonParams);
+            // },
 
+            toDetail: function (STORE_ID, GOODS_NO) {
                 var jsonParams = {
-                    'funName': 'goto_shopping_cart',
-                    'params': {}
-                };
-                LHHybrid.nativeFun(jsonParams);
-            },
-
-            toDetail: function (STORE_ID, GOODS_NO, GOODS_ID) {
-                var jsonParams = {
-                    'funName': 'good_detail_fun',
+                    'funName': 'goods_detail_fun',
                     'params': {
-                        'STORE_ID': STORE_ID,
-                        'GOODS_NO': GOODS_NO,
-                        'GOODS_ID': GOODS_ID
+                        'goodsId': STORE_ID,
+                        'goodsItemId': GOODS_NO
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);

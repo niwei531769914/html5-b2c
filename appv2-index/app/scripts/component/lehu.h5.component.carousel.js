@@ -193,7 +193,6 @@ define('lehu.h5.component.carousel', [
             // 剩余次数规则
             that.options.data = new can.Map({
               "lasttimes": data.response.drawedTimes,
-               "activeRule": data.response.activeRule
             });
 
             // luck_id
@@ -202,7 +201,7 @@ define('lehu.h5.component.carousel', [
             var renderList = can.mustache(template_components_carousel);
             var html = renderList(that.options, that.helpers);
             that.element.html(html);
-
+            $('.dial_footer ul').append(data.response.activeRule);
             lottery.init('lottery');
             that.scrollZhongjiangjilu();
 
@@ -244,7 +243,7 @@ define('lehu.h5.component.carousel', [
 
       getLottery: function() {
         var that = this;
-
+        $(".lottery-bt").addClass("disable");
         this.param = {
           "userId": this.userId,
           "luckActiveId": this.luckId
@@ -317,8 +316,6 @@ define('lehu.h5.component.carousel', [
           return false;
         }
 
-        $(".lottery-bt").addClass("disable");
-
         var param = can.deparam(window.location.search.substr(1));
 
         this.userId = busizutil.getUserId();
@@ -329,16 +326,12 @@ define('lehu.h5.component.carousel', [
           } else {
             var jsonParams = {
               'funName': 'login',
-              'params': {
-                "backurl": "index"
-              }
+              'params': {}
             };
             LHHybrid.nativeFun(jsonParams);
-
             return false;
           }
         }
-
         this.getLottery();
       },
 
@@ -351,9 +344,7 @@ define('lehu.h5.component.carousel', [
         } else {
           var jsonParams = {
             'funName': 'login',
-            'params': {
-              "backurl": "index"
-            }
+            'params': {}
           };
           LHHybrid.nativeFun(jsonParams);
 
