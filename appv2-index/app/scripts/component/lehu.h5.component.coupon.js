@@ -156,20 +156,22 @@ define('lehu.h5.component.coupon', [
             ,
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
-
+                alert(window.location.href);
                 var couponid = element.attr("data-id");
 
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
+                     alert(2);
                     if (param.from == 'app') {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
-                                //"backurl": "index"
+                                "backurl": "index"
                             }
                         };
+                        alert(3);
                         LHHybrid.nativeFun(jsonParams);
 
                         return false;

@@ -330,12 +330,10 @@ define('lehu.h5.component.carousel', [
                 if ($(".lottery-bt").hasClass("disable")) {
                     return false;
                 }
-
                 var param = can.deparam(window.location.search.substr(1));
-
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
-                    if (util.isMobile.WeChat() || param.from == "share" || !param.version) {
+                    if (util.isMobile.WeChat() || param.from == "share") {
                         location.href = "login.html?from=" + escape(location.href);
                         return false;
                     } else {
