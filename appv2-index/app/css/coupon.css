@@ -29,9 +29,9 @@
 .coupons_box_r span i{ margin-left: .1rem}
 
 .coupons_box_s{ width:2.23rem; height:1.35rem; display:block; float:left;  border-radius:0 .1rem .1rem 0;position:relative; }
-.coupons_box_s em{ font-size:.20rem; color:#212121; width:90%;  display:block; float:left; margin:.28rem 0 .12rem 10%;}
+.coupons_box_s em{ font-size:.20rem; width:90%;  display:block; float:left; margin:.28rem 0 .12rem 10%;}
 .coupons_box_s em b{ font-size: .36rem ; font-weight: bolder;}
-.coupons_box_s span{ font-size:.20rem; color:#f53828; width:90%;  display:block; float:left; margin:0 0 .2rem 10%; text-align: center}
+.coupons_box_s span{ font-size:.20rem; width:90%;  display:block; float:left; margin:0 0 .2rem 10%; text-align: center}
 .coupons_box_s span i{ margin-left: .1rem}
 
 /*券类背景*/

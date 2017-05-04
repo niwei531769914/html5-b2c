@@ -128,7 +128,6 @@ define('lehu.h5.component.activityreduce', [
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
                 this.element.html(html);
-                console.log(ACTIVITYLIST);
                 //    去导航条
                 this.deleteNav();
                 //下拉刷新
@@ -206,7 +205,6 @@ define('lehu.h5.component.activityreduce', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
                 if (param.from == "app") {
                     $('.header').hide();
                     $('.fullgive_ad').css('margin-top', 0);
@@ -275,12 +273,12 @@ define('lehu.h5.component.activityreduce', [
             //     LHHybrid.nativeFun(jsonParams);
             // },
 
-            toDetail: function (STORE_ID, GOODS_NO) {
+            toDetail: function (goodsitemid, goodsid) {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {
-                        'goodsId': STORE_ID,
-                        'goodsItemId': GOODS_NO
+                        'goodsId': goodsitemid,
+                        'goodsItemId': goodsid
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);
@@ -294,7 +292,6 @@ define('lehu.h5.component.activityreduce', [
                         'params': {}
                     };
                     LHHybrid.nativeFun(jsonParams);
-                    console.log('back_fun');
                 } else {
                     history.go(-1);
                 }

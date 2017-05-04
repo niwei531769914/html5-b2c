@@ -1,7 +1,7 @@
 .time-sale-main{    width: 100%; height: auto; display: block; float: left; margin: .8rem 0 0 0!important;  }
 
-.tabs{ width:100%; height:.8rem; display:block; background:#f5a623; float: left; position: fixed;white-space: nowrap; overflow-x: auto; overflow-y: hidden; z-index: 9}
-.tabs a{ width:20%; height:.8rem; display:inline-block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden; position: relative; top: -.1rem}
+.tabs{ width:100%; height:.8rem; display:block; background:#f5a623; float: left; position: fixed;white-space: nowrap; overflow-x: auto; overflow-y: hidden; z-index: 9; font-size: 0}
+.tabs a{ width:20%; height:.8rem; display:inline-block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden}
 .tabs a.active{ background:url(../img/pt_nav.png) no-repeat center bottom #d18200; background-size:.3rem;}
 
 /*列表*/

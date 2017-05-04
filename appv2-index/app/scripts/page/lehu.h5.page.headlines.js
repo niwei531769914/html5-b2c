@@ -51,7 +51,11 @@ define('lehu.h5.page.headlines', [
 
                         if(data.code == 1){
                             if(data.response == ""){
-                                return false;
+                                var html = "";
+                                html += '<p>春眠不觉晓</p><p>处处问题鸟</p>';
+                                console.log(html);
+                                $('.line-content-title').empty().append(html);
+                                $('.line-content-detail').html("滚蛋！");
                             }
                             var CONTENT = data.response[0];
                             console.log(CONTENT);

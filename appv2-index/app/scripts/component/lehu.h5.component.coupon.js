@@ -39,7 +39,7 @@ define('lehu.h5.component.coupon', [
 
 
             initData: function () {
-                this.URL = LHHybrid.getUrl();
+                this.URL = window.location.host;
             },
 
             render: function () {
@@ -51,13 +51,11 @@ define('lehu.h5.component.coupon', [
             getCoupon: function (flag) {
 
                 var that = this;
-
                 this.param = {
                     "flag": flag,
                     "pageRows": 20,
                     "toPage": 1
                 };
-
                 var api = new LHAPI({
                     url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
@@ -66,38 +64,74 @@ define('lehu.h5.component.coupon', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
+                            console.log(flag);
                             var COUPONLIST = data.response.list;
-                            if (COUPONLIST && COUPONLIST.length > 0) {
-                                var html = "";
-                                for (var i = 0; i < COUPONLIST.length; i++) {
-                                    if (COUPONLIST[i].usingRange == 4) {
-                                        html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b><b>全场券</b></em><span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' +
-                                            COUPONLIST[i].useEndTime + '前使用</p></div><div class="coupons_box_r" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
-                                    }
-                                    if (COUPONLIST[i].usingRange == 3) {
-                                        html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_gift.png"><b><b>品类券</b></em><span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' +
-                                            COUPONLIST[i].useEndTime + '前使用</p></div><div class="coupons_box_r" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
-                                    }
-                                    if (COUPONLIST[i].usingRange == 2) {
-                                        html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b><b>品类券</b></em><span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' +
-                                            COUPONLIST[i].useEndTime + '前使用</p></div><div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span>立即领取<i>&gt;</i></span></div></div>';
-                                    }
-                                    if (COUPONLIST[i].usingRange == 1) {
-                                        html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b><b>品类券</b></em><span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' +
-                                            COUPONLIST[i].useEndTime + '前使用</p></div><div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span>立即领取<i>&gt;</i></span></div></div>';
+                            if (flag == 0) {
+                                if (COUPONLIST && COUPONLIST.length > 0) {
+                                    var html = "";
+                                    for (var i = 0; i < COUPONLIST.length; i++) {
+                                        if (COUPONLIST[i].usingRange == 4) {
+                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>全场券</b></em>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 3) {
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 2) {
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 1) {
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                                        }
+                                        ;
+
+                                        html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
+
+                                        if (COUPONLIST[i].type == 1) {
+                                            html += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
+                                        }
+                                        else if (COUPONLIST[i].type == 2) {
+                                            html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
+                                        }
                                     }
                                 }
-                                $('.coupons_box_null').hide();
-                                $('.coupons_main').empty().append(html);
-                                $('.enter_coupon').show();
                             }
-                            else if (COUPONLIST && COUPONLIST == "") {
-                                $('.coupons_main').empty();
-                                $('.coupons_box_null').show();
-                                $('.enter_coupon').show();
+                            else if (flag == 1) {
+                                if (COUPONLIST && COUPONLIST.length > 0) {
+                                    var html = "";
+                                    for (var i = 0; i < COUPONLIST.length; i++) {
+                                        if (COUPONLIST[i].usingRange == 4) {
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em><span>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 3) {
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em><span>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 2) {
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em><span>';
+                                        }
+                                        else if (COUPONLIST[i].usingRange == 1) {
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                                        }
+                                        ;
+                                        html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
+                                        if (COUPONLIST[i].type == 1) {
+                                            html += '<div class="coupons_box_r"  data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121"><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
+                                        }
+                                        else if (COUPONLIST[i].type == 2) {
+                                            html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
+                                        }
+                                    }
+                                }
                             }
-                        }
 
+                            $('.coupons_box_null').hide();
+                            $('.coupons_main').empty().append(html);
+                            $('.enter_coupon').show();
+                        }
+                        else if (COUPONLIST && COUPONLIST == "") {
+                            $('.coupons_main').empty();
+                            $('.coupons_box_null').show();
+                            $('.enter_coupon').show();
+                        }
                     })
                     .fail(function (error) {
                         util.tip(error.msg);
@@ -118,7 +152,8 @@ define('lehu.h5.component.coupon', [
                     that.getCoupon(0);
                 }
 
-            },
+            }
+            ,
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
 
@@ -127,11 +162,8 @@ define('lehu.h5.component.coupon', [
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
-                alert(2);
-                alert(this.userId);
-                alert(3);
                 if (!this.userId) {
-                    if (param.from == 'app' ) {
+                    if (param.from == 'app') {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
@@ -142,7 +174,7 @@ define('lehu.h5.component.coupon', [
 
                         return false;
 
-                    } else if( util.isMobile.WeChat() || param.from == 'share'){
+                    } else if (util.isMobile.WeChat() || param.from == 'share') {
 
                         location.href = "login.html?from=coupon.html";
                         return false;
@@ -150,9 +182,10 @@ define('lehu.h5.component.coupon', [
                     }
                 }
                 this.uesCoupon(this.userId, couponid);
-            },
+            }
+            ,
 
-            uesCoupon:function (userId,couponid) {
+            uesCoupon: function (userId, couponid) {
                 var that = this;
 
                 this.param = {
@@ -166,20 +199,21 @@ define('lehu.h5.component.coupon', [
                     method: 'post'
                 });
                 api.sendRequest()
-                    .done(function(data) {
+                    .done(function (data) {
 
-                        if(data.code == 1){
-                            util.tip("领取成功！",3000);
+                        if (data.code == 1) {
+                            util.tip("领取成功！", 3000);
                         }
                         else {
                             //code不为1
-                            util.tip(data.msg,3000);
+                            util.tip(data.msg, 3000);
                         }
                     })
-                    .fail(function(error) {
+                    .fail(function (error) {
                         util.tip(error.msg);
                     });
-            },
+            }
+            ,
 
             '.enter_coupon click': function () {
 
@@ -189,15 +223,17 @@ define('lehu.h5.component.coupon', [
                 };
                 LHHybrid.nativeFun(jsonParams);
 
-            },
+            }
+            ,
 
-            deleteNav:function () {
+            deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if(param.from == "app"){
+                if (param.from == "app") {
                     $('.header').hide();
                     return false;
                 }
-            },
+            }
+            ,
 
             '.back click': function () {
 
@@ -220,6 +256,8 @@ define('lehu.h5.component.coupon', [
                 }
 
             }
-        });
+        })
+            ;
 
-    });
+    })
+;

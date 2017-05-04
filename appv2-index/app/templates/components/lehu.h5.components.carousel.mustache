@@ -5,7 +5,7 @@
     <h2>幸运大转盘</h2>
 </header>
 
-<div class="nwrapper">
+<div class="nwrapper" style="position: relative">
         <!--顶部-->
         <div class="dial_top">
 
@@ -71,10 +71,33 @@
         
         <!--说明-->
         <div class="dial_footer">
-            <span>活动规则</span>
+            <span class="ruler">活动规则</span>
             <ul>
             </ul>
         </div>
 
+    <!--恭喜您，中奖啦-->
+    <div class="pop_win" style="display: none">
+        <div class="pop_win_window">
+            <div class="window_title" style=" padding-top: 1.8rem;">
+                <p style="color: #212121; font-size: .32rem ; width: 2.83rem; " class="pop_win_name"></p>
+                <p style="color: #756e63; font-size: .24rem">可在<span class="pop_win_coupons">我的优惠券</span>进行查看哦！</p>
+            </div>
+            <a href="javascript:;">知道啦~</a>
+        </div>
+    </div>
+
+    <!--谢谢参与-->
+    <div class="pop_lost" style="display: none">
+        <div class="pop_lost_window">
+            <div class="window_title" style=" padding-top: 1.5rem;">
+                <p style="color: #212121; font-size: .32rem; width: 3.2rem">很遗憾没有中奖，换个姿势，再来一次把~</p>
+                <p style="color: #756e63; font-size: .26rem">谢谢参与！</p>
+            </div>
+            <a href="javascript:;">确认</a>
+        </div>
+    </div>
         
     </div>
+
+
