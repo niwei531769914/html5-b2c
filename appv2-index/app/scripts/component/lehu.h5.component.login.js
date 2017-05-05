@@ -19,7 +19,6 @@ define('lehu.h5.component.login', [
               template_components_login) {
         'use strict';
 
-        //var DEFAULT_GOTO_URL = "http://app.lehumall.com/html5/app/index.html";
 
         return can.Control.extend({
 
@@ -84,7 +83,13 @@ define('lehu.h5.component.login', [
             },
 
             initData: function () {
-                this.URL = LHHybrid.getUrl();
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
                 this.loginBysms = false;
             },
 
@@ -172,7 +177,7 @@ define('lehu.h5.component.login', [
 
 
                 var api = new LHAPI({
-                    url: "http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -207,7 +212,7 @@ define('lehu.h5.component.login', [
 
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/login',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -261,7 +266,7 @@ define('lehu.h5.component.login', [
                 };
 
                 var api = new LHAPI({
-                    url: "http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/login",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/login",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

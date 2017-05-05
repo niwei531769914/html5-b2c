@@ -70,7 +70,13 @@ define('lehu.h5.component.forgetpassword', [
       },
 
       initData: function() {
-        this.URL = LHHybrid.getUrl();
+          var HOST = window.location.host;
+          if(HOST.indexOf('118')>1){
+              this.URL = 'http://118.178.227.135';
+          }
+          else {
+              this.URL = 'http://121.196.208.98:28080';
+          }
       },
 
       checkmobile: function(mobile) {
@@ -141,7 +147,7 @@ define('lehu.h5.component.forgetpassword', [
         };
 
         var api = new LHAPI({
-          url: 'http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/findpassword',
+          url: that.URL + '/mobile-web-user/ws/mobile/v1/user/findpassword',
           data: JSON.stringify(this.param),
           method: 'post'
         });
@@ -183,7 +189,7 @@ define('lehu.h5.component.forgetpassword', [
         //busizutil.encription(this.param);
 
         var api = new LHAPI({
-          url: 'http://118.178.227.135/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+          url: that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
           data: JSON.stringify(this.param),
           method: 'post'
         });

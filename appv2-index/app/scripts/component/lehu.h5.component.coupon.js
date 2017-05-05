@@ -37,9 +37,14 @@ define('lehu.h5.component.coupon', [
                 this.render();
             },
 
-
             initData: function () {
-                this.URL = window.location.host;
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
             },
 
             render: function () {
@@ -49,7 +54,6 @@ define('lehu.h5.component.coupon', [
 
             //券展示
             getCoupon: function (flag) {
-
                 var that = this;
                 this.param = {
                     "flag": flag,
@@ -57,7 +61,7 @@ define('lehu.h5.component.coupon', [
                     "toPage": 1
                 };
                 var api = new LHAPI({
-                    url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/ticketCenter/list",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -152,8 +156,7 @@ define('lehu.h5.component.coupon', [
                     that.getCoupon(0);
                 }
 
-            }
-            ,
+            } ,
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
                 alert(window.location.href);
@@ -163,7 +166,6 @@ define('lehu.h5.component.coupon', [
 
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
-                     alert(2);
                     if (param.from == 'app') {
                         var jsonParams = {
                             'funName': 'login',
@@ -171,7 +173,6 @@ define('lehu.h5.component.coupon', [
                                 "backurl": "index"
                             }
                         };
-                        alert(3);
                         LHHybrid.nativeFun(jsonParams);
 
                         return false;
@@ -184,8 +185,8 @@ define('lehu.h5.component.coupon', [
                     }
                 }
                 this.uesCoupon(this.userId, couponid);
-            }
-            ,
+            },
+
 
             uesCoupon: function (userId, couponid) {
                 var that = this;
@@ -196,7 +197,7 @@ define('lehu.h5.component.coupon', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -214,10 +215,26 @@ define('lehu.h5.component.coupon', [
                     .fail(function (error) {
                         util.tip(error.msg);
                     });
-            }
-            ,
+            },
 
             '.enter_coupon click': function () {
+                var param = can.deparam(window.location.search.substr(1));
+                this.userId = busizutil.getUserId();
+                if(!this.userId){
+                    if (param.from == 'app') {
+                        var jsonParams = {
+                            'funName': 'login',
+                            'params': {
+                                "backurl": "index"
+                            }
+                        };
+                        LHHybrid.nativeFun(jsonParams);
+                        return false;
+                    } else if (util.isMobile.WeChat() || param.from == 'share') {
+                        location.href = "login.html?from=coupon.html";
+                        return false;
+                    }
+                }
 
                 var jsonParams = {
                     'funName': 'back_coupons',
@@ -225,8 +242,7 @@ define('lehu.h5.component.coupon', [
                 };
                 LHHybrid.nativeFun(jsonParams);
 
-            }
-            ,
+            },
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
@@ -234,8 +250,7 @@ define('lehu.h5.component.coupon', [
                     $('.header').hide();
                     return false;
                 }
-            }
-            ,
+            },
 
             '.back click': function () {
 
@@ -258,8 +273,7 @@ define('lehu.h5.component.coupon', [
                 }
 
             }
-        })
-            ;
+        });
 
     })
 ;

@@ -67,7 +67,7 @@ define('lehu.h5.component.carousel', [
                 lottery.times = 0;
                 click = false;
                 setTimeout(function () {
-                    if (tip == "很遗憾没有中奖~") {
+                    if (tip == "很遗憾您没有中奖~") {
                         $('.pop_lost').show();
                     }
                     else {
@@ -92,8 +92,7 @@ define('lehu.h5.component.carousel', [
                 }
                 if (lottery.speed < 40) {
                     lottery.speed = 40;
-                }
-                ;
+                };
 
                 lottery.timer = setTimeout(function () {
                     roll(lotteryIndex, tip);
@@ -121,25 +120,18 @@ define('lehu.h5.component.carousel', [
                     var lottery = list[index];
 
                     // 谢谢参与
-                    if (!lottery.prizeType) {
-                        return lottery.prizeName;
-                    } else if (lottery.prizeType == "2") { // 优惠券
-                        var map = {
-                            "5": "lottery-bg05",
-                            "8": "lottery-bg01",
-                            "20": "lottery-bg02",
-                            '50': "lottery-bg06",
-                            '100': "lottery-bg03",
-                            "200": "lottery-bg04"
-                        }
-                        if (lottery.TICKET_INFO) {
-                            return '<p class="' + (map[lottery.TICKET_INFO.PRICE] || "lottery-bg01") + '"><em><b>' + lottery.TICKET_INFO.PRICE + '</b>元优惠券</em>(全场通用)</p><span>通用券' + lottery.TICKET_INFO.PRICE + '元</span>'
-                        } else {
-                            return lottery.prizeName;
+                    if (lottery.prizeType == 1) {
+                        return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
+                    } else if (lottery.prizeType == 2) { // 优惠券
+
+                        if (lottery.lhqType ==1) {
+                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><b><img src='images/carousel/ic_product.png'></b>全场券</em><i>" + lottery.prizeName + "</i><span>" + lottery.condition2 + "元</span></p>";
+                        } else if(lottery.lhqType == 2) {
+                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><b><img src='images/carousel/ic_product.png'></b>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "元<b>送</b>" +  lottery.condition2 +"</span></p>";
                         }
 
                     } else {
-                        return lottery.prizeName;
+                        return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
                     }
                 }
             },
@@ -154,7 +146,13 @@ define('lehu.h5.component.carousel', [
             },
 
             initData: function () {
-                this.URL = LHHybrid.getUrl();
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
             },
 
             render: function () {
@@ -172,7 +170,7 @@ define('lehu.h5.component.carousel', [
                 var that = this;
 
                 var api = new LHAPI({
-                    url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -196,7 +194,7 @@ define('lehu.h5.component.carousel', [
                             for (var i = 0; i < length; i++) {
                                 that.options.luckProbabilityList.push({
                                     "prizeName": "谢谢参与",
-                                    "prizeType": ""
+                                    "prizeType": 1
                                 })
                             }
                         }
@@ -263,7 +261,7 @@ define('lehu.h5.component.carousel', [
                 };
 
                 var api = new LHAPI({
-                    url: "http://118.178.227.135/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -287,21 +285,26 @@ define('lehu.h5.component.carousel', [
                         var tip = ""; //中奖信息
 
                         if (data.response.prizeId) {
-                            console.log(2);
                             for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
                                 if (that.options.luckProbabilityList[i].id == data.response.prizeId) {
-                                    lotteryIndex = i;
-                                    console.log(lotteryIndex);
-                                    lotteryInfo = that.options.luckProbabilityList[i];
-                                    tip = "恭喜您获得" + lotteryInfo.prizeName;
-                                    break;
+                                    if(that.options.luckProbabilityList[i].prizeType == 2){
+                                        lotteryIndex = i;
+                                        lotteryInfo = that.options.luckProbabilityList[i];
+                                        tip = "恭喜您获得" + lotteryInfo.prizeName;
+                                        break;
+                                    }
+                                    else if(that.options.luckProbabilityList[i].prizeType == 1){
+                                        lotteryIndex = i;
+                                        lotteryInfo = that.options.luckProbabilityList[i];
+                                        tip = "很遗憾您没有中奖~";
+                                        break;
+                                    }
                                 }
                             }
 
                         } else { //谢谢参与
-                            console.log(11111);
                             for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
-                                if (that.options.luckProbabilityList[i].TYPE == "") {
+                                if (that.options.luckProbabilityList[i].prizeType == 1) {
                                     lotteryIndex = i;
                                     lotteryInfo = that.options.luckProbabilityList[i];
                                     tip = "很遗憾没有中奖~";
@@ -309,7 +312,6 @@ define('lehu.h5.component.carousel', [
                                 }
                             }
                         }
-                        console.log(lotteryIndex);
                         // 滚动抽奖
                         if (click) {
                             return false;
@@ -332,6 +334,7 @@ define('lehu.h5.component.carousel', [
                 }
                 var param = can.deparam(window.location.search.substr(1));
                 this.userId = busizutil.getUserId();
+                alert(this.userId);
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == "share") {
                         location.href = "login.html?from=" + escape(location.href);
@@ -378,7 +381,7 @@ define('lehu.h5.component.carousel', [
                 $('.pop_win').hide();
             },
             '.pop_lost a click': function () {
-                $('.pop_win').hide();
+                $('.pop_lost').hide();
             },
 
             deleteNav: function () {

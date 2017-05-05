@@ -4,22 +4,21 @@
 .dial_main_box{ width:auto; margin:.32rem auto 0; line-height:.5rem; height:.5rem; color:#ffffff; font-size:.3rem; display: table; padding-right:.2rem;}
 .dial_main_box span{ font-size:.34rem; color:#ffe800; font-weight:bold;}
 #lottery{
-	width: 6.7rem; height:5.2rem;
+	width: 6.7rem; height:6.7rem;
 	margin: 0 0 0 .5rem;
 }
 
 #lottery table td{
 	width: 2.12rem;
-	height: 1.68rem;
+	height: 2.12rem;
 	text-align: center;
 	vertical-align: middle;
-	background: #ffffff;
 	background-size:100% ;
-	font-size: .4rem;
-	border-radius: .14rem;
-	color: #e72920;
-	line-height:1.68rem;
-	margin:.04rem 0 0 .03rem; display:block; float:left; font-weight:bold;
+	font-size: .24rem;
+	color: #212121;
+	line-height:2.12rem;
+	margin:.04rem 0 0 .03rem; display:block; float:left;
+	background-image:url(../img/coupons.png);
 }
 
 #lottery table td a{
@@ -28,21 +27,25 @@
 	display: block;
 	text-decoration: none;
 	background: #ff9800;
-	border-radius: .14rem;
 	color: #ffffff;
 	font-size: .34rem;
 }
-.dial_main #lottery .active{ background: #fedd2e}
-#lottery td span{ width:100%; font-size:.24rem; height:.35rem; display:block; float:left; line-height: .4rem;}
-#lottery td p{ width:1.9rem; height:.8rem; display:block; float:left; margin:.18rem 0 .05rem .13rem; background-size:100%; line-height:.2rem; color:#ffffff; font-size:.16rem; background-repeat:no-repeat;}
-#lottery td p em{ width:auto; font-size:.18rem; line-height:.3rem; height:.3rem; display:table; border-bottom:1px dashed #ffffff; margin:.08rem auto;}
-#lottery td p em b{ font-size:.35rem; font-weight:bold;}
-#lottery td p.lottery-bg01{ background-image:url(../img/z_01.png);}
-#lottery td p.lottery-bg02{ background-image:url(../img/z_02.png);}
-#lottery td p.lottery-bg03{ background-image:url(../img/z_03.png);}
-#lottery td p.lottery-bg04{ background-image:url(../img/z_04.png);}
-#lottery td p.lottery-bg05{ background-image:url(../img/z_05.png);}
-#lottery td p.lottery-bg06{ background-image:url(../img/z_06.png);}
+.dial_main #lottery .active{ background: url(../img/pic_card@2x.png) no-repeat; background-size: 100%}
+#lottery td p{ width:2.12rem; height:2.12rem; display:block; float:left;background-size:100%; line-height:.2rem; font-size:.16rem; background-repeat:no-repeat; }
+#lottery td p em{ width:auto; font-size:.16rem; line-height:.3rem; height:.3rem; display:table; margin:.3rem .1rem .16rem;}
+#lottery td p em b{ width: .26rem; height: .26rem; overflow: hidden }
+#lottery td p em b img{ width: .26rem; height: .26rem; vertical-align: bottom; margin-right: .08rem }
+#lottery td p i{ font-size: .24rem; font-weight: bold; display: block}
+#lottery td p span{ font-size:.26rem;  display: block; text-align: left; margin: .56rem .1rem 0; font-weight: bold}
+#lottery td p span b{ font-size:.20rem; margin-left: .08rem; font-weight: normal}
+/*.dial_main #lottery.lottery-unit{ background-image:url(../img/coupons.png); }*/
+#lottery td p.lottery-bg00{ background: #ffffff}
+#lottery td p.lottery-bg01{ background-image:url(../img/coupons.png);}
+#lottery td p.lottery-bg02{ background-image:url(../img/coupons.png);}
+#lottery td p.lottery-bg03{ background-image:url(../img/coupons.png);}
+#lottery td p.lottery-bg04{ background-image:url(../img/coupons.png);}
+#lottery td p.lottery-bg05{ background-image:url(../img/coupons.png);}
+#lottery td p.lottery-bg06{ background-image:url(../img/coupons.png);}
 .dial_msg{ width:100%; height:auto; display:block; float:left; margin:.32rem 0;}
 .dial_msg_box{ width:80%; height:.74rem; overflow:hidden;display:block; background: rgba(0,0,0,.4); border-radius: .74rem; margin: 0 10%}
 .dial_msg_box li{ width:80%; height:.74rem; display:block; float:left; margin:0 10%; line-height:.74rem; font-size:.28rem; color:#ffffff; padding:0 10%; }

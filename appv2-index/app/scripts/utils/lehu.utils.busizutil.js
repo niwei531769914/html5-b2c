@@ -103,7 +103,7 @@ define('lehu.utils.busizutil', [
     var getUserId = function() {
     // var param = can.deparam(window.location.search.substr(1));
     // var userId = param.userid;
-        var userId = $.fn.cookie('userId');
+    var userId = $.fn.cookie('userId');
     if (userId) {
       return userId;
     }

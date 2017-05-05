@@ -21,7 +21,15 @@ define('lehu.h5.page.graphicdetails', [
         Fastclick.attach(document.body);
 
         var GraphicDetails = can.Control.extend({
-
+            initData: function() {
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
+            },
             /**
              * [init 初始化]
              * @param  {[type]} element 元素
@@ -29,6 +37,7 @@ define('lehu.h5.page.graphicdetails', [
              */
             init: function(element, options) {
                 var that = this;
+                this.initData();
                 var renderList = can.mustache(template_page_graphicdetails);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -38,7 +47,7 @@ define('lehu.h5.page.graphicdetails', [
                     goodsId : param.goodsId
                 }
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
+                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

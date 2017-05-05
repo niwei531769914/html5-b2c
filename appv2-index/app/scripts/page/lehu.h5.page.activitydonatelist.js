@@ -24,7 +24,13 @@ define('lehu.h5.page.activitydonatelist', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                this.URL = LHHybrid.getUrl();
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
             },
 
             /**
@@ -50,7 +56,7 @@ define('lehu.h5.page.activitydonatelist', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

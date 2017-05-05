@@ -70,7 +70,13 @@ define('lehu.h5.component.activityreduce', [
             },
 
             initData: function () {
-                this.URL = LHHybrid.getUrl();
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
             },
 
             render: function () {
@@ -96,7 +102,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -175,7 +181,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });

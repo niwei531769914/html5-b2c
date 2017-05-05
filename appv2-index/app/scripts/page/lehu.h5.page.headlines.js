@@ -23,7 +23,13 @@ define('lehu.h5.page.headlines', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                this.URL = LHHybrid.getUrl();
+                var HOST = window.location.host;
+                if(HOST.indexOf('118')>1){
+                    this.URL = 'http://118.178.227.135';
+                }
+                else {
+                    this.URL = 'http://121.196.208.98:28080';
+                }
             },
 
             /**
@@ -42,7 +48,7 @@ define('lehu.h5.page.headlines', [
                 //    去除导航
                 this.deleteNav();
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
                     data: {},
                     method: 'get'
                 });
@@ -56,6 +62,7 @@ define('lehu.h5.page.headlines', [
                                 console.log(html);
                                 $('.line-content-title').empty().append(html);
                                 $('.line-content-detail').html("滚蛋！");
+                                return false;
                             }
                             var CONTENT = data.response[0];
                             console.log(CONTENT);
