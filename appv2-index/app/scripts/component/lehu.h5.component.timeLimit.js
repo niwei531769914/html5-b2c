@@ -59,6 +59,9 @@ define('lehu.h5.component.timeLimit', [
                             var html = "";
                             var activityId = "";
                             var status = "";
+                            if(TABLIST == ""){
+
+                            }
 
                             if(TABLIST[0].status == 2) {
                                 html += " <a class='active' status = " + TABLIST[0].status + "  activityid = " + TABLIST[0].activityId + ">" + TABLIST[0].dateStr + "点场</a>";

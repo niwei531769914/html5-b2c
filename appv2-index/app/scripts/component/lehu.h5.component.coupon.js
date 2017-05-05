@@ -39,7 +39,7 @@ define('lehu.h5.component.coupon', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if (HOST.indexOf('118') > 1) {
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -68,8 +68,13 @@ define('lehu.h5.component.coupon', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            console.log(flag);
                             var COUPONLIST = data.response.list;
+                            if (COUPONLIST == "") {
+                                $('.coupons_main').empty();
+                                $('.coupons_box_null').show();
+                                $('.enter_coupon').show();
+                                return false;
+                            }
                             if (flag == 0) {
                                 if (COUPONLIST && COUPONLIST.length > 0) {
                                     var html = "";
@@ -104,13 +109,13 @@ define('lehu.h5.component.coupon', [
                                     var html = "";
                                     for (var i = 0; i < COUPONLIST.length; i++) {
                                         if (COUPONLIST[i].usingRange == 4) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em><span>';
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em>';
                                         }
                                         else if (COUPONLIST[i].usingRange == 3) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em><span>';
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
                                         }
                                         else if (COUPONLIST[i].usingRange == 2) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em><span>';
+                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
                                         }
                                         else if (COUPONLIST[i].usingRange == 1) {
                                             html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
@@ -131,14 +136,12 @@ define('lehu.h5.component.coupon', [
                             $('.coupons_main').empty().append(html);
                             $('.enter_coupon').show();
                         }
-                        else if (COUPONLIST && COUPONLIST == "") {
-                            $('.coupons_main').empty();
-                            $('.coupons_box_null').show();
-                            $('.enter_coupon').show();
+                        else {
+                            util.tip(data.msg);
                         }
                     })
                     .fail(function (error) {
-                        util.tip(error.msg);
+                        util.tip("服务器错误！");
                     });
 
             },
@@ -156,7 +159,7 @@ define('lehu.h5.component.coupon', [
                     that.getCoupon(0);
                 }
 
-            } ,
+            },
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
                 alert(window.location.href);
@@ -220,7 +223,7 @@ define('lehu.h5.component.coupon', [
             '.enter_coupon click': function () {
                 var param = can.deparam(window.location.search.substr(1));
                 this.userId = busizutil.getUserId();
-                if(!this.userId){
+                if (!this.userId) {
                     if (param.from == 'app') {
                         var jsonParams = {
                             'funName': 'login',
@@ -253,23 +256,11 @@ define('lehu.h5.component.coupon', [
             },
 
             '.back click': function () {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {
-                            "backurl": "index"
-                        }
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                    console.log('back_fun');
+                if (history.length == 1) {
+                    window.opener = null;
+                    window.close();
                 } else {
-                    if (history.length == 1) {
-                        window.opener = null;
-                        window.close();
-                    } else {
-                        history.go(-1);
-                    }
+                    history.go(-1);
                 }
 
             }
