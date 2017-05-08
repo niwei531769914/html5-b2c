@@ -39,7 +39,7 @@ define('lehu.h5.component.coupon', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > 1) {
+                if (HOST.indexOf('118') > -1) {
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -99,7 +99,7 @@ define('lehu.h5.component.coupon', [
                                             html += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
                                         }
                                         else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
+                                            html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
                                         }
                                     }
                                 }
@@ -126,7 +126,7 @@ define('lehu.h5.component.coupon', [
                                             html += '<div class="coupons_box_r"  data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121"><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
                                         }
                                         else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition2 + '</b>送<b>' + COUPONLIST[i].condition1 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
+                                            html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
                                         }
                                     }
                                 }
@@ -162,7 +162,6 @@ define('lehu.h5.component.coupon', [
             },
 
             ".coupons_box_r,.coupons_box_s click": function (element, event) {
-                alert(window.location.href);
                 var couponid = element.attr("data-id");
 
                 var param = can.deparam(window.location.search.substr(1));

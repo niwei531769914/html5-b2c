@@ -125,11 +125,11 @@ define('lehu.h5.component.carousel', [
                     } else if (lottery.prizeType == 2) { // 优惠券
 
                         if (lottery.lhqType ==1) {
-                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><b><img src='images/carousel/ic_product.png'></b>全场券</em><i>" + lottery.prizeName + "</i><span>" + lottery.condition2 + "元</span></p>";
+                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
                         } else if(lottery.lhqType == 2) {
-                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><b><img src='images/carousel/ic_product.png'></b>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "元<b>送</b>" +  lottery.condition2 +"</span></p>";
+                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>送</b>" +  lottery.condition2 +"</span></p>";
                         }
-
+                        
                     } else {
                         return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
                     }
@@ -147,7 +147,7 @@ define('lehu.h5.component.carousel', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -334,7 +334,6 @@ define('lehu.h5.component.carousel', [
                 }
                 var param = can.deparam(window.location.search.substr(1));
                 this.userId = busizutil.getUserId();
-                alert(this.userId);
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == "share") {
                         location.href = "login.html?from=" + escape(location.href);

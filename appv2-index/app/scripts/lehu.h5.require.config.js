@@ -101,6 +101,7 @@ requirejs.config({
         "swipe": "scripts/vendor/swipe",
         "slide": "scripts/vendor/slide",
         "imagelazyload": "scripts/vendor/zepto.picLazyLoad.min",
+        "echo": "scripts/vendor/echo.min",
 
         // 3des加密
         'tripledes': '../bower_components/cryptojslib/rollups/tripledes',

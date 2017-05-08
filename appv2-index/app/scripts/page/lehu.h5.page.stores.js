@@ -7,13 +7,13 @@ define('lehu.h5.page.stores', [
         'lehu.h5.business.config',
         'lehu.hybrid',
         'lehu.h5.api',
-
+        'echo',
         'lehu.h5.header.footer',
 
         'text!template_components_stores'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,echo,
         LHFooter,
         template_page_stores) {
         'use strict';
@@ -24,7 +24,7 @@ define('lehu.h5.page.stores', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -60,9 +60,18 @@ define('lehu.h5.page.stores', [
                             var CONTENT = data.response;
                             var html = "";
                             for(var i = 0; i< CONTENT.length; i++){
-                                html += '<div class="stores-list-box"><img src="' + CONTENT[i].img + '"  data-url="' + CONTENT[i].url + '"><p>' + CONTENT[i].title + '</p></div>';
+                                html += '<div class="stores-list-box"><img src="images/big_goods_back.png" data-echo="' + CONTENT[i].img + '"  data-url="' + CONTENT[i].url + '"><p>' + CONTENT[i].title + '</p></div>';
                             }
                             $('.stores-list').empty().append(html);
+                            //图片懒加载
+                            echo.init({
+                                offset: 100,
+                                throttle: 250,
+                                unload: false,
+                                callback: function (element, op) {
+                                    console.log(element, 'has been', op + 'ed')
+                                }
+                            })
                         }
                     })
                     .fail(function(error) {

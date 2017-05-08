@@ -6,7 +6,7 @@
 </header>
 
 <!--活动图片-->
-<img src="{{activityImg}}" class="fullgive_ad" style="margin-top: 1rem;">
+<img src="../images/big_goods_back.png" data-echo="{{activityImg}}" class="fullgive_ad" style="margin-top: 1rem;">
 
 <!--列表-->
 <ul class="fullgive_list">
@@ -15,7 +15,7 @@
         <li class="fullgive-sale-box">
             <div class="fullgive-sale-img">
                 <img data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}" data-storeid="{{storeId}}"
-                     src="{{lehu-img imgprefix IMG}}">
+                     data-echo="{{goodsItemImg}}" src="../images/goods_back.png">
             </div>
             <a href="javascript:;" class="fullgive-sale-title">{{goodsName}}</a>
 

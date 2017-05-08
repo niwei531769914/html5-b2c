@@ -73,7 +73,7 @@ define('lehu.h5.component.register', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > 1) {
+                if (HOST.indexOf('118') > -1) {
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -205,7 +205,7 @@ define('lehu.h5.component.register', [
                     'password': passWord,
                     'identifyingcode': captcha,
                     'phoneToken': '',
-                    'origin': '5'
+                    'origin': '5',
                 };
 
 
@@ -217,7 +217,7 @@ define('lehu.h5.component.register', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            store.set("user", data.response);
+                            store.set("userId", data.response);
                             location.href = that.from;
                         } else {
                             $(".err-msg").text(data.msg).parent().css("display", "block");

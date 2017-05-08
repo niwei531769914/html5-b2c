@@ -7,12 +7,12 @@ define('lehu.h5.component.timeLimit', [
         'lehu.hybrid',
         'md5',
         'store',
-        'imagelazyload',
+        'echo',
         'lehu.utils.busizutil',
         'text!template_components_timeLimit'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid, md5, store, imagelazyload, busizutil, template_components_timeLimit) {
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, md5, store, echo, busizutil, template_components_timeLimit) {
         'use strict';
 
         var DEFAULT_PAGE_INDEX = 1;
@@ -37,7 +37,7 @@ define('lehu.h5.component.timeLimit', [
 
             initDate : function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -234,6 +234,14 @@ define('lehu.h5.component.timeLimit', [
                                 }
 
                                 $(".swiper-slide").empty().append(HTML);
+                                echo.init({
+                                    offset: 100,
+                                    throttle: 250,
+                                    unload: false,
+                                    callback: function (element, op) {
+                                        console.log(element, 'has been', op + 'ed')
+                                    }
+                                })
                             }
 
                         }

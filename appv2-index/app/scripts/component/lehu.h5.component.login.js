@@ -84,11 +84,13 @@ define('lehu.h5.component.login', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
+                    console.log(2);
                 }
                 else {
                     this.URL = 'http://121.196.208.98:28080';
+                    console.log(3);
                 }
                 this.loginBysms = false;
             },
@@ -207,7 +209,8 @@ define('lehu.h5.component.login', [
                     'phoneCode': userName,
                     'identifyingcode': captcha,
                     'type': "1",
-                    'origin': '5'
+                    'origin': '5',
+                    'phoneToken ':''
                 };
 
 
@@ -262,7 +265,8 @@ define('lehu.h5.component.login', [
                     'phoneCode': userName,
                     'password': passWord,
                     'type': '0',
-                    'origin': '5'
+                    'origin': '5',
+                    'phoneToken':''
                 };
 
                 var api = new LHAPI({

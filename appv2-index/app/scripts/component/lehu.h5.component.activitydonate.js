@@ -72,7 +72,7 @@ define('lehu.h5.component.activitydonate', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -134,9 +134,21 @@ define('lehu.h5.component.activitydonate', [
 
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
+                console.log(this.options.data);
                 this.element.html(html);
+
                 //    去导航条
                 this.deleteNav();
+
+                //图片懒加载
+                echo.init({
+                    offset: 100,
+                    throttle: 250,
+                    unload: false,
+                    callback: function (element, op) {
+                        console.log(element, 'has been', op + 'ed')
+                    }
+                });
 
                 this.initLoadDataEvent();
             },

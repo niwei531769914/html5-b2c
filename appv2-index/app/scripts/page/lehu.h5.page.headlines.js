@@ -24,7 +24,7 @@ define('lehu.h5.page.headlines', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>1){
+                if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
