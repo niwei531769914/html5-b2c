@@ -8,7 +8,6 @@ define('lehu.h5.component.servers', [
         'underscore',
         'md5',
 
-        'imagelazyload',
         'tripledes',
         'modeecb',
         'lehu.utils.busizutil',
@@ -17,7 +16,7 @@ define('lehu.h5.component.servers', [
     ],
 
     function($, can, LHConfig, util, LHAPI, LHHybrid, _, md5,
-             imagelazyload, tripledes, modeecb, busizutil,
+              tripledes, modeecb, busizutil,
              template_components_servers) {
         'use strict';
 

@@ -7,7 +7,7 @@ define('lehu.h5.component.forgetpassword', [
     'lehu.hybrid',
     'md5',
 
-    'imagelazyload',
+    'imgLazyLoad',
     'lehu.utils.busizutil',
 
     'text!template_components_forgetpassword'

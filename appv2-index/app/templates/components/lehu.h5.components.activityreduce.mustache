@@ -2,20 +2,19 @@
 <header class="header" style="z-index: 9; position: fixed; border-bottom: 0px">
     <a href="javascript:;" class="back"></a>
     <h2>满赠</h2>
-
 </header>
 
 <!--活动图片-->
-<img src="{{activityImg}}" class="fullgive_ad" style="margin-top: 1rem;">
+<img src="images/big_goods_back.png" data-img="{{activityImg}}" class="fullgive_ad lazyload" style="margin-top: 1rem; margin-bottom: .15rem">
 
 <!--列表-->
-<ul class="fullgive_list">
+<ul class="fullgive-sale">
 
     {{#each goods}}
         <li class="fullgive-sale-box">
             <div class="fullgive-sale-img">
-                <img data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
-                     data-echo="{{goodsItemImg}}"  src="../images/goods_back.png">
+                <img class="lazyload" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
+                     data-img="{{goodsItemImg}}"  src="images/goods_back.png">
             </div>
             <a href="javascript:;" class="fullgive-sale-title">{{goodsName}}</a>
 

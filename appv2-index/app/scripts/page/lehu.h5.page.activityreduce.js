@@ -28,7 +28,7 @@ define('lehu.h5.page.activityreduce', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var activityreward = new LHActivityreduce("#content");
+                var activityreduce = new LHActivityreduce("#content");
                 new LHFooter();
                 var param = can.deparam(window.location.search.substr(1));
 

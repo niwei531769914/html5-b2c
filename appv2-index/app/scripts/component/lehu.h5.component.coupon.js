@@ -186,11 +186,10 @@ define('lehu.h5.component.coupon', [
 
                     }
                 }
-                this.uesCoupon(this.userId, couponid);
+                this.uesCoupon(element,this.userId, couponid);
             },
 
-
-            uesCoupon: function (userId, couponid) {
+            uesCoupon: function (element,userId, couponid) {
                 var that = this;
 
                 this.param = {
@@ -208,6 +207,10 @@ define('lehu.h5.component.coupon', [
 
                         if (data.code == 1) {
                             util.tip("领取成功！", 3000);
+                            $(element).parents('.coupons_box').hide();
+                            if($(element).parents('.coupons_box').length ==0){
+                                $('.coupons_box_null').show();
+                            }
                         }
                         else {
                             //code不为1

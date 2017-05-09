@@ -7,13 +7,13 @@ define('lehu.h5.page.stores', [
         'lehu.h5.business.config',
         'lehu.hybrid',
         'lehu.h5.api',
-        'echo',
+        'imgLazyLoad',
         'lehu.h5.header.footer',
 
         'text!template_components_stores'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,echo,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,imgLazyLoad,
         LHFooter,
         template_page_stores) {
         'use strict';
@@ -60,18 +60,12 @@ define('lehu.h5.page.stores', [
                             var CONTENT = data.response;
                             var html = "";
                             for(var i = 0; i< CONTENT.length; i++){
-                                html += '<div class="stores-list-box"><img src="images/big_goods_back.png" data-echo="' + CONTENT[i].img + '"  data-url="' + CONTENT[i].url + '"><p>' + CONTENT[i].title + '</p></div>';
+                                html += '<div class="stores-list-box"><img class="lazyload" src="images/big_goods_back.png" data-img="' + CONTENT[i].img + '"  data-url="' + CONTENT[i].url + '"><p>' + CONTENT[i].title + '</p></div>';
                             }
                             $('.stores-list').empty().append(html);
+
                             //图片懒加载
-                            echo.init({
-                                offset: 100,
-                                throttle: 250,
-                                unload: false,
-                                callback: function (element, op) {
-                                    console.log(element, 'has been', op + 'ed')
-                                }
-                            })
+                            $.imgLazyLoad()
                         }
                     })
                     .fail(function(error) {

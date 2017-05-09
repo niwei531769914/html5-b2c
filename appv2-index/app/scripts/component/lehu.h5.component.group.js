@@ -8,7 +8,7 @@ define('lehu.h5.component.group', [
     'md5',
     'store',
 
-    'imagelazyload',
+    'imgLazyLoad',
     'lehu.utils.busizutil',
 
     'text!template_components_group'

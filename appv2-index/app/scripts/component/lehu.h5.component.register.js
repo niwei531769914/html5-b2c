@@ -8,14 +8,13 @@ define('lehu.h5.component.register', [
         'md5',
         'store',
 
-        'imagelazyload',
         'lehu.utils.busizutil',
 
         'text!template_components_register'
     ],
 
     function ($, can, LHConfig, util, LHAPI, LHHybrid, md5, store,
-              imagelazyload, busizutil,
+              busizutil,
               template_components_register) {
         'use strict';
 

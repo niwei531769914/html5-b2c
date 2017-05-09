@@ -7,7 +7,7 @@ define('lehu.h5.page.activityreducelist', [
         'lehu.h5.business.config',
         'lehu.hybrid',
         'lehu.h5.api',
-        "echo",
+        "imgLazyLoad",
 
         'lehu.h5.header.footer',
         'lehu.h5.header.download',
@@ -15,7 +15,7 @@ define('lehu.h5.page.activityreducelist', [
         'text!template_components_activityreducelist'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,echo,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,ImgLazyLoad,
         LHFooter,LHDownload,
         template_page_activityreducelist) {
         'use strict';
@@ -70,18 +70,13 @@ define('lehu.h5.page.activityreducelist', [
                             }
                             var html = "";
                             for(var i = 0; i< CONTENT.length; i++){
-                                html += '<div class="fullgive_adList"><img  src="images/big_goods_back.png"  data-echo="https://img11.360buyimg.com/jshopm/s640x260_jfs/t4816/166/2569546069/92243/9c24ffa1/5903161fN235bee6b.jpg!q70.jpg"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].activityName + '</p></div>';
+                                html += '<div class="fullgive_adList"><img class="lazyload"  src="images/big_goods_back.png"  data-img="https://img11.360buyimg.com/jshopm/s640x260_jfs/t4816/166/2569546069/92243/9c24ffa1/5903161fN235bee6b.jpg!q70.jpg"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].activityName + '</p></div>';
                             }
                             $('.fullgive_ads').empty().append(html);
                             //图片懒加载
-                            echo.init({
-                                offset: 100,
-                                throttle: 6000,
-                                unload: false,
-                                callback: function (element, op) {
-                                    console.log(element, 'has been', op + 'ed')
-                                }
-                            });
+                            $.imgLazyLoad({
+                                effect : "fadeIn"
+                            })
                         }
                     })
                     .fail(function(error) {

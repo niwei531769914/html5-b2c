@@ -8,7 +8,7 @@ define('lehu.h5.component.activityreduce', [
         'md5',
         'store',
 
-        'imagelazyload',
+        'imgLazyLoad',
         'lehu.utils.busizutil',
 
         'text!template_components_activityreduce'
@@ -136,6 +136,8 @@ define('lehu.h5.component.activityreduce', [
                 this.element.html(html);
                 //    去导航条
                 this.deleteNav();
+                //图片懒加载
+                $.imgLazyLoad();
                 //下拉刷新
                 this.initLoadDataEvent();
             },
@@ -195,6 +197,8 @@ define('lehu.h5.component.activityreduce', [
 
                             that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
                             that.options.data.attr("supplement.onLoadingData", false);
+                            //图片懒加载
+                            $.imgLazyLoad();
                         } else {
                             that.options.data.attr("supplement.noData", true);
                         }
@@ -223,7 +227,6 @@ define('lehu.h5.component.activityreduce', [
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
-                alert(this.userId);
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == 'share') {
                         location.href = "login.html?from=" + escape(location.href);

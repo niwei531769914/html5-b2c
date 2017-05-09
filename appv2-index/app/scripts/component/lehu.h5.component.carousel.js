@@ -6,7 +6,7 @@ define('lehu.h5.component.carousel', [
         'lehu.h5.api',
         'lehu.hybrid',
 
-        'imagelazyload',
+        'imgLazyLoad',
         'lehu.utils.busizutil',
 
         'text!template_components_carousel'
@@ -127,7 +127,7 @@ define('lehu.h5.component.carousel', [
                         if (lottery.lhqType ==1) {
                             return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
                         } else if(lottery.lhqType == 2) {
-                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>送</b>" +  lottery.condition2 +"</span></p>";
+                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" +  lottery.condition2 +"</span></p>";
                         }
                         
                     } else {
@@ -201,7 +201,8 @@ define('lehu.h5.component.carousel', [
 
                         // 剩余次数规则
                         that.options.data = new can.Map({
-                            "lasttimes": data.response.drawableTimes
+                            "lasttimes": data.response.drawableTimes,
+                            "bgImgUrl": data.response.bgImgUrl
                         });
 
                         // luck_id

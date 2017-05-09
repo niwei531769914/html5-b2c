@@ -100,7 +100,7 @@ requirejs.config({
 
         "swipe": "scripts/vendor/swipe",
         "slide": "scripts/vendor/slide",
-        "imagelazyload": "scripts/vendor/zepto.picLazyLoad.min",
+        "imgLazyLoad": "scripts/vendor/zepto.picLazyLoad.min",
         "echo": "scripts/vendor/echo.min",
 
         // 3des加密

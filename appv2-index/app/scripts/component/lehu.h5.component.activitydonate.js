@@ -8,7 +8,7 @@ define('lehu.h5.component.activitydonate', [
         'md5',
         'store',
 
-        'imagelazyload',
+        'imgLazyLoad',
         'lehu.utils.busizutil',
 
         'text!template_components_activitydonate'
@@ -134,21 +134,13 @@ define('lehu.h5.component.activitydonate', [
 
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
-                console.log(this.options.data);
                 this.element.html(html);
 
                 //    去导航条
                 this.deleteNav();
 
                 //图片懒加载
-                echo.init({
-                    offset: 100,
-                    throttle: 250,
-                    unload: false,
-                    callback: function (element, op) {
-                        console.log(element, 'has been', op + 'ed')
-                    }
-                });
+                $.imgLazyLoad();
 
                 this.initLoadDataEvent();
             },
@@ -208,6 +200,8 @@ define('lehu.h5.component.activitydonate', [
 
                             that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
                             that.options.data.attr("supplement.onLoadingData", false);
+                            //图片懒加载
+                            $.imgLazyLoad();
                         } else {
                             that.options.data.attr("supplement.noData", true);
                         }
@@ -228,7 +222,6 @@ define('lehu.h5.component.activitydonate', [
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
-                alert(this.userId);
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == 'share') {
                         location.href = "login.html?from=" + escape(location.href);

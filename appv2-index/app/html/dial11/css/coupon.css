@@ -1,5 +1,6 @@
 .dial_bj{ background:-webkit-gradient(linear, 0% 100%, 100% 100%,from(#ff1f3f), to(#e80a29));;}
-.dial_top{ width:100%; background:url(../img/dial_02.jpg) no-repeat; height:3.65rem; background-size:100%; display:block; float:left;}
+.dial_top{ width:100%;  height: auto; display:block; float:left;}
+.dial_top img{ width:100%; display:block}
 .dial_main{ width:100%;background-size:100%; display:block; float:left;}
 .dial_main_box{ width:auto; margin:.32rem auto 0; line-height:.5rem; height:.5rem; color:#ffffff; font-size:.3rem; display: table; padding-right:.2rem;}
 .dial_main_box span{ font-size:.34rem; color:#ffe800; font-weight:bold;}
