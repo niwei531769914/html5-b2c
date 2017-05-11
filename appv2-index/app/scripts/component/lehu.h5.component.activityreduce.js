@@ -26,37 +26,6 @@ define('lehu.h5.component.activityreduce', [
 
         return can.Control.extend({
 
-            helpers: {
-                // 'lehu-img': function (imgprefix, img) {
-                //     if (_.isFunction(img)) {
-                //         img = img();
-                //     }
-                //
-                //     if (_.isFunction(imgprefix)) {
-                //         imgprefix = imgprefix();
-                //     }
-                //
-                //     if (img.indexOf("http://") > -1) {
-                //         return img;
-                //     }
-                //
-                //     return imgprefix + img;
-                // },
-
-                // 'lehu-showDis': function (discount, price, options) {
-                //     if (_.isFunction(discount)) {
-                //         discount = discount();
-                //     }
-                //     if (_.isFunction(price)) {
-                //         price = price();
-                //     }
-                //     if (parseFloat(discount) < parseFloat(price) && discount != 0) {
-                //         return options.fn(options.contexts || this);
-                //     } else {
-                //         return options.inverse(options.contexts || this);
-                //     }
-                // }
-            },
 
             param: {},
 
@@ -207,10 +176,12 @@ define('lehu.h5.component.activityreduce', [
             },
 
             //去商品详情
-            ".fullgive_list img click": function (element, event) {
+            ".fullgive-sale-img img,.fullgive-sale-title,.fullgive-sale-msg em click": function (element, event) {
+                console.log(2);
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
-                this.toDetail(goodsitemid, goodsid);
+
+                this.toDetail(goodsid,goodsitemid);
             },
 
             deleteNav: function () {
@@ -224,6 +195,7 @@ define('lehu.h5.component.activityreduce', [
 
             //加入购物车
             ".fullgive-sale-ct click": function (element, event) {
+                var that = this;
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
@@ -249,11 +221,11 @@ define('lehu.h5.component.activityreduce', [
                     goodsId: goodsid,
                     storeId: stroeId,
                     goodsItemId: goodsitemid,
-                    quantity: 0
+                    quantity: 1
                 }
 
                 var api = new LHAPI({
-                    url: 'http://118.178.227.135/mobile-web-trade/ws/mobile/v1/cart/add',
+                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -282,28 +254,19 @@ define('lehu.h5.component.activityreduce', [
             //     LHHybrid.nativeFun(jsonParams);
             // },
 
-            toDetail: function (goodsitemid, goodsid) {
+            toDetail: function (goodsid,goodsitemid) {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {
-                        'goodsId': goodsitemid,
-                        'goodsItemId': goodsid
+                        'goodsId': goodsid,
+                        'goodsItemId': goodsitemid
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);
             },
 
             '.back click': function () {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                } else {
                     history.go(-1);
-                }
             }
         });
 

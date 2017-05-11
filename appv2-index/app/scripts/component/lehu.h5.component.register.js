@@ -193,6 +193,10 @@ define('lehu.h5.component.register', [
                     $(".err-msg").text("密码不能为空!").parent().css("display", "block")
                     return false;
                 }
+                if (passWord.length < 7) {
+                    $(".err-msg").text("密码不能小于8位数").parent().css("display", "block")
+                    return false;
+                }
 
                 if (!that.checkmobile(userName)) {
                     $(".err-msg").text("手机号码格式错误!").parent().css("display", "block");
@@ -228,18 +232,7 @@ define('lehu.h5.component.register', [
             },
 
             '.back click': function () {
-
-                // temp begin
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back-fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                    console.log('back-fun');
-                } else {
                     history.go(-1);
-                }
             }
 
 

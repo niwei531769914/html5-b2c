@@ -35,6 +35,9 @@ define('lehu.h5.component.coupon', [
 
                 //渲染页面
                 this.render();
+
+            //    分享
+               this.share();
             },
 
             initData: function () {
@@ -55,10 +58,15 @@ define('lehu.h5.component.coupon', [
             //券展示
             getCoupon: function (flag) {
                 var that = this;
+                this.userId = busizutil.getUserId();
+                if(!this.userId){
+                    this.userId = "";
+                }
                 this.param = {
                     "flag": flag,
                     "pageRows": 20,
-                    "toPage": 1
+                    "toPage": 1,
+                    "userId":this.userId
                 };
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
@@ -196,7 +204,6 @@ define('lehu.h5.component.coupon', [
                     "userId": userId,
                     "activityId": couponid
                 };
-
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     data: JSON.stringify(this.param),
@@ -207,8 +214,9 @@ define('lehu.h5.component.coupon', [
 
                         if (data.code == 1) {
                             util.tip("领取成功！", 3000);
-                            $(element).parents('.coupons_box').hide();
-                            if($(element).parents('.coupons_box').length ==0){
+                            $(element).parents('.coupons_box').remove();
+                            alert($('.coupons_box').length);
+                            if($('.coupons_box').length <= 0){
                                 $('.coupons_box_null').show();
                             }
                         }
@@ -257,14 +265,24 @@ define('lehu.h5.component.coupon', [
                 }
             },
 
-            '.back click': function () {
-                if (history.length == 1) {
-                    window.opener = null;
-                    window.close();
-                } else {
-                    history.go(-1);
-                }
+            //分享
+            share:function () {
+                var jsonParams = {
+                    'funName': 'shareHandler',
+                    'params': {
+                        "shouldShare":1,
+                        "shareTitle":'抽奖',
+                        "shareUrl":'http://118.178.227.135:8083/front/coupon.html?from=share',
+                        "shareImage":'',
+                        "shareContent ":'我是谁'
+                    },
+                };
+                console.log(jsonParams.funName);
+                LHHybrid.nativeFun(jsonParams);
+            },
 
+            '.back click': function () {
+                    history.go(-1);
             }
         });
 

@@ -26,37 +26,6 @@ define('lehu.h5.component.activitydonate', [
 
         return can.Control.extend({
 
-            helpers: {
-                // 'lehu-img': function (imgprefix, img) {
-                //     if (_.isFunction(img)) {
-                //         img = img();
-                //     }
-                //
-                //     if (_.isFunction(imgprefix)) {
-                //         imgprefix = imgprefix();
-                //     }
-                //
-                //     if (img.indexOf("http://") > -1) {
-                //         return img;
-                //     }
-                //
-                //     return imgprefix + img;
-                // },
-                //
-                // 'lehu-showDis': function (discount, price, options) {
-                //     if (_.isFunction(discount)) {
-                //         discount = discount();
-                //     }
-                //     if (_.isFunction(price)) {
-                //         price = price();
-                //     }
-                //     if (parseFloat(discount) < parseFloat(price) && discount != 0) {
-                //         return options.fn(options.contexts || this);
-                //     } else {
-                //         return options.inverse(options.contexts || this);
-                //     }
-                // }
-            },
 
             param: {},
 
@@ -67,7 +36,6 @@ define('lehu.h5.component.activitydonate', [
             init: function () {
                 this.initData();
                 this.render();
-
             },
 
             initData: function () {
@@ -103,13 +71,13 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
                 api.sendRequest()
                     .done(function (data) {
-                        if(data.code == 1) {
+                        if (data.code == 1) {
                             that.paint(data);
                         }
                     })
@@ -129,19 +97,17 @@ define('lehu.h5.component.activitydonate', [
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
-                //this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
+                // this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
                 this.options.data.attr("pageIndex", this.pageIndex);
 
                 this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data);
                 this.element.html(html);
-
                 //    去导航条
                 this.deleteNav();
-
                 //图片懒加载
                 $.imgLazyLoad();
-
+                //下拉刷新
                 this.initLoadDataEvent();
             },
 
@@ -186,7 +152,7 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -210,15 +176,26 @@ define('lehu.h5.component.activitydonate', [
             },
 
             //去商品详情
-            ".fullgive_list img click": function (element, event) {
+            ".fullgive-sale-img img,.fullgive-sale-title,.fullgive-sale-msg em click": function (element, event) {
+                console.log(2);
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
-                this.toDetail(goodsitemid, goodsid);
+
+                this.toDetail(goodsid,goodsitemid);
+            },
+
+            deleteNav: function () {
+                var param = can.deparam(window.location.search.substr(1));
+                if (param.from == "app") {
+                    $('.header').hide();
+                    $('.fullgive_ad').css('margin-top', 0);
+                    return false;
+                }
             },
 
             //加入购物车
-            //加入购物车
             ".fullgive-sale-ct click": function (element, event) {
+                var that = this;
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.userId = busizutil.getUserId();
@@ -244,7 +221,7 @@ define('lehu.h5.component.activitydonate', [
                     goodsId: goodsid,
                     storeId: stroeId,
                     goodsItemId: goodsitemid,
-                    quantity: 0
+                    quantity: 1
                 }
 
                 var api = new LHAPI({
@@ -266,47 +243,30 @@ define('lehu.h5.component.activitydonate', [
                         util.tip("服务器错误！", 3000);
                     });
             },
+
             //去购物车
-            "#gotocart click": function (element, event) {
+            // "#gotocart click": function (element, event) {
+            //
+            //     var jsonParams = {
+            //         'funName': 'goto_shopping_cart',
+            //         'params': {}
+            //     };
+            //     LHHybrid.nativeFun(jsonParams);
+            // },
 
-                var jsonParams = {
-                    'funName': 'goto_shopping_cart',
-                    'params': {}
-                };
-                LHHybrid.nativeFun(jsonParams);
-            },
-
-            toDetail: function (STORE_ID, GOODS_NO) {
+            toDetail: function (goodsid,goodsitemid) {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {
-                        'goodsId': STORE_ID,
-                        'goodsItemId': GOODS_NO
+                        'goodsId': goodsid,
+                        'goodsItemId': goodsitemid
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);
             },
 
-            deleteNav: function () {
-                var param = can.deparam(window.location.search.substr(1));
-                if (param.from == "app") {
-                    $('.header').hide();
-                    $('.fullgive_ad').css('top',0);
-                    return false;
-                }
-            },
-
             '.back click': function () {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                } else {
-                    history.go(-1);
-                }
+                history.go(-1);
             }
         });
 

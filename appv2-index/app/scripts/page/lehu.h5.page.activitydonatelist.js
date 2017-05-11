@@ -99,27 +99,17 @@ define('lehu.h5.page.activitydonatelist', [
 
                 var param = can.deparam(window.location.search.substr(1));
                 if(param.from == "app"){
-                    window.location.href = "activityreduce.html?from=app&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                    window.location.href = "activitydonate.html?from=app&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
                 }
                 else if(param.from == "share"){
-                    window.location.href = "activityreduce.html?from=share&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                    window.location.href = "activitydonate.html?from=share&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
                 }
 
                 return false;
             },
 
             '.back click': function() {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                    console.log('back_fun');
-                } else {
                     history.go(-1);
-                }
             }
         });
 

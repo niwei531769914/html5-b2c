@@ -210,17 +210,7 @@ define('lehu.h5.component.forgetpassword', [
       },
 
       '.back click': function() {
-
-        if (util.isMobile.Android() || util.isMobile.iOS()) {
-          var jsonParams = {
-            'funName': 'back-fun',
-            'params': {}
-          };
-          LHHybrid.nativeFun(jsonParams);
-          console.log('back-fun');
-        } else {
           history.go(-1);
-        }
       }
     });
 

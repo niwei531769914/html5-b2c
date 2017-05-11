@@ -93,19 +93,8 @@ define('lehu.h5.page.headlines', [
                 }
             },
 
-
             '.back click': function() {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                    console.log('back_fun');
-                } else {
                     history.go(-1);
-                }
             }
         });
 

@@ -125,9 +125,9 @@ define('lehu.h5.component.carousel', [
                     } else if (lottery.prizeType == 2) { // 优惠券
 
                         if (lottery.lhqType ==1) {
-                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
+                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
                         } else if(lottery.lhqType == 2) {
-                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>全场券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" +  lottery.condition2 +"</span></p>";
+                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" +  lottery.condition2 +"</span></p>";
                         }
                         
                     } else {
@@ -393,17 +393,7 @@ define('lehu.h5.component.carousel', [
             },
 
             '.back click': function () {
-
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    var jsonParams = {
-                        'funName': 'back_fun',
-                        'params': {}
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                    console.log('back_fun');
-                } else {
                     history.go(-1);
-                }
             }
         });
 
