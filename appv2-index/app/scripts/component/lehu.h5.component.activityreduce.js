@@ -28,6 +28,17 @@ define('lehu.h5.component.activityreduce', [
 
 
             param: {},
+            helpers: {
+                'lehu-rulers': function(goodsSpecName) {
+                    var rulerList = goodsSpecName().split('+');
+                    var HTML = "";
+                    for(var i = 0; i < rulerList.length; i++){
+                        HTML += "<span>" + rulerList[i] + "</span>"
+                    }
+                    return HTML;
+
+                }
+            },
 
             /**
              * @override
@@ -40,7 +51,7 @@ define('lehu.h5.component.activityreduce', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
+                if (HOST.indexOf('118') > -1) {
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -71,7 +82,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -97,11 +108,10 @@ define('lehu.h5.component.activityreduce', [
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
-                // this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
                 this.options.data.attr("pageIndex", this.pageIndex);
 
                 this.options.data.attr("supplement.noData", false);
-                var html = renderFn(this.options.data);
+                var html = renderFn(this.options.data, this.helpers);
                 this.element.html(html);
                 //    去导航条
                 this.deleteNav();
@@ -120,7 +130,7 @@ define('lehu.h5.component.activityreduce', [
                 var renderData = this.options.data;
                 //节流阀
                 var loadingDatas = function () {
-                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData")|| that.options.data.attr("goods").length<10) {
+                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData") || that.options.data.attr("goods").length < 10) {
                         return false;
                     }
                     var srollPos = $(window).scrollTop(); //滚动条距离顶部的高度
@@ -152,7 +162,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -176,12 +186,11 @@ define('lehu.h5.component.activityreduce', [
             },
 
             //去商品详情
-            ".fullgive-sale-img img,.fullgive-sale-title,.fullgive-sale-msg em click": function (element, event) {
-                console.log(2);
+            ".fullgive-sale-img img,.fullgive-sale-tap click": function (element, event) {
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
 
-                this.toDetail(goodsid,goodsitemid);
+                this.toDetail(goodsid, goodsitemid);
             },
 
             deleteNav: function () {
@@ -254,7 +263,7 @@ define('lehu.h5.component.activityreduce', [
             //     LHHybrid.nativeFun(jsonParams);
             // },
 
-            toDetail: function (goodsid,goodsitemid) {
+            toDetail: function (goodsid, goodsitemid) {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {
@@ -266,7 +275,7 @@ define('lehu.h5.component.activityreduce', [
             },
 
             '.back click': function () {
-                    history.go(-1);
+                history.go(-1);
             }
         });
 

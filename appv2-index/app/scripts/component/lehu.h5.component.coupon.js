@@ -83,23 +83,16 @@ define('lehu.h5.component.coupon', [
                                 $('.enter_coupon').show();
                                 return false;
                             }
-                            if (flag == 0) {
+                        //    if (flag == 0) {
                                 if (COUPONLIST && COUPONLIST.length > 0) {
                                     var html = "";
                                     for (var i = 0; i < COUPONLIST.length; i++) {
-                                        if (COUPONLIST[i].usingRange == 4) {
-                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>全场券</b></em>';
+                                        if (COUPONLIST[i].type == 1) {
+                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
-                                        else if (COUPONLIST[i].usingRange == 3) {
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                                        else if(COUPONLIST[i].type == 2){
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
-                                        else if (COUPONLIST[i].usingRange == 2) {
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                                        }
-                                        else if (COUPONLIST[i].usingRange == 1) {
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                                        }
-                                        ;
 
                                         html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
 
@@ -111,34 +104,34 @@ define('lehu.h5.component.coupon', [
                                         }
                                     }
                                 }
-                            }
-                            else if (flag == 1) {
-                                if (COUPONLIST && COUPONLIST.length > 0) {
-                                    var html = "";
-                                    for (var i = 0; i < COUPONLIST.length; i++) {
-                                        if (COUPONLIST[i].usingRange == 4) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em>';
-                                        }
-                                        else if (COUPONLIST[i].usingRange == 3) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                                        }
-                                        else if (COUPONLIST[i].usingRange == 2) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                                        }
-                                        else if (COUPONLIST[i].usingRange == 1) {
-                                            html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                                        }
-                                        ;
-                                        html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
-                                        if (COUPONLIST[i].type == 1) {
-                                            html += '<div class="coupons_box_r"  data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121"><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
-                                        }
-                                        else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
-                                        }
-                                    }
-                                }
-                            }
+                      //      }
+                      //       else if (flag == 1) {
+                      //           if (COUPONLIST && COUPONLIST.length > 0) {
+                      //               var html = "";
+                      //               for (var i = 0; i < COUPONLIST.length; i++) {
+                      //                   if (COUPONLIST[i].usingRange == 4) {
+                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em>';
+                      //                   }
+                      //                   else if (COUPONLIST[i].usingRange == 3) {
+                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                      //                   }
+                      //                   else if (COUPONLIST[i].usingRange == 2) {
+                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                      //                   }
+                      //                   else if (COUPONLIST[i].usingRange == 1) {
+                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
+                      //                   }
+                      //                   ;
+                      //                   html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
+                      //                   if (COUPONLIST[i].type == 1) {
+                      //                       html += '<div class="coupons_box_r"  data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121"><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
+                      //                   }
+                      //                   else if (COUPONLIST[i].type == 2) {
+                      //                       html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
+                      //                   }
+                      //               }
+                      //           }
+                      //       }
 
                             $('.coupons_box_null').hide();
                             $('.coupons_main').empty().append(html);
@@ -215,7 +208,6 @@ define('lehu.h5.component.coupon', [
                         if (data.code == 1) {
                             util.tip("领取成功！", 3000);
                             $(element).parents('.coupons_box').remove();
-                            alert($('.coupons_box').length);
                             if($('.coupons_box').length <= 0){
                                 $('.coupons_box_null').show();
                             }
@@ -274,7 +266,7 @@ define('lehu.h5.component.coupon', [
                         "shareTitle":'抽奖',
                         "shareUrl":'http://118.178.227.135:8083/front/coupon.html?from=share',
                         "shareImage":'',
-                        "shareContent ":'我是谁'
+                        "shareContent":'我是谁'
                     },
                 };
                 console.log(jsonParams.funName);

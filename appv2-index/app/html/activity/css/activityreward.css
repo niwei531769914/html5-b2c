@@ -1,22 +1,34 @@
 .header{ position: fixed}
-.rightlink{ background: url(../img/gouwu_03.jpg) no-repeat; background-size: 100%;}
+.rightlink{ background: url(../images/ic_add_shopping_cart.png) no-repeat; background-size: 100%;}
+
+.fullgive_ads{ width: 100%; height: auto; float: left; margin-top: .88rem }
+.fullgive_adList{ width: 100%; height: auto; float: left}
+.fullgive_adList img{ width: 100%; height: auto; float: left}
+.fullgive_ad{ width:94%; height:auto; display:block; float:left; margin: 0 3%}
 
 /*容器*/
 .fullgive-sale{ width:100%; height:auto; display:block; float:left; background: #f5f5f5;}
 .fullgive-sale-box{ width:100%; height:auto; display:block; float:left; margin:.15rem 0 0; background: #ffffff; padding: .2rem 0}
-.fullgive-sale-img{ width:26%; height:auto; display:block; float:left; margin:0 0 0 3%;}
+.fullgive-sale-img{ width:2.4rem; height:2.4rem; display:block; float:left; margin:0 0 0 .08rem; background: #f5f5f5}
 .fullgive-sale-img img{ width:100%; height:auto; display: block; float:left;}
-.fullgive-sale-title{ width:64%; height:.8rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.35rem; display:block; float:right; margin-right:3%;word-break:break-all; font-weight: 500}
-.fullgive-sale-msg{ width:67%; height:auto; display:block; float:right; position:relative;}
-.fullgive-sale-msg em{ width: 100%; height: auto; display: block; float: left}
-.fullgive-sale-msg del{ width:auto; height:auto;display:inline-block;}
-.fullgive-sale-msg em{ font-size:.18rem; color: #707070}
-.fullgive-sale-msg em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 500}
+
+.fullgive-sale-tap{ width: 4.54rem; height: auto; float: left; margin-left: 0.18rem }
+.fullgive-sale-title{ width:100%; height:.7rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.35rem; display:block; float:right;word-break:break-all; font-weight: 600; margin-top: .06rem}
+
+
+.fullgive-sale-specif{width:100%; height:auto; display:block; float:left; font-size: .24rem; color: #757575; margin-bottom: .08rem; margin-top: .1rem}
+.fullgive-sale-specif span{ margin-right: .16rem}
+.fullgive-sale-tap em{ width: 100%; height: auto; display: block; float: left; padding-bottom: .16rem; padding-top: .1rem}
+.fullgive-sale-tap em{ font-size:.18rem; color: #707070}
+.fullgive-sale-tap em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 600}
+.fullgive-sale-msg{ width:4.84rem; height:auto; display:block; float:right; position:relative; padding-left: .18rem}
+
+
 .fullgive-sale-msg del{ font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
 
 
 
-.fullgive-sale-btn{ float: left; width: 100%; height: auto; margin-top: .2rem}
+.fullgive-sale-btn{ float: left; width: 100%; height: auto}
 
 .fullgive-sale-msg span em{ width:70%; height:.28rem; display:block; float:left; font-size:.2rem; color:#212121;line-height: .28rem;border-radius: .28rem 0 0 .28rem; text-align: right; padding-right: 10%}
 .fullgive-sale-msg span{ width:50%; height:.28rem; display:inline-block;color:#212121;line-height: .28rem; border: .02rem solid #f5ac30; border-radius: .28rem; float: left; margin-top: .1rem; margin-right: .5rem}

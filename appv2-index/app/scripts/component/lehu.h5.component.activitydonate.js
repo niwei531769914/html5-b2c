@@ -6,7 +6,6 @@ define('lehu.h5.component.activitydonate', [
         'lehu.h5.api',
         'lehu.hybrid',
         'md5',
-        'store',
 
         'imgLazyLoad',
         'lehu.utils.busizutil',
@@ -14,7 +13,7 @@ define('lehu.h5.component.activitydonate', [
         'text!template_components_activitydonate'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid, md5, store,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, md5,
               imagelazyload, busizutil,
               template_components_activitydonate) {
         'use strict';
@@ -25,10 +24,19 @@ define('lehu.h5.component.activitydonate', [
         can.route.ready();
 
         return can.Control.extend({
-
-
             param: {},
 
+            helpers: {
+                'lehu-rulers': function(goodsSpecName) {
+                    var rulerList = goodsSpecName().split('+');
+                    var HTML = "";
+                    for(var i = 0; i < rulerList.length; i++){
+                        HTML += "<span>" + rulerList[i] + "</span>"
+                    }
+                    return HTML;
+
+                }
+            },
             /**
              * @override
              * @description 初始化方法
@@ -40,7 +48,7 @@ define('lehu.h5.component.activitydonate', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
+                if (HOST.indexOf('118') > -1) {
                     this.URL = 'http://118.178.227.135';
                 }
                 else {
@@ -71,7 +79,7 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -85,23 +93,24 @@ define('lehu.h5.component.activitydonate', [
 
             paint: function (data) {
 
+                var that = this;
                 var ACTIVITYLIST = data.response.promotionInfo;
-                var renderFn = can.view.mustache(template_components_activitydonate);
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
                 };
                 if (ACTIVITYLIST.activityImg == "") {
-                    ACTIVITYLIST.activityImg = "https://m.360buyimg.com/mobilecms/s720x322_jfs/t5380/53/518840503/167832/4849cc1b/5901bc2eNbed21d23.jpg!q70.jpg";
+                    ACTIVITYLIST.activityImg =
+                        "https://m.360buyimg.com/mobilecms/s720x322_jfs/t5380/53/518840503/167832/4849cc1b/5901bc2eNbed21d23.jpg!q70.jpg";
                 }
                 else {
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
-                // this.options.data.attr("imgprefix", this.URL.IMAGE_URL);
                 this.options.data.attr("pageIndex", this.pageIndex);
-
                 this.options.data.attr("supplement.noData", false);
-                var html = renderFn(this.options.data);
+
+                var renderFn = can.mustache(template_components_activitydonate);
+                var html = renderFn(that.options.data,that.helpers);
                 this.element.html(html);
                 //    去导航条
                 this.deleteNav();
@@ -120,7 +129,9 @@ define('lehu.h5.component.activitydonate', [
                 var renderData = this.options.data;
                 //节流阀
                 var loadingDatas = function () {
-                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData")|| that.options.data.attr("goods").length<10) {
+                    if (that.options.data.attr("supplement.noData") ||
+                        that.options.data.attr("supplement.onLoadingData") || that.options.data.attr
+                        ("goods").length < 10) {
                         return false;
                     }
                     var srollPos = $(window).scrollTop(); //滚动条距离顶部的高度
@@ -152,20 +163,24 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
                 api.sendRequest()
                     .done(function (data) {
-                        that.options.data.attr("supplement.onLoadingData", false);
+                        that.options.data.attr("supplement.onLoadingData",
+                            false);
                         if (data.response.promotionInfo.goods) {
-                            _.each(data.response.promotionInfo.goods, function (item) {
+                            _.each(data.response.promotionInfo.goods, function
+                                (item) {
                                 that.options.data.goods.push(item);
                             });
 
-                            that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
-                            that.options.data.attr("supplement.onLoadingData", false);
+                            that.options.data.attr("pageIndex", parseInt
+                                (that.options.data.pageIndex) + 1);
+                            that.options.data.attr("supplement.onLoadingData",
+                                false);
                             //图片懒加载
                             $.imgLazyLoad();
                         } else {
@@ -176,12 +191,11 @@ define('lehu.h5.component.activitydonate', [
             },
 
             //去商品详情
-            ".fullgive-sale-img img,.fullgive-sale-title,.fullgive-sale-msg em click": function (element, event) {
-                console.log(2);
+            ".fullgive-sale-img img,.fullgive-sale-tap click": function (element, event) {
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
 
-                this.toDetail(goodsid,goodsitemid);
+                this.toDetail(goodsid, goodsitemid);
             },
 
             deleteNav: function () {
@@ -201,7 +215,8 @@ define('lehu.h5.component.activitydonate', [
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
                     if (util.isMobile.WeChat() || param.from == 'share') {
-                        location.href = "login.html?from=" + escape(location.href);
+                        location.href = "login.html?from=" + escape
+                            (location.href);
                         return false;
                     } else {
                         var jsonParams = {
@@ -254,7 +269,7 @@ define('lehu.h5.component.activitydonate', [
             //     LHHybrid.nativeFun(jsonParams);
             // },
 
-            toDetail: function (goodsid,goodsitemid) {
+            toDetail: function (goodsid, goodsitemid) {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {

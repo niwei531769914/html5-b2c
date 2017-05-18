@@ -35,7 +35,7 @@
 #lottery td p{ width:2.12rem; height:2.12rem; display:block; float:left;background-size:100%; line-height:.2rem; font-size:.16rem; background-repeat:no-repeat; }
 #lottery td p em{ width:auto; font-size:.16rem;  height:.3rem; display:table; margin:.3rem .1rem .16rem;}
 #lottery td p em  img{ width: .2rem; height: .2rem; margin-right: .08rem; display: inline-block; vertical-align: text-bottom }
-#lottery td p i{ font-size: .24rem; font-weight: bold; display: block}
+#lottery td p i{ font-size: .24rem; font-weight: bold; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
 #lottery td p span{ font-size:.26rem;  display: block; text-align: left; margin: .56rem .1rem 0; font-weight: bold}
 #lottery td p span b{ font-size:.20rem; margin-left: .08rem; font-weight: normal}
 /*.dial_main #lottery.lottery-unit{ background-image:url(../img/coupons.png); }*/

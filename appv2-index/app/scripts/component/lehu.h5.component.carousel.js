@@ -118,7 +118,6 @@ define('lehu.h5.component.carousel', [
 
                 "lehu-lottery": function (list, index) {
                     var lottery = list[index];
-
                     // 谢谢参与
                     if (lottery.prizeType == 1) {
                         return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
@@ -129,7 +128,6 @@ define('lehu.h5.component.carousel', [
                         } else if(lottery.lhqType == 2) {
                             return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" +  lottery.condition2 +"</span></p>";
                         }
-                        
                     } else {
                         return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
                     }
@@ -213,7 +211,6 @@ define('lehu.h5.component.carousel', [
                         that.element.html(html);
                         $('.dial_footer ul').append(data.response.activeRule);
                         lottery.init('lottery');
-                        console.log(that.options.luckProbabilityList);
                         that.scrollZhongjiangjilu();
 
                         //  去除导航事件

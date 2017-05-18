@@ -1,36 +1,34 @@
-.time-sale-main{width: 100%; height: auto; display: block; float: left;}
 
-.tabs{ width:100%; height:.8rem; display:block; background:#f5a623; float: left; position: fixed;white-space: nowrap; overflow-x: auto; overflow-y: hidden; z-index: 9; font-size: 0}
-.tabs a{ width:20%; height:.8rem; display:inline-block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden}
+.tabs{ width:100%; height:1.6rem; display:block; float: left; position: fixed;white-space: nowrap; overflow-x: auto; overflow-y: hidden; z-index: 9; font-size: 0;box-shadow: 0px 1px 4px 0px rgb( 225, 225, 225 )}
+.tabs a{ width:20%; height:.8rem; display:inline-block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden; background:#f5a623}
 .tabs a.active{ background:url(../images/pt_nav.png) no-repeat center bottom #d18200; background-size:.3rem;}
 
 /*列表*/
-.time-title{ margin-top: 2.08rem; border-top: 1px solid #efefef;position: relative; padding-top: .3rem; float:left; width:100%; z-index: -1;}
-.time-title .time-title-count{display: none; position: absolute;top: -.21rem;left: 32%;padding: .05rem .6rem;color: #818181; font-size:.25rem;-webkit-transform: translateX(-18%);transform: translateX(-18%); background: #ffffff  }
-.time-title-count-2,.time-title-count-3{ left: 38% !important; }
+.tabs-title{ width: 100%; height: .8rem; float: left; background: #ffffff; z-index: 9}
+.time-title{margin:.4rem 5% .1rem;border-top: 1px solid #efefef;position: relative;padding-top: .2rem; float:left; width:90%}
+.time-title .time-title-count{ width: 3.2rem; height: auto; text-align: center ; position: absolute;top: -.21rem;left: 32%;padding: .05rem 0;color: #818181; font-size:.25rem;-webkit-transform: translateX(-13%);transform: translateX(-13%); background: #ffffff  }
 .time-title .time-title-count em{ padding: 0 .08rem ; color: #212121}
 
-
-
 /*容器*/
-.swiper-container{background: rgb(239,239,239);}
- .time-sale-box{ width:100%; height:auto; display:block; float:left; margin-top:.15rem; background: #ffffff; padding: .2rem 0}
-.time-sale-img{ position: relative; width:2rem; height:2rem; display:block; float:left; margin:0 0 0 4%;}
-.time-sale-img img{ width:100%; height:auto; display: block; float:left;}
-.time-sale-img>b{width: .96rem; height: .96rem; position: absolute; top: .56rem; left: .56rem;}
-.time-sale-img>b>img{width: 100%; height: 100%; vertical-align: top;}
-.time-sale-title{ width:60%; height:.8rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.35rem; display:block; float:right; margin-right:4%;word-break:break-all; font-weight: 500}
+.time-sale-main{    width: 100%; height: auto; display: block; float: left; margin: 2.48rem 0 0 0; background: #f5f5f5 }
+.time-sale{ width:100%; height:auto; display:block; float:left; background: #f5f5f5;}
+.time-sale-box{ width:100%; height:auto; display:block; float:left; margin:.15rem 0 0; background: #ffffff; padding: .2rem 0}
+.time-sale-img{ width:2.4rem; height:2.4rem; display:block; float:left; margin:0 0 0 .16rem; background: #f5f5f5; position: relative}
+.time-sale-img img{ width:2.4rem; height:2.4rem;  display: block; float:left;}
+.time-sale-img>b{ width: .96rem; height: .96rem; position: absolute; top: .72rem; left: .72rem}
+.time-sale-img>b>img{ width: 100%; height: 100%; vertical-align: top}
+.time-sale-title{ width:60%; height:.8rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.35rem; display:block; float:right; margin-right:4%;word-break:break-all; font-weight: 500; padding-top: .1rem; padding-bottom: .16rem}
 .time-sale-msg{ width:64%; height:auto; display:block; float:right; position:relative;}
 .time-sale-msg em{ width: 100%; height: auto; display: block; float: left}
 .time-sale-msg del{ width:auto; height:auto;display:inline-block;}
-.time-sale-msg em{ font-size:.18rem; color: #707070}
+.time-sale-msg em{ font-size:.18rem; color: #757575}
 .time-sale-msg em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 500}
 .time-sale-msg del{ font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
 
 
-.time-sale-btn{ float: left; width: 100%; height: auto; margin-top: .2rem}
+.time-sale-btn{ float: left; width: 100%; height: auto; margin-top: .3rem}
 
-.time-sale-msg span em{ width:70%; height:.28rem; display:block; float:left; font-size:.2rem; color:#212121;line-height: .28rem;border-radius: .28rem 0 0 .28rem; -moz-border-radius: .28rem 0 0 .28rem ;  -webkit-border-radius: .28rem 0 0 .28rem ;text-align: right; padding-right: 10%}
+.time-sale-msg span em{ width:70%; height:.28rem; display:block; float:left; font-size:.2rem; color:#212121;line-height: .28rem;border-radius: .28rem 0 0 .28rem; text-align: right; padding-right: 10%}
 .time-sale-msg span{ width:50%; height:.28rem; display:inline-block;color:#212121;line-height: .28rem; border: .02rem solid #f5ac30; border-radius: .28rem; float: left; margin-top: .1rem; margin-right: .5rem}
 .time-sale-msg a{padding:0 .3rem; right:0;display: inline-block ;  float: left}
 
@@ -39,4 +37,5 @@
 .time-sale-ct,.time-sale-st{ font-size: .22rem; width: auto; height: .5rem; line-height: .5rem; color: #ffffff; background: #bdbdbd; border-radius:.06rem; }
 .time-sale-msg span i{ color:#fe0101; margin-left:.15rem;}
 .time-sale-msg span .time-sale-tab{ color: #c27d0a}
-.time-sale-msg span .time-sale-active{color: #c27c07; background: #f9ca7b}
+.time-sale-msg span .time-sale-active{  color: #c27c07; background: #f9ca7b}
+

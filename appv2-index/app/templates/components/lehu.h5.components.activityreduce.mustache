@@ -5,7 +5,8 @@
 </header>
 
 <!--活动图片-->
-<img src="images/big_goods_back.png" data-img="{{activityImg}}" class="fullgive_ad lazyload" style="margin-top: 1rem; margin-bottom: .15rem">
+<img src="images/big_goods_back.png" data-img="{{activityImg}}" class="fullgive_ad lazyload"
+     style="margin-top: 1rem; margin-bottom: .15rem">
 
 <!--列表-->
 <ul class="fullgive-sale">
@@ -14,15 +15,21 @@
         <li class="fullgive-sale-box">
             <div class="fullgive-sale-img">
                 <img class="lazyload" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
-                     data-img="{{goodsItemImg}}"  src="images/goods_back.png">
+                     data-img="{{goodsItemImg}}" src="images/goods_back.png">
             </div>
-            <a href="javascript:;" class="fullgive-sale-title"  data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">{{goodsName}}</a>
 
-            <div class="fullgive-sale-msg">
+            <div class="fullgive-sale-tap" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
+                <a href="javascript:;" class="fullgive-sale-title" >{{goodsName}}</a>
+                <a href="javascript:;" class="fullgive-sale-specif">
+                    {{{lehu-rulers goodsSpecName}}}
+                </a>
                 <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+            </div>
+            <div class="fullgive-sale-msg">
 
                 <div class="fullgive-sale-btn">
-                    <a href="javascript:;" class="fullgive-sale-ct"  data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}" data-storeid="{{storeId}}">加入购物车</a>
+                    <a href="javascript:;" class="fullgive-sale-ct" data-goodsid="{{goodsId}}"
+                       data-goodsitemid="{{goodsItemId}}" data-storeid="{{storeId}}">加入购物车</a>
                 </div>
             </div>
         </li>

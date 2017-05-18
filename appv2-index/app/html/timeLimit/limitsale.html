@@ -39,8 +39,20 @@
         <a href="javascript:;"><span>12点场</span></a>
         <a href="javascript:;"><span>16点场</span></a>
         <a href="javascript:;"><span>20点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
+        <div class="tabs-title">
+            <div class="time-title" >
+                <span class="time-title-count">本次抢购已经结束</span>
+            </div>
+            <div class="time-title">
+                <span class="time-title-count">本场结束还剩<span><em>00</em>:<em>06</em>:<em>23</em></span></span>
+            </div>
+            <div class="time-title"  style="display: none">
+                <span class="time-title-count">本次抢购即将开始</span>
+            </div>
+            <div class="time-title" style="display: none">
+                <span class="time-title-count">本次抢购即将开始</span>
+            </div>
+        </div>
     </div>
 
     <!--tab列表页-->
@@ -48,9 +60,7 @@
         <div class="swiper-wrapper" style="-webkit-overflow-scrolling:touch">
 
             <div class="swiper-slide">
-                <div class="time-title">
-                    <span class="time-title-count">本次抢购已经结束</span>
-                </div>
+
 
                 <div class="time-sale">
 
@@ -70,7 +80,7 @@
                     </div>
                     <div class="time-sale-box">
                         <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
-                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</a>
                         <div class="time-sale-msg">
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
@@ -218,9 +228,9 @@
 
             <div class="swiper-slide">
 
-                <div class="time-title">
-                    <span class="time-title-count">本场结束还剩<span><em>00</em>:<em>06</em>:<em>23</em></span></span>
-                </div>
+                <!--<div class="time-title">-->
+                    <!--<span class="time-title-count">本场结束还剩<span><em>00</em>:<em>06</em>:<em>23</em></span></span>-->
+                <!--</div>-->
 
                 <div class="time-sale">
 
@@ -249,16 +259,16 @@
             <div class="swiper-slide">
 
 
-                <div class="time-title">
-                    <span class="time-title-count">本次抢购即将开始</span>
-                </div>
+                <!--<div class="time-title">-->
+                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--</div>-->
 
                 <div class="time-sale">
 
                     <!--商品-->
                     <div class="time-sale-box">
                         <a href="" class="time-sale-img"><img src="img/goods_03.jpg"></a>
-                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹DIHEAL 可莱丝W.HDIHEAL 可莱丝W.HDIHEAL 可莱丝W.HDIHEAL 可莱丝W.H碳面膜10张</a>
                         <div class="time-sale-msg">
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
@@ -278,16 +288,16 @@
             <div class="swiper-slide">
 
 
-                <div class="time-title">
-                    <span class="time-title-count">本次抢购即将开始</span>
-                </div>
+                <!--<div class="time-title">-->
+                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--</div>-->
 
                 <div class="time-sale">
 
                     <!--商品-->
                     <div class="time-sale-box">
                         <a href="" class="time-sale-img"><img src="img/goods_03.jpg"></a>
-                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白直邮】MEDIHEAL 可莱直邮】MEDIHEAL 可莱保湿竹碳面膜10张</a>
                         <div class="time-sale-msg">
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
@@ -307,9 +317,9 @@
             <div class="swiper-slide">
 
 
-                <div class="time-title">
-                    <span class="time-title-count">本次抢购即将开始</span>
-                </div>
+                <!--<div class="time-title">-->
+                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--</div>-->
 
                 <div class="time-sale">
 
@@ -338,6 +348,9 @@
         </div>
     </div>
 </div>
+<div style="background: rgba(0,0,0,.5); position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 999; text-align: center; display: none">
+    <img src="img/loading51.gif" style="width: 1rem; height: auto; margin-top:70%">
+</div>
 </body>
 <script type="text/javascript">
  $(document).ready(function(){
@@ -349,7 +362,9 @@
          var Index = $(this).index();
 
          $('.swiper-slide').eq(Index).show();
+         $('.time-title').eq(Index).show();
          $('.swiper-slide').eq(Index).siblings().hide();
+         $('.time-title').eq(Index).siblings().hide();
 
      })
  });
