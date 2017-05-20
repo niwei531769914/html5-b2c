@@ -47,6 +47,12 @@ define('lehu.h5.component.activityreduce', [
             init: function () {
                 this.initData();
                 this.render();
+
+                //    是否显示购物车
+                this.shoppingCart();
+
+                //    分享
+                this.share();
             },
 
             initData: function () {
@@ -253,15 +259,14 @@ define('lehu.h5.component.activityreduce', [
                     });
             },
 
-            //去购物车
-            // "#gotocart click": function (element, event) {
-            //
-            //     var jsonParams = {
-            //         'funName': 'goto_shopping_cart',
-            //         'params': {}
-            //     };
-            //     LHHybrid.nativeFun(jsonParams);
-            // },
+           // 去购物车
+            shoppingCart: function (element, event) {
+                var jsonParams = {
+                    'funName': 'goto_shopping_cart',
+                    'params': {}
+                };
+                LHHybrid.nativeFun(jsonParams);
+            },
 
             toDetail: function (goodsid, goodsitemid) {
                 var jsonParams = {
@@ -271,6 +276,24 @@ define('lehu.h5.component.activityreduce', [
                         'goodsItemId': goodsitemid
                     }
                 };
+                LHHybrid.nativeFun(jsonParams);
+            },
+
+            //分享
+            share:function () {
+                var param = can.deparam(window.location.search.substr(1));
+                var that = this;
+                var jsonParams = {
+                    'funName': 'shareHandler',
+                    'params': {
+                        "shouldShare":1,
+                        "shareTitle":'满减',
+                        "shareUrl": that.LOACTION + '/front/activityreduce.html?from=share&' + param.activityId + '&' + param.storeActivityId,
+                        "shareImage":'',
+                        "shareContent":'我是谁'
+                    },
+                };
+                console.log(jsonParams.funName);
                 LHHybrid.nativeFun(jsonParams);
             },
 

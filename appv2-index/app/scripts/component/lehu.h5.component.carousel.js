@@ -141,15 +141,20 @@ define('lehu.h5.component.carousel', [
             init: function () {
                 this.initData();
                 this.render();
+                //    分享
+                this.share();
+
             },
 
             initData: function () {
                 var HOST = window.location.host;
                 if(HOST.indexOf('118')>-1){
                     this.URL = 'http://118.178.227.135';
+                    this.LOACTION = 'http://118.178.227.135:8083'
                 }
                 else {
                     this.URL = 'http://121.196.208.98:28080';
+                    this.LOACTION = 'http://121.196.208.98:28080'
                 }
             },
 
@@ -379,6 +384,23 @@ define('lehu.h5.component.carousel', [
             },
             '.pop_lost a click': function () {
                 $('.pop_lost').hide();
+            },
+
+            //分享
+            share:function () {
+                var that = this;
+                var jsonParams = {
+                    'funName': 'shareHandler',
+                    'params': {
+                        "shouldShare":1,
+                        "shareTitle":'抽奖',
+                        "shareUrl": that.LOACTION + '/front/carousel.html?from=share',
+                        "shareImage":'',
+                        "shareContent":'我是谁'
+                    },
+                };
+                console.log(jsonParams.funName);
+                LHHybrid.nativeFun(jsonParams);
             },
 
             deleteNav: function () {

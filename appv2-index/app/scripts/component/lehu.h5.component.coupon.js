@@ -44,9 +44,11 @@ define('lehu.h5.component.coupon', [
                 var HOST = window.location.host;
                 if (HOST.indexOf('118') > -1) {
                     this.URL = 'http://118.178.227.135';
+                    this.LOACTION = 'http://118.178.227.135:8083'
                 }
                 else {
                     this.URL = 'http://121.196.208.98:28080';
+                    this.LOACTION = 'http://121.196.208.98:28080'
                 }
             },
 
@@ -57,6 +59,7 @@ define('lehu.h5.component.coupon', [
 
             //券展示
             getCoupon: function (flag) {
+
                 var that = this;
                 this.userId = busizutil.getUserId();
                 if(!this.userId){
@@ -68,6 +71,7 @@ define('lehu.h5.component.coupon', [
                     "toPage": 1,
                     "userId":this.userId
                 };
+                console.log(flag);
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
@@ -75,6 +79,7 @@ define('lehu.h5.component.coupon', [
                 });
                 api.sendRequest()
                     .done(function (data) {
+
                         if (data.code == 1) {
                             var COUPONLIST = data.response.list;
                             if (COUPONLIST == "") {
@@ -83,15 +88,27 @@ define('lehu.h5.component.coupon', [
                                 $('.enter_coupon').show();
                                 return false;
                             }
-                        //    if (flag == 0) {
+
                                 if (COUPONLIST && COUPONLIST.length > 0) {
                                     var html = "";
+
                                     for (var i = 0; i < COUPONLIST.length; i++) {
-                                        if (COUPONLIST[i].type == 1) {
-                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+
+                                        if(flag == 0){
+                                            if (COUPONLIST[i].type == 1) {
+                                                html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+                                            }
+                                            else if(COUPONLIST[i].type == 2){
+                                                html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+                                            }
                                         }
-                                        else if(COUPONLIST[i].type == 2){
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+                                        else if(flag == 1){
+                                            if (COUPONLIST[i].type == 1) {
+                                                html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                            }
+                                            else if(COUPONLIST[i].type == 2){
+                                                html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                            }
                                         }
 
                                         html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
@@ -104,34 +121,7 @@ define('lehu.h5.component.coupon', [
                                         }
                                     }
                                 }
-                      //      }
-                      //       else if (flag == 1) {
-                      //           if (COUPONLIST && COUPONLIST.length > 0) {
-                      //               var html = "";
-                      //               for (var i = 0; i < COUPONLIST.length; i++) {
-                      //                   if (COUPONLIST[i].usingRange == 4) {
-                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_store_mall.png"><b>全场券</b></em>';
-                      //                   }
-                      //                   else if (COUPONLIST[i].usingRange == 3) {
-                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                      //                   }
-                      //                   else if (COUPONLIST[i].usingRange == 2) {
-                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                      //                   }
-                      //                   else if (COUPONLIST[i].usingRange == 1) {
-                      //                       html += '<div class="coupons_box store-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_redeem.png"><b>品类券</b></em>';
-                      //                   }
-                      //                   ;
-                      //                   html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
-                      //                   if (COUPONLIST[i].type == 1) {
-                      //                       html += '<div class="coupons_box_r"  data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121"><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
-                      //                   }
-                      //                   else if (COUPONLIST[i].type == 2) {
-                      //                       html += '<div class="coupons_box_s" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em style="color: #212121">满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span style="color: #f53828">立即领取<i>&gt;</i></span></div></div>';
-                      //                   }
-                      //               }
-                      //           }
-                      //       }
+
 
                             $('.coupons_box_null').hide();
                             $('.coupons_main').empty().append(html);
@@ -251,7 +241,7 @@ define('lehu.h5.component.coupon', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.from == "app") {
+                if (param.from == "app"|| util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     return false;
                 }
@@ -259,12 +249,13 @@ define('lehu.h5.component.coupon', [
 
             //分享
             share:function () {
+                var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
                         "shouldShare":1,
-                        "shareTitle":'抽奖',
-                        "shareUrl":'http://118.178.227.135:8083/front/coupon.html?from=share',
+                        "shareTitle":'领券中心',
+                        "shareUrl": that.LOACTION + '/front/coupon.html?from=share',
                         "shareImage":'',
                         "shareContent":'我是谁'
                     },
