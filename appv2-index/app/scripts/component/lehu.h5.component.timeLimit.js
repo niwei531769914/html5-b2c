@@ -43,11 +43,11 @@ define('lehu.h5.component.timeLimit', [
                 //渲染页面
                 this.render();
 
-                //分享
-                this.share();
-
                 //滚动加载
                 this.bindScroll();
+
+                //分享
+                this.share();
 
             },
 
@@ -217,6 +217,7 @@ define('lehu.h5.component.timeLimit', [
                             var BOXLIST = data.response.seckillListVO;
                             that.totalPageNum = data.response.totalPage;
                             if (BOXLIST == "") {
+                                $(".loading-date").hide();
                                 $('.nlist_nomore').show();
                                 return false;
                             }
@@ -268,6 +269,9 @@ define('lehu.h5.component.timeLimit', [
                                 }
 
                             }
+                            if (that.pageIndex == that.totalPageNum) {
+                                that.nlist_no();
+                            }
 
                             if (that.clear) {
                                 $(".time-sale-main").append(HTML);
@@ -276,9 +280,7 @@ define('lehu.h5.component.timeLimit', [
                                 $(".time-sale-main").empty().append(HTML);
                                 that.clear = true;
                             }
-                            if (that.pageIndex == that.totalPageNum) {
-                                that.nlist_no();
-                            }
+
 
                             //图片懒加载
                             $.imgLazyLoad();
@@ -308,21 +310,19 @@ define('lehu.h5.component.timeLimit', [
                 var totalheight = 0;
 
                 $(window).scroll(function () {
-
-                    if (that.pageIndex > that.totalPageNum) {
+                    if (that.pageIndex >= that.totalPageNum) {
                         return;
                     }
-
                     var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
                     totalheight = parseFloat($(window).height()) + parseFloat(srollPos); //滚动条当前位置距顶部距离+浏览器的高度
 
                     if (($(document).height() == totalheight)) {
+
                         that.pageIndex++;
-
                         that.sendRequest(that.activityId, that.status);
-
                     } else {
                         if (($(document).height() - totalheight) <= range) { //页面底部与滚动条底部的距离<range
+
                             if (huadong) {
                                 huadong = false;
                                 that.pageIndex++;

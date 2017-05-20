@@ -175,7 +175,7 @@ define('lehu.h5.component.activityreduce', [
                 api.sendRequest()
                     .done(function (data) {
                         that.options.data.attr("supplement.onLoadingData", false);
-                        if (data.response.promotionInfo.goods) {
+                        if (data.response.promotionInfo.goods.length > 0) {
                             _.each(data.response.promotionInfo.goods, function (item) {
                                 that.options.data.goods.push(item);
                             });

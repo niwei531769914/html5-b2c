@@ -805,24 +805,6 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.carousel']
             }
         },
-      group: {
-            options: {
-                optimize: 'none',
-                preserveLicenseComments: false,
-                baseUrl: './app/',
-                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.group.js',
-                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
-                paths: {
-                    'moment': '../bower_components/momentjs/min/moment.min',
-                    'fastclick': '../bower_components/fastclick/lib/fastclick'
-                },
-                include: [
-                    'lehu.helpers',
-                    'lehu.h5.page.group'
-                ],
-                insertRequire: ['lehu.h5.page.group']
-            }
-        },
       timeLimit: {
             options: {
                 optimize: 'none',
@@ -859,7 +841,7 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.servers']
             }
         },
-        activityreduce: {
+      activityreduce: {
             options: {
                 optimize: 'none',
                 preserveLicenseComments: false,
@@ -877,7 +859,7 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.activityreduce']
             }
         },
-        activitydonate: {
+      activitydonate: {
             options: {
                 optimize: 'none',
                 preserveLicenseComments: false,
@@ -895,7 +877,7 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.activitydonate']
             }
         },
-        activityreducelist: {
+      activityreducelist: {
             options: {
                 optimize: 'none',
                 preserveLicenseComments: false,
@@ -913,7 +895,7 @@ module.exports = function(grunt) {
                 insertRequire: ['lehu.h5.page.activityreducelist']
             }
         },
-        activitydonatelist: {
+      activitydonatelist: {
             options: {
                 optimize: 'none',
                 preserveLicenseComments: false,
