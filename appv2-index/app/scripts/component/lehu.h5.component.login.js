@@ -31,7 +31,7 @@ define('lehu.h5.component.login', [
                 this.initData();
 
                 var params = can.deparam(window.location.search.substr(1));
-                this.from = params.from;
+                this.from = params.hyfrom;
 
                 var renderList = can.mustache(template_components_login);
                 var html = renderList(this.options);
@@ -83,14 +83,10 @@ define('lehu.h5.component.login', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
-                    console.log(2);
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                    console.log(3);
-                }
+                this.URL = HOST;
                 this.loginBysms = false;
             },
 

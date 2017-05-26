@@ -33,10 +33,11 @@ define('lehu.h5.page.activitydonate', [
 
                 var param = can.deparam(window.location.search.substr(1));
 
-                if(param.from == "share"){
-                    new LHDownload(null,{
-                        "position":"bottom"
-                    });
+                if(!param.hyfrom){
+                    // new LHDownload(null,{
+                    //     "position":"bottom"
+                    // });
+                    new LHDownload();
                 }
             }
         });

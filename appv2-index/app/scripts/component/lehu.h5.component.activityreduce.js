@@ -36,7 +36,19 @@ define('lehu.h5.component.activityreduce', [
                         HTML += "<span>" + rulerList[i] + "</span>"
                     }
                     return HTML;
-
+                },
+                'lehu-showDis': function(discount, price, options) {
+                    if (_.isFunction(discount)) {
+                        discount = discount();
+                    }
+                    if (_.isFunction(price)) {
+                        price = price();
+                    }
+                    if (parseFloat(discount) < parseFloat(price) && discount != 0) {
+                        return options.fn(options.contexts || this);
+                    } else {
+                        return options.inverse(options.contexts || this);
+                    }
                 }
             },
 
@@ -57,12 +69,10 @@ define('lehu.h5.component.activityreduce', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > -1) {
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
 
             render: function () {
@@ -201,7 +211,7 @@ define('lehu.h5.component.activityreduce', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.from == "app") {
+                if (param.hyfrom == "app") {
                     $('.header').hide();
                     $('.fullgive_ad').css('margin-top', 0);
                     return false;
@@ -213,17 +223,19 @@ define('lehu.h5.component.activityreduce', [
                 var that = this;
                 var param = can.deparam(window.location.search.substr(1));
 
-                this.userId = busizutil.getUserId();
-                if (!this.userId) {
-                    if (util.isMobile.WeChat() || param.from == 'share') {
-                        location.href = "login.html?from=" + escape(location.href);
-                        return false;
-                    } else {
+                this.user = busizutil.getUserId();
+                if (!this.user) {
+                    if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {}
                         };
                         LHHybrid.nativeFun(jsonParams);
+                        return false;
+
+                    } else {
+
+                        location.href = "login.html?hyfrom=" + escape(location.href);
                         return false;
                     }
                 }
@@ -232,11 +244,13 @@ define('lehu.h5.component.activityreduce', [
                 var stroeId = element.attr("data-storeid");
 
                 var query = {
-                    userId: this.userId,
-                    goodsId: goodsid,
-                    storeId: stroeId,
-                    goodsItemId: goodsitemid,
-                    quantity: 1
+                    "userId": this.user.userId,
+                    "strToken": this.user.token,
+                    "strUserId": this.user.userId,
+                    "goodsId": goodsid,
+                    "storeId": stroeId,
+                    "goodsItemId": goodsitemid,
+                    "quantity": 1
                 }
 
                 var api = new LHAPI({
@@ -288,8 +302,8 @@ define('lehu.h5.component.activityreduce', [
                     'params': {
                         "shouldShare":1,
                         "shareTitle":'满减',
-                        "shareUrl": that.LOACTION + '/front/activityreduce.html?from=share&' + param.activityId + '&' + param.storeActivityId,
-                        "shareImage":'',
+                        "shareUrl": that.URL + '/front/activityreduce.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
+                        "shareImage": that.URL+ '/front/images/Shortcut_114_114.png',
                         "shareContent":'我是谁'
                     },
                 };

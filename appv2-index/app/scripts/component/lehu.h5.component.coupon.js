@@ -24,8 +24,8 @@ define('lehu.h5.component.coupon', [
              * @description 初始化方法
              */
             init: function () {
-                this.initData();
 
+                this.initData();
                 var renderList = can.mustache(template_components_coupon);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -36,20 +36,16 @@ define('lehu.h5.component.coupon', [
                 //渲染页面
                 this.render();
 
-            //    分享
-               this.share();
+                //    分享
+                this.share();
             },
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > -1) {
-                    this.URL = 'http://118.178.227.135';
-                    this.LOACTION = 'http://118.178.227.135:8083'
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                    this.LOACTION = 'http://121.196.208.98:28080'
-                }
+                this.URL = HOST;
             },
 
             render: function () {
@@ -61,15 +57,17 @@ define('lehu.h5.component.coupon', [
             getCoupon: function (flag) {
 
                 var that = this;
-                this.userId = busizutil.getUserId();
-                if(!this.userId){
-                    this.userId = "";
+                this.user = busizutil.getUserId();
+
+                if (!this.user) {
+                    this.user = {};
+                    this.user.userId = "";
                 }
                 this.param = {
                     "flag": flag,
                     "pageRows": 20,
                     "toPage": 1,
-                    "userId":this.userId
+                    "userId": this.user.userId
                 };
                 console.log(flag);
                 var api = new LHAPI({
@@ -89,38 +87,38 @@ define('lehu.h5.component.coupon', [
                                 return false;
                             }
 
-                                if (COUPONLIST && COUPONLIST.length > 0) {
-                                    var html = "";
+                            if (COUPONLIST && COUPONLIST.length > 0) {
+                                var html = "";
 
-                                    for (var i = 0; i < COUPONLIST.length; i++) {
+                                for (var i = 0; i < COUPONLIST.length; i++) {
 
-                                        if(flag == 0){
-                                            if (COUPONLIST[i].type == 1) {
-                                                html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
-                                            }
-                                            else if(COUPONLIST[i].type == 2){
-                                                html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
-                                            }
-                                        }
-                                        else if(flag == 1){
-                                            if (COUPONLIST[i].type == 1) {
-                                                html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
-                                            }
-                                            else if(COUPONLIST[i].type == 2){
-                                                html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
-                                            }
-                                        }
-
-                                        html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
-
+                                    if (flag == 0) {
                                         if (COUPONLIST[i].type == 1) {
-                                            html += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
+                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
                                         else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
                                     }
+                                    else if (flag == 1) {
+                                        if (COUPONLIST[i].type == 1) {
+                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                        }
+                                        else if (COUPONLIST[i].type == 2) {
+                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                        }
+                                    }
+
+                                    html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
+
+                                    if (COUPONLIST[i].type == 1) {
+                                        html += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
+                                    }
+                                    else if (COUPONLIST[i].type == 2) {
+                                        html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
+                                    }
                                 }
+                            }
 
 
                             $('.coupons_box_null').hide();
@@ -157,9 +155,9 @@ define('lehu.h5.component.coupon', [
 
                 var param = can.deparam(window.location.search.substr(1));
 
-                this.userId = busizutil.getUserId();
-                if (!this.userId) {
-                    if (param.from == 'app') {
+                this.user = busizutil.getUserId();
+                if (!this.user) {
+                    if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
@@ -170,21 +168,23 @@ define('lehu.h5.component.coupon', [
 
                         return false;
 
-                    } else if (util.isMobile.WeChat() || param.from == 'share') {
+                    } else  {
 
-                        location.href = "login.html?from=coupon.html";
+                        location.href = "login.html?hyfrom=coupon.html";
                         return false;
 
                     }
                 }
-                this.uesCoupon(element,this.userId, couponid);
+                this.uesCoupon(element, this.userId, couponid);
             },
 
-            uesCoupon: function (element,userId, couponid) {
+            uesCoupon: function (element, userId, couponid) {
                 var that = this;
 
                 this.param = {
-                    "userId": userId,
+                    "userId": this.user.userId,
+                    "strUserId": this.user.userId,
+                    "strToken": this.user.token,
                     "activityId": couponid
                 };
                 var api = new LHAPI({
@@ -198,7 +198,7 @@ define('lehu.h5.component.coupon', [
                         if (data.code == 1) {
                             util.tip("领取成功！", 3000);
                             $(element).parents('.coupons_box').remove();
-                            if($('.coupons_box').length <= 0){
+                            if ($('.coupons_box').length <= 0) {
                                 $('.coupons_box_null').show();
                             }
                         }
@@ -216,7 +216,7 @@ define('lehu.h5.component.coupon', [
                 var param = can.deparam(window.location.search.substr(1));
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
-                    if (param.from == 'app') {
+                    if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {
@@ -225,39 +225,46 @@ define('lehu.h5.component.coupon', [
                         };
                         LHHybrid.nativeFun(jsonParams);
                         return false;
-                    } else if (util.isMobile.WeChat() || param.from == 'share') {
-                        location.href = "login.html?from=coupon.html";
+                    } else  {
+                        location.href = "login.html?hyfrom=coupon.html";
                         return false;
                     }
                 }
-
-                var jsonParams = {
-                    'funName': 'back_coupons',
-                    'params': {}
-                };
-                LHHybrid.nativeFun(jsonParams);
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
+                    var jsonParams = {
+                        'funName': 'back_coupons',
+                        'params': {}
+                    };
+                    LHHybrid.nativeFun(jsonParams);
+                }
+                else if(util.isMobile.QQ() || util.isMobile.WeChat()){
+                    util.tip("此功能需要下载APP!");
+                }
+                else {
+                    util.tip("此功能需要下载APP!");
+                }
 
             },
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.from == "app"|| util.isMobile.QQ() || util.isMobile.WeChat()) {
+                if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     return false;
                 }
             },
 
             //分享
-            share:function () {
+            share: function () {
                 var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
-                        "shouldShare":1,
-                        "shareTitle":'领券中心',
-                        "shareUrl": that.LOACTION + '/front/coupon.html?from=share',
-                        "shareImage":'',
-                        "shareContent":'我是谁'
+                        "shouldShare": 1,
+                        "shareTitle": '汇银乐虎全球购-领券中心',
+                        "shareUrl": that.URL + '/front/coupon.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareContent": '汇银乐虎全球购，赶紧领取优惠券吧，手慢无！'
                     },
                 };
                 console.log(jsonParams.funName);
@@ -265,7 +272,7 @@ define('lehu.h5.component.coupon', [
             },
 
             '.back click': function () {
-                    history.go(-1);
+                history.go(-1);
             }
         });
 

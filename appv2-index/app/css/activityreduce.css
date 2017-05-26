@@ -21,11 +21,8 @@
 .fullgive-sale-tap em{ width: 100%; height: auto; display: block; float: left; padding-bottom: .24rem; padding-top: .1rem}
 .fullgive-sale-tap em{ font-size:.18rem; color: #707070}
 .fullgive-sale-tap em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 600}
+.fullgive-sale-tap em del{font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
 .fullgive-sale-msg{ width:4.84rem; height:auto; display:block; float:right; position:relative; padding-left: .18rem}
-
-
-.fullgive-sale-msg del{ font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
-
 
 
 .fullgive-sale-btn{ float: left; width: 100%; height: auto}

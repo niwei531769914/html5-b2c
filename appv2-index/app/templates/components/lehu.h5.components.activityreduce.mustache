@@ -19,11 +19,18 @@
             </div>
 
             <div class="fullgive-sale-tap" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
-                <a href="javascript:;" class="fullgive-sale-title" >{{goodsName}}</a>
+                <a href="javascript:;" class="fullgive-sale-title">{{goodsName}}</a>
                 <a href="javascript:;" class="fullgive-sale-specif">
                     {{{lehu-rulers goodsSpecName}}}
                 </a>
-                <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+                {{^lehu-showDis promotionPrice goodsItemPrice}}
+                    <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+                {{/lehu-showDis}}
+                {{#lehu-showDis promotionPrice goodsItemPrice}}
+                    <em>活动价：<i>¥ {{promotionPrice}}</i>
+                        <del>￥{{goodsItemPrice}}</del>
+                    </em>
+                {{/lehu-showDis}}
             </div>
             <div class="fullgive-sale-msg">
 

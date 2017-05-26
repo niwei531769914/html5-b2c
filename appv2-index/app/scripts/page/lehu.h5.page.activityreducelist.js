@@ -26,12 +26,10 @@ define('lehu.h5.page.activityreducelist', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
 
             /**
@@ -87,8 +85,8 @@ define('lehu.h5.page.activityreducelist', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
-                if (param.from == "app") {
+
+                if (param.hyfrom) {
                     $('.header').hide();
                     $('.fullgive_ad').css('top',0);
                     return false;
@@ -100,11 +98,11 @@ define('lehu.h5.page.activityreducelist', [
                 var STOREACTIVITY = element.attr('data-storeActivityId');
 
                 var param = can.deparam(window.location.search.substr(1));
-                if(param.from == "app"){
-                    window.location.href = "activityreduce.html?from=app&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                if(param.hyfrom == "app"){
+                    window.location.href = "activityreduce.html?hyfrom=app&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
                 }
-                else if(param.from == "share"){
-                    window.location.href = "activityreduce.html?from=share&activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
+                else {
+                    window.location.href = "activityreduce.html?activityId=" + ACTIVITY +"&storeActivityId=" + STOREACTIVITY;
                 }
 
                 return false;
@@ -120,9 +118,7 @@ define('lehu.h5.page.activityreducelist', [
 
         var param = can.deparam(window.location.search.substr(1));
 
-        if(param.from == "share"){
-            new LHDownload(null,{
-                "position":"bottom"
-            });
+        if(!param.hyfrom){
+            new LHDownload();
         }
     });

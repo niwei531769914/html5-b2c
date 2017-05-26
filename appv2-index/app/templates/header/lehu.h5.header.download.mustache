@@ -1,74 +1,92 @@
-<div class="downloadapp" style="display: none; font-size: 14px">
+<div class="downloadapp" style="font-size: 14px">
     <div class="downloadapp-content">
-      {{^canotclose}}<a class="downloadapp-close">X</a>{{/canotclose}}
-      <span class="logo-downloadapp"><img src="images/Shortcut_114_114.png" width="64" height="64" alt=""></span>
-      <div class="downloadapp-c1">
-        <p class="downloadapp-c1r1">{{title}}</p>
-        <p class="downloadapp-c1r2">{{subtitle}}</p>
-        <img class="downloadapp-c1r3" src="images/good.png" width="62" height="10" alt="">
-      </div>
-      <a class="downloadapp-c2" href="javascript:void(0)" id="btnOpenApp">进入</a>
+        <a class="downloadapp-close"><img src="images/close.png"></a>
+        <span class="logo-downloadapp"><img src="images/Shortcut_114_114.png" alt=""></span>
+        <div class="downloadapp-c1">
+            <p class="downloadapp-c1r1">{{title}}</p>
+            <p class="downloadapp-c1r2">{{subtitle}}</p>
+        </div>
+        <a class="downloadapp-c2" href="javascript:void(0)" id="btnOpenApp">立即打开</a>
     </div>
 </div>
 <style type="text/css">
-.downloadapp-content {
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  bottom: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #000000;
-  width: 100%; }
+    .downloadapp-content {
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        bottom: 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: #000000;
+        width: 100%;
+    }
 
-.downloadapp-c1 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
+    .downloadapp-c1 {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
 
-.downloadapp-c1r1 {
-  color: #ffffff; }
+    .downloadapp-c1r1 {
+        color: #ffffff;
+        font-size: .26rem;
+    }
 
-.downloadapp-c1r2 {
-  color: #ffffff; }
+    .downloadapp-c1r2 {
+        color: #ffffff;
+        font-size: .20rem;
+    }
 
-.downloadapp-c2 {
-  display: inline-block;
-  /*border: 2px solid #e62117;*/
-  color: #e62117;
-  background: #fff;
-  text-align: center;
-  -webkit-border-radius: 5px;
-          border-radius: 5px; }
+    .downloadapp-c2 {
+        display: inline-block;
+        /*border: 2px solid #e62117;*/
+        color: #e62117;
+        background: #fff;
+        text-align: center;
+    }
 
-.downloadapp-c2:visited {
-  color: #e62117; }
+    .downloadapp-c2:visited {
+        color: #e62117;
+    }
 
-.downloadapp-content {
-  height: 84px; }
+    .downloadapp-content {
+        height: 1rem;
+    }
 
-.downloadapp-close {
-  margin: 0 8px;
-    color: #ffffff;
-}
+    .downloadapp-close {
+        width: .5rem;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+    }
 
-.downloadapp-c1 {
-  margin-left: 8px;
-  line-height: 16px; }
+    .downloadapp-close img {
+        width: .5rem;
+        height: .5rem;
+    }
 
-.downloadapp-c2 {
-  width: 60px;
-  height: 26px;
-  line-height: 26px;
-  margin-right: 20px; }
+    .logo-downloadapp img {
+        width: .64rem;
+        height: .64rem;
+    }
 
-.downloadapp-c1r3 {
-  margin-top: 3px; }
+    .downloadapp-c1 {
+        margin-left: 8px;
+        line-height: 16px;
+    }
+
+    .downloadapp-c2 {
+        width: 21%;
+        height: 1rem;
+        line-height: 1rem;
+        background: #f64024;
+        color: #fff;
+    }
 </style>

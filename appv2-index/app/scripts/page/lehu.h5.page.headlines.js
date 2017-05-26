@@ -24,12 +24,10 @@ define('lehu.h5.page.headlines', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
 
             /**
@@ -45,6 +43,7 @@ define('lehu.h5.page.headlines', [
                 var renderList = can.mustache(template_page_headlines);
                 var html = renderList(this.options);
                 this.element.html(html);
+                var param = can.deparam(window.location.search.substr(1));
                 //    去除导航
                 this.deleteNav();
                 var api = new LHAPI({
@@ -57,20 +56,19 @@ define('lehu.h5.page.headlines', [
 
                         if(data.code == 1){
                             if(data.response == ""){
-                                var html = "";
-                                html += '<p>春眠不觉晓</p><p>处处问题鸟</p>';
-                                console.log(html);
-                                $('.line-content-title').empty().append(html);
-                                $('.line-content-detail').html("滚蛋！");
                                 return false;
                             }
-                            var CONTENT = data.response[0];
+                            var CONTENT = data.response;
                             console.log(CONTENT);
                             var html = "";
-                            html += '<p>' + CONTENT.begintime + '</p><p>' + CONTENT.articleTitle + '</p>';
-                            console.log(html);
-                            $('.line-content-title').empty().append(html);
-                            $('.line-content-detail').html(CONTENT.articleContent);
+                            for(var i =0; i <CONTENT.length; i++){
+                                if( CONTENT[i].id == param.id){
+                                    html += '<p>' + CONTENT[i].begintime + '</p><p>' + CONTENT[i].articleTitle + '</p>';
+                                    $('.line-content-title').empty().append(html);
+                                    $('.line-content-detail').html(CONTENT[i].articleContent);
+                                    return false;
+                                }
+                            }
 
                         }
 
@@ -86,8 +84,7 @@ define('lehu.h5.page.headlines', [
 
             deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
-                if(param.from == "app"){
+                if(param.hyfrom){
                     $('.header').hide();
                     return false;
                 }

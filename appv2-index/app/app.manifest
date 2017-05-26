@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-#v1.4.81
+#v1.4.118
 
 
 CACHE:
@@ -16,6 +16,11 @@ scripts/lehu.h5.page.registerhelp.js
 scripts/lehu.h5.page.coupon.js
 scripts/lehu.h5.page.carousel.js
 scripts/lehu.h5.page.servers.js
+scripts/lehu.h5.page.activitydonate.js
+scripts/lehu.h5.page.activityreduce.js
+scripts/lehu.h5.page.activityreducelist.js
+scripts/lehu.h5.page.activitydonatelist.js
+scripts/lehu.h5.page.timeLimit.js
 
 
 images/Shortcut_114_114.png

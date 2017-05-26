@@ -92,7 +92,8 @@ define('lehu.h5.component.carousel', [
                 }
                 if (lottery.speed < 40) {
                     lottery.speed = 40;
-                };
+                }
+                ;
 
                 lottery.timer = setTimeout(function () {
                     roll(lotteryIndex, tip);
@@ -120,16 +121,16 @@ define('lehu.h5.component.carousel', [
                     var lottery = list[index];
                     // 谢谢参与
                     if (lottery.prizeType == 1) {
-                        return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
+                        return "<p class='lottery-bg00  lottery-unit-" + index + "'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
                     } else if (lottery.prizeType == 2) { // 优惠券
 
-                        if (lottery.lhqType ==1) {
-                            return "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
-                        } else if(lottery.lhqType == 2) {
-                            return  "<p class='lottery-bg01 lottery-unit-"+ index+"'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" +  lottery.condition2 +"</span></p>";
+                        if (lottery.lhqType == 1) {
+                            return "<p class='lottery-bg01 lottery-unit-" + index + "'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span>￥" + lottery.condition2 + "<b>现金券</b></span></p>";
+                        } else if (lottery.lhqType == 2) {
+                            return "<p class='lottery-bg01 lottery-unit-" + index + "'><em><img src='images/carousel/ic_product.png'>乐虎券</em><i>" + lottery.prizeName + "</i><span><b>满</b>" + lottery.condition1 + "<b>减</b>" + lottery.condition2 + "</span></p>";
                         }
                     } else {
-                        return  "<p class='lottery-bg00  lottery-unit-"+ index+"'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
+                        return "<p class='lottery-bg00  lottery-unit-" + index + "'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
                     }
                 }
             },
@@ -139,37 +140,33 @@ define('lehu.h5.component.carousel', [
              * @description 初始化方法
              */
             init: function () {
+                this.luckId = "";
                 this.initData();
                 this.render();
-                //    分享
-                this.share();
-
+             //   this.localStronge();
             },
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
-                    this.LOACTION = 'http://118.178.227.135:8083'
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                    this.LOACTION = 'http://121.196.208.98:28080'
-                }
+                this.URL = HOST;
             },
 
             render: function () {
 
-                this.userId = busizutil.getUserId();
+                this.user = busizutil.getUserId();
 
                 var params = {};
 
-                if (this.userId) {
-                    params.userId = this.userId;
+                if (this.user) {
+                    params.userId = this.user.userId;
+                    //   params.token = this.userId.token;
                 } else {
                     params.userId = "";
+                    // params.token = "";
                 }
-
                 var that = this;
 
                 var api = new LHAPI({
@@ -210,7 +207,7 @@ define('lehu.h5.component.carousel', [
 
                         // luck_id
                         that.luckId = data.response.id;
-
+                        console.log(that.luckId);
                         var renderList = can.mustache(template_components_carousel);
                         var html = renderList(that.options, that.helpers);
                         that.element.html(html);
@@ -221,17 +218,21 @@ define('lehu.h5.component.carousel', [
                         //  去除导航事件
                         that.deleteNav();
 
-                        if (!that.userId) {
+                        if (!that.user) {
                             $("#nologin").show();
                             $("#alreadylogin").hide();
                         } else {
                             $("#nologin").hide();
                             $("#alreadylogin").show();
                         }
+                        //    分享
+                        that.share();
                     })
                     .fail(function (error) {
                         util.tip(error.msg);
                     });
+
+
             },
 
             scrollZhongjiangjilu: function () {
@@ -259,10 +260,11 @@ define('lehu.h5.component.carousel', [
                 $(".lottery-bt").addClass("disable");
                 $('.pop_win_name').empty();
                 this.param = {
-                    "userId": this.userId,
+                    "userId": this.user.userId,
+                    "strToken": this.user.token,
+                    "strUserId": this.user.userId,
                     "luckActiveId": this.luckId
                 };
-
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     data: JSON.stringify(this.param),
@@ -290,13 +292,13 @@ define('lehu.h5.component.carousel', [
                         if (data.response.prizeId) {
                             for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
                                 if (that.options.luckProbabilityList[i].id == data.response.prizeId) {
-                                    if(that.options.luckProbabilityList[i].prizeType == 2){
+                                    if (that.options.luckProbabilityList[i].prizeType == 2) {
                                         lotteryIndex = i;
                                         lotteryInfo = that.options.luckProbabilityList[i];
                                         tip = "恭喜您获得" + lotteryInfo.prizeName;
                                         break;
                                     }
-                                    else if(that.options.luckProbabilityList[i].prizeType == 1){
+                                    else if (that.options.luckProbabilityList[i].prizeType == 1) {
                                         lotteryIndex = i;
                                         lotteryInfo = that.options.luckProbabilityList[i];
                                         tip = "很遗憾您没有中奖~";
@@ -338,16 +340,18 @@ define('lehu.h5.component.carousel', [
                 var param = can.deparam(window.location.search.substr(1));
                 this.userId = busizutil.getUserId();
                 if (!this.userId) {
-                    if (util.isMobile.WeChat() || param.from == "share") {
-                        location.href = "login.html?from=" + escape(location.href);
-                        return false;
-                    } else {
+                    if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {}
                         };
                         LHHybrid.nativeFun(jsonParams);
                         return false;
+                    } else {
+
+                        location.href = "login.html?hyfrom=" + escape(location.href);
+                        return false;
+
                     }
                 }
                 this.getLottery();
@@ -356,17 +360,18 @@ define('lehu.h5.component.carousel', [
             "#login click": function (element, event) {
                 var param = can.deparam(window.location.search.substr(1));
 
-                if (util.isMobile.WeChat() || param.from == "share") {
-                    location.href = "login.html?from=carousel.html";
-                    return false;
-                } else {
+                if (param.hyfrom) {
                     var jsonParams = {
                         'funName': 'login',
                         'params': {}
                     };
                     LHHybrid.nativeFun(jsonParams);
-
                     return false;
+
+                } else {
+                    location.href = "login.html?hyfrom=carousel.html";
+                    return false;
+
                 }
             },
 
@@ -387,32 +392,33 @@ define('lehu.h5.component.carousel', [
             },
 
             //分享
-            share:function () {
+            share: function () {
                 var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
-                        "shouldShare":1,
-                        "shareTitle":'抽奖',
-                        "shareUrl": that.LOACTION + '/front/carousel.html?from=share',
-                        "shareImage":'',
-                        "shareContent":'我是谁'
+                        "shouldShare": 1,
+                        "shareTitle": '汇银乐虎全球购-幸运大转盘',
+                        "shareUrl": that.URL + '/front/carousel.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareContent": '汇银乐虎全球购，幸运大转盘，奖品抽到你手软！',
+                        "luckActiveId": that.luckId
                     },
                 };
-                console.log(jsonParams.funName);
+                console.log(jsonParams);
                 LHHybrid.nativeFun(jsonParams);
             },
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.from == "app") {
+                if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     return false;
                 }
             },
 
             '.back click': function () {
-                    history.go(-1);
+                history.go(-1);
             }
         });
 

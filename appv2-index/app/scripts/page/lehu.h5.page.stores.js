@@ -24,12 +24,10 @@ define('lehu.h5.page.stores', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
 
             /**
@@ -76,8 +74,8 @@ define('lehu.h5.page.stores', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
-                if (param.from == "app") {
+
+                if (param.hyfrom) {
                     $('.header').hide();
                     return false;
                 }

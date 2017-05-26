@@ -29,7 +29,7 @@ define('lehu.h5.component.register', [
             init: function () {
                 this.initData();
                 var params = can.deparam(window.location.search.substr(1));
-                this.from = params.from;
+                this.from = params.hyfrom;
                 var renderList = can.mustache(template_components_register);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -72,12 +72,10 @@ define('lehu.h5.component.register', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > -1) {
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
 
             /*密码显示按钮*/

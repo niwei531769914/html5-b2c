@@ -21,14 +21,14 @@ define('lehu.h5.page.graphicdetails', [
         Fastclick.attach(document.body);
 
         var GraphicDetails = can.Control.extend({
+
+
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf('118')>-1){
-                    this.URL = 'http://118.178.227.135';
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                }
+                this.URL = HOST;
             },
             /**
              * [init 初始化]

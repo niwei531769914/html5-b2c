@@ -53,14 +53,10 @@ define('lehu.h5.component.timeLimit', [
 
             initDate: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf('118') > -1) {
-                    this.URL = 'http://118.178.227.135';
-                    this.LOACTION = 'http://118.178.227.135:8083'
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
-                else {
-                    this.URL = 'http://121.196.208.98:28080';
-                    this.LOACTION = 'http://121.196.208.98:28080'
-                }
+                this.URL = HOST;
             },
 
             render: function () {
@@ -89,7 +85,7 @@ define('lehu.h5.component.timeLimit', [
                                 }
                                 html += "<div class='tabs-title'>";
                                 for (var k = 0; k < TABLIST.length; k++) {
-                                    if (TABLIST[k] == 0) {
+                                    if (TABLIST[k].status == 2) {
                                         html += "<div class = 'time-title'><span class='time-title-count'>本次抢购即将开始</span></div>"
                                     }
                                     else {
@@ -130,7 +126,8 @@ define('lehu.h5.component.timeLimit', [
                             }
                             //渲染时间点
                             $(".tabs").empty().append(html);
-                            $(".tabs").css("background","#f5a623");
+                            $(".tabs").css("background", "#f5a623");
+                            $(".tabs").css("box-shadow", "0px 1px 4px 0px rgb( 225, 225, 225 )");
                             //倒计时插入
                             that.renderSecondkillList(data.nowTime, that.juli);
 
@@ -222,6 +219,7 @@ define('lehu.h5.component.timeLimit', [
                                 return false;
                             }
                             var HTML = "";
+                            var TOALEWIDHT = [];
                             for (var i = 0; i < BOXLIST.length; i++) {
                                 //状态为1
                                 if (status == 1) {
@@ -233,13 +231,38 @@ define('lehu.h5.component.timeLimit', [
 
                                     } else if (BOXLIST[i].status == 2) {
 
-                                        HTML += "<img  class='lazyload'  style='opacity: .7' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
+                                        if (parseFloat(BOXLIST[i].total) == 0) {
+
+                                            HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
+
+                                        } else if (parseFloat(BOXLIST[i].total) >= 1) {
+
+                                            HTML += "<img  class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
+                                        }
                                     }
 
-                                    HTML += "</a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a>" + "<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em>";
+                                    HTML += "</a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a href='javascript:;' class='time-sale-ruler'>";
+                                    if (BOXLIST[i].goodsSpecName) {
+                                        var goodsSpecName = BOXLIST[i].goodsSpecName;
+                                        var goodsrulers = [];
+                                        goodsrulers = goodsSpecName.split('+');
+                                        for (var j = 0; j < goodsrulers.length; j++) {
+                                            HTML += "<span>" + goodsrulers[j] + "</span>";
+                                        }
+                                    }
+                                    HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em>";
+
 
                                     if (BOXLIST[i].status == 1) {
-                                        HTML += "<div class='time-sale-btn'><span><em class='time-sale-active'>还剩" + BOXLIST[i].total + "件</em></span><a href='javascript:;'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' class='time-sale-bt'>立即抢</a></div></div></div>";
+
+
+                                        var TOTAL = BOXLIST[i].total;
+                                        var INITTOTAL = 200 || BOXLIST[i].originalTotal;
+
+                                         TOTALWIDTH[i] = (parseFloat(TOTAL)/parseFloat(INITTOTAL) *100) + "%";
+
+                                        HTML += "<div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em><em class='time-sale-process time-sale-width" + [i] +"'></em></span><a href='javascript:;'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' class='time-sale-bt'>立即抢</a></div></div></div>";
+
                                     }
                                     else if (BOXLIST[i].status == 2) {
                                         HTML += "<div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
@@ -248,8 +271,17 @@ define('lehu.h5.component.timeLimit', [
                                 //状态为2
                                 if (status == 2) {
 
-                                    HTML += "<div class='time-sale-box'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "'><a href='javascript:;' class='time-sale-img'><img class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'></a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a>" +
-                                        "<div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em></span><a href='javascript:;' class='time-sale-st'>即将开始</a></div></div></div>"
+                                    HTML += "<div class='time-sale-box'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "'><a href='javascript:;' class='time-sale-img'><img class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'></a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a href='javascript:;' class='time-sale-ruler'>";
+
+                                    if (BOXLIST[i].goodsSpecName) {
+                                        var goodsSpecName = BOXLIST[i].goodsSpecName;
+                                        var goodsrulers = [];
+                                        goodsrulers = goodsSpecName.split('+');
+                                        for (var j = 0; j < goodsrulers.length; j++) {
+                                            HTML += "<span>" + goodsrulers[j] + "</span>";
+                                        }
+                                    }
+                                    HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em></span><a href='javascript:;' class='time-sale-st'>即将开始</a></div></div></div>"
                                 }
 
                                 //状态为3
@@ -265,7 +297,18 @@ define('lehu.h5.component.timeLimit', [
                                         HTML += "<img  class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
                                     }
 
-                                    HTML += "</a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><em>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
+                                    HTML += "</a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a href='javascript:;' class='time-sale-ruler'>";
+
+                                    if (BOXLIST[i].goodsSpecName) {
+                                        var goodsSpecName = BOXLIST[i].goodsSpecName;
+                                        var goodsrulers = [];
+                                        goodsrulers = goodsSpecName.split('+');
+                                        for (var j = 0; j < goodsrulers.length; j++) {
+                                            HTML += "<span>" + goodsrulers[j] + "</span>";
+                                        }
+                                    }
+
+                                        HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
                                 }
 
                             }
@@ -279,6 +322,16 @@ define('lehu.h5.component.timeLimit', [
                             else {
                                 $(".time-sale-main").empty().append(HTML);
                                 that.clear = true;
+                            }
+
+                            if (status == 1) {
+
+                                for(var k= 0; k < BOXLIST.length ; k++){
+                                    var INDEX = pageIndex -1;
+                                    $('.time-sale-width' + INDEX + [i]).css("width",TOALEWIDHT[i]);
+
+                                }
+
                             }
 
 
@@ -361,16 +414,16 @@ define('lehu.h5.component.timeLimit', [
             },
 
             //分享
-            share:function () {
+            share: function () {
                 var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
-                        "shouldShare":1,
-                        "shareTitle":'限时折扣',
-                        "shareUrl": that.LOACTION + '/front/timeLimit.html?from=share',
-                        "shareImage":'',
-                        "shareContent":'我是谁'
+                        "shouldShare": 1,
+                        "shareTitle": '限时折扣',
+                        "shareUrl": that.URL + '/front/timeLimit.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareContent": '我是谁'
                     },
                 };
                 console.log(jsonParams.funName);
@@ -380,8 +433,7 @@ define('lehu.h5.component.timeLimit', [
             /*去除header*/
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                //console.log(param.from);
-                if (param.from == "app" || util.isMobile.QQ() || util.isMobile.WeChat()) {
+                if ( param.hyfrom  || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     $('.tabs').css('top', '0');
                     $('.time-sale-main').css('margin-top', '1.6rem');

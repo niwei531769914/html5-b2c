@@ -18,24 +18,27 @@
 .time-sale-box{ width:100%; height:auto; display:block; float:left; margin:.15rem 0 0; background: #ffffff; padding: .2rem 0}
 .time-sale-img{ width:2.4rem; height:2.4rem; display:block; float:left; margin:0 0 0 .16rem; background: #f5f5f5}
 .time-sale-img img{ width:2.4rem; height:2.4rem;  display: block; float:left;}
-.time-sale-title{ width:60%; height:.8rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.35rem; display:block; float:right; margin-right:4%;word-break:break-all; font-weight: 500; padding-top: .1rem; padding-bottom: .16rem}
+.time-sale-title{ width:60%; height:.7rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.34rem; display:block; float:right; margin-right:4%;word-break:break-all; font-weight: 500; padding-top: .1rem; }
 .time-sale-msg{ width:64%; height:auto; display:block; float:right; position:relative;}
-.time-sale-msg em{ width: 100%; height: auto; display: block; float: left}
-.time-sale-msg del{ width:auto; height:auto;display:inline-block;}
-.time-sale-msg em{ font-size:.18rem; color: #707070}
-.time-sale-msg em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 500}
+.time-sale-msg .time-sale-price{ width: 100%; height: auto; display: block; float: left;font-size:.18rem; color: #707070}
+.time-sale-msg .time-sale-price i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 500}
 .time-sale-msg del{ font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
 
+.time-sale-msg .time-sale-ruler{width:100%; height:auto; display:block; float:left; font-size: .24rem; color: #757575; padding-bottom: .08rem; padding-top: .1rem}
+.time-sale-msg .time-sale-ruler span{ margin-right: .16rem}
 
 .time-sale-btn{ float: left; width: 100%; height: auto; margin-top: .3rem}
 
-.time-sale-msg span em{ width:70%; height:.28rem; display:block; float:left; font-size:.2rem; color:#212121;line-height: .28rem;border-radius: .28rem 0 0 .28rem; text-align: right; padding-right: 10%}
-.time-sale-msg span{ width:50%; height:.28rem; display:inline-block;color:#212121;line-height: .28rem; border: .02rem solid #f5ac30; border-radius: .28rem; float: left; margin-top: .1rem; margin-right: .5rem}
-.time-sale-msg a{padding:0 .3rem; right:0;display: inline-block ;  float: left}
+.time-sale-btn span{ position: relative}
+.time-sale-process{ position: absolute; width: 70%; height: .28rem; background: #f9ca7b; display: block;border-radius: .28rem 0 0 .28rem; opacity: .6}
+
+
+.time-sale-msg .time-sale-btn span .time-sale-tab{ width:70%; height:.28rem; display:block; float:left; font-size:.2rem; line-height: .28rem;border-radius: .28rem 0 0 .28rem; text-align: right; padding-right: 10%; z-index: 1}
+.time-sale-msg .time-sale-btn span{ width:50%; height:.28rem; display:inline-block; line-height: .28rem; border: 1px solid #f5ac30; border-radius: .28rem; float: left; margin-top: .1rem; margin-right: .5rem}
+.time-sale-msg .time-sale-btn a{padding:0 .3rem; right:0;display: inline-block ;  float: left}
 
 
 .time-sale-bt{ width:auto; height:.5rem; line-height:.5rem; padding:0 .3rem; border-radius:.06rem; background:#f53828; font-size:.22rem; color:#ffffff;}
 .time-sale-ct,.time-sale-st{ font-size: .22rem; width: auto; height: .5rem; line-height: .5rem; color: #ffffff; background: #bdbdbd; border-radius:.06rem; }
 .time-sale-msg span i{ color:#fe0101; margin-left:.15rem;}
 .time-sale-msg span .time-sale-tab{ color: #c27d0a}
-.time-sale-msg span .time-sale-active{  color: #c27c07; background: #f9ca7b}
