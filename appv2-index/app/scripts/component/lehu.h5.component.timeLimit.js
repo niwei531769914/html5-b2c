@@ -73,6 +73,7 @@ define('lehu.h5.component.timeLimit', [
                             var html = "";
                             if (TABLIST == "") {
                                 $(".loading-date").hide();
+                                $(".nlist_no_activity").show();
                                 return false;
                             }
 
@@ -125,7 +126,7 @@ define('lehu.h5.component.timeLimit', [
                                 html += "</div>";
                             }
                             //渲染时间点
-                            $(".tabs").empty().append(html);
+                            $(".tabs").show().empty().append(html);
                             $(".tabs").css("background", "#f5a623");
                             $(".tabs").css("box-shadow", "0px 1px 4px 0px rgb( 225, 225, 225 )");
                             //倒计时插入
@@ -320,7 +321,7 @@ define('lehu.h5.component.timeLimit', [
                                 $(".time-sale-main").append(HTML);
                             }
                             else {
-                                $(".time-sale-main").empty().append(HTML);
+                                $(".time-sale-main").show().empty().append(HTML);
                                 that.clear = true;
                             }
 
@@ -329,11 +330,8 @@ define('lehu.h5.component.timeLimit', [
                                 for(var k= 0; k < BOXLIST.length ; k++){
                                     var INDEX = pageIndex -1;
                                     $('.time-sale-width' + INDEX + [i]).css("width",TOALEWIDHT[i]);
-
                                 }
-
                             }
-
 
                             //图片懒加载
                             $.imgLazyLoad();

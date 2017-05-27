@@ -64,6 +64,7 @@ define('lehu.h5.page.activitydonatelist', [
                         if(data.code == 1){
                             var CONTENT = data.response;
                             if(CONTENT == "" ){
+                                $(".nlist_no_activity").show();
                                 return false;
                             }
                             var html = "";

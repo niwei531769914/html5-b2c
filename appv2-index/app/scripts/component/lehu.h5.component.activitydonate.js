@@ -27,15 +27,15 @@ define('lehu.h5.component.activitydonate', [
             param: {},
 
             helpers: {
-                'lehu-rulers': function(goodsSpecName) {
+                'lehu-rulers': function (goodsSpecName) {
                     var rulerList = goodsSpecName().split('+');
                     var HTML = "";
-                    for(var i = 0; i < rulerList.length; i++){
+                    for (var i = 0; i < rulerList.length; i++) {
                         HTML += "<span>" + rulerList[i] + "</span>"
                     }
                     return HTML;
                 },
-                'lehu-showDis': function(discount, price, options) {
+                'lehu-showDis': function (discount, price, options) {
                     if (_.isFunction(discount)) {
                         discount = discount();
                     }
@@ -60,13 +60,13 @@ define('lehu.h5.component.activitydonate', [
                 //    是否显示购物车
                 this.shoppingCart();
 
-            //    分享
+                //    分享
                 this.share();
             },
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
@@ -126,7 +126,7 @@ define('lehu.h5.component.activitydonate', [
                 this.options.data.attr("supplement.noData", false);
 
                 var renderFn = can.mustache(template_components_activitydonate);
-                var html = renderFn(that.options.data,that.helpers);
+                var html = renderFn(that.options.data, that.helpers);
                 this.element.html(html);
                 //    去导航条
                 this.deleteNav();
@@ -266,6 +266,22 @@ define('lehu.h5.component.activitydonate', [
 
                 api.sendRequest()
                     .done(function (data) {
+                        if (data.code == -10) {
+                            util.tip(data.msg, 2000);
+                            setTimeout(function () {
+                                if (param.hyfrom) {
+                                    var jsonParams = {
+                                        'funName': 'login',
+                                        'params': {}
+                                    };
+                                    LHHybrid.nativeFun(jsonParams);
+                                } else {
+
+                                    location.href = "login.html?hyfrom=" + escape(location.href);
+                                }
+                            }, 2000);
+                            return false;
+                        }
                         if (data.code == 1) {
                             util.tip("成功加入购物车！", 3000);
                         }
@@ -299,17 +315,17 @@ define('lehu.h5.component.activitydonate', [
             },
 
             //分享
-            share:function () {
+            share: function () {
                 var param = can.deparam(window.location.search.substr(1));
                 var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
-                        "shouldShare":1,
-                        "shareTitle":'满减',
+                        "shouldShare": 1,
+                        "shareTitle": '满减',
                         "shareUrl": that.URL + '/front/activitydonate.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
                         "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
-                        "shareContent":'我是谁'
+                        "shareContent": '我是谁'
                     },
                 };
                 console.log(jsonParams.funName);

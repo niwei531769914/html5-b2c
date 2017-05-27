@@ -162,10 +162,10 @@ define('lehu.h5.component.carousel', [
 
                 if (this.user) {
                     params.userId = this.user.userId;
-                    //   params.token = this.userId.token;
+
                 } else {
                     params.userId = "";
-                    // params.token = "";
+
                 }
                 var that = this;
 
@@ -207,7 +207,7 @@ define('lehu.h5.component.carousel', [
 
                         // luck_id
                         that.luckId = data.response.id;
-                        console.log(that.luckId);
+
                         var renderList = can.mustache(template_components_carousel);
                         var html = renderList(that.options, that.helpers);
                         that.element.html(html);
@@ -272,7 +272,23 @@ define('lehu.h5.component.carousel', [
                 });
                 api.sendRequest()
                     .done(function (data) {
+                        if (data.code == -10) {
+                            util.tip(data.msg, 2000);
+                            setTimeout(function () {
+                                var param = can.deparam(window.location.search.substr(1));
+                                if (param.hyfrom) {
+                                    var jsonParams = {
+                                        'funName': 'login',
+                                        'params': {}
+                                    };
+                                    LHHybrid.nativeFun(jsonParams);
+                                } else {
 
+                                    location.href = "login.html?hyfrom=" + escape(location.href);
+                                }
+                            }, 2000);
+                            return false;
+                        }
                         //如果返回code不等于1
                         if (data.code !== 1) {
                             util.tip(data.msg, 3000);
@@ -338,8 +354,8 @@ define('lehu.h5.component.carousel', [
                     return false;
                 }
                 var param = can.deparam(window.location.search.substr(1));
-                this.userId = busizutil.getUserId();
-                if (!this.userId) {
+                this.user = busizutil.getUserId();
+                if (!this.user) {
                     if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',

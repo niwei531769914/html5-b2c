@@ -41,7 +41,7 @@
 
 
 /*进入我的乐虎券*/
-.enter_coupon{ width: 94%; height: .8rem; display: block; float: left; background: #ffffff; margin-top: .1rem; padding: 0 3%}
+.enter_coupon{ width: 94%; height: .8rem; display: block; float: left; background: #ffffff; margin-top: .1rem; padding: 0 3%; margin-bottom: 1rem}
 .enter_coupon_me{ float: left; color: #000000; font-size: .20rem; line-height: .8rem}
 .enter_coupon_me img{ width: .4rem; height: auto; margin-right: .1rem; position: relative; top: -.02rem}
 .enter_coupon_te{float: right; line-height: .5em}

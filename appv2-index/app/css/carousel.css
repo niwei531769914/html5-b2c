@@ -46,7 +46,7 @@
 .dial_msg_box li em{display:block; float:left;}
 
 .dial_footer{ width:86%; height:auto; margin:0 5% 0;float:left; background: rgba(0,0,0,.2); padding: .2rem 2% 0; border-radius: .16rem; -moz-border-radius: .16rem; -webkit-border-radius: .16rem}
-.dial_footer span{ width:1.62rem; height:.42rem; display:block; float:left;  background: #f5a623; color: #ffffff; font-size: .28rem; text-align: center; line-height: .42rem; position: relative; left: -4%}
+.dial_footer .ruler{ width:1.62rem; height:.42rem; display:block; float:left;  background: #f5a623; color: #ffffff; font-size: .28rem; text-align: center; line-height: .42rem; position: relative; left: -4%}
 .dial_footer ul{font-size:.26rem; color:#ffffff; line-height:.4rem; display:block; float:left; margin-top: .1rem; width: 100%; height: auto; max-height: 3.3rem; overflow: auto; padding-bottom: .2rem}
 .dial_footer ul li{ width: 100%; height: auto; }
 

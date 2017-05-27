@@ -9,7 +9,7 @@
 /*容器*/
 .fullgive-sale{ width:100%; height:auto; display:block; float:left; background: #f5f5f5;}
 .fullgive-sale-box{ width:100%; height:auto; display:block; float:left; margin:.15rem 0 0; background: #ffffff; padding: .2rem 0}
-.fullgive-sale-img{ width:2.4rem; height:2.4rem; display:block; float:left; margin:0 0 0 .08rem; background: #f5f5f5}
+.fullgive-sale-img{ width:2.4rem; height:2.4rem; display:block; float:left; margin:0 0 0 .08rem; background: #f5f5f5; overflow: hidden}
 .fullgive-sale-img img{ width:100%; height:auto; display: block; float:left;}
 
 .fullgive-sale-tap{ width: 4.54rem; height: auto; float: left; margin-left: 0.18rem }

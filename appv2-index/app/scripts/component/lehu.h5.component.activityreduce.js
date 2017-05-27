@@ -29,15 +29,15 @@ define('lehu.h5.component.activityreduce', [
 
             param: {},
             helpers: {
-                'lehu-rulers': function(goodsSpecName) {
+                'lehu-rulers': function (goodsSpecName) {
                     var rulerList = goodsSpecName().split('+');
                     var HTML = "";
-                    for(var i = 0; i < rulerList.length; i++){
+                    for (var i = 0; i < rulerList.length; i++) {
                         HTML += "<span>" + rulerList[i] + "</span>"
                     }
                     return HTML;
                 },
-                'lehu-showDis': function(discount, price, options) {
+                'lehu-showDis': function (discount, price, options) {
                     if (_.isFunction(discount)) {
                         discount = discount();
                     }
@@ -69,7 +69,7 @@ define('lehu.h5.component.activityreduce', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
@@ -261,7 +261,23 @@ define('lehu.h5.component.activityreduce', [
 
                 api.sendRequest()
                     .done(function (data) {
-                        if (data.code == 1) {
+                        if (data.code == -10) {
+                            util.tip(data.msg, 2000);
+                            setTimeout(function () {
+                                if (param.hyfrom) {
+                                    var jsonParams = {
+                                        'funName': 'login',
+                                        'params': {}
+                                    };
+                                    LHHybrid.nativeFun(jsonParams);
+                                } else {
+
+                                    location.href = "login.html?hyfrom=" + escape(location.href);
+                                }
+                            }, 2000);
+
+                        }
+                        else if (data.code == 1) {
                             util.tip("成功加入购物车！", 3000);
                         }
                         else {
@@ -273,7 +289,7 @@ define('lehu.h5.component.activityreduce', [
                     });
             },
 
-           // 去购物车
+            // 去购物车
             shoppingCart: function (element, event) {
                 var jsonParams = {
                     'funName': 'goto_shopping_cart',
@@ -294,17 +310,17 @@ define('lehu.h5.component.activityreduce', [
             },
 
             //分享
-            share:function () {
+            share: function () {
                 var param = can.deparam(window.location.search.substr(1));
                 var that = this;
                 var jsonParams = {
                     'funName': 'shareHandler',
                     'params': {
-                        "shouldShare":1,
-                        "shareTitle":'满减',
+                        "shouldShare": 1,
+                        "shareTitle": '满减',
                         "shareUrl": that.URL + '/front/activityreduce.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
-                        "shareImage": that.URL+ '/front/images/Shortcut_114_114.png',
-                        "shareContent":'我是谁'
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareContent": '我是谁'
                     },
                 };
                 console.log(jsonParams.funName);

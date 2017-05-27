@@ -83,7 +83,6 @@ define('lehu.h5.component.coupon', [
                             if (COUPONLIST == "") {
                                 $('.coupons_main').empty();
                                 $('.coupons_box_null').show();
-                                $('.enter_coupon').show();
                                 return false;
                             }
 
@@ -120,10 +119,8 @@ define('lehu.h5.component.coupon', [
                                 }
                             }
 
-
                             $('.coupons_box_null').hide();
                             $('.coupons_main').empty().append(html);
-                            $('.enter_coupon').show();
                         }
                         else {
                             util.tip(data.msg);
@@ -165,9 +162,7 @@ define('lehu.h5.component.coupon', [
                             }
                         };
                         LHHybrid.nativeFun(jsonParams);
-
                         return false;
-
                     } else  {
 
                         location.href = "login.html?hyfrom=coupon.html";
@@ -175,10 +170,10 @@ define('lehu.h5.component.coupon', [
 
                     }
                 }
-                this.uesCoupon(element, this.userId, couponid);
+                this.uesCoupon(element, this.user, couponid);
             },
 
-            uesCoupon: function (element, userId, couponid) {
+            uesCoupon: function (element, user, couponid) {
                 var that = this;
 
                 this.param = {
@@ -194,7 +189,24 @@ define('lehu.h5.component.coupon', [
                 });
                 api.sendRequest()
                     .done(function (data) {
+                        if (data.code == -10) {
+                            util.tip(data.msg, 2000);
+                            console.log(2);
+                            setTimeout(function () {
+                                var param = can.deparam(window.location.search.substr(1));
+                                if (param.hyfrom) {
+                                    var jsonParams = {
+                                        'funName': 'login',
+                                        'params': {}
+                                    };
+                                    LHHybrid.nativeFun(jsonParams);
+                                } else {
 
+                                    location.href = "login.html?hyfrom=" + escape(location.href);
+                                }
+                            }, 2000);
+                            return false;
+                        }
                         if (data.code == 1) {
                             util.tip("领取成功！", 3000);
                             $(element).parents('.coupons_box').remove();
@@ -214,8 +226,8 @@ define('lehu.h5.component.coupon', [
 
             '.enter_coupon click': function () {
                 var param = can.deparam(window.location.search.substr(1));
-                this.userId = busizutil.getUserId();
-                if (!this.userId) {
+                this.user = busizutil.getUserId();
+                if (!this.user) {
                     if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
@@ -237,20 +249,18 @@ define('lehu.h5.component.coupon', [
                     };
                     LHHybrid.nativeFun(jsonParams);
                 }
-                else if(util.isMobile.QQ() || util.isMobile.WeChat()){
-                    util.tip("此功能需要下载APP!");
-                }
                 else {
                     util.tip("此功能需要下载APP!");
                 }
-
             },
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
                 if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
-                    return false;
+                }
+                if(util.isMobile.QQ() || util.isMobile.WeChat()){
+                    $('.enter_coupon').hide();
                 }
             },
 
@@ -267,7 +277,6 @@ define('lehu.h5.component.coupon', [
                         "shareContent": '汇银乐虎全球购，赶紧领取优惠券吧，手慢无！'
                     },
                 };
-                console.log(jsonParams.funName);
                 LHHybrid.nativeFun(jsonParams);
             },
 
