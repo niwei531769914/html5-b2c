@@ -37,7 +37,9 @@ define('lehu.h5.component.coupon', [
                 this.render();
 
                 //    分享
-                this.share();
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    this.share();
+                }
             },
 
             initData: function () {

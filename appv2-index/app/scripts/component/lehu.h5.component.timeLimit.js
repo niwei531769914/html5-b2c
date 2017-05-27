@@ -46,8 +46,10 @@ define('lehu.h5.component.timeLimit', [
                 //滚动加载
                 this.bindScroll();
 
-                //分享
-                this.share();
+                //    分享
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    this.share();
+                }
 
             },
 
@@ -226,20 +228,14 @@ define('lehu.h5.component.timeLimit', [
                                 if (status == 1) {
                                     HTML += "<div class='time-sale-box'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' ><a href='javascript:;' class='time-sale-img'>";
 
-                                    if (BOXLIST[i].status == 1) {
+                                    if (parseFloat(BOXLIST[i].total) >= 1) {
 
                                         HTML += "<img class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
 
-                                    } else if (BOXLIST[i].status == 2) {
-
-                                        if (parseFloat(BOXLIST[i].total) == 0) {
+                                    } else if (parseFloat(BOXLIST[i].total) == 0) {
 
                                             HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
 
-                                        } else if (parseFloat(BOXLIST[i].total) >= 1) {
-
-                                            HTML += "<img  class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
-                                        }
                                     }
 
                                     HTML += "</a><a href='javascript:;' class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a href='javascript:;' class='time-sale-ruler'>";
@@ -254,18 +250,17 @@ define('lehu.h5.component.timeLimit', [
                                     HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em>";
 
 
-                                    if (BOXLIST[i].status == 1) {
-
+                                    if (parseFloat(BOXLIST[i].total) >= 1) {
 
                                         var TOTAL = BOXLIST[i].total;
-                                        var INITTOTAL = 200 || BOXLIST[i].originalTotal;
+                                        var INITTOTAL = BOXLIST[i].originalTotal;
 
-                                         TOTALWIDTH[i] = (parseFloat(TOTAL)/parseFloat(INITTOTAL) *100) + "%";
+                                         var TOTALWIDTH = (parseFloat(TOTAL)/parseFloat(INITTOTAL) *100) + "%";
 
-                                        HTML += "<div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em><em class='time-sale-process time-sale-width" + [i] +"'></em></span><a href='javascript:;'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' class='time-sale-bt'>立即抢</a></div></div></div>";
+                                        HTML += "<div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em><em class='time-sale-process' style='width: " + TOTALWIDTH + "'></em></span><a href='javascript:;'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' class='time-sale-bt'>立即抢</a></div></div></div>";
 
                                     }
-                                    else if (BOXLIST[i].status == 2) {
+                                    else if (parseFloat(BOXLIST[i].total) == 0) {
                                         HTML += "<div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
                                     }
                                 }
@@ -323,14 +318,6 @@ define('lehu.h5.component.timeLimit', [
                             else {
                                 $(".time-sale-main").show().empty().append(HTML);
                                 that.clear = true;
-                            }
-
-                            if (status == 1) {
-
-                                for(var k= 0; k < BOXLIST.length ; k++){
-                                    var INDEX = pageIndex -1;
-                                    $('.time-sale-width' + INDEX + [i]).css("width",TOALEWIDHT[i]);
-                                }
                             }
 
                             //图片懒加载

@@ -3,7 +3,7 @@
 .line-content{ width: 94%; height: auto; margin-top: .2rem; padding: 0 3%}
 .line-content .line-content-title img{ width: 100%; height: auto; margin-bottom: .2rem}
 .line-content .line-content-title p{ width: 100%; height: auto; line-height: .6rem}
-.line-content .line-content-title p:nth-of-type(1){ font-size: .26rem; font-weight: bolder; color: #000000}
-.line-content .line-content-title p:nth-of-type(2){ font-size: .36rem; font-weight: bolder; color: #000000}
-.line-content-detail{ margin: .1rem 0 .5rem 0 ; font-size: .20rem;line-height: .5rem }
+.line-content .line-content-title p:nth-of-type(1){ font-size: .3rem; font-weight: bolder; color: #000000}
+.line-content .line-content-title p:nth-of-type(2){ font-size: .38rem; font-weight: bolder; color: #000000}
+.line-content-detail{ margin: .1rem 0 .5rem 0 ; font-size: .24rem;line-height: .5rem; letter-spacing: 1px }
 .line-content-detail img{ width: 100%; height: auto; margin: .2rem 0}

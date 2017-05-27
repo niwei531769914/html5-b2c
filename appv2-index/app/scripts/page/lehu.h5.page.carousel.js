@@ -30,8 +30,7 @@ define('lehu.h5.page.carousel', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var wheel = new LHCarousel("#content");
-                new LHFooter();
+
                 var param = can.deparam(window.location.search.substr(1));
 
                 if(!param.hyfrom){
@@ -40,6 +39,10 @@ define('lehu.h5.page.carousel', [
                     // });
                     new LHDownload();
                 }
+                new LHFooter();
+                var wheel = new LHCarousel("#content");
+
+
             }
         });
 

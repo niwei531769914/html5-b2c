@@ -64,7 +64,10 @@ define('lehu.h5.component.activityreduce', [
                 this.shoppingCart();
 
                 //    分享
-                this.share();
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    this.share();
+                }
+
             },
 
             initData: function () {

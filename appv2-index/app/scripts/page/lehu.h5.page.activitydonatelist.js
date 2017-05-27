@@ -111,11 +111,12 @@ define('lehu.h5.page.activitydonatelist', [
                     history.go(-1);
             }
         });
-
-        new RegisterHelp('#content');
         var param = can.deparam(window.location.search.substr(1));
-        new LHFooter();
+
         if(!param.hyfrom){
             new LHDownload();
         }
+        new LHFooter();
+        new RegisterHelp('#content');
+
     });

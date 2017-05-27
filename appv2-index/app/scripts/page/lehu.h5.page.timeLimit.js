@@ -25,8 +25,6 @@ define('lehu.h5.page.timeLimit', [
 			 * @param  {[type]} options 选项
 			 */
 			init: function(element, options) {
-				var timeLimit = new LHTimeLimit("#content");
-				new LHFooter();
 
                 var param = can.deparam(window.location.search.substr(1));
 
@@ -36,6 +34,11 @@ define('lehu.h5.page.timeLimit', [
                     // });
                     new LHDownload();
                 }
+
+                new LHFooter();
+
+				var timeLimit = new LHTimeLimit("#content");
+
 			}
 		});
 

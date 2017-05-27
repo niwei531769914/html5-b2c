@@ -143,7 +143,10 @@ define('lehu.h5.component.carousel', [
                 this.luckId = "";
                 this.initData();
                 this.render();
-             //   this.localStronge();
+                //    分享
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    this.share();
+                }
             },
 
             initData: function () {
@@ -225,8 +228,7 @@ define('lehu.h5.component.carousel', [
                             $("#nologin").hide();
                             $("#alreadylogin").show();
                         }
-                        //    分享
-                        that.share();
+
                     })
                     .fail(function (error) {
                         util.tip(error.msg);

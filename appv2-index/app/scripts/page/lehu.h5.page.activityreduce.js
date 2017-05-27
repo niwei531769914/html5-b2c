@@ -28,8 +28,6 @@ define('lehu.h5.page.activityreduce', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var activityreduce = new LHActivityreduce("#content");
-                new LHFooter();
                 var param = can.deparam(window.location.search.substr(1));
 
                 if(!param.hyfrom){
@@ -38,6 +36,10 @@ define('lehu.h5.page.activityreduce', [
                     // });
                     new LHDownload();
                 }
+                new LHFooter();
+                var activityreduce = new LHActivityreduce("#content");
+
+
             }
         });
 

@@ -43,8 +43,8 @@ define('lehu.h5.page.registerhelp', [
             },
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
-                if (param.from == "app") {
+
+                if (param.hyfrom) {
                     $('.header').hide();
                     $('.login_main').css('margin-top',0);
                     return false;

@@ -61,7 +61,9 @@ define('lehu.h5.component.activitydonate', [
                 this.shoppingCart();
 
                 //    分享
-                this.share();
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    this.share();
+                }
             },
 
             initData: function () {
@@ -216,7 +218,7 @@ define('lehu.h5.component.activitydonate', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.lhfrom == "app") {
+                if (param.lhfrom) {
                     $('.header').hide();
                     $('.fullgive_ad').css('margin-top', 0);
                     return false;
@@ -230,7 +232,7 @@ define('lehu.h5.component.activitydonate', [
 
                 this.user = busizutil.getUserId();
                 if (!this.user) {
-                    if (param.lhfrom) {
+                    if (param.hyfrom) {
                         var jsonParams = {
                             'funName': 'login',
                             'params': {}
@@ -240,7 +242,7 @@ define('lehu.h5.component.activitydonate', [
 
                     } else {
 
-                        location.href = "login.html?lhfrom=" + escape(location.href);
+                        location.href = "login.html?hyfrom=" + escape(location.href);
                         return false;
                     }
                 }

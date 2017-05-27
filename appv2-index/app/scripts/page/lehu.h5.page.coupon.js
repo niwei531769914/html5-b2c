@@ -29,8 +29,6 @@ define('lehu.h5.page.coupon', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var coupon = new LHCoupon("#content");
-                new LHFooter();
 
                 var param = can.deparam(window.location.search.substr(1));
 
@@ -40,6 +38,9 @@ define('lehu.h5.page.coupon', [
                     // });
                     new LHDownload();
                 }
+                new LHFooter();
+                var coupon = new LHCoupon("#content");
+
 
             }
         });

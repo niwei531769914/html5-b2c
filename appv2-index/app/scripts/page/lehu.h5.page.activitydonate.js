@@ -28,17 +28,16 @@ define('lehu.h5.page.activitydonate', [
              * @param  {[type]} options 选项
              */
             init: function(element, options) {
-                var activityreward = new LHActivitydonate("#content");
-                new LHFooter();
-
                 var param = can.deparam(window.location.search.substr(1));
-
                 if(!param.hyfrom){
                     // new LHDownload(null,{
                     //     "position":"bottom"
                     // });
                     new LHDownload();
                 }
+                new LHFooter();
+
+                var activityreward = new LHActivitydonate("#content");
             }
         });
 
