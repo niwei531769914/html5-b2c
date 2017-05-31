@@ -5,6 +5,7 @@ define('lehu.h5.component.coupon', [
         'lehu.util',
         'lehu.h5.api',
         'lehu.hybrid',
+        'store',
 
         //'imagelazyload',
         'lehu.utils.busizutil',
@@ -12,7 +13,7 @@ define('lehu.h5.component.coupon', [
         'text!template_components_coupon'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid,store,
               busizutil,
               template_components_coupon) {
         'use strict';
@@ -37,14 +38,21 @@ define('lehu.h5.component.coupon', [
                 this.render();
 
                 //    分享
-                if(util.isMobile.Android() || util.isMobile.iOS()){
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
                     this.share();
                 }
+
+               //    IOS存userid和token
+                if (util.isMobile.iOS()) {
+                    this.localStronge();
+                }
+
+
             },
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
@@ -64,12 +72,15 @@ define('lehu.h5.component.coupon', [
                 if (!this.user) {
                     this.user = {};
                     this.user.userId = "";
+                    this.user.token = "";
                 }
                 this.param = {
                     "flag": flag,
                     "pageRows": 20,
                     "toPage": 1,
-                    "userId": this.user.userId
+                    "userId": this.user.userId,
+                    "strUserId": this.user.userId,
+                    "strToken": this.user.token
                 };
                 console.log(flag);
                 var api = new LHAPI({
@@ -165,7 +176,7 @@ define('lehu.h5.component.coupon', [
                         };
                         LHHybrid.nativeFun(jsonParams);
                         return false;
-                    } else  {
+                    } else {
 
                         location.href = "login.html?hyfrom=coupon.html";
                         return false;
@@ -239,7 +250,7 @@ define('lehu.h5.component.coupon', [
                         };
                         LHHybrid.nativeFun(jsonParams);
                         return false;
-                    } else  {
+                    } else {
                         location.href = "login.html?hyfrom=coupon.html";
                         return false;
                     }
@@ -261,7 +272,7 @@ define('lehu.h5.component.coupon', [
                 if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                 }
-                if(util.isMobile.QQ() || util.isMobile.WeChat()){
+                if (util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.enter_coupon').hide();
                 }
             },
@@ -280,6 +291,16 @@ define('lehu.h5.component.coupon', [
                     },
                 };
                 LHHybrid.nativeFun(jsonParams);
+            },
+
+            //IOS userid和token 本地存储
+            localStronge: function () {
+                var jsonParams = {
+                    'funName': 'localStronge',
+                    'params': {}
+                };
+
+                LHHybrid.nativeRegister(jsonParams);
             },
 
             '.back click': function () {

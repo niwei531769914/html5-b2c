@@ -68,6 +68,11 @@ define('lehu.h5.component.activityreduce', [
                     this.share();
                 }
 
+                //    IOS存userid和token
+                if (util.isMobile.iOS()) {
+                    this.localStronge();
+                }
+
             },
 
             initData: function () {
@@ -214,7 +219,7 @@ define('lehu.h5.component.activityreduce', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if (param.hyfrom == "app") {
+                if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     $('.fullgive_ad').css('margin-top', 0);
                     return false;
@@ -326,8 +331,17 @@ define('lehu.h5.component.activityreduce', [
                         "shareContent": '我是谁'
                     },
                 };
-                console.log(jsonParams.funName);
                 LHHybrid.nativeFun(jsonParams);
+            },
+
+            //IOS userid和token 本地存储
+            localStronge: function () {
+                var jsonParams = {
+                    'funName': 'localStronge',
+                    'params': {}
+                };
+
+                LHHybrid.nativeRegister(jsonParams);
             },
 
             '.back click': function () {

@@ -147,6 +147,12 @@ define('lehu.h5.component.carousel', [
                 if(util.isMobile.Android() || util.isMobile.iOS()){
                     this.share();
                 }
+
+                //    IOS存userid和token
+                if (util.isMobile.iOS()) {
+                    this.localStronge();
+                }
+
             },
 
             initData: function () {
@@ -425,6 +431,16 @@ define('lehu.h5.component.carousel', [
                 };
                 console.log(jsonParams);
                 LHHybrid.nativeFun(jsonParams);
+            },
+
+            //IOS userid和token 本地存储
+            localStronge: function () {
+                var jsonParams = {
+                    'funName': 'localStronge',
+                    'params': {}
+                };
+
+                LHHybrid.nativeRegister(jsonParams);
             },
 
             deleteNav: function () {

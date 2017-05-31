@@ -114,7 +114,7 @@ define('lehu.utils.busizutil', [
       return user;
     }
 
-    var user = store.get("userId");
+    var user = store.get("user");
     if (user) {
       userId = user;
     }

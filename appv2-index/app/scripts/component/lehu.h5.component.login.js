@@ -217,7 +217,7 @@ define('lehu.h5.component.login', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            store.set("userId", data.response);
+                            store.set("user", data.response);
                             location.href = that.from;
                         }
                         else {
@@ -272,7 +272,7 @@ define('lehu.h5.component.login', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            store.set("userId", data.response);
+                            store.set("user", data.response);
                             location.href = that.from;
                             return false;
                         }

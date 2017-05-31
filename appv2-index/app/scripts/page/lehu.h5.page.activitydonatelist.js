@@ -85,9 +85,9 @@ define('lehu.h5.page.activitydonatelist', [
 
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.hyfrom);
-                if (param.hyfrom) {
+                if (param.hyfrom  || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
+                    $('.fullgive_ad').css('top',0);
                     return false;
                 }
             },
