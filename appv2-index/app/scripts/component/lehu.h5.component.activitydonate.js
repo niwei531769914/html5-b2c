@@ -103,7 +103,8 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -119,6 +120,25 @@ define('lehu.h5.component.activitydonate', [
 
                 var that = this;
                 var ACTIVITYLIST = data.response.promotionInfo;
+
+                var TITLE = ACTIVITYLIST.activityName;
+
+                //标题
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title":TITLE
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
+                }
+
+                $('title').html(TITLE);
+
+
+
+
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
                 };
@@ -131,11 +151,19 @@ define('lehu.h5.component.activitydonate', [
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
                 this.options.data.attr("pageIndex", this.pageIndex);
-                this.options.data.attr("supplement.noData", false);
+                if (data.page.pageAmount && data.page.pageAmount == 1) {
+                    this.options.data.attr("supplement.noData", true);
+                }
+                else {
+                    this.options.data.attr("supplement.noData", false);
+                }
 
                 var renderFn = can.mustache(template_components_activitydonate);
                 var html = renderFn(that.options.data, that.helpers);
                 this.element.html(html);
+
+                $('header h2').empty().html(ACTIVITYLIST.activityName);
+
                 //    去导航条
                 this.deleteNav();
                 //图片懒加载
@@ -187,6 +215,7 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
+                    // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
@@ -267,6 +296,7 @@ define('lehu.h5.component.activitydonate', [
                 }
 
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
                     url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
                     data: JSON.stringify(query),
                     method: 'post'

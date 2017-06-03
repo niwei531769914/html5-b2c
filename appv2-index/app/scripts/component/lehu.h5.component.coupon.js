@@ -84,6 +84,7 @@ define('lehu.h5.component.coupon', [
                 };
                 console.log(flag);
                 var api = new LHAPI({
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
                     method: 'post'
@@ -196,6 +197,7 @@ define('lehu.h5.component.coupon', [
                     "activityId": couponid
                 };
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     data: JSON.stringify(this.param),
                     method: 'post'

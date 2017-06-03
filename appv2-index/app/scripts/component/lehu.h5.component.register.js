@@ -29,7 +29,7 @@ define('lehu.h5.component.register', [
             init: function () {
                 this.initData();
                 var params = can.deparam(window.location.search.substr(1));
-                this.from = params.hyfrom;
+                this.from = params.from;
                 var renderList = can.mustache(template_components_register);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -150,7 +150,8 @@ define('lehu.h5.component.register', [
                 //busizutil.encription(this.param);
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -211,6 +212,7 @@ define('lehu.h5.component.register', [
 
 
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
                     url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
                     data: JSON.stringify(this.param),
                     method: 'post'

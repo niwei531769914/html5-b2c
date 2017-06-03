@@ -64,7 +64,7 @@ define('lehu.h5.component.activityreduce', [
                 this.shoppingCart();
 
                 //    分享
-                if(util.isMobile.Android() || util.isMobile.iOS()){
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
                     this.share();
                 }
 
@@ -106,6 +106,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
@@ -121,6 +122,22 @@ define('lehu.h5.component.activityreduce', [
             paint: function (data) {
 
                 var ACTIVITYLIST = data.response.promotionInfo;
+
+                var TITLE = ACTIVITYLIST.activityName;
+
+                //标题
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title":TITLE
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
+                }
+
+                $('title').html(TITLE);
+
                 var renderFn = can.view.mustache(template_components_activityreduce);
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
@@ -133,10 +150,18 @@ define('lehu.h5.component.activityreduce', [
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
                 this.options.data.attr("pageIndex", this.pageIndex);
+                if (data.page.pageAmount && data.page.pageAmount == 1) {
+                    this.options.data.attr("supplement.noData", true);
+                }
+                else {
+                    this.options.data.attr("supplement.noData", false);
+                }
 
-                this.options.data.attr("supplement.noData", false);
                 var html = renderFn(this.options.data, this.helpers);
                 this.element.html(html);
+
+                $('header h2').empty().html(ACTIVITYLIST.activityName);
+
                 //    去导航条
                 this.deleteNav();
                 //图片懒加载
@@ -186,6 +211,7 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
@@ -197,13 +223,15 @@ define('lehu.h5.component.activityreduce', [
                             _.each(data.response.promotionInfo.goods, function (item) {
                                 that.options.data.goods.push(item);
                             });
-
-                            that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
-                            that.options.data.attr("supplement.onLoadingData", false);
+                            if ( data.page.pageAmount && parseInt(that.options.data.pageIndex) == data.page.pageAmount) {
+                                that.options.data.attr("supplement.noData", true);
+                            }
+                            else {
+                                that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
+                                that.options.data.attr("supplement.onLoadingData", false);
+                            }
                             //图片懒加载
                             $.imgLazyLoad();
-                        } else {
-                            that.options.data.attr("supplement.noData", true);
                         }
 
                     })
@@ -262,6 +290,7 @@ define('lehu.h5.component.activityreduce', [
                 }
 
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
                     url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
                     data: JSON.stringify(query),
                     method: 'post'

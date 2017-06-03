@@ -144,7 +144,7 @@ define('lehu.h5.component.carousel', [
                 this.initData();
                 this.render();
                 //    分享
-                if(util.isMobile.Android() || util.isMobile.iOS()){
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
                     this.share();
                 }
 
@@ -157,7 +157,7 @@ define('lehu.h5.component.carousel', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
@@ -179,6 +179,7 @@ define('lehu.h5.component.carousel', [
                 var that = this;
 
                 var api = new LHAPI({
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
                     data: JSON.stringify(params),
                     method: 'post'
@@ -187,7 +188,9 @@ define('lehu.h5.component.carousel', [
                     .done(function (data) {
 
                         if (data.code !== 1) {
-                            util.tip(data.msg, 4000);
+                            var html = "<img src= 'images/no_activity.png' style=' margin: 0 auto; display: block' />";
+                            $(".dial_bj").css("background", "#ffffff");
+                            $(".nwrapper").empty().append(html);
                             return false;
                         }
 
@@ -274,6 +277,7 @@ define('lehu.h5.component.carousel', [
                     "luckActiveId": this.luckId
                 };
                 var api = new LHAPI({
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     data: JSON.stringify(this.param),
                     method: 'post'
@@ -313,7 +317,7 @@ define('lehu.h5.component.carousel', [
                         var lotteryInfo = null;
                         var tip = ""; //中奖信息
 
-                        if (data.response.prizeId) {
+                        if (data.response.prizeId > 0 ) {
                             for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
                                 if (that.options.luckProbabilityList[i].id == data.response.prizeId) {
                                     if (that.options.luckProbabilityList[i].prizeType == 2) {
@@ -330,13 +334,23 @@ define('lehu.h5.component.carousel', [
                                     }
                                 }
                             }
-
-                        } else { //谢谢参与
+                        }
+                        else if (data.response.prizeId == -1) {
                             for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
                                 if (that.options.luckProbabilityList[i].prizeType == 1) {
                                     lotteryIndex = i;
                                     lotteryInfo = that.options.luckProbabilityList[i];
-                                    tip = "很遗憾没有中奖~";
+                                    tip = "很遗憾您没有中奖~";
+                                    break;
+                                }
+                            }
+                        }
+                        else { //谢谢参与
+                            for (var i = 0; i < that.options.luckProbabilityList.length; i++) {
+                                if (that.options.luckProbabilityList[i].prizeType == 1) {
+                                    lotteryIndex = i;
+                                    lotteryInfo = that.options.luckProbabilityList[i];
+                                    tip = "很遗憾您没有中奖~";
                                     break;
                                 }
                             }

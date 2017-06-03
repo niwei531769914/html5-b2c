@@ -55,7 +55,8 @@ define('lehu.h5.page.activitydonatelist', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

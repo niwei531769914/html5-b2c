@@ -48,7 +48,8 @@ define('lehu.h5.page.stores', [
                 this.deleteNav();
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
                     data: {},
                     method: 'get'
                 });

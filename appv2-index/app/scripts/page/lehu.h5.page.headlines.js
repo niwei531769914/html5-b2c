@@ -47,6 +47,7 @@ define('lehu.h5.page.headlines', [
                 //    去除导航
                 this.deleteNav();
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
                     data: {},
                     method: 'get'

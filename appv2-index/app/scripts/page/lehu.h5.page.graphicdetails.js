@@ -47,6 +47,7 @@ define('lehu.h5.page.graphicdetails', [
                     goodsId : param.goodsId
                 }
                 var api = new LHAPI({
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
                     url: that.URL + '/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
                     data: JSON.stringify(params),
                     method: 'post'
