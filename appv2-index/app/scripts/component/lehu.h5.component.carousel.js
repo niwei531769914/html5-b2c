@@ -179,8 +179,8 @@ define('lehu.h5.component.carousel', [
                 var that = this;
 
                 var api = new LHAPI({
-                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
-                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -277,8 +277,8 @@ define('lehu.h5.component.carousel', [
                     "luckActiveId": this.luckId
                 };
                 var api = new LHAPI({
-                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/drawLuck",
-                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

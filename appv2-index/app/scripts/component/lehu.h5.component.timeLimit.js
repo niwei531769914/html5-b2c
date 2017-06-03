@@ -64,8 +64,8 @@ define('lehu.h5.component.timeLimit', [
             render: function () {
                 var that = this;
                 var api = new LHAPI({
-                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
-                    url:  that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+                    //url:  that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
                     data: {},
                     method: 'post'
                 });
@@ -208,8 +208,8 @@ define('lehu.h5.component.timeLimit', [
                     "pageSize": 10
                 }
                 var api = new LHAPI({
-                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitList",
-                    url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
                     data: JSON.stringify(param),
                     method: 'post'
                 });

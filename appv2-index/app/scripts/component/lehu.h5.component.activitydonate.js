@@ -103,8 +103,8 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                  //  url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -215,8 +215,8 @@ define('lehu.h5.component.activitydonate', [
                 };
 
                 var api = new LHAPI({
-                    // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                   // url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -296,8 +296,8 @@ define('lehu.h5.component.activitydonate', [
                 }
 
                 var api = new LHAPI({
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
-                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
+                    //url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
