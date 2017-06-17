@@ -49,14 +49,26 @@ define('lehu.h5.page.activitydonatelist', [
                 //去除导航
                 this.deleteNav();
 
+                if(util.isMobile.iOS()){
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "汇银乐虎全球购-满赠活动"
+                        }
+                    }
+                    LHHybrid.nativeFun(jsonParams);
+                }
+
+
                 var params = {
                     "toPage":1,
                     "pageRows":20
                 };
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateList',
-                    //url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -70,7 +82,7 @@ define('lehu.h5.page.activitydonatelist', [
                             }
                             var html = "";
                             for(var i = 0; i< CONTENT.length; i++){
-                                html += '<div class="fullgive_adList"><img class="lazyload" src="images/big_goods_back.png"  data-img="https://img11.360buyimg.com/jshopm/s640x260_jfs/t4816/166/2569546069/92243/9c24ffa1/5903161fN235bee6b.jpg!q70.jpg"  data-activityId="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].activityName + '</p></div>';
+                                html += '<div class="fullgive_adList"><img class="lazyload" src="images/big_goods_back.png"  data-img="http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg"  data-activityId="' + CONTENT[i].activityId  + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '"><p>' + CONTENT[i].activityName + '</p></div>';
                             }
                             $('.fullgive_ads').empty().append(html);
 

@@ -81,6 +81,7 @@ define('lehu.h5.component.activityreduce', [
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
+                this.shoppingIsfor = false;
             },
 
             render: function () {
@@ -106,8 +107,8 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
-                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -143,7 +144,7 @@ define('lehu.h5.component.activityreduce', [
                     onLoadingData: false
                 };
                 if (ACTIVITYLIST.activityImg == "") {
-                    ACTIVITYLIST.activityImg = "https://m.360buyimg.com/mobilecms/s720x322_jfs/t5380/53/518840503/167832/4849cc1b/5901bc2eNbed21d23.jpg!q70.jpg";
+                    ACTIVITYLIST.activityImg = "http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg";
                 }
                 else {
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
@@ -211,8 +212,8 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
-                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -259,6 +260,7 @@ define('lehu.h5.component.activityreduce', [
                 var that = this;
                 var param = can.deparam(window.location.search.substr(1));
 
+
                 this.user = busizutil.getUserId();
                 if (!this.user) {
                     if (param.hyfrom) {
@@ -275,6 +277,13 @@ define('lehu.h5.component.activityreduce', [
                         return false;
                     }
                 }
+
+
+                if(that.shoppingIsfor){
+                    return false;
+                }
+                that.shoppingIsfor = true;
+
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
                 var stroeId = element.attr("data-storeid");
@@ -290,8 +299,8 @@ define('lehu.h5.component.activityreduce', [
                 }
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
-                    //url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/cart/add',
+                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -315,10 +324,17 @@ define('lehu.h5.component.activityreduce', [
 
                         }
                         else if (data.code == 1) {
+
                             util.tip("成功加入购物车！", 3000);
+                            setTimeout(function () {
+                                that.shoppingIsfor = false;
+                            },3000)
                         }
                         else {
                             util.tip(data.msg, 3000);
+                            setTimeout(function () {
+                                that.shoppingIsfor = false;
+                            },3000)
                         }
                     })
                     .fail(function (error) {

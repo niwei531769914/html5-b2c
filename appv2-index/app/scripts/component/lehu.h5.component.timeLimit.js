@@ -47,25 +47,36 @@ define('lehu.h5.component.timeLimit', [
                 this.bindScroll();
 
                 //    分享
-                if(util.isMobile.Android() || util.isMobile.iOS()){
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
                     this.share();
+                }
+                if (util.isMobile.iOS()) {
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "汇银乐虎全球购-限时折扣"
+                        }
+                    }
+                        LHHybrid.nativeFun(jsonParams);
                 }
 
             },
 
             initDate: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
             },
 
             render: function () {
+                $('.loading-date').show();
                 var that = this;
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
-                    //url:  that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
                     data: {},
                     method: 'post'
                 });
@@ -80,7 +91,8 @@ define('lehu.h5.component.timeLimit', [
                                 return false;
                             }
 
-                            if (TABLIST[0].status == 2) {
+                            //活动都未开始; 取第一场未开始  2 status
+                            if (that.isStatus(TABLIST) == 2) {
                                 html += " <a class='active' status = " + TABLIST[0].status + "  activityid = " + TABLIST[0].activityId + ">" + TABLIST[0].dateStr + "点场</a>";
                                 that.status = TABLIST[0].status;
                                 that.activityId = TABLIST[0].activityId;
@@ -89,7 +101,7 @@ define('lehu.h5.component.timeLimit', [
                                 }
                                 html += "<div class='tabs-title'>";
                                 for (var k = 0; k < TABLIST.length; k++) {
-                                    if (TABLIST[k].status == 2) {
+                                    if ( k == 0) {
                                         html += "<div class = 'time-title'><span class='time-title-count'>本次抢购即将开始</span></div>"
                                     }
                                     else {
@@ -99,7 +111,29 @@ define('lehu.h5.component.timeLimit', [
                                 html += "</div>";
 
                             }
-                            else {
+
+                            //活动都结束; 取最后一场3 status
+                            else if(that.isStatus(TABLIST) == 3 ){
+                                for(var l= 0; l< TABLIST.length -1 ; l++){
+                                    html += " <a status = " + TABLIST[l].status + "  activityid = " + TABLIST[l].activityId + ">" + TABLIST[l].dateStr + "点场</a>";
+                                }
+                                html += " <a class='active' status = " + TABLIST[TABLIST.length - 1].status + "  activityid = " + TABLIST[TABLIST.length - 1].activityId + ">" + TABLIST[TABLIST.length - 1].dateStr + "点场</a>";
+                                that.status = TABLIST[TABLIST.length - 1].status;
+                                that.activityId = TABLIST[TABLIST.length - 1].activityId;
+
+                                html += "<div class='tabs-title'>";
+                                for (var s = 0; s < TABLIST.length; s++) {
+                                    if (s == TABLIST.length -1 ) {
+                                        html += "<div class = 'time-title'><span class='time-title-count'>本次抢购已经结束</span></div>"
+                                    }
+                                    else {
+                                        html += "<div class = 'time-title' style='display: none'><span class='time-title-count'>本次抢购已经结束</span></div>"
+                                    }
+                                }
+                                html += "</div>";
+                            }
+                            //活动status有2有3有1; 取2 status
+                            else if(that.isStatus(TABLIST) == 1){
                                 for (var i = 0; i < TABLIST.length; i++) {
 
                                     //判断抢购时间
@@ -128,13 +162,56 @@ define('lehu.h5.component.timeLimit', [
                                 }
                                 html += "</div>";
                             }
+                            else {
+                                var tag = true;
+                                var tags = true;
+                                for (var i = 0; i < TABLIST.length; i++) {
+                                    //判断抢购时间
+                                    if(tag){
+                                        if (TABLIST[i].status == 2) {
+                                            that.activityId = TABLIST[i].activityId;
+                                            that.status = TABLIST[i].status;
+                                            html += " <a class='active' status = " + TABLIST[i].status + "  activityid = " + TABLIST[i].activityId + ">" + TABLIST[i].dateStr + "点场</a>";
+                                            tag = false
+                                        } else {
+                                            html += " <a status = " + TABLIST[i].status + "  activityid = " + TABLIST[i].activityId + ">" + TABLIST[i].dateStr + "点场</a>";
+                                        }
+                                    }
+                                    else if (!tag) {
+                                        html += " <a status = " + TABLIST[i].status + "  activityid = " + TABLIST[i].activityId + ">" + TABLIST[i].dateStr + "点场</a>";
+                                    }
+                                }
+                                html += "<div class='tabs-title'>";
+                                for (var s = 0; s < TABLIST.length; s++) {
+                                    if(tags){
+                                        if (TABLIST[s].status == 3) {
+                                            console.log(1);
+                                            html += "<div class = 'time-title' style='display: none'><span class='time-title-count'>本次抢购已经结束</span></div>";
+                                        }
+                                        else if (TABLIST[s].status == 2) {
+                                            console.log(2);
+                                            html += "<div class = 'time-title' ><span class='time-title-count'>本次抢购即将开始</span></div>";
+                                            tags = false;
+                                        }
+                                    }
+                                    else if(!tags){
+                                        console.log(3);
+                                        html += "<div class = 'time-title' style='display: none'><span class='time-title-count'>本次抢购即将开始</span></div>";
+                                    }
+                                }
+                                html += "</div>";
+                            }
+
+                            //清楚加载
+                            $('.loading-date').hide();
+
                             //渲染时间点
                             $(".tabs").show().empty().append(html);
                             $(".tabs").css("background", "#f5a623");
                             $(".tabs").css("box-shadow", "0px 1px 4px 0px rgb( 225, 225, 225 )");
                             //倒计时插入
                             that.renderSecondkillList(data.nowTime, that.juli);
-
+                            that.countDown();
                             //倒计时
                             setInterval(function () {
                                 that.countDown();
@@ -147,6 +224,21 @@ define('lehu.h5.component.timeLimit', [
                     .fail(function (error) {
                         util.tip("服务器错误！");
                     })
+            },
+
+            //判断活动状态
+            isStatus: function (tablist) {
+                for (var i = 0; i < tablist.length; i++) {
+                    if (tablist[0].status == 2) {
+                        return tablist[i];
+                    }
+                    else if (tablist[tablist.length - 1].status == 3) {
+                        return tablist[i].status;
+                    }
+                    else if (tablist[i].status == 1) {
+                        return tablist[i].status;
+                    }
+                }
             },
 
             ".tabs a click": function (element, event) {
@@ -194,22 +286,21 @@ define('lehu.h5.component.timeLimit', [
                 $(".time-title-count-1").empty().append("本场结束还剩<em>" + hours + "</em>:<em>" + minutes + "</em>:<em>" + seconds + "</em>");
                 --that.juli;
 
-                if (that.shengyu = 0) {
+                if (that.juli == 0) {
                     window.location.reload();
                 }
             },
 
             sendRequest: function (activityId, status) {
-                console.log(activityId);
                 var that = this;
                 var param = {
                     "activityId": activityId,
                     "page": that.pageIndex,
                     "pageSize": 10
-                }
+                };
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitList",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
                     data: JSON.stringify(param),
                     method: 'post'
                 });
@@ -220,7 +311,6 @@ define('lehu.h5.component.timeLimit', [
                             that.totalPageNum = data.response.totalPage;
                             if (BOXLIST == "") {
                                 $(".loading-date").hide();
-                                $('.nlist_nomore').show();
                                 return false;
                             }
                             var HTML = "";
@@ -236,7 +326,7 @@ define('lehu.h5.component.timeLimit', [
 
                                     } else if (parseFloat(BOXLIST[i].total) == 0) {
 
-                                            HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
+                                        HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
 
                                     }
 
@@ -257,7 +347,7 @@ define('lehu.h5.component.timeLimit', [
                                         var TOTAL = BOXLIST[i].total;
                                         var INITTOTAL = BOXLIST[i].originalTotal;
 
-                                         var TOTALWIDTH = (parseFloat(TOTAL)/parseFloat(INITTOTAL) *100) + "%";
+                                        var TOTALWIDTH = (parseFloat(TOTAL) / parseFloat(INITTOTAL) * 100) + "%";
 
                                         HTML += "<div class='time-sale-btn'><span><em class='time-sale-tab'>还剩" + BOXLIST[i].total + "件</em><em class='time-sale-process' style='width: " + TOTALWIDTH + "'></em></span><a href='javascript:;'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "' class='time-sale-bt'>立即抢</a></div></div></div>";
 
@@ -306,7 +396,7 @@ define('lehu.h5.component.timeLimit', [
                                         }
                                     }
 
-                                        HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
+                                    HTML += "</a><em class='time-sale-price'>限时购<i>¥" + BOXLIST[i].price + "</i><del>¥" + BOXLIST[i].originalPrice + "</del></em><div class='time-sale-btn'><a href='javascript:;' class='time-sale-ct'>已结束</a></div></div></div>";
                                 }
 
                             }
@@ -332,6 +422,7 @@ define('lehu.h5.component.timeLimit', [
                         }
                     })
                     .fail(function (error) {
+                        $(".loading-date").css("display", "none");
                         util.tip("服务器错误！");
                     })
             },
@@ -413,14 +504,13 @@ define('lehu.h5.component.timeLimit', [
                         "shareContent": '我是谁'
                     },
                 };
-                console.log(jsonParams.funName);
                 LHHybrid.nativeFun(jsonParams);
             },
 
             /*去除header*/
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
-                if ( param.hyfrom  || util.isMobile.QQ() || util.isMobile.WeChat()) {
+                if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                     $('.tabs').css('top', '0');
                     $('.time-sale-main').css('margin-top', '1.6rem');

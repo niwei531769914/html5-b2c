@@ -13,7 +13,7 @@ define('lehu.h5.component.coupon', [
         'text!template_components_coupon'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid,store,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, store,
               busizutil,
               template_components_coupon) {
         'use strict';
@@ -27,6 +27,12 @@ define('lehu.h5.component.coupon', [
             init: function () {
 
                 this.initData();
+
+                this.pageIndex = 1;
+                this.totalPageNum = "";
+                this.flag = "";
+                this.clear = false;
+
                 var renderList = can.mustache(template_components_coupon);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -37,14 +43,24 @@ define('lehu.h5.component.coupon', [
                 //渲染页面
                 this.render();
 
+                //滚动加载
+                this.bindScroll();
                 //    分享
                 if (util.isMobile.Android() || util.isMobile.iOS()) {
                     this.share();
                 }
 
-               //    IOS存userid和token
+                //    IOS存userid和token
                 if (util.isMobile.iOS()) {
                     this.localStronge();
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "汇银乐虎全球购-领券中心"
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
                 }
 
 
@@ -76,16 +92,17 @@ define('lehu.h5.component.coupon', [
                 }
                 this.param = {
                     "flag": flag,
-                    "pageRows": 20,
-                    "toPage": 1,
+                    "pageRows": 10,
+                    "toPage": that.pageIndex,
                     "userId": this.user.userId,
                     "strUserId": this.user.userId,
                     "strToken": this.user.token
                 };
                 console.log(flag);
+                console.log(that.pageIndexg);
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -94,6 +111,8 @@ define('lehu.h5.component.coupon', [
 
                         if (data.code == 1) {
                             var COUPONLIST = data.response.list;
+                            that.totalPageNum = data.page.pageAmount;
+                            console.log(data.page.pageAmount);
                             if (COUPONLIST == "") {
                                 $('.coupons_main').empty();
                                 $('.coupons_box_null').show();
@@ -101,40 +120,48 @@ define('lehu.h5.component.coupon', [
                             }
 
                             if (COUPONLIST && COUPONLIST.length > 0) {
-                                var html = "";
+                                var HTML = "";
 
                                 for (var i = 0; i < COUPONLIST.length; i++) {
 
                                     if (flag == 0) {
                                         if (COUPONLIST[i].type == 1) {
-                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+                                            HTML += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
                                         else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
+                                            HTML += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>乐虎券</b></em>';
                                         }
                                     }
                                     else if (flag == 1) {
                                         if (COUPONLIST[i].type == 1) {
-                                            html += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                            HTML += '<div class="coupons_box total-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
                                         }
                                         else if (COUPONLIST[i].type == 2) {
-                                            html += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
+                                            HTML += '<div class="coupons_box single-coupon"><div class="coupons_box_l"> <em><img src="images/coupons/ic_product.png"><b>' + COUPONLIST[i].storeName + '</b></em>';
                                         }
                                     }
 
-                                    html += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
+                                    HTML += '<span>' + COUPONLIST[i].ticketActivityName + '</span><p>请于' + COUPONLIST[i].useEndTime + '前使用</p></div>';
 
                                     if (COUPONLIST[i].type == 1) {
-                                        html += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取<i>&gt;</i></span></div></div>';
+                                        HTML += '<div class="coupons_box_r" style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em><b>￥' + COUPONLIST[i].condition2 + '</b>现金券</em> <span>立即领取</span></div></div>';
                                     }
                                     else if (COUPONLIST[i].type == 2) {
-                                        html += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span >立即领取<i>&gt;</i></span></div></div>';
+                                        HTML += '<div class="coupons_box_s"  style="color: #ffffff" data-id = "' + COUPONLIST[i].ticketActivityId + '"><em>满<b>' + COUPONLIST[i].condition1 + '</b>减<b>' + COUPONLIST[i].condition2 + '</b></em><span >立即领取</span></div></div>';
                                     }
                                 }
                             }
 
                             $('.coupons_box_null').hide();
-                            $('.coupons_main').empty().append(html);
+
+                            if (that.clear) {
+                                $(".coupons_main").append(HTML);
+                            }
+                            else {
+                                $(".coupons_main").show().empty().append(HTML);
+                                that.clear = true;
+                            }
+
                         }
                         else {
                             util.tip(data.msg);
@@ -153,9 +180,11 @@ define('lehu.h5.component.coupon', [
                 element.addClass('active');
 
                 if (element.index() == 1) {
+                    that.flag = 1;
                     that.getCoupon(1);
                 }
                 else if (element.index() == 0) {
+                    that.flag = 0;
                     that.getCoupon(0);
                 }
 
@@ -187,6 +216,46 @@ define('lehu.h5.component.coupon', [
                 this.uesCoupon(element, this.user, couponid);
             },
 
+            /**
+             * @author zhangke
+             * @description 初始化上拉加载数据事件
+             */
+            bindScroll: function () {
+                var that = this;
+
+                //滚动加载
+                var range = 400; //距下边界长度/单位px
+                var huadong = true;
+
+                var totalheight = 0;
+
+                $(window).scroll(function () {
+                    if (that.pageIndex >= that.totalPageNum) {
+                        return;
+                    }
+                    var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
+                    totalheight = parseFloat($(window).height()) + parseFloat(srollPos); //滚动条当前位置距顶部距离+浏览器的高度
+
+                    if (($(document).height() == totalheight)) {
+
+                        that.pageIndex++;
+                        that.getCoupon(that.flag);
+                    } else {
+                        if (($(document).height() - totalheight) <= range) { //页面底部与滚动条底部的距离<range
+
+                            if (huadong) {
+                                huadong = false;
+                                that.pageIndex++;
+                                that.getCoupon(that.flag);
+                            }
+                        } else {
+
+                            huadong = true;
+                        }
+                    }
+                });
+            },
+
             uesCoupon: function (element, user, couponid) {
                 var that = this;
 
@@ -197,8 +266,8 @@ define('lehu.h5.component.coupon', [
                     "activityId": couponid
                 };
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
-                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

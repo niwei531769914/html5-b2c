@@ -47,8 +47,8 @@ define('lehu.h5.page.headlines', [
                 //    去除导航
                 this.deleteNav();
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
-                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/marketing/getLehuTop',
                     data: {},
                     method: 'get'
                 });
@@ -61,12 +61,23 @@ define('lehu.h5.page.headlines', [
                             }
                             var CONTENT = data.response;
                             console.log(CONTENT);
+
                             var html = "";
                             for(var i =0; i <CONTENT.length; i++){
                                 if( CONTENT[i].id == param.id){
                                     html += '<p>' + CONTENT[i].begintime + '</p><p>' + CONTENT[i].articleTitle + '</p>';
                                     $('.line-content-title').empty().append(html);
                                     $('.line-content-detail').html(CONTENT[i].articleContent);
+                                    //标题
+                                    if(util.isMobile.iOS() || util.isMobile.Android()){
+                                        var jsonParams = {
+                                            'funName': 'title_fun',
+                                            'params': {
+                                                "title": CONTENT[i].articleTitle
+                                            }
+                                        };
+                                        LHHybrid.nativeFun(jsonParams);
+                                    }
                                     return false;
                                 }
                             }

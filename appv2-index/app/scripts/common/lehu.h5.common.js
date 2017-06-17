@@ -15,7 +15,8 @@ var Zepto=function(){function e(e){return null==e?String(e):V[$.call(e)]||"objec
                     var r = {};
                     r.userId = "", r.token = ""
                 }
-                t.userId == "" || t.token.length == "" ? (i.remove("user"), window.location.reload()) : ( r.userId == t.userId && r.token == t.token ? (i.remove("user"), i.set("user", t)) : (i.remove("user"), i.set("user", t), window.location.reload())), n(e.params)
+                if (r.userId == "" && r.token == "" && t.userId == "" && t.token == "")return !1;
+                t.userId == "" || t.token.length == "" ? (i.remove("user"), window.location.reload()) : r.userId == t.userId && r.token == t.token ? (i.remove("user"), i.set("user", t)) : (i.remove("user"), i.set("user", t), window.location.reload()), n(e.params)
             })
         })
     };

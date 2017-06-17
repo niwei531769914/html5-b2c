@@ -44,12 +44,23 @@ define('lehu.h5.page.stores', [
                 var html = renderList(this.options);
                 this.element.html(html);
 
+                if(util.isMobile.iOS()){
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "汇银乐虎全球购-门店活动"
+                        }
+                    }
+                    LHHybrid.nativeFun(jsonParams);
+                }
+
                 //去除导航
                 this.deleteNav();
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
-                    //url:  that.URL + '/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/marketing/storeActivity',
                     data: {},
                     method: 'get'
                 });

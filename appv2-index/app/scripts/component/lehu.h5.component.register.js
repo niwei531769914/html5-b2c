@@ -150,8 +150,8 @@ define('lehu.h5.component.register', [
                 //busizutil.encription(this.param);
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
-                    //url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -192,8 +192,8 @@ define('lehu.h5.component.register', [
                     $(".err-msg").text("密码不能为空!").parent().css("display", "block")
                     return false;
                 }
-                if (passWord.length < 7) {
-                    $(".err-msg").text("密码不能小于8位数").parent().css("display", "block")
+                if (passWord.length < 5) {
+                    $(".err-msg").text("密码不能小于6位数").parent().css("display", "block")
                     return false;
                 }
 
@@ -204,7 +204,7 @@ define('lehu.h5.component.register', [
 
                 this.param = {
                     'phoneCode': userName,
-                    'password': passWord,
+                    'password': md5(passWord),
                     'identifyingcode': captcha,
                     'phoneToken': '',
                     'origin': '5',
@@ -212,8 +212,8 @@ define('lehu.h5.component.register', [
 
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
-                    //url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

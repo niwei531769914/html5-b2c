@@ -1,0 +1,15 @@
+.coupons_bj{ background: url(../img/bj.jpg) no-repeat #fdeaa5; background-size:100%;}
+.coupons_bj .nwrapper{ height:100%; position:fixed;}
+.bt_share{ width:1.5rem; height:1rem; position:absolute; top:0; right:0;}
+.bt_get{  width:4.15rem; height:1.3rem; display:block; float:left; position:absolute; bottom:1.5rem; left:1.67rem;background:url(../img/get.png) no-repeat; background-size:100%;}
+.bt_get.end{ background-image:url(../img/get_end.png);}
+.foot_text{ width:100%; text-align:center; font-size:.3rem; color:#ff4800; text-decoration:underline; height:.35rem; position:absolute; left:0; bottom:.6rem;}
+.coupons_main{ width:67.333%; height:2.11rem; display:block; float:left; margin:4.62rem 0 0 17.6%;}
+.coupons_main .end{ background:url(../img/bj_end.png) no-repeat top right; background-size:1.2rem;}
+.coupons_box{ width:100%; height:2.1rem; display:block; float:left; margin-bottom:.22rem; cursor:pointer;}
+.coupons_main_l{ width:1.9rem;height:2.1rem;display:block; float:left; margin:0 .18rem 0 .37rem; line-height:2.1rem;color:#ffffff; font-size:.7rem; font-weight:bold;font-family:arial; text-align:center;}
+.coupons_main_l em{ font-size:.24rem;}
+.coupons_main_r{ width:2.2rem;height:2.1rem;display:block; float:left; color:#ffffff;}
+.coupons_main_r span{ width:100%; height:.3rem; display:block; float:left; font-size:.27rem; color:#fef984; margin:.5rem 0 .05rem;}
+.coupons_main_r i{ width:90%; height:.3rem;display:block; float:left; font-size:.23rem; font-weight:bold; border-bottom:1px dashed #ffffff;}
+.coupons_main_r p{ width:100%; height:.5rem; line-height:.3rem;display:block; float:left; font-size:.23rem; font-weight:bold; padding-top:.05rem;}

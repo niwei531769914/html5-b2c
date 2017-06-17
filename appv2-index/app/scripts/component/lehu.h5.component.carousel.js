@@ -143,14 +143,19 @@ define('lehu.h5.component.carousel', [
                 this.luckId = "";
                 this.initData();
                 this.render();
-                //    分享
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    this.share();
-                }
+
 
                 //    IOS存userid和token
                 if (util.isMobile.iOS()) {
                     this.localStronge();
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "汇银乐虎全球购-大抽奖"
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
                 }
 
             },
@@ -179,8 +184,8 @@ define('lehu.h5.component.carousel', [
                 var that = this;
 
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/getLuckActivity",
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -220,6 +225,11 @@ define('lehu.h5.component.carousel', [
                         // luck_id
                         that.luckId = data.response.id;
 
+                        //    分享
+                        if (util.isMobile.Android() || util.isMobile.iOS()) {
+                            that.share();
+                        }
+
                         var renderList = can.mustache(template_components_carousel);
                         var html = renderList(that.options, that.helpers);
                         that.element.html(html);
@@ -238,11 +248,11 @@ define('lehu.h5.component.carousel', [
                             $("#alreadylogin").show();
                         }
 
+
                     })
                     .fail(function (error) {
                         util.tip(error.msg);
                     });
-
 
             },
 
@@ -277,8 +287,8 @@ define('lehu.h5.component.carousel', [
                     "luckActiveId": this.luckId
                 };
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/drawLuck",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/luck/drawLuck",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -371,7 +381,7 @@ define('lehu.h5.component.carousel', [
             },
 
             "#lottery a click": function () {
-
+                var that = this;
                 if ($(".lottery-bt").hasClass("disable")) {
                     return false;
                 }
