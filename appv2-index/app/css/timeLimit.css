@@ -17,7 +17,7 @@
 .time-sale-img img{ width:2.4rem; height:2.4rem;  display: block; float:left;}
 .time-sale-img>b{ width: .96rem; height: .96rem; position: absolute; top: .72rem; left: .72rem}
 .time-sale-img>b>img{ width: 100%; height: 100%; vertical-align: top}
-.time-sale-title{ width:60%; height:.7rem; overflow:hidden; color:#212121; font-size:.26rem; line-height:.34rem; display:block; float:right; margin-right:4%;word-break:break-all; font-weight: 500; padding-top: .1rem; }
+.time-sale-title{ width:60%; height:.7rem; color:#212121; font-size:.26rem; line-height:.36rem;float:right; margin-right:4%; overflow:hidden; text-overflow: ellipsis ;  white-space: normal;  display:-webkit-box;  -webkit-box-orient:vertical;-webkit-line-clamp:2; font-weight: 500; padding-top: .1rem; }
 .time-sale-msg{ width:64%; height:auto; display:block; float:right; position:relative;}
 .time-sale-msg .time-sale-price{ width: 100%; height: auto; display: block; float: left;font-size:.18rem; color: #757575}
 .time-sale-msg .time-sale-price i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 500}

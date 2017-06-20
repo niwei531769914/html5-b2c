@@ -118,6 +118,7 @@ define('lehu.h5.component.carousel', [
                 },
 
                 "lehu-lottery": function (list, index) {
+                    console.log(list);
                     var lottery = list[index];
                     // 谢谢参与
                     if (lottery.prizeType == 1) {
@@ -236,7 +237,7 @@ define('lehu.h5.component.carousel', [
                         $('.dial_footer ul').append(data.response.activeRule);
                         lottery.init('lottery');
                         that.scrollZhongjiangjilu();
-
+                        console.log(that.options);
                         //  去除导航事件
                         that.deleteNav();
 
@@ -453,7 +454,6 @@ define('lehu.h5.component.carousel', [
                         "luckActiveId": that.luckId
                     },
                 };
-                console.log(jsonParams);
                 LHHybrid.nativeFun(jsonParams);
             },
 

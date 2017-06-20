@@ -30,7 +30,7 @@ define('lehu.h5.component.coupon', [
 
                 this.pageIndex = 1;
                 this.totalPageNum = "";
-                this.flag = "";
+                this.flag = 0;
                 this.clear = false;
 
                 var renderList = can.mustache(template_components_coupon);
@@ -80,7 +80,7 @@ define('lehu.h5.component.coupon', [
             },
 
             //券展示
-            getCoupon: function (flag) {
+            getCoupon: function (flag,topage) {
 
                 var that = this;
                 this.user = busizutil.getUserId();
@@ -93,13 +93,13 @@ define('lehu.h5.component.coupon', [
                 this.param = {
                     "flag": flag,
                     "pageRows": 10,
-                    "toPage": that.pageIndex,
+                    "toPage": topage,
                     "userId": this.user.userId,
                     "strUserId": this.user.userId,
                     "strToken": this.user.token
                 };
-                console.log(flag);
-                console.log(that.pageIndexg);
+
+
                 var api = new LHAPI({
                     //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
@@ -112,7 +112,7 @@ define('lehu.h5.component.coupon', [
                         if (data.code == 1) {
                             var COUPONLIST = data.response.list;
                             that.totalPageNum = data.page.pageAmount;
-                            console.log(data.page.pageAmount);
+
                             if (COUPONLIST == "") {
                                 $('.coupons_main').empty();
                                 $('.coupons_box_null').show();
@@ -155,9 +155,11 @@ define('lehu.h5.component.coupon', [
                             $('.coupons_box_null').hide();
 
                             if (that.clear) {
+
                                 $(".coupons_main").append(HTML);
                             }
                             else {
+
                                 $(".coupons_main").show().empty().append(HTML);
                                 that.clear = true;
                             }
@@ -178,14 +180,16 @@ define('lehu.h5.component.coupon', [
                 //切换券类
                 $(".coupons_category .active").removeClass('active');
                 element.addClass('active');
-
+                that.clear = false;
+                that.pageIndex = 1;
+                console.log(that.pageIndex);
                 if (element.index() == 1) {
                     that.flag = 1;
-                    that.getCoupon(1);
+                    that.getCoupon(1,that.pageIndex);
                 }
                 else if (element.index() == 0) {
                     that.flag = 0;
-                    that.getCoupon(0);
+                    that.getCoupon(0,that.pageIndex);
                 }
 
             },
@@ -239,14 +243,14 @@ define('lehu.h5.component.coupon', [
                     if (($(document).height() == totalheight)) {
 
                         that.pageIndex++;
-                        that.getCoupon(that.flag);
+                        that.getCoupon(that.flag,that.pageIndex);
                     } else {
                         if (($(document).height() - totalheight) <= range) { //页面底部与滚动条底部的距离<range
 
                             if (huadong) {
                                 huadong = false;
                                 that.pageIndex++;
-                                that.getCoupon(that.flag);
+                                that.getCoupon(that.flag,that.pageIndex);
                             }
                         } else {
 
@@ -275,7 +279,6 @@ define('lehu.h5.component.coupon', [
                     .done(function (data) {
                         if (data.code == -10) {
                             util.tip(data.msg, 2000);
-                            console.log(2);
                             setTimeout(function () {
                                 var param = can.deparam(window.location.search.substr(1));
                                 if (param.hyfrom) {

@@ -67,6 +67,7 @@ define('lehu.h5.component.coupondetail', [
 
                     var api = new LHAPI({
                         url:  that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo",
+                        //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
                         data: JSON.stringify(this.param),
                         method: 'post'
                     });
@@ -134,6 +135,7 @@ define('lehu.h5.component.coupondetail', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                   // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -143,7 +145,10 @@ define('lehu.h5.component.coupondetail', [
 
                         if (data.code !== 1) {
                             util.tip("客官来晚喽，券已经被领完啦");
-                            $("#content").empty();
+                            var renderList = can.mustache(template_components_coupondetail);
+                            var html = renderList(that.options, that.helpers);
+                            that.element.html(html);
+                            $(".coupons_main").empty();
                             return false;
                         }
 
@@ -185,6 +190,7 @@ define('lehu.h5.component.coupondetail', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
+                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -199,6 +205,7 @@ define('lehu.h5.component.coupondetail', [
                         }
                         else {
                             util.tip(data.msg,3000);
+                            $(".coupons_main").removeClass("disabled");
                         }
 
                     })

@@ -57,12 +57,13 @@ define('lehu.h5.component.activitydonate', [
                 this.initData();
                 this.render();
 
-                //    是否显示购物车
-                this.shoppingCart();
 
                 //    分享
                 if(util.isMobile.Android() || util.isMobile.iOS()){
+                    //    分享
                     this.share();
+                    //    是否显示购物车
+                    this.shoppingCart();
                 }
 
                 //    IOS存userid和token
