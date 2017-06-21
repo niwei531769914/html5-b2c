@@ -66,8 +66,8 @@ define('lehu.h5.component.coupondetail', [
                     };
 
                     var api = new LHAPI({
-                        url:  that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo",
-                        //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                        //url:  that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo",
+                        url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
                         data: JSON.stringify(this.param),
                         method: 'post'
                     });
@@ -134,8 +134,8 @@ define('lehu.h5.component.coupondetail', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
-                   // url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                   // url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -189,8 +189,8 @@ define('lehu.h5.component.coupondetail', [
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
+                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
