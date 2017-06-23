@@ -94,7 +94,7 @@ define('lehu.h5.component.register', [
                 setTimeout(function () {
                     if (time > 0) {
                         time--;
-                        that.element.find('.btn-retransmit').text(time + 's').addClass('btn-retransmit-disabled');
+                        that.element.find('.btn-retransmit').text(time + 's后重发').addClass('btn-retransmit-disabled');
                         that.countdown.call(that, time);
                     } else {
                         that.element.find('.btn-retransmit').text('获取验证码').removeClass('btn-retransmit-disabled');
@@ -225,7 +225,7 @@ define('lehu.h5.component.register', [
                         }
                     })
                     .fail(function (error) {
-                        alert("注册失败");
+                        $(".err-msg").text('注册失败').parent().css("display", "block");
                     })
             },
 

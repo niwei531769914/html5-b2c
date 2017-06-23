@@ -100,18 +100,22 @@ define('lehu.h5.component.login', [
                 this.element.find('.item-tips').hide();
             },
 
-            '.login-tab span click': function (element, event) {
-                $('.login-tab span').removeClass('active');
-                element.addClass('active');
-
-                if ($('.login-tab-sms').hasClass('active')) {
+            //密码验证码切换
+            '.login-tabs click': function (element, event) {
+                if ($(element).hasClass('login-tab-sms')) {
                     this.loginBysms = true;
+                    $(element).removeClass('login-tab-sms');
+                    $(element).addClass('login-tab-psd');
+                    $(element).html('密码登录');
                     $('.item.item-password').hide();
                     $('.item.item-sms-captcha').show();
                     $('.btn-login').addClass('btn-disabled');
                     $('.txt-password').val("");
                 } else {
                     this.loginBysms = false;
+                    $(element).addClass('login-tab-sms');
+                    $(element).removeClass('login-tab-psd');
+                    $(element).html('验证码登录');
                     $('.item.item-password').show();
                     $('.item.item-sms-captcha').hide();
                     $('.btn-login').addClass('btn-disabled');
@@ -142,7 +146,7 @@ define('lehu.h5.component.login', [
                 setTimeout(function () {
                     if (time > 0) {
                         time--;
-                        that.element.find('.btn-retransmit').text(time + 's').addClass('btn-retransmit-disabled');
+                        that.element.find('.btn-retransmit').text(time + 's后重发').addClass('btn-retransmit-disabled');
                         that.countdown.call(that, time);
                     } else {
                         that.element.find('.btn-retransmit').text('获取验证码').removeClass('btn-retransmit-disabled');
@@ -196,7 +200,7 @@ define('lehu.h5.component.login', [
                 var that = this;
 
                 if (captcha == "") {
-                    $(".err-msg").text("验证码不能为空!").parent().css("display", "block")
+                    $(".err-msg").text("验证码不能为空!").parent().css("display", "block");
                     return false;
                 }
 
@@ -222,11 +226,11 @@ define('lehu.h5.component.login', [
                             location.href = that.from;
                         }
                         else {
-                            util.tip(data.msg);
+                            $(".err-msg").text(data.msg).parent().css("display", "block")
                         }
                     })
                     .fail(function (error) {
-                        $(".err-msg").text(error.msg).parent().css("display", "block")
+                        $(".err-msg").text('登录失败，请重新登录').parent().css("display", "block")
                     })
             },
 
@@ -253,7 +257,7 @@ define('lehu.h5.component.login', [
                 }
 
                 if (passWord == "") {
-                    $(".err-msg").text("密码不能为空!").parent().css("display", "block")
+                    $(".err-msg").text("密码不能为空!").parent().css("display", "block");
                     return false;
                 }
 
@@ -279,11 +283,11 @@ define('lehu.h5.component.login', [
                             return false;
                         }
                         else {
-                            util.tip(data.msg);
+                            $(".err-msg").text(data.msg).parent().css("display", "block")
                         }
                     })
                     .fail(function (error) {
-                        $(".err-msg").text(error.msg).parent().css("display", "block")
+                        $(".err-msg").text('登录失败，请重新登录').parent().css("display", "block")
                     })
             },
 

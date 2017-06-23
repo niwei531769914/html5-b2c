@@ -1,51 +1,55 @@
 
 <!-- 顶部 -->
 <header class="header">
-    <a href="javascript:;" class="back"></a>
-
-    <!-- 密码登录/验证码登录切换 -->
-    <div class="login-tab">
-        <span class="login-tab-psd active">密码登录</span>
-        <span class="login-tab-sms">验证码登录</span>
-    </div>
+    <a href="javascript: void (0)" class="back"></a>
+    <h2>登录</h2>
 </header>
 
 <!--中间-->
 <section class="login-main">
-        <!--错误信息提示-->
+
+    <div class="login-protrait">
+        <img src="images/login/logo.png">
+        <p>汇银乐虎全球家</p>
+    </div>
+
+
+    <!--错误信息提示-->
         <div class="item item-tips">
             <div class="err-msg">用户名不存在</div>
         </div> 
         <!--登录表单-->
         <div class="login-form">
             <div class="item item-username">
-            	  <i class="icon-tel"></i>
                 <input class="txt-input txt-username" type="number" pattern="\d*" placeholder="输入手机号码" >
             </div>
             
             <div class="item item-password">
-            	  <i class="icon-pwd"></i>
                 <input class="txt-input txt-password" type="password" autocomplete="off" placeholder="输入密码">
                 <b class="tp-btn btn-off"></b>
             </div>
               
             <div class="item item-tab item-sms-captcha" style="display: none">
-                 <i class="icon-sms"></i>
                  <input class="txt-input txt-sms-captcha" type="tel" autocomplete="off" placeholder="输入验证码">
-                 <a href="javascript:;" class="btn-retransmit">获取验证码</a>
-            </div>
-
-            <div class="item item-btns item-login">
-                <a class="btn-login btn-disabled" href="javascript:;">登录</a>
-            </div>
-
-            <div class="item item-res">
-                <a class="btn-res btn-disabled register" href="javascript:;">注册</a>
+                 <a href="javascript: void (0)" class="btn-retransmit">获取验证码</a>
             </div>
 
             <div class="item item-login-option">
               <span class="retrieve-password">
-                  <a href="javascript:;">忘记密码？</a>
+                  <a href="forgetpassword.html">忘记密码？</a>
+              </span>
+            </div>
+
+            <div class="item item-btns item-login">
+                <a class="btn-login btn-disabled" href="javascript: void (0)">开启环球购物</a>
+            </div>
+
+            <div class="item item-res">
+              <span class="retrieve-res">
+                  <a class="btn-res btn-disabled register" href="javascript: void (0)">立即注册</a>
+              </span>
+                <span class="retrieve-sms">
+                  <a class="login-tabs login-tab-sms" href="javascript: void (0)">验证码登录</a>
               </span>
             </div>
 
