@@ -101,8 +101,8 @@ define('lehu.h5.component.coupon', [
 
 
                 var api = new LHAPI({
-                    //url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
-                    url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
+                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/list",
+                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -181,8 +181,8 @@ define('lehu.h5.component.coupon', [
                 $(".coupons_category .active").removeClass('active');
                 element.addClass('active');
                 that.clear = false;
+                //init
                 that.pageIndex = 1;
-                console.log(that.pageIndex);
                 if (element.index() == 1) {
                     that.flag = 1;
                     that.getCoupon(1,that.pageIndex);
@@ -270,8 +270,8 @@ define('lehu.h5.component.coupon', [
                     "activityId": couponid
                 };
                 var api = new LHAPI({
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

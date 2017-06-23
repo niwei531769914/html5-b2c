@@ -66,8 +66,8 @@ define('lehu.h5.page.activityreducelist', [
                 };
 
                 var api = new LHAPI({
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceList',
-                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceList',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/reduceList',
+                    //url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

@@ -148,8 +148,8 @@ define('lehu.h5.component.register', [
                 };
 
                 var api = new LHAPI({
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
-                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    //url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -210,8 +210,8 @@ define('lehu.h5.component.register', [
 
 
                 var api = new LHAPI({
-                    //url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
+                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
+                    //url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
