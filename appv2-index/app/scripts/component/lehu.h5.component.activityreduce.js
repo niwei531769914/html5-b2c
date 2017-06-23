@@ -60,14 +60,6 @@ define('lehu.h5.component.activityreduce', [
                 this.initData();
                 this.render();
 
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    //    分享
-                    this.share();
-
-                    //    是否显示购物车
-                    this.shoppingCart();
-                }
-
                 //    IOS存userid和token
                 if (util.isMobile.iOS()) {
                     this.localStronge();
@@ -126,17 +118,6 @@ define('lehu.h5.component.activityreduce', [
 
                 var TITLE = ACTIVITYLIST.activityName;
 
-                //标题
-                if(util.isMobile.Android() || util.isMobile.iOS()){
-                    var jsonParams = {
-                        'funName': 'title_fun',
-                        'params': {
-                            "title":TITLE
-                        }
-                    };
-                    LHHybrid.nativeFun(jsonParams);
-                }
-
                 $('title').html(TITLE);
 
                 var renderFn = can.view.mustache(template_components_activityreduce);
@@ -169,6 +150,25 @@ define('lehu.h5.component.activityreduce', [
                 $.imgLazyLoad();
                 //下拉刷新
                 this.initLoadDataEvent();
+
+                //标题
+                if(util.isMobile.Android() || util.isMobile.iOS()){
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title":TITLE
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
+                }
+
+                if (util.isMobile.Android() || util.isMobile.iOS()) {
+                    //    分享
+                    this.share();
+
+                    //    是否显示购物车
+                    this.shoppingCart();
+                }
             },
 
             /**

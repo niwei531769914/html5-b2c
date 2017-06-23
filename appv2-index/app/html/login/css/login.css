@@ -10,36 +10,46 @@
 .header .login-tab .active{ background: #ffffff; color: #ff6600}
 
 /*主体*/
-.login-main{ width:6.7rem; height:auto; display:block; float:left; margin:2rem .4rem 0}
+.login-main{ width:5.7em; height:auto; display:block; float:left; margin:1rem .9rem 0}
+.login-main .login-protrait{ width: 100%; height: auto; text-align: center}
+.login-main .login-protrait img{ width: 1rem; height: auto; display: block; margin: 0 auto}
+.login-main .login-protrait p{ width: 100%; height: auto; font-size: .3rem; color: #bfbfbf; margin-top: .3rem; letter-spacing: 1px}
+
 .login-main .item{width:100%;font-size:.26rem;float:left;}
 .login-main .item.item-tips{margin-bottom:.1rem;display:none; height:.3rem;}
 .login-main .item.item-tips .err-msg {font-size: .24rem;color: #f51449;}
-.login-main .item .txt-input{width:5.89rem;height:1rem;line-height:normal;padding:0; border-bottom:1px solid #e1e1e1;font-size:.26rem;color:#666666;font-family:"Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft Yahei","微软雅黑",Tahoma,Arial,STHeiti,sans-serif; float:left;}
-.login-main .item .txt-input.txt-password{ width:4.82rem;}
+.login-main .item-username{ width: 100%; height: auto; border-bottom: 1px solid #eaeaea}
+.login-main .item-password{ width: 100%; height: auto; border-bottom: 1px solid #eaeaea}
+.login-main .item-sms-captcha{ width: 100%; height: auto; border-bottom: 1px solid #eaeaea}
+.login-main .item .txt-input{width:100%;height:1rem;line-height:normal;padding:0; font-size:.26rem;color:#666666;font-family:"Helvetica Neue","Hiragino Sans GB","Segoe UI","Microsoft Yahei","微软雅黑",Tahoma,Arial,STHeiti,sans-serif; float:left;}
+.login-main .item .txt-input.txt-password{ width:4.7rem;}
 .login-main .item-login-option{ height:.7rem;}
-.login-main .item-login-option .retrieve-password{float:right;width:50%;text-align:right; line-height:.7rem;}
-.login-main .item-login-option .retrieve-password a{color:#22aaff;font-size:.26rem; padding-left:.2rem;}
+.login-main .item-login-option .retrieve-password{float:left;width:50%;text-align:left; line-height:.7rem;}
+.login-main .item-login-option .retrieve-password a{color:#7c7c7c;font-size:.26rem; padding-left:.2rem;}
 .login-main .item-login-option .login-free,.login-main .item-login-option .reg-protocol{float:left;width:auto; line-height:.7rem; font-size:.26rem; color:#646464;}
-.login-main .item-login-option .login-free i,.login-main .item-reg-option .reg-protocol i{ background:url(../img/login_mei.png) no-repeat center center; background-size:100%; width:.26rem; height:.26rem;margin:.21rem .1rem 0 .81rem;}
+.login-main .item-login-option .login-free i,.login-main .item-reg-option .reg-protocol i{ background:url(../img/login_mei.png) no-repeat center center; background-size:100%; width:.26rem; height:.26rem;margin:.21rem .1rem 0 0;}
 .login-main .item-login-option .login-free.login-free-selected i,.login-main .item-reg-option .reg-protocol.reg-protocol-selected i{ background-image:url(../img/login_zhong.png);}
 .reg-protocol a{ display:block; float:left;}
 .reg-protocol a span{ color: #22aaff}
 .login-main .item-reg-option{ height:1rem; line-height:1rem;}
 .login-main .item-reg-option .reg-protocol i{ margin-top:.37rem;}
-.login-main .item-btns .btn-login,.main .item-btns .btn-next{display:inline-block;width:100%;height:.86rem;border-radius:.1rem;background:#f51449;text-decoration:none;line-height:.86rem;text-align:center;font-size:.32rem;color:#fff;}
-.login-main .item-res .btn-res{display:inline-block;width:100%;height:.86rem;border-radius:.1rem;text-decoration:none;line-height:.86rem;text-align:center;font-size:.32rem;color:#ff6600; border: 1px solid #ff6600}
-.login-main .item-btns .btn-disabled{background:#e2e2e2 !important;cursor:default;color:#bdbdbd}
-.login-main .item-password .tp-btn{display:block;width:.44rem;height:.44rem;border-bottom:1px solid #e1e1e1; background:url(../img/login_kai.png) no-repeat center center; background-size:.44rem; display: block; float:left; padding:.28rem;}
+.login-main .item-btns .btn-login,.main .item-btns .btn-next{display:inline-block;width:100%;height:.76rem;border-radius:.1rem;background:#f51449;text-decoration:none;line-height:.76rem;text-align:center;font-size:.24rem;color:#fff;}
+.login-main .item-res .btn-res,.login-main .item-res .login-tab-sms{display:inline-block;width: auto;height:auto;text-decoration:none;line-height:.86rem;text-align:center;font-size:.28rem;color:#757575}
+.login-main .item-btns .btn-disabled{background:#bababa !important;cursor:default;color:#ffffff; letter-spacing: 1px}
+.login-main .item-password .tp-btn{display:block;width:.44rem;height:.44rem; background:url(../img/login_kai.png) no-repeat center center; background-size:.44rem; display: block; float:left; padding:.28rem;}
 .login-main .item-password .btn-off{ background-image:url(../img/login_kai.png);}
 .login-main .item-password .btn-on{ background-image:url(../img/login_guan.png);}
 .login-main .item.joint-login{margin:1rem 0 0;bottom:1rem;left:0;width:100%}
 .login-main .item i{ width:.35rem; height:.44rem; display:block; float:left; margin:.28rem .23rem; background-repeat:no-repeat; background-position: center center; background-size:100%;}
-.icon-tel{ background-image:url(../img/login_shouji.png);}
-.icon-pwd{ background-image:url(../img/login_mima.png);}
-.icon-sms{ background-image:url(../img/login_yanzm.png);}
+/*.icon-tel{ background-image:url(../img/login_shouji.png);}*/
+/*.icon-pwd{ background-image:url(../img/login_mima.png);}*/
+/*.icon-sms{ background-image:url(../img/login_yanzm.png);}*/
 .txt-input::-webkit-input-placeholder{color: #e1e1e1;}
-.login-main .btn-retransmit{float:right;overflow:hidden;width:1.5rem;height:.6rem;background:#ff6600;border-radius:.1rem;line-height:.6rem;text-align:center;cursor:pointer;font-size:.26rem;color:#ffffff; padding:0 .1rem; margin-top:-.8rem;}
-.login-main .btn-retransmit-disabled{background:#e2e2e2 !important;cursor:default;color:#bdbdbd;}
+.login-main .btn-retransmit{float:right;overflow:hidden;width:1.5rem;height:.6rem;border-radius:.1rem;line-height:.6rem;text-align:center;cursor:pointer;font-size:.26rem;color:#7c7c7c; padding:0 .1rem; margin-top:-.8rem;}
+.login-main .btn-retransmit-disabled{cursor:default;color:#bdbdbd;}
 .login-main .item-btns .btn-findpwd{ margin-top:1.4rem;}
+.login-main .login-form{ width: 100%; height: auto; margin-top: 1rem}
 .login-main .login-form .item-login{ margin-top: 1.1rem}
 .login-main .login-form .item-res{ margin-top: .3rem;}
+.login-main .login-form .item-res .retrieve-res{display: block; float: left}
+.login-main .login-form .item-res .retrieve-sms{display: block; float: right}

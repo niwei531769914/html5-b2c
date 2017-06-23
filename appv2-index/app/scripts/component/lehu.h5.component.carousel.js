@@ -226,11 +226,6 @@ define('lehu.h5.component.carousel', [
                         // luck_id
                         that.luckId = data.response.id;
 
-                        //    分享
-                        if (util.isMobile.Android() || util.isMobile.iOS()) {
-                            that.share();
-                        }
-
                         var renderList = can.mustache(template_components_carousel);
                         var html = renderList(that.options, that.helpers);
                         that.element.html(html);
@@ -248,7 +243,10 @@ define('lehu.h5.component.carousel', [
                             $("#nologin").hide();
                             $("#alreadylogin").show();
                         }
-
+                        //    分享
+                        if (util.isMobile.Android() || util.isMobile.iOS()) {
+                            that.share();
+                        }
 
                     })
                     .fail(function (error) {
