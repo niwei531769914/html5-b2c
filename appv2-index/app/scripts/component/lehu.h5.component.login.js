@@ -82,11 +82,13 @@ define('lehu.h5.component.login', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+               // this.URL = 'http://121.196.208.98:28080';
+                this.URL = 'http://mobile.vision-world.cn:8080';
                 this.loginBysms = false;
             },
 
@@ -177,8 +179,7 @@ define('lehu.h5.component.login', [
                 };
 
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
-                    //url: that.URL + "/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -214,8 +215,7 @@ define('lehu.h5.component.login', [
 
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/login',
-                    //url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -270,8 +270,7 @@ define('lehu.h5.component.login', [
                 };
 
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/login",
-                    //url: that.URL + "/mobile-web-user/ws/mobile/v1/user/login",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/login",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

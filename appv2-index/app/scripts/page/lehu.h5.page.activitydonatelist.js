@@ -25,11 +25,13 @@ define('lehu.h5.page.activitydonatelist', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+                //this.URL = 'http://121.196.208.98:28080';
+                 this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             /**
@@ -49,15 +51,19 @@ define('lehu.h5.page.activitydonatelist', [
                 //去除导航
                 this.deleteNav();
 
-                if(util.isMobile.iOS()){
-                    //标题
-                    var jsonParams = {
-                        'funName': 'title_fun',
-                        'params': {
-                            "title": "汇银乐虎全球购-满赠活动"
+                var param = can.deparam(window.location.search.substr(1));
+
+                if(param.hyfrom == 'app'){
+                    if(util.isMobile.iOS()){
+                        //标题
+                        var jsonParams = {
+                            'funName': 'title_fun',
+                            'params': {
+                                "title": "汇银乐虎全球购-满赠活动"
+                            }
                         }
+                        LHHybrid.nativeFun(jsonParams);
                     }
-                    LHHybrid.nativeFun(jsonParams);
                 }
 
 
@@ -67,8 +73,7 @@ define('lehu.h5.page.activitydonatelist', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/promotion/donateList',
-                    //url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
+                    url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

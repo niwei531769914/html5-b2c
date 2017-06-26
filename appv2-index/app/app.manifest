@@ -1,10 +1,5 @@
 CACHE MANIFEST
-
-<<<<<<< HEAD
-#v1.4.207
-=======
-#v1.4.206
->>>>>>> 624ac1b3bb8bb47f50ceed233e476c36e9b50a7b
+#v1.4.215
 
 CACHE:
 styles/lehu.h5.login.css
@@ -32,6 +27,8 @@ images/login/login_04.png
 images/loading.gif
 images/big_goods_back.png
 images/goods_back.png
+images/coupons/single_coupon.png
+images/coupons/total_coupon.png
 
  
 NETWORK:

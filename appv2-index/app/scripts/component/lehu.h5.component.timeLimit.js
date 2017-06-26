@@ -46,37 +46,44 @@ define('lehu.h5.component.timeLimit', [
                 //滚动加载
                 this.bindScroll();
 
-                //    分享
-                if (util.isMobile.Android() || util.isMobile.iOS()) {
-                    this.share();
-                }
-                if (util.isMobile.iOS()) {
-                    //标题
-                    var jsonParams = {
-                        'funName': 'title_fun',
-                        'params': {
-                            "title": "汇银乐虎全球购-限时折扣"
-                        }
+                var params = can.deparam(window.location.search.substr(1));
+
+                if(params.hyfrom == 'app'){
+                    //    分享
+                    if (util.isMobile.Android() || util.isMobile.iOS()) {
+                        this.share();
                     }
+
+                    if (util.isMobile.iOS()) {
+                        //标题
+                        var jsonParams = {
+                            'funName': 'title_fun',
+                            'params': {
+                                "title": "汇银乐虎全球购-限时折扣"
+                            }
+                        }
                         LHHybrid.nativeFun(jsonParams);
+                    }
+
                 }
 
             },
 
             initDate: function () {
-                var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+                //this.URL = 'http://121.196.208.98:28080';
+                 this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             render: function () {
                 $('.loading-date').show();
                 var that = this;
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
                     data: {},
                     method: 'post'
                 });
@@ -299,8 +306,7 @@ define('lehu.h5.component.timeLimit', [
                     "pageSize": 10
                 };
                 var api = new LHAPI({
-                    url: "http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/activity/timelimitList",
-                    //url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
+                    url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitList",
                     data: JSON.stringify(param),
                     method: 'post'
                 });

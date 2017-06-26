@@ -66,8 +66,7 @@ define('lehu.h5.component.coupondetail', [
                     };
 
                     var api = new LHAPI({
-                        //url:  that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo",
-                        url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                        url:  that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo",
                         data: JSON.stringify(this.param),
                         method: 'post'
                     });
@@ -96,33 +95,20 @@ define('lehu.h5.component.coupondetail', [
             },
 
             ".bt_share click": function (element, event) {
-                var param = can.deparam(window.location.search.substr(1));
-
                 if (util.isMobile.WeChat()|| util.isMobile.QQ()) {
                     $("#sharetip").show();
                     return false;
                 }
-
-                // var jsonParams = {
-                //   'funName': 'share_fun',
-                //   'params': {
-                //     'title': "汇银乐虎全球购-领券中心",
-                //     'type': "1",
-                //     'video_img': "",
-                //     'shareUrl': 'http://' + window.location.host + "/html5/app/coupon.html?from=share",
-                //     'shareImgUrl': "http://app.lehumall.com/html5/app/images/Shortcut_114_114.png",
-                //     'text': "汇银乐虎全球购，赶紧领取优惠券吧，手慢无！"
-                //   }
-                // };
-                // LHHybrid.nativeFun(jsonParams);
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+                //this.URL = 'http://121.196.208.98:28080';
+                 this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             render: function () {
@@ -134,8 +120,7 @@ define('lehu.h5.component.coupondetail', [
                 };
 
                 var api = new LHAPI({
-                   // url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -189,8 +174,7 @@ define('lehu.h5.component.coupondetail', [
                 };
 
                 var api = new LHAPI({
-                    //url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

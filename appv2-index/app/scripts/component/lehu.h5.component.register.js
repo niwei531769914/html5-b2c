@@ -71,11 +71,13 @@ define('lehu.h5.component.register', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+                //this.URL = 'http://121.196.208.98:28080';
+                 this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             /*密码显示按钮*/
@@ -148,8 +150,7 @@ define('lehu.h5.component.register', [
                 };
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
-                    //url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -194,6 +195,10 @@ define('lehu.h5.component.register', [
                     $(".err-msg").text("密码不能小于6位数").parent().css("display", "block")
                     return false;
                 }
+                if (passWord.length > 17) {
+                    $(".err-msg").text("密码不能大于18位数").parent().css("display", "block")
+                    return false;
+                }
 
                 if (!that.checkmobile(userName)) {
                     $(".err-msg").text("手机号码格式错误!").parent().css("display", "block");
@@ -210,7 +215,6 @@ define('lehu.h5.component.register', [
 
 
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-user/ws/mobile/v1/user/register',
                     //url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
                     data: JSON.stringify(this.param),
                     method: 'post'

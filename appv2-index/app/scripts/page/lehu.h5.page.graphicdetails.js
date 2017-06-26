@@ -24,11 +24,13 @@ define('lehu.h5.page.graphicdetails', [
 
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                // var HOST = window.location.host;
+                // if(HOST.indexOf("http://") == -1){
+                //     HOST = "http://" + HOST;
+                // }
+                // this.URL = HOST;
+                //this.URL = 'http://121.196.208.98:28080';
+                 this.URL = 'http://mobile.vision-world.cn:8080';
             },
             /**
              * [init 初始化]
@@ -47,8 +49,7 @@ define('lehu.h5.page.graphicdetails', [
                     goodsId : param.goodsId
                 }
                 var api = new LHAPI({
-                    url: 'http://mobile.vision-world.cn:8080/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
-                    //url: that.URL + '/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
+                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/goods/goodsDetail',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

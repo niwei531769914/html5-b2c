@@ -26,7 +26,7 @@
 .login-main .item .txt-input.txt-password{ width:4.7rem;}
 .login-main .item-login-option{ height:.7rem;}
 .login-main .item-login-option .retrieve-password{float:left;width:50%;text-align:left; line-height:.7rem;}
-.login-main .item-login-option .retrieve-password a{color:#7c7c7c;font-size:.26rem; padding-left:.2rem;}
+.login-main .item-login-option .retrieve-password a{color:#7c7c7c;font-size:.26rem;}
 .login-main .item-login-option .login-free,.login-main .item-login-option .reg-protocol{float:left;width:auto; line-height:.7rem; font-size:.26rem; color:#646464;}
 .login-main .item-login-option .login-free i,.login-main .item-reg-option .reg-protocol i{ background:url(../images/login/login_mei.png) no-repeat center center; background-size:100%; width:.26rem; height:.26rem;margin:.21rem .1rem 0 0;}
 .login-main .item-login-option .login-free.login-free-selected i,.login-main .item-reg-option .reg-protocol.reg-protocol-selected i{ background-image:url(../images/login/login_zhong.png);}
@@ -34,7 +34,7 @@
 .reg-protocol a span{ color: #22aaff}
 .login-main .item-reg-option{ height:1rem; line-height:1rem;}
 .login-main .item-reg-option .reg-protocol i{ margin-top:.37rem;}
-.login-main .item-btns .btn-login,.main .item-btns .btn-next{display:inline-block;width:100%;height:.76rem;border-radius:.1rem;background:#f51449;text-decoration:none;line-height:.76rem;text-align:center;font-size:.24rem;color:#fff;}
+.login-main .item-btns .btn-login,.main .item-btns .btn-next{display:inline-block;width:100%;height:.76rem;border-radius:.1rem;background:#f32458;text-decoration:none;line-height:.76rem;text-align:center;font-size:.24rem;color:#fff;}
 .login-main .item-res .btn-res,.login-main .item-res .login-tab-sms,.login-main .item-res .login-tab-psd{display:inline-block;width: auto;height:auto;text-decoration:none;line-height:.86rem;text-align:center;font-size:.28rem;color:#757575}
 .login-main .item-btns .btn-disabled{background:#bababa !important;cursor:default;color:#ffffff; letter-spacing: 1px}
 .login-main .item-password .tp-btn{display:block;width:.44rem;height:.44rem; background:url(../images/login/ic_visibility.png) no-repeat center center; background-size:.44rem; display: block; float:left; padding:.28rem;}
