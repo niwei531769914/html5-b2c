@@ -40,7 +40,6 @@ define('lehu.h5.component.orderlist', [
 
                 if (params.hyfrom == 'app') {
 
-
                     if (util.isMobile.iOS()) {
                         //标题
                         var jsonParams = {
@@ -51,9 +50,7 @@ define('lehu.h5.component.orderlist', [
                         }
                         LHHybrid.nativeFun(jsonParams);
                     }
-
                 }
-
             },
 
             initDate: function () {
@@ -65,7 +62,7 @@ define('lehu.h5.component.orderlist', [
                 this.user = busizutil.getUserId();
 
                 var params = {
-                    'phone': 18602523203
+                    'phone': this.user.phone
                 };
 
                 $.ajax({
@@ -78,7 +75,11 @@ define('lehu.h5.component.orderlist', [
 
                             var html = '';
                             var ORDERLIST = result.orderList;
-
+                            console.log(ORDERLIST.length);
+                            if(ORDERLIST.length == 0){
+                                $('.order-no-order').show();
+                                return false;
+                            }
                             for(var i = 0; i < ORDERLIST.length; i++){
                                  html += '<div class="order-list-item"><div class="list-item-des"><span class="item-des-name">' + ORDERLIST[i].STORE_NAME + '</span> <a href="javascript:void (0)" class="item-des-go">' + ORDERLIST[i].STATUS_NAME + '</a></div>';
 
@@ -117,13 +118,17 @@ define('lehu.h5.component.orderlist', [
 
             },
 
+            //进入订单详情页
+            '.order-list-item click':function () {
+                alert('123456789');
+            },
+
             /*去除header*/
             deleteNav: function () {
                 var param = can.deparam(window.location.search.substr(1));
                 if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
-                    $('.tabs').css('top', '0');
-                    $('.time-sale-main').css('margin-top', '1.6rem');
+                    $('.order-list').css('margin-top', '0');
                     return false;
                 }
             },

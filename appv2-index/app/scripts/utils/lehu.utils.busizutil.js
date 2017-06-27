@@ -105,11 +105,13 @@ define('lehu.utils.busizutil', [
     // var userId = param.userid;
     var userId = $.fn.cookie('userId');
     var token = $.fn.cookie('token');
+    var phone = $.fn.cookie('phone');
 
     if (userId&&token) {
       var user = {
           userId : userId,
-          token : token
+          token : token,
+          phone: phone
       }
       return user;
     }

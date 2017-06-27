@@ -1,5 +1,7 @@
 
 .order-list{ width: 100%; height: auto; margin: 0 auto; float: none}
+.order-list .order-no-order{ width: 100%; height: auto; float: left; font-size: .3rem; color: #757575; text-align: center; letter-spacing: 1px; display: none}
+.order-list .order-no-order img{ width: 2rem; height: auto; display: block; margin: .22rem auto;  }
 .order-list .order-list-item{ width: 100%; height: auto; float: left}
 .order-list .order-list-item .list-item-des{ width: 94%; height: .8rem; padding: 0 3%; float: left; border-bottom: 1px solid #e0e0e0; line-height: .8rem  }
 .order-list .order-list-item .list-item-des .item-des-name{ font-size: .26rem; color: #212121; float: left; font-weight: 600}
