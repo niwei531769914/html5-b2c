@@ -148,11 +148,6 @@ define('lehu.h5.component.carousel', [
                 //app登录
                 if(params.hyfrom == 'app'){
 
-                    //    分享
-                    if (util.isMobile.Android() || util.isMobile.iOS()) {
-                        that.share();
-                    }
-
                     //    IOS存userid和token
                     if (util.isMobile.iOS()) {
                         this.localStronge();
@@ -181,7 +176,7 @@ define('lehu.h5.component.carousel', [
             render: function () {
 
                 this.user = busizutil.getUserId();
-
+                var param = can.deparam(window.location.search.substr(1));
                 var params = {};
 
                 if (this.user) {
@@ -249,6 +244,14 @@ define('lehu.h5.component.carousel', [
                         } else {
                             $("#nologin").hide();
                             $("#alreadylogin").show();
+                        }
+
+                        if(param.hyfrom == 'app'){
+                            //    分享
+                            if (util.isMobile.Android() || util.isMobile.iOS()) {
+                                that.share();
+                            }
+
                         }
 
                     })

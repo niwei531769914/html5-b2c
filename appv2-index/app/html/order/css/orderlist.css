@@ -1,0 +1,24 @@
+
+.order-list{ width: 100%; height: auto; margin: 0 auto; float: none}
+.order-list .order-list-item{ width: 100%; height: auto; float: left}
+.order-list .order-list-item .list-item-des{ width: 94%; height: .8rem; padding: 0 3%; float: left; border-bottom: 1px solid #e0e0e0; line-height: .8rem  }
+.order-list .order-list-item .list-item-des .item-des-name{ font-size: .26rem; color: #212121; float: left; font-weight: 600}
+.order-list .order-list-item .list-item-des .item-des-go{ float: right; color: #f53828; font-size: .26rem }
+
+/*goods*/
+.order-list .list-item-goods{ width: 100%; height: auto; float: left;}
+.order-list .list-item-goods .item-goods{ width: 100%; height: auto; float: left; border-bottom: 1px solid #e0e0e0; padding: .2rem 0; position: relative}
+.order-list .list-item-goods .item-goods .item-goods-image{width: 1.4rem; height: 1.4rem; float: left; display: block; margin-left: .32rem }
+.order-list .list-item-goods .item-goods .item-goods-title{ width: 5.23rem; height: auto; float: right; margin-right: .32rem}
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-sc{ width: 100% ; height: auto; float: left}
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-sc .item-goods-name{ width: 3.65rem; height: .7rem; font-size: .26rem;  float: left; line-height: .35rem; overflow:hidden; text-overflow: ellipsis ;  white-space: normal;  display:-webkit-box;  -webkit-box-orient:vertical;-webkit-line-clamp:2; }
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-sc .item-goods-price{ width: 1.28rem; height: auto; font-size: .26rem; float: right; line-height: .35rem; text-align: right}
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-rulers{ width: 100%; height: .3rem; font-size: .24rem; color: #757575; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; margin-top: .07rem}
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-rulers em{ margin-right: .05rem}
+.order-list .list-item-goods .item-goods .item-goods-title .item-goods-tax{ width: 100%; height: auto; float: left; white-space: nowrap; font-size: .24rem; color: #757575; margin-top: .07rem}
+.order-list .list-item-goods .item-goods .item-goods-quantity{ position: absolute; right: .32rem; font-size: .3rem; color: #757575; bottom: .2rem }
+
+/*totalPrice*/
+.order-list .order-list-item .list-item-prices{ width: 94%; height: auto; font-size: .28rem; color: #212121; padding: .2rem 3%; float: left }
+.order-list .order-list-item .list-item-prices em{ padding: 0 .1rem }
+.order-list .order-list-item .list-item-prices b{ padding: 0 .1rem }
