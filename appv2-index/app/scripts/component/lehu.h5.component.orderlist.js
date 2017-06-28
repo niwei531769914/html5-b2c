@@ -33,24 +33,26 @@ define('lehu.h5.component.orderlist', [
                 //    去除导航
                 this.deleteNav();
 
-                //渲染页面
-                this.render();
-
                 var params = can.deparam(window.location.search.substr(1));
 
                 if (params.hyfrom == 'app') {
-
                     if (util.isMobile.iOS()) {
+                        //token
+                        this.localStronge();
+
                         //标题
                         var jsonParams = {
                             'funName': 'title_fun',
                             'params': {
                                 "title": "我的订单"
                             }
-                        }
+                        };
                         LHHybrid.nativeFun(jsonParams);
                     }
                 }
+
+                //渲染页面
+                this.render();
             },
 
             initDate: function () {
@@ -121,6 +123,16 @@ define('lehu.h5.component.orderlist', [
             //进入订单详情页
             '.order-list-item click':function () {
                 alert('123456789');
+            },
+
+            //IOS userid和token 本地存储
+            localStronge: function () {
+                var jsonParams = {
+                    'funName': 'localStronge',
+                    'params': {}
+                };
+
+                LHHybrid.nativeRegister(jsonParams);
             },
 
             /*去除header*/

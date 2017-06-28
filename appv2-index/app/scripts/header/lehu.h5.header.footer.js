@@ -44,7 +44,8 @@ define('lehu.h5.header.footer', [
             window.addEventListener("scroll", function() {
               var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
               var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-              if (scrollTop > clientHeight) {
+           //   if (scrollTop >  0 ||clientHeight) {
+              if (scrollTop >  10 ) {
                 topElement.style.display = "block"
               } else {
                 topElement.style.display = "none"

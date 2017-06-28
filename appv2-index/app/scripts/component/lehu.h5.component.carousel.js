@@ -121,7 +121,7 @@ define('lehu.h5.component.carousel', [
                     var lottery = list[index];
                     // 谢谢参与
                     if (lottery.prizeType == 1) {
-                        return "<p class='lottery-bg00  lottery-unit-" + index + "'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>谢谢参与</i></p>";
+                        return "<p class='lottery-bg00  lottery-unit-" + index + "'><img src='images/carousel/pic_thanks.png' style='display: block; margin: 0 auto; width: .4rem; height: .4rem; margin-top: .6rem; margin-bottom: .2rem'> <i>" + lottery.prizeName  +"</i></p>";
                     } else if (lottery.prizeType == 2) { // 优惠券
 
                         if (lottery.lhqType == 1) {
