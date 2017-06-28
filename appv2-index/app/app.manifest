@@ -1,9 +1,26 @@
 CACHE MANIFEST
-#v1.4.239
+#v1.4.242
 
 CACHE:
 styles/lehu.h5.login.css
 styles/lehu.h5.coupon.css
+styles/lehu.h5.activitydonate.css
+styles/lehu.h5.activityreduce.css
+styles/lehu.h5.activitydonatelist.css
+styles/lehu.h5.activityreducelist.css
+styles/lehu.h5.carousel.css
+styles/lehu.h5.coupondetail.css
+styles/lehu.h5.forgetpassword.css
+styles/lehu.h5.graphicdetails.css
+styles/lehu.h5.login.css
+styles/lehu.h5.orderDetails.css
+styles/lehu.h5.orderlist.css
+styles/lehu.h5.register.css
+styles/lehu.h5.stores.css
+styles/lehu.h5.timeLimit.css
+styles/lehu.h5.servers.css
+styles/lehu.h5.registerhelp.css
+
 
 scripts/common/lehu.h5.common.js
 scripts/common/require.min.js
@@ -14,11 +31,16 @@ scripts/lehu.h5.page.registerhelp.js
 scripts/lehu.h5.page.coupon.js
 scripts/lehu.h5.page.carousel.js
 scripts/lehu.h5.page.servers.js
+scripts/lehu.h5.page.graphicdetails.js
 scripts/lehu.h5.page.activitydonate.js
 scripts/lehu.h5.page.activityreduce.js
 scripts/lehu.h5.page.activityreducelist.js
 scripts/lehu.h5.page.activitydonatelist.js
+scripts/lehu.h5.page.orderlist.js
+scripts/lehu.h5.page.orderDetails.js
 scripts/lehu.h5.page.timeLimit.js
+scripts/lehu.h5.page.stores.js
+scripts/lehu.h5.page.headlines.js
 
 
 images/Shortcut_114_114.png
