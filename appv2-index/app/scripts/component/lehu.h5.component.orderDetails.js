@@ -24,9 +24,6 @@ define('lehu.h5.component.orderDetails', [
             init: function () {
                 this.initData();
 
-                //    去除导航
-                this.deleteNav();
-
                 var params = can.deparam(window.location.search.substr(1));
 
                 if (params.hyfrom == 'app') {
@@ -57,6 +54,11 @@ define('lehu.h5.component.orderDetails', [
                 var renderFn = can.view.mustache(template_components_orderDetails);
                 var html = renderFn(this.options.data);
                 this.element.html(html);
+
+
+                //    去除导航
+                this.deleteNav();
+
                 this.request();
             },
 
@@ -78,7 +80,7 @@ define('lehu.h5.component.orderDetails', [
                         var InterfaceData = bToObj.order.orderInfo;
                         var Commodity = bToObj.order.detailsList;
                         var HTML = "";
-
+                        $(".OrderDetails-state").empty().html(InterfaceData.STATUS_NAME);
                         $(".OrderDetailsUserName").empty().html(InterfaceData.CONSIGNEE_NAME);
                         $(".OrderDetailsUserPhone").empty().html(InterfaceData.CONSIGNEE_PHONE);
                         $(".OrderDetailsUserAddress").empty().html(InterfaceData.ADDRESS);

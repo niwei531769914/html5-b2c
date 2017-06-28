@@ -123,7 +123,7 @@ define('lehu.h5.component.orderlist', [
             //进入订单详情页
             '.order-list-item click':function (element,event) {
                 var ORDERCODE = $(element).attr('data-orderCode');
-                window.location.href = 'orderDetails.html?orderCode' + ORDERCODE;
+                window.location.href = 'orderDetails.html?hyfrom=app&orderCode=' + ORDERCODE;
             },
 
             //IOS userid和token 本地存储
