@@ -197,7 +197,7 @@ define('lehu.h5.component.carousel', [
                     .done(function (data) {
 
                         if (data.code !== 1) {
-                            var html = "<img src= 'images/no_activity.png' style=' margin: 0 auto; display: block' />";
+                            var html = "<div style='width: 100%; height: auto; float: left; display: none; text-align: center; font-size: .28rem'><img src= 'images/no_activity.png' style=' width: 2.4rem; height: auto margin: 1.2rem auto .48rem; display: block' />暂时没有活动哦～</div> ";
                             $(".dial_bj").css("background", "#ffffff");
                             $(".nwrapper").empty().append(html);
                             return false;

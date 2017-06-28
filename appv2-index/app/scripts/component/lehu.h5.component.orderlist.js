@@ -83,7 +83,7 @@ define('lehu.h5.component.orderlist', [
                                 return false;
                             }
                             for(var i = 0; i < ORDERLIST.length; i++){
-                                 html += '<div class="order-list-item"><div class="list-item-des"><span class="item-des-name">' + ORDERLIST[i].STORE_NAME + '</span> <a href="javascript:void (0)" class="item-des-go">' + ORDERLIST[i].STATUS_NAME + '</a></div>';
+                                 html += '<div class="order-list-item" data-orderCode = "' + ORDERLIST[i].ORDER_CODE + '"><div class="list-item-des"><span class="item-des-name">' + ORDERLIST[i].STORE_NAME + '</span> <a href="javascript:void (0)" class="item-des-go">' + ORDERLIST[i].STATUS_NAME + '</a></div>';
 
                                  var ORDERDETAILLIST = ORDERLIST[i].orderDetalList;
 
@@ -121,8 +121,9 @@ define('lehu.h5.component.orderlist', [
             },
 
             //进入订单详情页
-            '.order-list-item click':function () {
-                alert('123456789');
+            '.order-list-item click':function (element,event) {
+                var ORDERCODE = $(element).attr('data-orderCode');
+                window.location.href = 'orderDetails.html?orderCode' + ORDERCODE;
             },
 
             //IOS userid和token 本地存储

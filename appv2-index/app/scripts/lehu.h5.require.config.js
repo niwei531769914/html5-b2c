@@ -56,6 +56,7 @@ requirejs.config({
         "lehu.h5.page.graphicdetails": "scripts/page/lehu.h5.page.graphicdetails",
         "lehu.h5.page.coupondetail": "scripts/page/lehu.h5.page.coupondetail",
         "lehu.h5.page.orderlist": "scripts/page/lehu.h5.page.orderlist",
+        "lehu.h5.page.orderDetails": "scripts/page/lehu.h5.page.orderDetails",
 
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
@@ -70,6 +71,7 @@ requirejs.config({
         "lehu.h5.component.headlines": "scripts/component/lehu.h5.component.headlines",
         "lehu.h5.component.coupondetail": "scripts/component/lehu.h5.component.coupondetail",
         "lehu.h5.component.orderlist": "scripts/component/lehu.h5.component.orderlist",
+        "lehu.h5.component.orderDetails": "scripts/component/lehu.h5.component.orderDetails",
 
         "template_page_registerhelp": "templates/page/lehu.h5.page.registerhelp.mustache",
 
@@ -93,6 +95,7 @@ requirejs.config({
         "template_components_activitydonatelist": "templates/components/lehu.h5.components.activitydonatelist.mustache",
         "template_components_coupondetail": "templates/components/lehu.h5.components.coupondetail.mustache",
         "template_components_orderlist": "templates/components/lehu.h5.components.orderlist.mustache",
+        "template_components_orderDetails": "templates/components/lehu.h5.components.orderDetails.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 
