@@ -81,10 +81,10 @@ define('lehu.h5.component.activitydonate', [
                 //     HOST = "http://" + HOST;
                 // }
                 // this.URL = HOST;
-                //this.URL = 'http://121.196.208.98:28080';
-                this.URL = 'http://mobile.vision-world.cn:8080';
-                //this.URLF = 'http://121.196.208.98:28080';
-                this.URLF = 'http://front.vision-world.cn:8080';
+                this.URL = 'http://121.196.208.98:28080';
+                //this.URL = 'http://mobile.vision-world.cn:8080';
+                this.URLF = 'http://121.196.208.98:28080';
+                //this.URLF = 'http://front.vision-world.cn:8080';
                 this.shoppingIsfor = false;
             },
 
@@ -139,7 +139,7 @@ define('lehu.h5.component.activitydonate', [
                 };
                 if (ACTIVITYLIST.activityImg == "") {
                     ACTIVITYLIST.activityImg =
-                        "http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg";
+                        "http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629133401926.jpg";
                 }
                 else {
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
