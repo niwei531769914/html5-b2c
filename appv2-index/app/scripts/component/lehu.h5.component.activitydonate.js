@@ -151,6 +151,7 @@ define('lehu.h5.component.activitydonate', [
                 }
                 else {
                     this.options.data.attr("supplement.noData", false);
+                    this.options.data.attr("supplement.onLoadingData", true);
                 }
 
                 var renderFn = can.mustache(template_components_activitydonate);
@@ -189,9 +190,8 @@ define('lehu.h5.component.activitydonate', [
                 var renderData = this.options.data;
                 //节流阀
                 var loadingDatas = function () {
-                    if (that.options.data.attr("supplement.noData") ||
-                        that.options.data.attr("supplement.onLoadingData") || that.options.data.attr
-                        ("goods").length < 10) {
+                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("goods").length < 10) {
+
                         return false;
                     }
                     var srollPos = $(window).scrollTop(); //滚动条距离顶部的高度
@@ -245,7 +245,7 @@ define('lehu.h5.component.activitydonate', [
                             }
                             else {
                                 that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
-                                that.options.data.attr("supplement.onLoadingData", false);
+                                that.options.data.attr("supplement.onLoadingData", true);
                             }
                             //图片懒加载
                             $.imgLazyLoad();

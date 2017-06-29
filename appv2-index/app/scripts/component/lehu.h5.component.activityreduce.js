@@ -136,7 +136,7 @@ define('lehu.h5.component.activityreduce', [
 
                 $('title').html(TITLE);
 
-                var renderFn = can.view.mustache(template_components_activityreduce);
+
                 ACTIVITYLIST.supplement = {
                     onLoadingData: false
                 };
@@ -153,8 +153,10 @@ define('lehu.h5.component.activityreduce', [
                 }
                 else {
                     this.options.data.attr("supplement.noData", false);
+                    this.options.data.attr("supplement.onLoadingData", true);
                 }
 
+                var renderFn = can.view.mustache(template_components_activityreduce);
                 var html = renderFn(this.options.data, this.helpers);
                 this.element.html(html);
 
@@ -191,7 +193,8 @@ define('lehu.h5.component.activityreduce', [
                 var renderData = this.options.data;
                 //节流阀
                 var loadingDatas = function () {
-                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("supplement.onLoadingData") || that.options.data.attr("goods").length < 10) {
+                    if (that.options.data.attr("supplement.noData") || that.options.data.attr("goods").length < 10) {
+
                         return false;
                     }
                     var srollPos = $(window).scrollTop(); //滚动条距离顶部的高度
@@ -245,7 +248,7 @@ define('lehu.h5.component.activityreduce', [
                             }
                             else {
                                 that.options.data.attr("pageIndex", parseInt(that.options.data.pageIndex) + 1);
-                                that.options.data.attr("supplement.onLoadingData", false);
+                                that.options.data.attr("supplement.onLoadingData", true);
                             }
                             //图片懒加载
                             $.imgLazyLoad();
@@ -276,7 +279,6 @@ define('lehu.h5.component.activityreduce', [
                 var that = this;
                 var param = can.deparam(window.location.search.substr(1));
 
-
                 this.user = busizutil.getUserId();
                 if (!this.user) {
                     if (param.hyfrom) {
@@ -293,7 +295,6 @@ define('lehu.h5.component.activityreduce', [
                         return false;
                     }
                 }
-
 
                 if(that.shoppingIsfor){
                     return false;
