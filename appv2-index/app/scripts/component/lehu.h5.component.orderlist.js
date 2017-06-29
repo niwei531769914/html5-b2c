@@ -64,7 +64,8 @@ define('lehu.h5.component.orderlist', [
                 this.user = busizutil.getUserId();
 
                 var params = {
-                    'phone': this.user.phone
+                    //'phone': this.user.phone
+                    'phone': 15151876020
                 };
 
                 $.ajax({
@@ -82,7 +83,9 @@ define('lehu.h5.component.orderlist', [
                                 $('.order-no-order').show();
                                 return false;
                             }
+                            console.log(2);
                             for(var i = 0; i < ORDERLIST.length; i++){
+                                console.log(1);
                                  html += '<div class="order-list-item" data-orderCode = "' + ORDERLIST[i].ORDER_CODE + '"><div class="list-item-des"><span class="item-des-name">' + ORDERLIST[i].STORE_NAME + '</span> <a href="javascript:void (0)" class="item-des-go">' + ORDERLIST[i].STATUS_NAME + '</a></div>';
 
                                  var ORDERDETAILLIST = ORDERLIST[i].orderDetalList;
@@ -105,6 +108,9 @@ define('lehu.h5.component.orderlist', [
                                  html += '<div class="nhr"></div>';
                                  html += '</div>';
                             }
+
+                            //loadingimg remove
+                            $('.nlist_loading').hide();
 
                             //rend
                              $('.order-list').empty().append(html);

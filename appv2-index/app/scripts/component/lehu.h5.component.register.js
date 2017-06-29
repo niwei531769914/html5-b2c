@@ -76,8 +76,8 @@ define('lehu.h5.component.register', [
                 //     HOST = "http://" + HOST;
                 // }
                 // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
+                //this.URL = 'http://121.196.208.98:28080';
+                this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             /*密码显示按钮*/

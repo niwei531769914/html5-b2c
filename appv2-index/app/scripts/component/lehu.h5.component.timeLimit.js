@@ -75,12 +75,14 @@ define('lehu.h5.component.timeLimit', [
                 //     HOST = "http://" + HOST;
                 // }
                 // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
+                //this.URL = 'http://121.196.208.98:28080';
+                this.URL = 'http://mobile.vision-world.cn:8080';
+                //this.URLF = 'http://121.196.208.98:28080';
+                this.URLF = 'http://front.vision-world.cn:8080';
             },
 
             render: function () {
-                $('.loading-date').show();
+
                 var that = this;
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
@@ -93,7 +95,7 @@ define('lehu.h5.component.timeLimit', [
                             var TABLIST = data.response;
                             var html = "";
                             if (TABLIST == "") {
-                                $(".loading-date").hide();
+
                                 $(".nlist_no_activity").show();
                                 return false;
                             }
@@ -505,8 +507,8 @@ define('lehu.h5.component.timeLimit', [
                     'params': {
                         "shouldShare": 1,
                         "shareTitle": '限时折扣',
-                        "shareUrl": that.URL + '/front/timeLimit.html',
-                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareUrl": that.URLF + '/front/timeLimit.html',
+                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
                         "shareContent": '我是谁'
                     },
                 };

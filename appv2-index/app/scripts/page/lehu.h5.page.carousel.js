@@ -39,7 +39,7 @@ define('lehu.h5.page.carousel', [
                     // });
                     new LHDownload();
                 }
-                new LHFooter();
+
                 var wheel = new LHCarousel("#content");
 
 

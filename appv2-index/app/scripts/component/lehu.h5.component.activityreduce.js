@@ -86,8 +86,10 @@ define('lehu.h5.component.activityreduce', [
                 //     HOST = "http://" + HOST;
                 // }
                 // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
+                //this.URL = 'http://121.196.208.98:28080';
+                this.URL = 'http://mobile.vision-world.cn:8080';
+                //this.URLF = 'http://121.196.208.98:28080';
+                this.URLF = 'http://front.vision-world.cn:8080';
                 this.shoppingIsfor = false;
             },
 
@@ -199,6 +201,7 @@ define('lehu.h5.component.activityreduce', [
                     if ((windowHeight + srollPos + 200) >= (dbHiht)) {
 
                         that.loadingData();
+
                     }
                 };
 
@@ -208,11 +211,13 @@ define('lehu.h5.component.activityreduce', [
             loadingData: function (cparams) {
 
                 var that = this;
+
                 that.options.data.attr("supplement.onLoadingData", true);
 
                 var params = can.deparam(window.location.search.substr(1));
                 var ACTIVITYID = params.activityId;
-                var STOREACTIVITYID = params.activityId;
+                var STOREACTIVITYID = params.storeActivityId;
+
                 var query = {
                     toPage: parseInt(this.options.data.pageIndex) + 1,
                     pageRows: 10,
@@ -227,12 +232,15 @@ define('lehu.h5.component.activityreduce', [
                 });
                 api.sendRequest()
                     .done(function (data) {
+
+                        console.log(that.options.data.pageIndex);
                         that.options.data.attr("supplement.onLoadingData", false);
                         if (data.response.promotionInfo.goods.length > 0) {
                             _.each(data.response.promotionInfo.goods, function (item) {
                                 that.options.data.goods.push(item);
                             });
-                            if ( data.page.pageAmount && parseInt(that.options.data.pageIndex) == data.page.pageAmount) {
+                            if ( data.page.pageAmount && parseInt(parseInt(that.options.data.pageIndex) + 1) == data.page.pageAmount) {
+
                                 that.options.data.attr("supplement.noData", true);
                             }
                             else {
@@ -378,8 +386,8 @@ define('lehu.h5.component.activityreduce', [
                     'params': {
                         "shouldShare": 1,
                         "shareTitle": '满减',
-                        "shareUrl": that.URL + '/front/activityreduce.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
-                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareUrl": that.URLF + '/front/activityreduce.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
+                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
                         "shareContent": '我是谁'
                     },
                 };
