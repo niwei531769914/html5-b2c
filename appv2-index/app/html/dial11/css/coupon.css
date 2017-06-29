@@ -48,9 +48,10 @@
 #lottery td p.lottery-bg06{ background-image:url(../img/coupons.png);}
 .dial_msg{ width:100%; height:auto; display:block; float:left; margin:.32rem 0;}
 .dial_msg_box{ width:80%; height:.74rem; overflow:hidden;display:block; background: rgba(0,0,0,.4); border-radius: .74rem; margin: 0 10%}
-.dial_msg_box li{ width:80%; height:.74rem; display:block; float:left; margin:0 10%; line-height:.74rem; font-size:.28rem; color:#ffffff; padding:0 10%; }
-.dial_msg_box li span{ width:40%; display:block; float:left;text-align:center; margin-left:2%;}
-.dial_msg_box li em{display:block; float:left;}
+.dial_msg_box ul { float: left; width: 100%; height: auto}
+.dial_msg_box li{ width:80%; height:.74rem; display:block; float:left; margin:0 10%; line-height:.74rem; font-size:.28rem; color:#ffffff; text-align: center }
+.dial_msg_box li span{ width:40%; margin-left:2%;}
+
 
 .dial_footer{ width:86%; height:auto; margin:0 5% 1rem;float:left; background: rgba(0,0,0,.2); padding: .2rem 2%}
 .dial_footer span{ width:1.62rem; height:.42rem; display:block; float:left;  background: #f5a623; color: #ffffff; font-size: .28rem; text-align: center; line-height: .42rem; position: relative; left: -4%}

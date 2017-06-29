@@ -37,7 +37,8 @@ define('lehu.h5.page.activityreducelist', [
                 this.IMGURL = [
                     {img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155064967.jpg'},
                     {img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629115637945.jpg'},
-                    {img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155572104.jpg'}
+                    {img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291157102264.jpg'},
+                    {img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155572104.jpg'},
                 ];
             },
 
@@ -84,6 +85,7 @@ define('lehu.h5.page.activityreducelist', [
                 });
                 api.sendRequest()
                     .done(function (data) {
+                        $('.nlist_loading').hide();
                         if (data.code == 1) {
                             var CONTENT = data.response;
                             if (CONTENT == "") {
@@ -110,6 +112,7 @@ define('lehu.h5.page.activityreducelist', [
                         }
                     })
                     .fail(function (error) {
+                        $('.nlist_loading').hide();
                         util.tip("服务器错误！");
                     });
                 new LHFooter();

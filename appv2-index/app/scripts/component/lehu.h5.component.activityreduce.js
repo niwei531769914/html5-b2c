@@ -385,10 +385,10 @@ define('lehu.h5.component.activityreduce', [
                     'funName': 'shareHandler',
                     'params': {
                         "shouldShare": 1,
-                        "shareTitle": '满减',
+                        "shareTitle": '满减专区，优惠享不停',
                         "shareUrl": that.URLF + '/front/activityreduce.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
                         "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
-                        "shareContent": '我是谁'
+                        "shareContent": '来汇银乐虎淘好货 你也来参加吧》》'
                     },
                 };
                 LHHybrid.nativeFun(jsonParams);

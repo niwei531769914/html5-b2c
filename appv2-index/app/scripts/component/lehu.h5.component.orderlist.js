@@ -77,14 +77,12 @@ define('lehu.h5.component.orderlist', [
 
                             var html = '';
                             var ORDERLIST = result.orderList;
-                            console.log(ORDERLIST.length);
                             if(ORDERLIST.length == 0){
+                                $('.nlist_loading').hide();
                                 $('.order-no-order').show();
                                 return false;
                             }
-                            console.log(2);
                             for(var i = 0; i < ORDERLIST.length; i++){
-                                console.log(1);
                                  html += '<div class="order-list-item" data-orderCode = "' + ORDERLIST[i].ORDER_CODE + '"><div class="list-item-des"><span class="item-des-name">' + ORDERLIST[i].STORE_NAME + '</span> <a href="javascript:void (0)" class="item-des-go">' + ORDERLIST[i].STATUS_NAME + '</a></div>';
 
                                  var ORDERDETAILLIST = ORDERLIST[i].orderDetalList;

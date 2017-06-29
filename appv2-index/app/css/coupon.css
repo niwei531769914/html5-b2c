@@ -23,16 +23,16 @@
 .coupons_box_l p{ width: 90%; color: #c1c1c1; font-size: .20rem; height: auto; margin: 0 8% 0; float: left}
 .coupons_box_c{ width:.22rem; height:1.35rem; display:block; float:left; }
 .coupons_box_r{ width:1.96rem; height:1.35rem; display:block; float:left;  border-radius:0 .1rem .1rem 0;position:relative; margin-left: .22rem}
-.coupons_box_r em{ font-size:.20rem; color:#ffffff; width:95%;  display:block; float:left; margin:.28rem 0 .12rem 5%;}
+.coupons_box_r em{ font-size:.20rem; color:#ffffff; width:100%;  display:block; float:left; margin:.28rem 0 .12rem 0;}
 .coupons_box_r em b{ font-size: .36rem ; font-weight: bolder; margin-right: .1rem}
-.coupons_box_r span{ font-size:.20rem; color:#ffffff; width:95%;  display:block; float:left; margin:0 0 .2rem 5%; text-align: center}
+.coupons_box_r span{ font-size:.20rem; color:#ffffff; width:auto;  display:block; float:left; margin-left: .3rem;}
 
 
-.coupons_box_s{ width:2.13rem; height:1.35rem; display:block; float:left;  border-radius:0 .1rem .1rem 0;position:relative;margin-left: .1rem }
-.coupons_box_s em{ font-size:.20rem; width:90%;  display:block; float:left; margin:.28rem 0 .12rem 10%;}
+.coupons_box_s{ width:2rem; height:1.35rem; display:block; float:left;  border-radius:0 .1rem .1rem 0;position:relative;margin-left: .2rem }
+.coupons_box_s em{ font-size:.20rem; width:100%;  display:block; float:left; margin:.28rem 0 .12rem 0; text-align: center}
 .coupons_box_s em b{ font-size: .36rem ; font-weight: bolder;}
-.coupons_box_s span{ font-size:.20rem; width:90%;  display:block; float:left; margin:0 0 .2rem 10%; text-align: center}
-.coupons_box_s span i{ margin-left: .1rem}
+.coupons_box_s span{ font-size:.20rem; width:auto;  display:block; float:left; margin-left:.3rem; }
+.coupons_box_s span i{ margin-left: .2rem}
 
 /*券类背景*/
 .total-coupon{ background: url(../images/coupons/total_coupon.png) no-repeat; background-size: 100%}

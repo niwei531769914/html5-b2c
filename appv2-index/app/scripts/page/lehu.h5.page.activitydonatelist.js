@@ -73,7 +73,6 @@ define('lehu.h5.page.activitydonatelist', [
                     }
                 }
 
-
                 var params = {
                     "toPage":1,
                     "pageRows":20
@@ -86,6 +85,7 @@ define('lehu.h5.page.activitydonatelist', [
                 });
                 api.sendRequest()
                     .done(function(data) {
+                        $('.nlist_loading').hide();
                         if(data.code == 1){
                             var CONTENT = data.response;
                             if(CONTENT == "" ){
@@ -111,6 +111,7 @@ define('lehu.h5.page.activitydonatelist', [
                         }
                     })
                     .fail(function(error) {
+                        $('.nlist_loading').hide();
                         util.tip("服务器错误！");
                     });
                 new LHFooter();
