@@ -48,5 +48,5 @@
 .enter_coupon_te img{ width: .4rem; height: auto;}
 
 /*无券状态*/
-.coupons_box_null{ width: 80%; margin: .5rem 10%; font-size: .28rem; text-align: center}
-.coupons_box_null img{ width: 3rem; height: auto; display: block; margin: .24rem auto}
+.coupons_box_null{ width: 60%; margin: 1rem 20%; font-size: .28rem; text-align: center; float: left; color: #757575}
+.coupons_box_null img{ width: 2.4rem; height: auto; display: block; margin: 0 auto .5rem}

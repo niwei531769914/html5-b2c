@@ -115,7 +115,6 @@ define('lehu.h5.page.activityreducelist', [
                         $('.nlist_loading').hide();
                         util.tip("服务器错误！");
                     });
-                new LHFooter();
             },
 
             deleteNav: function () {
@@ -153,7 +152,7 @@ define('lehu.h5.page.activityreducelist', [
         if (!param.hyfrom) {
             new LHDownload();
         }
-        new LHFooter();
+      //  new LHFooter();
         new RegisterHelp('#content');
 
     });

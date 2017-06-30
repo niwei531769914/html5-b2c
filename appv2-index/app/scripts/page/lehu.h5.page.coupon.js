@@ -38,7 +38,7 @@ define('lehu.h5.page.coupon', [
                     // });
                     new LHDownload();
                 }
-                new LHFooter();
+              //  new LHFooter();
                 var coupon = new LHCoupon("#content");
 
 
