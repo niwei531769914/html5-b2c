@@ -114,7 +114,6 @@ define('lehu.h5.page.activitydonatelist', [
                         $('.nlist_loading').hide();
                         util.tip("服务器错误！");
                     });
-                new LHFooter();
             },
 
             deleteNav: function () {
@@ -150,7 +149,7 @@ define('lehu.h5.page.activitydonatelist', [
         if(!param.hyfrom){
             new LHDownload();
         }
-        new LHFooter();
+        //new LHFooter();
         new RegisterHelp('#content');
 
     });
