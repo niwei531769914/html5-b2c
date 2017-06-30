@@ -164,15 +164,15 @@ define('lehu.h5.component.carousel', [
             },
 
             initData: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
-                this.URLF = 'http://121.196.208.98:28080';
-                //this.URLF = 'http://front.vision-world.cn:8080';
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
+                // this.URLF = 'http://121.196.208.98:28080';
+                // //this.URLF = 'http://front.vision-world.cn:8080';
             },
 
             render: function () {
@@ -453,8 +453,8 @@ define('lehu.h5.component.carousel', [
                     'params': {
                         "shouldShare": 1,
                         "shareTitle": '汇银乐虎全球购-幸运大转盘',
-                        "shareUrl": that.URLF + '/front/carousel.html',
-                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
+                        "shareUrl": that.URL + '/front/carousel.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
                         "shareContent": '汇银乐虎全球购，幸运大转盘，奖品抽到你手软！',
                         "luckActiveId": that.luckId
                     },
