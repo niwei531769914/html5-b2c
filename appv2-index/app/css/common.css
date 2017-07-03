@@ -48,7 +48,7 @@ html, body {line-height: 1;width: 100%;font-family: "Helvetica Neue", "Hiragino 
 .dialog-cart .icon {position: absolute; left: 50%; top: 10px; margin-left: -25px; }
 
 /* loading */
-.nlist_loading {width: 30%; height: auto; display: block; margin: 0rem auto 0; margin-top: 50px;}
+.nlist_loading {width: 30%; height: auto; display: block; margin: 0 auto 0; margin-top: 250px;}
 .nwrapper{width: 100%;position: relative;max-width: 750px;min-width: 320px;overflow: hidden;margin: 0 auto;}
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
