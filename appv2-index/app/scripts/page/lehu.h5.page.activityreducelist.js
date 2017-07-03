@@ -25,13 +25,13 @@ define('lehu.h5.page.activityreducelist', [
         var RegisterHelp = can.Control.extend({
 
             initData: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
 
                 //数组图片
                 this.IMGURL = [

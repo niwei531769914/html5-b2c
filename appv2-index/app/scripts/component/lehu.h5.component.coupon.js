@@ -73,15 +73,15 @@ define('lehu.h5.component.coupon', [
             },
 
             initData: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
-                this.URLF = 'http://121.196.208.98:28080';
-                //this.URLF = 'http://front.vision-world.cn:8080';
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
+                // this.URLF = 'http://121.196.208.98:28080';
+                // //this.URLF = 'http://front.vision-world.cn:8080';
             },
 
             render: function () {
@@ -366,10 +366,10 @@ define('lehu.h5.component.coupon', [
                     'funName': 'shareHandler',
                     'params': {
                         "shouldShare": 1,
-                        "shareTitle": '汇银乐虎全球购-领券中心',
-                        "shareUrl": that.URLF + '/front/coupon.html',
-                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
-                        "shareContent": '汇银乐虎全球购，赶紧领取优惠券吧，手慢无！'
+                        "shareTitle": '乐虎券优惠大放松',
+                        "shareUrl": that.URL + '/front/coupon.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
+                        "shareContent": '邀小伙伴一起来汇银乐虎享受全球购物体验 领券下单更优惠哦'
                     },
                 };
                 LHHybrid.nativeFun(jsonParams);

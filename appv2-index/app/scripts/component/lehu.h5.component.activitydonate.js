@@ -76,16 +76,16 @@ define('lehu.h5.component.activitydonate', [
             },
 
             initData: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
-                this.URLF = 'http://121.196.208.98:28080';
-                //this.URLF = 'http://front.vision-world.cn:8080';
-                this.shoppingIsfor = false;
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
+                // this.URLF = 'http://121.196.208.98:28080';
+                // //this.URLF = 'http://front.vision-world.cn:8080';
+                 this.shoppingIsfor = false;
             },
 
             render: function () {
@@ -385,8 +385,8 @@ define('lehu.h5.component.activitydonate', [
                     'params': {
                         "shouldShare": 1,
                         "shareTitle": '满赠专区，优惠享不停',
-                        "shareUrl": that.URLF + '/front/activitydonate.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
-                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
+                        "shareUrl": that.URL + '/front/activitydonate.html?activityId=' + param.activityId + '&storeActivityId=' + param.storeActivityId,
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
                         "shareContent": '来汇银乐虎淘好货 你也来参加吧》》'
                     },
                 };

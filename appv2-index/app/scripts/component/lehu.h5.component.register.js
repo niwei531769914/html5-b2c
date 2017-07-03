@@ -71,13 +71,13 @@ define('lehu.h5.component.register', [
             },
 
             initData: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
             },
 
             /*密码显示按钮*/
@@ -213,9 +213,8 @@ define('lehu.h5.component.register', [
                     'origin': '5',
                 };
 
-
                 var api = new LHAPI({
-                    //url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

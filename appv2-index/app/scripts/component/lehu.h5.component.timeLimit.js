@@ -70,15 +70,15 @@ define('lehu.h5.component.timeLimit', [
             },
 
             initDate: function () {
-                // var HOST = window.location.host;
-                // if(HOST.indexOf("http://") == -1){
-                //     HOST = "http://" + HOST;
-                // }
-                // this.URL = HOST;
-                this.URL = 'http://121.196.208.98:28080';
-                //this.URL = 'http://mobile.vision-world.cn:8080';
-                this.URLF = 'http://121.196.208.98:28080';
-                //this.URLF = 'http://front.vision-world.cn:8080';
+                var HOST = window.location.host;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
+                }
+                this.URL = HOST;
+                // this.URL = 'http://121.196.208.98:28080';
+                // //this.URL = 'http://mobile.vision-world.cn:8080';
+                // this.URLF = 'http://121.196.208.98:28080';
+                // //this.URLF = 'http://front.vision-world.cn:8080';
             },
 
             render: function () {
@@ -507,8 +507,8 @@ define('lehu.h5.component.timeLimit', [
                     'params': {
                         "shouldShare": 1,
                         "shareTitle": '限时折扣',
-                        "shareUrl": that.URLF + '/front/timeLimit.html',
-                        "shareImage": that.URLF + '/front/images/Shortcut_114_114.png',
+                        "shareUrl": that.URL + '/front/timeLimit.html',
+                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
                         "shareContent": '我是谁'
                     },
                 };

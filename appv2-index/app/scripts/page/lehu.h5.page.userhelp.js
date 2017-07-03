@@ -1,4 +1,4 @@
-define('lehu.h5.page.registerhelp', [
+define('lehu.h5.page.userhelp', [
         'can',
         'zepto',
         'fastclick',
@@ -10,12 +10,12 @@ define('lehu.h5.page.registerhelp', [
 
         'lehu.h5.header.footer',
 
-        'text!template_page_registerhelp'
+        'text!template_page_userhelp'
     ],
 
     function (can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
               LHFooter,
-              template_page_registerhelp) {
+              template_page_userhelp) {
         'use strict';
 
         Fastclick.attach(document.body);
@@ -30,7 +30,7 @@ define('lehu.h5.page.registerhelp', [
             init: function (element, options) {
                 var that = this;
 
-                var renderList = can.mustache(template_page_registerhelp);
+                var renderList = can.mustache(template_page_userhelp);
                 that.element.html(renderList);
                 that.deleteNav();
                 new LHFooter();
