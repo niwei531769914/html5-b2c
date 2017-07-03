@@ -87,9 +87,7 @@ define('lehu.h5.component.login', [
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
-                // this.URL = 'http://121.196.208.98:28080';
-                // //this.URL = 'http://mobile.vision-world.cn:8080';
-                this.loginBysms = false;
+                this.loginBysms = true;
             },
 
             '.txt-username keyup': function (element, event) {
