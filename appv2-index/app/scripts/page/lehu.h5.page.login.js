@@ -28,7 +28,6 @@ define('lehu.h5.page.login', [
              */
             init: function(element, options) {
                 var login = new LHLogin("#login");
-                new LHFooter();
             }
         });
 

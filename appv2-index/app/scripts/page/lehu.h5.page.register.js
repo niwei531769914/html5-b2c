@@ -28,7 +28,6 @@ define('lehu.h5.page.register', [
              */
             init: function(element, options) {
                 var register = new LHRegister("#register");
-                new LHFooter();
             }
         });
 

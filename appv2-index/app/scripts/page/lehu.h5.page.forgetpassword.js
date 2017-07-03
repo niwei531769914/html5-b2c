@@ -28,7 +28,6 @@ define('lehu.h5.page.forgetpassword', [
              */
             init: function(element, options) {
                 var forgetpassword = new LHForgetpassword("#content");
-                new LHFooter();
             }
         });
 
