@@ -208,7 +208,7 @@ define('lehu.h5.component.login', [
                     'identifyingcode': captcha,
                     'type': "1",
                     'origin': '5',
-                    'phoneToken ':''
+                    'phoneToken':''
                 };
 
 
