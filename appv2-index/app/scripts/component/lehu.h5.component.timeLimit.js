@@ -506,10 +506,10 @@ define('lehu.h5.component.timeLimit', [
                     'funName': 'shareHandler',
                     'params': {
                         "shouldShare": 1,
-                        "shareTitle": '限时折扣',
+                        "shareTitle": '限时折扣限量抢购中',
                         "shareUrl": that.URL + '/front/timeLimit.html',
                         "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
-                        "shareContent": '我是谁'
+                        "shareContent": '小伙伴们，我在汇银乐虎参加限时折扣秒杀中.....'
                     },
                 };
                 LHHybrid.nativeFun(jsonParams);

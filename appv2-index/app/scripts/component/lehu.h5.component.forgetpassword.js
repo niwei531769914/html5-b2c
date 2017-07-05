@@ -29,6 +29,9 @@ define('lehu.h5.component.forgetpassword', [
             init: function () {
                 this.initData();
 
+                var params = can.deparam(window.location.search.substr(1));
+                this.from = params.hyfrom;
+                console.log(this.from);
                 var renderList = can.mustache(template_components_forgetpassword);
                 var html = renderList(this.options);
                 this.element.html(html);
@@ -102,7 +105,7 @@ define('lehu.h5.component.forgetpassword', [
                 setTimeout(function () {
                     if (time > 0) {
                         time--;
-                        that.element.find('.btn-retransmit').text(time + 's').addClass('btn-retransmit-disabled');
+                        that.element.find('.btn-retransmit').text(time + 's重发').addClass('btn-retransmit-disabled');
                         that.countdown.call(that, time);
                     } else {
                         that.element.find('.btn-retransmit').text('获取验证码').removeClass('btn-retransmit-disabled');
@@ -154,7 +157,7 @@ define('lehu.h5.component.forgetpassword', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            location.href = 'login.html';
+                            location.href = 'login.html?hyfrom=' + escape(that.from);
                         } else {
                             $(".err-msg").text(data.msg).parent().css("display", "block");
                         }

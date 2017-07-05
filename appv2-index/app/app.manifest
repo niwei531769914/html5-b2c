@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v1.4.250
+#v1.4.263
 
 CACHE:
 styles/lehu.h5.login.css
@@ -46,7 +46,9 @@ scripts/lehu.h5.page.headlines.js
 images/Shortcut_114_114.png
 images/dingbu.png
 images/login/login_04.png
+images/login/logo.png
 images/loading.gif
+images/loading51.gif
 images/big_goods_back.png
 images/goods_back.png
 images/no_activity.png
