@@ -290,7 +290,7 @@ define('lehu.h5.component.login', [
 
             '.retrieve-password click': function (element, event) {
                 if (this.from) {
-                    window.location.href = 'forgetpassword.html?from=' + this.from;
+                    window.location.href = 'forgetpassword.html?hyfrom=' + escape(this.from);
                 } else {
                     window.location.href = 'forgetpassword.html';
                 }

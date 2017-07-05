@@ -49,7 +49,7 @@ html, body {line-height: 1;width: 100%;font-family: "Helvetica Neue", "Hiragino 
 
 /* loading */
  
-.nlist_loading {width: 30%; height: auto; display: block; margin: 0rem auto 0; margin-top: 250px;}
+.nlist_loading {width: 30%; height: auto; display: block; margin: 0rem auto 0; margin-top: 50px;}
  
 .nwrapper{width: 100%;position: relative;max-width: 750px;min-width: 320px;overflow: hidden;margin: 0 auto;}
 

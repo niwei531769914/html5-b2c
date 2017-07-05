@@ -221,8 +221,7 @@ define('lehu.h5.component.register', [
                 api.sendRequest()
                     .done(function (data) {
                         if (data.code == 1) {
-                            store.set("user", data.response);
-                            location.href = that.from;
+                            location.href = 'login.html?hyfrom=' + escape(that.from);
                         } else {
                             $(".err-msg").text(data.msg).parent().css("display", "block");
                         }

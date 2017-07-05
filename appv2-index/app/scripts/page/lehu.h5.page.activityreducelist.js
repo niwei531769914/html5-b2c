@@ -149,9 +149,9 @@ define('lehu.h5.page.activityreducelist', [
 
         var param = can.deparam(window.location.search.substr(1));
 
-        if (!param.hyfrom) {
-            new LHDownload();
-        }
+        // if (!param.hyfrom) {
+        //     new LHDownload();
+        // }
       //  new LHFooter();
         new RegisterHelp('#content');
 

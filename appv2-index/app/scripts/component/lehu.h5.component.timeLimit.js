@@ -1,4 +1,5 @@
 define('lehu.h5.component.timeLimit', [
+
 		'zepto',
 		'can',
 		'lehu.h5.business.config',
@@ -75,8 +76,8 @@ define('lehu.h5.component.timeLimit', [
 				}
 				this.URL = HOST;
 				// this.URL = 'http://121.196.208.98:28080';
-				//this.URL = 'http://mobile.vision-world.cn:8080';
-				//this.URLF = 'http://121.196.208.98:28080';
+				// //this.URL = 'http://mobile.vision-world.cn:8080';
+				// this.URLF = 'http://121.196.208.98:28080';
 				// //this.URLF = 'http://front.vision-world.cn:8080';
 			},
 
@@ -491,10 +492,10 @@ define('lehu.h5.component.timeLimit', [
 					'funName': 'shareHandler',
 					'params': {
 						"shouldShare": 1,
-						"shareTitle": '限时折扣',
+						"shareTitle": '限时折扣限量抢购中',
 						"shareUrl": that.URL + '/front/timeLimit.html',
 						"shareImage": that.URL + '/front/images/Shortcut_114_114.png',
-						"shareContent": '我是谁'
+						"shareContent": '小伙伴们，我在汇银乐虎参加限时折扣秒杀中.....'
 					},
 				};
 				LHHybrid.nativeFun(jsonParams);
