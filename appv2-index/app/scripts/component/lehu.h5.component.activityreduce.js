@@ -259,10 +259,25 @@ define('lehu.h5.component.activityreduce', [
 
             //去商品详情
             ".fullgive-sale-img img,.fullgive-sale-tap click": function (element, event) {
+
+                //app外打开
+                var param = can.deparam(window.location.search.substr(1));
+                if(!param.hyfrom){
+                    $('.app-mask').show();
+                    $('.app-native').show();
+                    return false;
+                }
+
                 var goodsid = element.attr("data-goodsid");
                 var goodsitemid = element.attr("data-goodsitemid");
 
                 this.toDetail(goodsid, goodsitemid);
+            },
+
+            //app外打开关闭
+            ".app-native-cancel click": function () {
+                $('.app-mask').hide();
+                $('.app-native').hide();
             },
 
             deleteNav: function () {
