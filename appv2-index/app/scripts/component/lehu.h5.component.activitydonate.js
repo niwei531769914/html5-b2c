@@ -57,6 +57,9 @@ define('lehu.h5.component.activitydonate', [
                 this.initData();
                 this.render();
 
+                //app以外打开app事件
+                this.bindEvent();
+
                 var params = can.deparam(window.location.search.substr(1));
                 //app登录
                 if(params.hyfrom == 'app'){
@@ -272,10 +275,11 @@ define('lehu.h5.component.activitydonate', [
                 this.toDetail(goodsid, goodsitemid);
             },
 
-            //app外打开关闭
-            ".app-native-cancel click": function () {
-                $('.app-mask').hide();
-                $('.app-native').hide();
+            bindEvent: function () {
+                $('.app-native-cancel').on('click',function () {
+                    $('.app-mask').hide();
+                    $('.app-native').hide();
+                })
             },
 
             deleteNav: function () {

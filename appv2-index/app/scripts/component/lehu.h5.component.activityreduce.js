@@ -60,6 +60,8 @@ define('lehu.h5.component.activityreduce', [
                 this.initData();
                 this.render();
 
+                //app以外打开app事件
+                this.bindEvent();
 
                 var params = can.deparam(window.location.search.substr(1));
                 //app登录
@@ -274,10 +276,11 @@ define('lehu.h5.component.activityreduce', [
                 this.toDetail(goodsid, goodsitemid);
             },
 
-            //app外打开关闭
-            ".app-native-cancel click": function () {
-                $('.app-mask').hide();
-                $('.app-native').hide();
+            bindEvent: function () {
+                $('.app-native-cancel').on('click',function () {
+                    $('.app-mask').hide();
+                    $('.app-native').hide();
+                })
             },
 
             deleteNav: function () {
