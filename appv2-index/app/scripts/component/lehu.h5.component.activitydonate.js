@@ -1,4 +1,5 @@
 define('lehu.h5.component.activitydonate', [
+
 		'zepto',
 		'can',
 		'lehu.h5.business.config',
@@ -13,7 +14,9 @@ define('lehu.h5.component.activitydonate', [
 		'text!template_components_activitydonate'
 	],
 
-	function($, can, LHConfig, util, LHAPI, LHHybrid, md5, imagelazyload, busizutil, template_components_activitydonate) {
+	function($, can, LHConfig, util, LHAPI, LHHybrid, md5,
+		imagelazyload, busizutil,
+		template_components_activitydonate) {
 		'use strict';
 
 		var DEFAULT_PAGE_INDEX = 1;
@@ -32,7 +35,6 @@ define('lehu.h5.component.activitydonate', [
 						HTML += "<span>" + rulerList[i] + "</span>"
 					}
 					return HTML;
-					console.log(HTML);
 				},
 				'lehu-showDis': function(discount, price, options) {
 					if(_.isFunction(discount)) {
@@ -55,6 +57,9 @@ define('lehu.h5.component.activitydonate', [
 			init: function() {
 				this.initData();
 				this.render();
+
+				//app以外打开app事件
+				this.bindEvent();
 
 				var params = can.deparam(window.location.search.substr(1));
 				//app登录
@@ -80,10 +85,10 @@ define('lehu.h5.component.activitydonate', [
 					HOST = "http://" + HOST;
 				}
 				this.URL = HOST;
-				//this.URL = 'http://121.196.208.98:28080';
-				//this.URL = 'http://mobile.vision-world.cn:8080';
-				//this.URLF = 'http://121.196.208.98:28080';
-				//this.URLF = 'http://front.vision-world.cn:8080';
+				// this.URL = 'http://121.196.208.98:28080';
+				// //this.URL = 'http://mobile.vision-world.cn:8080';
+				// this.URLF = 'http://121.196.208.98:28080';
+				// //this.URLF = 'http://front.vision-world.cn:8080';
 				this.shoppingIsfor = false;
 			},
 
@@ -253,10 +258,25 @@ define('lehu.h5.component.activitydonate', [
 
 			//去商品详情
 			".fullgive-sale-img img,.fullgive-sale-tap click": function(element, event) {
+				//app外打开
+				var param = can.deparam(window.location.search.substr(1));
+				if(!param.hyfrom) {
+					$('.app-mask').show();
+					$('.app-native').show();
+					return false;
+				}
+
 				var goodsid = element.attr("data-goodsid");
 				var goodsitemid = element.attr("data-goodsitemid");
 
 				this.toDetail(goodsid, goodsitemid);
+			},
+
+			bindEvent: function() {
+				$('.app-native-cancel').on('click', function() {
+					$('.app-mask').hide();
+					$('.app-native').hide();
+				})
 			},
 
 			deleteNav: function() {

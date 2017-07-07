@@ -37,6 +37,18 @@
 
 </div>
 
+<!--app以外打开弹创跳native-->
+<div class="app-mask"></div>
+<div class="app-native">
+    <div class="app-native-title">
+        是否前往APP
+    </div>
+    <div class="app-native-btn">
+        <a href="javascript: void (0)" class="app-native-cancel">取消</a>
+        <a href="javascript: void (0)" class="app-native-enter" id="btnOpenApp2">前往</a>
+    </div>
+</div>
+
 <script src="scripts/common/require.min.js"></script>
 <script src="scripts/common/lehu.h5.common.js"></script>
 
@@ -56,10 +68,19 @@
 
         var param = can.deparam(window.location.search.substr(1));
 
-
         new Mlink({
+                mlink: "https://a.mlinks.cc/Ac65",
+                button: document.querySelector("a#btnOpenApp"),
+                autoRedirect: false,    //自动打开App, 此配置在Android Chrome 35以上版本, 部分其他Android机型和浏览器, iOS 9.0以上系统无效;
+                autoRedirectToDownloadUrl: true, // 默认true, 当用户设备上未安装应用时自动打开下载地址; 如果您不希望直接打开下载地址, 设为false即可;
+                params: {
+                    from: 'app',
+                    activityid: param.activityId,
+                    storeactivityid: param.storeActivityId
+                }
+            },{
             mlink: "https://a.mlinks.cc/Ac65",
-            button: document.querySelector("a#btnOpenApp"),
+            button: document.querySelector("a#btnOpenApp2"),
             autoRedirect: false,    //自动打开App, 此配置在Android Chrome 35以上版本, 部分其他Android机型和浏览器, iOS 9.0以上系统无效;
             autoRedirectToDownloadUrl: true, // 默认true, 当用户设备上未安装应用时自动打开下载地址; 如果您不希望直接打开下载地址, 设为false即可;
             params: {
