@@ -166,10 +166,6 @@ define('lehu.h5.component.carousel', [
 					HOST = "http://" + HOST;
 				}
 				this.URL = HOST;
-				// this.URL = 'http://121.196.208.98:28080';
-				// //this.URL = 'http://mobile.vision-world.cn:8080';
-				// this.URLF = 'http://121.196.208.98:28080';
-				// //this.URLF = 'http://front.vision-world.cn:8080';
 			},
 
 			render: function() {
@@ -196,9 +192,14 @@ define('lehu.h5.component.carousel', [
 					.done(function(data) {
 
 						if(data.code !== 1) {
-							var html = "<div style='width: 100%; height: auto; float: left; display: none; text-align: center; font-size: .28rem'><img src= 'images/no_activity.png' style=' width: 2.4rem; height: auto margin: 1.2rem auto .48rem; display: block' />暂时没有活动哦～</div> ";
-							$(".dial_bj").css("background", "#ffffff");
-							$(".nwrapper").empty().append(html);
+							var renderList = can.mustache(template_components_carousel);
+							var html = renderList(that.options);
+							that.element.html(html);
+							//  去除导航事件
+							that.deleteNav();
+							$("body").removeClass('dial_bj');
+							$('#carousel').hide();
+							$('.nlist_no_activity').show();
 							return false;
 						}
 
