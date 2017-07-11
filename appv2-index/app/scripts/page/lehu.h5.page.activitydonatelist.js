@@ -96,10 +96,10 @@ define('lehu.h5.page.activitydonatelist', [
                             for (var i = 0; i < CONTENT.length; i++) {
                                 html += '<div class="fullgive_adList">';
                                 if ( i <= parseInt(that.IMGURL.length - 1)) {
-                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="' + that.IMGURL[i].img + '"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
+                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="' + that.IMGURL[i].img + '"  data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
                                 }
                                 else {
-                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
+                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
                                 }
 
                                 html += '<p>' + CONTENT[i].activityName + '</p></div>';
