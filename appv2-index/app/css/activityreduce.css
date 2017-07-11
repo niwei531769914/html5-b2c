@@ -15,7 +15,7 @@
 .fullgive-sale-img img{ width:100%; height:auto; display: block; float:left;}
 
 .fullgive-sale-tap{ width: 4.54rem; height: auto; float: left; margin-left: 0.18rem }
-.fullgive-sale-title{ width:100%; height:.7rem;color:#212121; font-size:.26rem; line-height:.35rem;float:right;font-weight: 600; padding-top: .06rem; overflow:hidden; word-break: break-all ;text-overflow: ellipsis ;  white-space: normal;  display:-webkit-box;  -webkit-box-orient:vertical;-webkit-line-clamp:2;}
+.fullgive-sale-title{ width:100%; height:.7rem;color:#212121; font-size:.26rem; line-height:.36rem;float:right;font-weight: 600; padding-top: .06rem; overflow:hidden; word-break: break-all ;text-overflow: ellipsis ;  white-space: normal;  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
 
 
 .fullgive-sale-specif{width:100%; height:auto; display:block; float:left; font-size: .24rem; color: #757575; padding-bottom: .08rem; padding-top: .1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
