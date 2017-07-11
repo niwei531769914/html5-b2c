@@ -73,27 +73,6 @@
 					script src = "scripts/common/require.min.js" >
 			</script>
 			<script src="scripts/common/lehu.h5.common.js"></script>
-
-			<!-- build:js({app, .tmp}) scripts/lehu.h5.page.carousel.js -->
-			<script src="scripts/lehu.h5.require.config.js"></script>
-			<script type="text/javascript">
-				require(['lehu.h5.page.carousel']);
-			</script>
-			<!-- endbuild -->
-			<script src="https://s.mlinks.cc/scripts/dist/mlink.min.js"></script>
-			<script type="text/javascript">
-				// if (document.querySelector("a#btnOpenApp")) {
-				setTimeout(function() {
-					new Mlink({
-						mlink: "https://a.mlinks.cc/AcVp",
-						button: document.querySelector("a#btnOpenApp"),
-						autoRedirect: false, //自动打开App, 此配置在Android Chrome 35以上版本, 部分其他Android机型和浏览器, iOS 9.0以上系统无效;
-						autoRedirectToDownloadUrl: true // 默认true, 当用户设备上未安装应用时自动打开下载地址; 如果您不希望直接打开下载地址, 设为false即可;
-					});
-				}, 0)
-
-				// }
-			</script>
 		</body>
 
 </html>
