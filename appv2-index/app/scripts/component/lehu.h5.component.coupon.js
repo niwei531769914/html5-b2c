@@ -74,8 +74,8 @@ define('lehu.h5.component.coupon', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -104,7 +104,6 @@ define('lehu.h5.component.coupon', [
                     "strUserId": this.user.userId,
                     "strToken": this.user.token
                 };
-
 
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/ticketCenter/list",

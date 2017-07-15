@@ -67,7 +67,6 @@ define('lehu.h5.component.orderlist', [
                     'phone': this.user.phone
                 };
 
-
                 $.ajax({
                     url: 'http://120.55.126.211:8082/myOrderList.do',
                     data: params,

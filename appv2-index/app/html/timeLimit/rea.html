@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link href="../common/css/common.css" rel="stylesheet">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/timelimit.js"></script>
+    <style type="text/css">
+        .navbar-header{width: 100%; height: 1.6rem; display: block; position: fixed; z-index: auto; max-width: 750px; min-width: 320px}
+
+        .navbar-main-menu{ width: 100%; height: .8rem; background: #ffffff }
+        .navbar-main-menu .scroll-wrap{width: 100%; height: .8rem; overflow: hidden; touch-action: none;}
+        .navbar-main-menu .scroll-wrap .equal-table{ font-size: .3rem; color: #212121; display: table; overflow-y: hidden; padding: .2rem 0; height: .4rem;}
+        .navbar-main-menu .scroll-wrap .equal-table li{ display: table-cell; white-space: nowrap; }
+        .navbar-main-menu .scroll-wrap .equal-table li a{ display: block; height: .4rem; line-height: .4rem; text-align: center; padding: 0 .3rem; box-sizing: border-box }
+        .navbar-main-menu .scroll-wrap .equal-table li a span{ padding: .04rem .1rem}
+        .navbar-main-menu .scroll-wrap .equal-table .nav-current span{ border-bottom: 2px solid #f53828  }
+
+    </style>
+
+</head>
+<body class="nwrapper">
+<!--top-->
+<div class="navbar-header">
+
+    <!--menu-->
+    <div class="navbar-main-menu">
+        <div class="scroll-wrap" id="wrapper">
+            <ul class="equal-table fixed">
+                <li class="nav-current"><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+                <li><a href="javascript:void (0)"><span>推荐</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+    var myscroll;
+    function loaded() {
+        myscroll = new iScroll("wrapper",{
+            hScroll:true,
+            vScroll:false,
+            bounce: true,
+            hScrollbar: false,
+            hideScrollbar: true
+        });
+    }
+    window.addEventListener("DOMContentLoaded",loaded,false);
+
+    $('.equal-table li').click(function () {
+        var Index = $(this).index();
+        $('.equal-table .nav-current').removeClass('nav-current');
+        $('.equal-table li').eq(Index).addClass('nav-current');
+        var PositionIndex = document.querySelector('#wrapper li[class="nav-current"]');
+        myscroll.scrollToElement(PositionIndex,200,true,true);
+    });
+</script>
+</html>

@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>限时抢购</title>
+    <meta charset="UTF-8">
+    <title>首页</title>
     <meta name="description" content="">
     <meta name="Keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
@@ -9,12 +10,11 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no,email=no">
-    <script src="../common/js/zepto.min.js"></script>
-    <script src="js/timelimit.js"></script>
     <link href="../common/css/common.css" rel="stylesheet">
-    <link href="css/timelimit.css" rel="stylesheet">
-    <script src="../../../../app/js/plus/swiper.jquery.min.js"></script>
-    <link rel="stylesheet" href="../../../../app/css/plus/swiper.min.css">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/timelimit.js"></script>
+    <link href="css/timelimit.css" rel="stylesheet"/>
     <style type="text/css">
         html {
             -webkit-overflow-scrolling:touch;
@@ -22,7 +22,6 @@
         body {
             -webkit-overflow-scrolling:touch;
         }
-
         ::-webkit-scrollbar{display:none}
         ::-webkit-scrollbar{width:1px;height:1px}
         ::scrollbar{width:1px;height:1px}
@@ -30,18 +29,28 @@
 </head>
 <body>
 <div class="nwrapper">
+    <!--menu-->
+    <div class="tabs">
 
-    <!--tap-->
-    <!--顶部-->
-    <div class="tabs" style="-webkit-overflow-scrolling:touch">
-        <a href="javascript:;" class="active"><span>8点场</span></a>
-        <a href="javascript:;"><span>正在抢购</span></a>
-        <a href="javascript:;"><span>12点场</span></a>
-        <a href="javascript:;"><span>16点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
-        <a href="javascript:;"><span>20点场</span></a>
+        <!--time-->
+        <div class="scroll-wrap" id="wrapper">
+            <ul class="equal-table fixed">
+                <li class="active"><a href="javascript:void (0)"><span>8点场</span></a></li>
+                <li><a href="javascript:void (0)"><span>10电场</span></a></li>
+                <li><a href="javascript:void (0)"><span>10电场</span></a></li>
+                <li><a href="javascript:void (0)"><span>10电场</span></a></li>
+                <li><a href="javascript:void (0)"><span>10电场</span></a></li>
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+                <!--<li><a href="javascript:void (0)"><span>10电场</span></a></li>-->
+            </ul>
+        </div>
+
+        <!--timeContent-->
         <div class="tabs-title">
             <div class="time-title" >
                 <span class="time-title-count">本次抢购已经结束</span>
@@ -56,6 +65,7 @@
                 <span class="time-title-count">本次抢购即将开始</span>
             </div>
         </div>
+
     </div>
 
     <!--tab列表页-->
@@ -72,13 +82,13 @@
                         <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
                         <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
                         <div class="time-sale-msg">
-                            <a href="javascript:;" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
+                            <a href="javascript:void (0)" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -86,13 +96,13 @@
                         <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
                         <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</a>
                         <div class="time-sale-msg">
-                            <a href="javascript:;" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
+                            <a href="javascript:void (0)" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -100,26 +110,13 @@
                         <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
                         <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
                         <div class="time-sale-msg">
-                            <a href="javascript:;" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
+                            <a href="javascript:void (0)" class="time-sale-ruler"><span>4M</span><span>16G</span></a>
                             <em>限时购<i>¥112</i>
                                 <del>¥165</del>
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="time-sale-box">
-                        <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
-                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
-                        <div class="time-sale-msg">
-                            <em>限时购<i>¥112</i>
-                                <del>¥165</del>
-                            </em>
-                            <div class="time-sale-btn">
-                                <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +129,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -145,7 +142,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -158,7 +155,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -171,7 +168,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +181,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +194,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +207,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +220,20 @@
                             </em>
                             <div class="time-sale-btn">
                                 <!--<span><em class="time-sale-active">还剩两件</em></span>-->
-                                <a href="javascript:;" class="time-sale-ct">已结束</a>
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="time-sale-box">
+                        <div class="time-sale-img"><img src="img/goods_03.jpg"></div>
+                        <a href="" class="time-sale-title">【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面膜10张</a>
+                        <div class="time-sale-msg">
+                            <em>限时购<i>¥112</i>
+                                <del>¥165</del>
+                            </em>
+                            <div class="time-sale-btn">
+                                <!--<span><em class="time-sale-active">还剩两件</em></span>-->
+                                <a href="javascript:void (0)" class="time-sale-ct">已结束</a>
                             </div>
                         </div>
                     </div>
@@ -235,7 +245,7 @@
             <div class="swiper-slide">
 
                 <!--<div class="time-title">-->
-                    <!--<span class="time-title-count">本场结束还剩<span><em>00</em>:<em>06</em>:<em>23</em></span></span>-->
+                <!--<span class="time-title-count">本场结束还剩<span><em>00</em>:<em>06</em>:<em>23</em></span></span>-->
                 <!--</div>-->
 
                 <div class="time-sale">
@@ -251,7 +261,7 @@
 
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em><em class="time-sale-process"></em></span>
-                                <a href="javascript:;" class="time-sale-bt">立即抢</a>
+                                <a href="javascript:void (0)" class="time-sale-bt">立即抢</a>
                             </div>
 
                         </div>
@@ -269,7 +279,7 @@
 
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em><em class="time-sale-process"></em></span>
-                                <a href="javascript:;" class="time-sale-bt">立即抢</a>
+                                <a href="javascript:void (0)" class="time-sale-bt">立即抢</a>
                             </div>
 
                         </div>
@@ -285,7 +295,7 @@
 
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em><em class="time-sale-process"></em></span>
-                                <a href="javascript:;" class="time-sale-bt">立即抢</a>
+                                <a href="javascript:void (0)" class="time-sale-bt">立即抢</a>
                             </div>
 
                         </div>
@@ -301,7 +311,7 @@
 
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em><em class="time-sale-process"></em></span>
-                                <a href="javascript:;" class="time-sale-bt">立即抢</a>
+                                <a href="javascript:void (0)" class="time-sale-bt">立即抢</a>
                             </div>
 
                         </div>
@@ -317,7 +327,7 @@
 
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em><em class="time-sale-process"></em></span>
-                                <a href="javascript:;" class="time-sale-bt">立即抢</a>
+                                <a href="javascript:void (0)" class="time-sale-bt">立即抢</a>
                             </div>
 
                         </div>
@@ -330,7 +340,7 @@
 
 
                 <!--<div class="time-title">-->
-                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--<span class="time-title-count">本次抢购即将开始</span>-->
                 <!--</div>-->
 
                 <div class="time-sale">
@@ -345,7 +355,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em></span>
-                                <a href="javascript:;" class="time-sale-st">即将开始</a>
+                                <a href="javascript:void (0)" class="time-sale-st">即将开始</a>
                             </div>
                         </div>
                     </div>
@@ -359,7 +369,7 @@
 
 
                 <!--<div class="time-title">-->
-                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--<span class="time-title-count">本次抢购即将开始</span>-->
                 <!--</div>-->
 
                 <div class="time-sale">
@@ -374,7 +384,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em></span>
-                                <a href="javascript:;" class="time-sale-st">即将开始</a>
+                                <a href="javascript:void (0)" class="time-sale-st">即将开始</a>
                             </div>
                         </div>
                     </div>
@@ -388,7 +398,7 @@
 
 
                 <!--<div class="time-title">-->
-                    <!--<span class="time-title-count">本次抢购即将开始</span>-->
+                <!--<span class="time-title-count">本次抢购即将开始</span>-->
                 <!--</div>-->
 
                 <div class="time-sale">
@@ -403,7 +413,7 @@
                             </em>
                             <div class="time-sale-btn">
                                 <span><em class="time-sale-tab">还剩两件</em></span>
-                                <a href="javascript:;" class="time-sale-st">即将开始</a>
+                                <a href="javascript:void (0)" class="time-sale-st">即将开始</a>
                             </div>
                         </div>
                     </div>
@@ -417,26 +427,28 @@
 
         </div>
     </div>
-</div>
-<div style="background: rgba(0,0,0,.5); position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 999; text-align: center; display: none">
-    <img src="img/loading51.gif" style="width: 1rem; height: auto; margin-top:70%">
+
 </div>
 </body>
 <script type="text/javascript">
- $(document).ready(function(){
-     $('.tabs a').click(function(){
+    var myscroll;
+    function loaded() {
+        myscroll = new iScroll("wrapper", {
+            hScroll: true,
+            vScroll: false,
+            bounce: true,
+            hScrollbar: false,
+            hideScrollbar: true
+        });
+    }
+    window.addEventListener("DOMContentLoaded", loaded, false);
 
-         $('.tabs a').removeClass('active');
-         $(this).addClass('active');
-
-         var Index = $(this).index();
-
-         $('.swiper-slide').eq(Index).show();
-         $('.time-title').eq(Index).show();
-         $('.swiper-slide').eq(Index).siblings().hide();
-         $('.time-title').eq(Index).siblings().hide();
-
-     })
- });
+    $('.equal-table li').click(function () {
+        var Index = $(this).index();
+        $('.equal-table .active').removeClass('active');
+        $('.equal-table li').eq(Index).addClass('active');
+        var PositionIndex = document.querySelector('#wrapper li[class="active"]');
+        myscroll.scrollToElement(PositionIndex, 200, true, true);
+    });
 </script>
 </html>

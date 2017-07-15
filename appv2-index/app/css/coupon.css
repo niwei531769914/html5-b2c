@@ -23,7 +23,7 @@
 .coupons_box_l p{ width: 90%; color: #c1c1c1; font-size: .20rem; height: auto; margin: 0 8% 0; float: left}
 .coupons_box_c{ width:.22rem; height:1.35rem; display:block; float:left; }
 .coupons_box_r{ width:1.96rem; height:1.35rem; display:block; float:left;  border-radius:0 .1rem .1rem 0;position:relative; margin-left: .22rem}
-.coupons_box_r em{ font-size:.20rem; color:#ffffff; width:100%;  display:block; float:left; margin:.28rem 0 .12rem 0;}
+.coupons_box_r em{ font-size:.20rem; color:#ffffff; width:100%; text-align: center ;display:block; float:left; margin:.28rem 0 .12rem 0;}
 .coupons_box_r em b{ font-size: .36rem ; font-weight: bolder; margin-right: .1rem}
 .coupons_box_r span{ font-size:.20rem; color:#ffffff; width:auto;  display:block; float:left; margin-left: .3rem;}
 

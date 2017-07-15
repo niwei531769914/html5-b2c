@@ -1,8 +1,13 @@
 
 
 .tabs{ width:100%; height:1.6rem; display:block;float: left; position: fixed;white-space: nowrap; overflow-x: auto; overflow-y: hidden; z-index: 9; font-size: 0}
-.tabs a{ width:20%; height:.8rem; display:inline-block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden ;background:#f5a623;}
-.tabs a.active{ background:url(../img/pt_nav.png) no-repeat center bottom #d18200; background-size:.3rem;}
+.tabs .scroll-wrap { width: 100%; height: .8rem; overflow: hidden; touch-action: none; background: #f5a623  }
+.tabs .scroll-wrap .equal-table {  font-size: .26rem;  color: #212121;  display: table;  overflow-y: hidden;  height: .8rem;  }
+.tabs .scroll-wrap .equal-table li { display: table-cell; white-space: nowrap;  }
+.tabs .scroll-wrap .equal-table li a{ width: 1.5rem; height:.8rem; display: block;  line-height:.8rem; font-size:.26rem; color:#ffffff; text-align:center; overflow: hidden ;}
+.tabs .scroll-wrap .equal-table li.active{ background:url(../img/pt_nav.png) no-repeat center bottom #d18200; background-size:.3rem;}
+
+
 
 /*列表*/
 .tabs-title{ width: 100%; height: .8rem; float: left; background: #ffffff; z-index: 9}
