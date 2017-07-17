@@ -117,7 +117,7 @@
 	font-size: .32rem;
 	padding-left: .3rem;
 	padding-top: .14rem;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .OrderDetails-Logistics>a {
@@ -167,7 +167,7 @@
 	height: .64rem;
 	line-height: .64rem;
 	font-size: .32rem;
-	font-weight: bold;
+	font-weight: 600;
 	float: left;
 	margin-left: .32rem;
 }
@@ -308,6 +308,7 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	text-align: right;
+	color: #757575;
 }
 
 
