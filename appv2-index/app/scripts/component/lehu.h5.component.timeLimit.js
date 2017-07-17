@@ -252,7 +252,7 @@ define('lehu.h5.component.timeLimit', [
             ".tabs a click": function (element, event) {
                 var that = this;
 
-                if(that.TOUCH){
+                if (that.TOUCH) {
                     return false;
                 }
 
@@ -328,7 +328,6 @@ define('lehu.h5.component.timeLimit', [
                                 return false;
                             }
                             var HTML = "";
-                            var TOALEWIDHT = [];
                             for (var i = 0; i < BOXLIST.length; i++) {
                                 //状态为1
                                 if (status == 1) {
@@ -336,11 +335,11 @@ define('lehu.h5.component.timeLimit', [
 
                                     if (parseFloat(BOXLIST[i].total) >= 1) {
 
-                                        HTML += "<img class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
+                                        HTML += "<img class='lazyload'  data-img='" + that.HTTP_NO(BOXLIST[i].imgUrl) + "' src='images/goods_back.png'>";
 
                                     } else if (parseFloat(BOXLIST[i].total) == 0) {
 
-                                        HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
+                                        HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + that.HTTP_NO(BOXLIST[i].imgUrl) + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
 
                                     }
 
@@ -373,7 +372,7 @@ define('lehu.h5.component.timeLimit', [
                                 //状态为2
                                 if (status == 2) {
 
-                                    HTML += "<div class='time-sale-box'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "'><a  href='javascript:void (0)'  class='time-sale-img'><img class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'></a><a  href='javascript:void (0)'  class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a  href='javascript:void (0)'  class='time-sale-ruler'>";
+                                    HTML += "<div class='time-sale-box'  data-goodsid = '" + BOXLIST[i].goodsId + "' data-goodsItemId = '" + BOXLIST[i].goodsItemId + "'><a  href='javascript:void (0)'  class='time-sale-img'><img class='lazyload'  data-img='" + that.HTTP_NO(BOXLIST[i].imgUrl) + "' src='images/goods_back.png'></a><a  href='javascript:void (0)'  class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a  href='javascript:void (0)'  class='time-sale-ruler'>";
 
                                     if (BOXLIST[i].goodsSpecName) {
                                         var goodsSpecName = BOXLIST[i].goodsSpecName;
@@ -392,11 +391,11 @@ define('lehu.h5.component.timeLimit', [
 
                                     if (BOXLIST[i].total == 0) {
 
-                                        HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
+                                        HTML += "<img class='lazyload'  style='opacity:.7;' data-img='" + that.HTTP_NO(BOXLIST[i].imgUrl) + "' src='images/goods_back.png'><b><img src='images/qiangwan.png'/></b>"
 
                                     } else if (BOXLIST[i].total >= 1) {
 
-                                        HTML += "<img  class='lazyload'  data-img='" + BOXLIST[i].imgUrl + "' src='images/goods_back.png'>";
+                                        HTML += "<img  class='lazyload'  data-img='" + that.HTTP_NO(BOXLIST[i].imgUrl) + "' src='images/goods_back.png'>";
                                     }
 
                                     HTML += "</a><a  href='javascript:void (0)'  class='time-sale-title'>" + BOXLIST[i].name + "</a><div class='time-sale-msg'><a  href='javascript:void (0)'  class='time-sale-ruler'>";
@@ -468,7 +467,7 @@ define('lehu.h5.component.timeLimit', [
 
                     function test() {
                         // 判断此刻到顶部的距离是否和1秒前的距离相等
-                        if($(window).scrollTop() == topValue) {
+                        if ($(window).scrollTop() == topValue) {
                             clearInterval(interval);
                             interval = null;
                             that.TOUCH = false;
@@ -504,6 +503,16 @@ define('lehu.h5.component.timeLimit', [
                 });
             },
 
+            //判断图片是否为http或者https
+            HTTP_NO: function (img) {
+                if (img.indexOf('http://') > -1) {
+                    return img.replace(/http/, 'https')
+                }
+                else {
+                    return img;
+                }
+            },
+
             //判断商品是否存在
             nlist_no: function () {
                 $(".loading-date").css("display", "none");
@@ -514,7 +523,7 @@ define('lehu.h5.component.timeLimit', [
             ".time-sale-box click": function (element, event) {
 
                 var that = this;
-                if(that.TOUCH){
+                if (that.TOUCH) {
                     return false;
                 }
 

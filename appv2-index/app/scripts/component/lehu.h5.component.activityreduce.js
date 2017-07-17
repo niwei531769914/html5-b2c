@@ -49,6 +49,17 @@ define('lehu.h5.component.activityreduce', [
                     } else {
                         return options.inverse(options.contexts || this);
                     }
+                },
+                'lehu-images': function (img) {
+                    if (_.isFunction(img)) {
+                        img = img();
+                    }
+                    if (img.indexOf('http://') > -1) {
+                        return img.replace(/http/, 'https')
+                    }
+                    else {
+                        return img;
+                    }
                 }
             },
 
@@ -139,7 +150,7 @@ define('lehu.h5.component.activityreduce', [
                     onLoadingData: false
                 };
                 if (ACTIVITYLIST.activityImg == "") {
-                    ACTIVITYLIST.activityImg = "http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629133401926.jpg";
+                    ACTIVITYLIST.activityImg = "https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629133401926.jpg";
                 }
                 else {
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;
