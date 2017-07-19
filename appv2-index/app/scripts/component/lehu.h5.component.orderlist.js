@@ -64,7 +64,7 @@ define('lehu.h5.component.orderlist', [
                 this.user = busizutil.getUserId();
 
                 var params = {
-                    'phone': 18020136378
+                    'phone': this.user.phone
                 };
 
                 $.ajax({

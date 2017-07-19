@@ -123,6 +123,7 @@ define('lehu.h5.component.activitydonate', [
 
                 var api = new LHAPI({
                     url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
+                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -149,7 +150,7 @@ define('lehu.h5.component.activitydonate', [
                 };
                 if (ACTIVITYLIST.activityImg == "") {
                     ACTIVITYLIST.activityImg =
-                        "https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629133401926.jpg";
+                        "https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181559351952.jpg";
                 }
                 else {
                     ACTIVITYLIST.activityImg = data.response.promotionInfo.activityImg;

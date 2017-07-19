@@ -55,7 +55,6 @@ define('lehu.h5.component.orderDetails', [
                 var html = renderFn(this.options.data);
                 this.element.html(html);
 
-
                 //    去除导航
                 this.deleteNav();
 

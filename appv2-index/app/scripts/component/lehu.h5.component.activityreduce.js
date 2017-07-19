@@ -126,6 +126,7 @@ define('lehu.h5.component.activityreduce', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
