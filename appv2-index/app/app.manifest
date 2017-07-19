@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#v1.4.292
+#v1.4.294
 
 CACHE:
 styles/lehu.h5.login.css
@@ -20,6 +20,8 @@ styles/lehu.h5.stores.css
 styles/lehu.h5.timeLimit.css
 styles/lehu.h5.servers.css
 styles/lehu.h5.registerhelp.css
+styles/lehu.h5.orderlist.css
+styles/lehu.h5.orderDetails.css
 
 
 scripts/common/lehu.h5.common.js
@@ -41,6 +43,8 @@ scripts/lehu.h5.page.orderDetails.js
 scripts/lehu.h5.page.timeLimit.js
 scripts/lehu.h5.page.stores.js
 scripts/lehu.h5.page.headlines.js
+scripts/lehu.h5.page.orderlist.js
+scripts/lehu.h5.page.orderDetails.js
 
 
 images/Shortcut_114_114.png
