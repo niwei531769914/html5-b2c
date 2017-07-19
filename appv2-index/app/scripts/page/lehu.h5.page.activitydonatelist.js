@@ -1,5 +1,6 @@
 define('lehu.h5.page.activitydonatelist', [
- 		'can',
+
+		'can',
 		'zepto',
 		'fastclick',
 		'lehu.util',
@@ -26,23 +27,18 @@ define('lehu.h5.page.activitydonatelist', [
 
 			initData: function() {
 				var HOST = window.location.host;
-				if(HOST.indexOf("http://") == -1) {
-					HOST = "http://" + HOST;
+				if(HOST.indexOf("https://") == -1) {
+					HOST = "https://" + HOST;
 				}
 				this.URL = HOST;
-				// this.URL = 'http://121.196.208.98:28080';
-				// this.URL = 'http://mobile.vision-world.cn:8080';
 
 				//数组图片
 				this.IMGURL = [{
-						img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155064967.jpg'
+						img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/20170718155701682.jpg'
 					},
 					{
-						img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629115637945.jpg'
+						img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181557253211.jpg'
 					},
-					{
-						img: 'http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155572104.jpg'
-					}
 				];
 			},
 
@@ -73,7 +69,7 @@ define('lehu.h5.page.activitydonatelist', [
 							'params': {
 								"title": "汇银乐虎全球购-满赠活动"
 							}
-						}
+						};
 						LHHybrid.nativeFun(jsonParams);
 					}
 				}
@@ -85,6 +81,7 @@ define('lehu.h5.page.activitydonatelist', [
 
 				var api = new LHAPI({
 					url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
+					//url:  'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/donateList',
 					data: JSON.stringify(params),
 					method: 'post'
 				});
@@ -101,9 +98,9 @@ define('lehu.h5.page.activitydonatelist', [
 							for(var i = 0; i < CONTENT.length; i++) {
 								html += '<div class="fullgive_adList">';
 								if(i <= parseInt(that.IMGURL.length - 1)) {
-									html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="' + that.IMGURL[i].img + '"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
+									html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="' + that.IMGURL[i].img + '"  data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
 								} else {
-									html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg"  data-url="' + CONTENT[i].url + '" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
+									html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181616083968.jpg" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
 								}
 
 								html += '<p>' + CONTENT[i].activityName + '</p></div>';
@@ -156,4 +153,3 @@ define('lehu.h5.page.activitydonatelist', [
 		new RegisterHelp('#content');
 
 	});
- 

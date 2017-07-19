@@ -115,7 +115,7 @@ define('lehu.h5.component.orderlist', [
 						}
 					},
 					error: function(error) {
-						console.log(error);
+						console.log('服务器错误！');
 					}
 				})
 

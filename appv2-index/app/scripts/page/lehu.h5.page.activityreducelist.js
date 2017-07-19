@@ -33,9 +33,9 @@ define('lehu.h5.page.activityreducelist', [
 
                 //数组图片
                 this.IMGURL = [
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155064967.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629115637945.jpg'},
                     {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291157102264.jpg'},
+                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629115637945.jpg'},
+                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155064967.jpg'},
                     {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155572104.jpg'},
                 ];
             },
@@ -78,6 +78,7 @@ define('lehu.h5.page.activityreducelist', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceList',
+                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/reduceList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });
@@ -97,7 +98,7 @@ define('lehu.h5.page.activityreducelist', [
                                     html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="' + that.IMGURL[i].img + '" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
                                 }
                                 else {
-                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="http://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170615/201706151949379959.jpg" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
+                                    html += '<img class="lazyload"  src="images/big_goods_back.png"  data-img="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg" data-activityId="' + CONTENT[i].activityId + '" data-storeActivityId="' + CONTENT[i].storeActivityId + '">';
                                 }
 
                                 html += '<p>' + CONTENT[i].activityName + '</p></div>';
