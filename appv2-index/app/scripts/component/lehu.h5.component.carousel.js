@@ -166,8 +166,8 @@ define('lehu.h5.component.carousel', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -234,7 +234,6 @@ define('lehu.h5.component.carousel', [
                         that.luckId = data.response.id;
                         that.initTimeMillis = data.response.initTimeMillis;
 
-                        console.log(that.initTimeMillis);
 
                         var renderList = can.mustache(template_components_carousel);
                         var html = renderList(that.options, that.helpers);
@@ -297,7 +296,7 @@ define('lehu.h5.component.carousel', [
                     "strToken": this.user.token,
                     "strUserId": this.user.userId,
                     "luckActiveId": this.luckId,
-                    "initTimeMillis": this.initTimeMillis
+                  //  "initTimeMillis": this.initTimeMillis
                 };
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
