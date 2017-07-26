@@ -13,9 +13,9 @@ define('lehu.h5.page.introduce', [
         'text!template_components_introduce'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
-        LHFooter,
-        template_page_introduce) {
+    function (can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
+              LHFooter,
+              template_page_introduce) {
         'use strict';
 
         Fastclick.attach(document.body);
@@ -27,24 +27,20 @@ define('lehu.h5.page.introduce', [
              * @param  {[type]} element 元素
              * @param  {[type]} options 选项
              */
-            init: function(element, options) {
+            init: function (element, options) {
                 var renderList = can.mustache(template_page_introduce);
                 var html = renderList(this.options);
                 this.element.html(html);
 
-                if(params.hyfrom == 'app'){
-
-                    //    IOS存userid和token
-                    if (util.isMobile.iOS()) {
-                        //标题
-                        var jsonParams = {
-                            'funName': 'title_fun',
-                            'params': {
-                                "title": "抢购门店价值400元提货券"
-                            }
-                        };
-                        LHHybrid.nativeFun(jsonParams);
-                    }
+                if (util.isMobile.iOS()) {
+                    //标题
+                    var jsonParams = {
+                        'funName': 'title_fun',
+                        'params': {
+                            "title": "抢购门店价值400元提货券"
+                        }
+                    };
+                    LHHybrid.nativeFun(jsonParams);
                 }
 
                 new LHFooter();
