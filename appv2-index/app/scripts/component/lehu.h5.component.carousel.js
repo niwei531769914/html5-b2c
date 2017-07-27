@@ -92,8 +92,7 @@ define('lehu.h5.component.carousel', [
                 }
                 if (lottery.speed < 40) {
                     lottery.speed = 40;
-                }
-                ;
+                };
 
                 lottery.timer = setTimeout(function () {
                     roll(lotteryIndex, tip);
@@ -296,7 +295,7 @@ define('lehu.h5.component.carousel', [
                     "strToken": this.user.token,
                     "strUserId": this.user.userId,
                     "luckActiveId": this.luckId,
-                  //  "initTimeMillis": this.initTimeMillis
+                   // "initTimeMillis": this.initTimeMillis
                 };
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",

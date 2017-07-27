@@ -71,7 +71,7 @@ define('lehu.h5.component.orderDetails', [
                 };
                 $.ajax({
                     method: "get",
-                    url: "http://120.55.126.211:8082/myOrderDetail.do",
+                    url: "https://app.lehumall.com/queryorder/myOrderDetail.do",
                     data: this.param
                 }).done(function (data) {
                     var bToObj = JSON.parse(data);

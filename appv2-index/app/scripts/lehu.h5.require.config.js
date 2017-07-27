@@ -59,6 +59,7 @@ requirejs.config({
         "lehu.h5.page.orderlist": "scripts/page/lehu.h5.page.orderlist",
         "lehu.h5.page.orderDetails": "scripts/page/lehu.h5.page.orderDetails",
         "lehu.h5.page.introduce": "scripts/page/lehu.h5.page.introduce",
+        "lehu.h5.page.goodslist": "scripts/page/lehu.h5.page.goodslist",
 
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
@@ -100,6 +101,7 @@ requirejs.config({
         "template_components_orderlist": "templates/components/lehu.h5.components.orderlist.mustache",
         "template_components_orderDetails": "templates/components/lehu.h5.components.orderDetails.mustache",
         "template_components_introduce": "templates/components/lehu.h5.components.introduce.mustache",
+        "template_components_goodslist": "templates/components/lehu.h5.components.goodslist.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 

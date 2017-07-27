@@ -1002,6 +1002,24 @@ module.exports = function(grunt) {
                 ],
                 insertRequire: ['lehu.h5.page.orderDetails']
             }
+        },
+        goodslist: {
+            options: {
+                optimize: 'none',
+                preserveLicenseComments: false,
+                baseUrl: './app/',
+                out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.goodslist.js',
+                mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+                paths: {
+                    'moment': '../bower_components/momentjs/min/moment.min',
+                    'fastclick': '../bower_components/fastclick/lib/fastclick'
+                },
+                include: [
+                    'lehu.helpers',
+                    'lehu.h5.page.goodslist'
+                ],
+                insertRequire: ['lehu.h5.page.goodslist']
+            }
         }
     }
   });

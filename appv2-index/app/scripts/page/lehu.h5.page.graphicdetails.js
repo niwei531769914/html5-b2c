@@ -22,7 +22,6 @@ define('lehu.h5.page.graphicdetails', [
 
         var GraphicDetails = can.Control.extend({
 
-
             initData: function() {
                 var HOST = window.location.host;
                 if(HOST.indexOf("https://") == -1){
