@@ -45,8 +45,7 @@ define('lehu.h5.component.servers', [
 
             deleteNav:function () {
                 var param = can.deparam(window.location.search.substr(1));
-                console.log(param.from);
-                if(param.from == "app"){
+                if(param.hyfrom == "app"){
                     $('.header').hide();
                     return false;
                 }
