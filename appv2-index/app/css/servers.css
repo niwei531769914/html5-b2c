@@ -1,9 +1,9 @@
 .severs-list-box{ width: 100%; height: auto; float: left; margin-bottom: .4rem}
 .severs-box-banner img{ width: 100%; height: auto}
-.servers-list-items{ width: 100%; height: auto; float: left; margin-top: .1rem}
-.servers-list-item { display: block; float: left; font-size: .3rem; width: 1.8rem; height: auto; text-align: center; margin: .1rem 0 .1rem .5rem}
+.servers-list-items{ width: 96%; height: auto; float: left; margin-top: .1rem; padding: 0 2%}
+.servers-list-item { display: block; float: left; font-size: .3rem; width: 25%; height: auto; text-align: center; margin: .2rem auto  }
 .servers-list-items img{ display: block; width: auto; height: .88rem; padding: .2rem 0; margin: 0 auto}
-.servers-list-items span{ display: block; color: #212121}
+.servers-list-items span{ display: block; color: #757575}
 
 
 
