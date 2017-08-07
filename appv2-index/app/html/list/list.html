@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>活动页配置</title>
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <script src="../common/js/zepto.min.js"></script>
+    <script src="js/list.js"></script>
+    <link href="../common/css/common.css" rel="stylesheet">
+    <link href="css/list.css" rel="stylesheet">
+    <script src="js/iscroll.js"></script>
+    <style type="text/css">
+
+        .list-content {
+            width: 100%;
+            height: auto;
+            float: left
+        }
+
+        .list-content .list-content-image {
+            width: 94%;
+            height: auto;
+            float: left;
+            background: #e0e0e0;
+            margin: .2rem 3% 0
+        }
+
+        .list-content .list-content-image img{
+            width: 100%;
+            height: auto;
+        }
+
+        .list-content .list-content-scroll {
+            width: 100%;
+            height: auto;
+            float: left;
+            margin-bottom: .15rem;
+            margin-top: .15rem;
+        }
+
+        .list-content .list-content-scroll .content-scroll-top {
+            width: 100%;
+            height: 2.3rem;
+            overflow: hidden;
+            float: left;
+        }
+
+        .list-content .list-content-scroll .scroll-goods {
+            width: 100%;
+            height: auto;
+            float: left;
+            margin-top: .2rem;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items {
+            width: 100%;
+            height: auto;
+            float: left;
+            touch-action: none;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul {
+            display: table;
+            overflow-y: hidden;
+            height: 3rem;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li {
+            width: auto;
+            height: auto;
+            display: block;
+            float: left;
+            margin-left: .225rem;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a {
+            width: 2.2rem;
+            height: auto;
+            display: block;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a img {
+            width: 2.2rem;
+            height: 2.2rem;
+            overflow: hidden;
+            display: block;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a p {
+            width: 2.2rem;
+            height: .6rem;
+            overflow: hidden;
+            display: block;
+            font-size: .24rem;
+            line-height: .32rem;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-top: .1rem;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a em {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: .1rem;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a em i {
+            max-width: 100%;
+            height: .3rem;
+            font-size: .26rem;
+            line-height: .3rem;
+            display: block;
+            float: left;
+            color: #f53828;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .list-content .list-content-scroll .scroll-goods-items ul li a em del {
+            max-width: 100%;
+            height: .3rem;
+            color: #bdbdbd;
+            font-size: .2rem;
+            display: block;
+            float: left;
+            margin-left: .1rem;
+            line-height: .34rem;
+            text-decoration: line-through;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .list-content .list-content-square {
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+
+        .list-content .list-content-square .content-square-title{
+            width: 96%;
+            height: auto;
+            float: left;
+            padding: .2rem 2% 0;
+        }
+
+        .list-content .list-content-square .content-square-title .square-caption{
+            float: left;
+            width: 100%;
+            height: auto;
+            font-size: .3rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .list-content .list-content-square .content-square-title .square-subhead{
+            float: left;
+            width: 100%;
+            height: auto;
+            font-size: .22rem;
+            color: #757575;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: .15rem;
+        }
+
+        .list-content .list-content-square .content-square-items{
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+
+        .list-content .list-content-square .content-square-items .content-square-item {
+            display: block;
+            width: 3.4125rem;
+            height: auto;
+            float: left;
+            margin: .2rem 0 .3rem .225rem;
+        }
+        .list-content .list-content-square .content-square-items .content-square-item img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .list-content .list-content-square .content-square-items .content-square-item p{
+            width: 100%;
+            height: .6rem;
+            overflow: hidden;
+            display: block;
+            font-size: .24rem;
+            line-height: .32rem;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-top: .1rem;
+        }
+        .list-content .list-content-square .content-square-items .content-square-item em{
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin-top: .1rem;
+        }
+
+        .list-content .list-content-square .content-square-items .content-square-item em i{
+            max-width: 100%;
+            height: .3rem;
+            font-size: .26rem;
+            line-height: .3rem;
+            display: block;
+            float: left;
+            color: #f53828;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .list-content .list-content-square .content-square-items .content-square-item em del{
+            max-width: 100%;
+            height: .3rem;
+            color: #bdbdbd;
+            font-size: .2rem;
+            display: block;
+            float: left;
+            margin-left: .1rem;
+            line-height: .34rem;
+            text-decoration: line-through;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .banner-title{
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+
+        .banner-title img{
+            width: 100%;
+            height: auto;
+            float: left;
+        }
+        .banner-title p{
+            font-size: .3rem;
+            width: 94%;
+            padding: .2rem 3%;
+            float: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #757575;
+        }
+
+        .wealthy{
+            width: 96%;
+            height: auto;
+            float: left;
+            padding: .2rem 2% ;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--list配置-->
+<div class="nwrapper">
+
+    <!--top header-->
+    <header class="header">
+        <a href="javascript:void (0)" class="back"></a>
+        <h2>活动页配置</h2>
+    </header>
+
+    <div class="list-content">
+
+        <!--banner图片-->
+        <div class="list-content-image">
+            <img src="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg">
+        </div>
+
+        <!--滚动图片-->
+        <div class="list-content-scroll">
+            <img class="content-scroll-top"
+                 src="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg">
+            <div class="scroll-goods">
+                <div class="scroll-goods-items">
+                    <ul>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nhr"></div>
+
+        <div class="list-content-scroll">
+            <img class="content-scroll-top"
+                 src="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg">
+            <div class="scroll-goods">
+                <div class="scroll-goods-items">
+                    <ul>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void (0)">
+                                <img src="images/goods_03.jpg">
+                                <p>【澳洲直邮可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL
+                                    可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                                <em><i>￥80</i>
+                                    <del>￥120</del>
+                                </em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nhr"></div>
+
+        <!--单品-->
+        <div class="list-content-square">
+            <div class="content-square-title">
+               <p class="square-caption">澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白</p>
+                <span class="square-subhead">澳洲直邮】</span>
+            </div>
+            <div class="content-square-items">
+                <a href="javascript:void (0)" class="content-square-item">
+                    <img src="images/goods_03.jpg">
+                    <p>【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                    <em><i>￥80</i><del>￥120</del></em>
+                </a>
+                <a href="javascript:void (0)" class="content-square-item">
+                    <img src="images/goods_03.jpg">
+                    <p>【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                    <em><i>￥80</i><del>￥120</del></em>
+                </a>
+                <a href="javascript:void (0)" class="content-square-item">
+                    <img src="images/goods_03.jpg">
+                    <p>【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                    <em><i>￥80</i><del>￥120</del></em>
+                </a>
+                <a href="javascript:void (0)" class="content-square-item">
+                    <img src="images/goods_03.jpg">
+                    <p>【澳洲直邮】MEDIHEAL 可莱丝W.H.P美白保湿竹碳面洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保洲直邮】MEDIHEAL可莱丝W.H.P美白保洲直邮】MEDIHEAL 可莱丝W.H.P美白保膜10张</p>
+                    <em><i>￥80</i><del>￥120</del></em>
+                </a>
+            </div>
+        </div>
+
+        <!--带标题的banner-->
+        <div class="banner-title">
+            <img src="https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg">
+            <p>参与门店:江宁店、广陵店、邗江店</p>
+        </div>
+
+        <div class="wealthy">
+
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+    $(function () {
+//        $('.list-content-scroll').each(function (index, item) {
+//            myscroll = new iScroll("wrapper" + index, {
+//                hScroll: true,
+//                vScroll: false,
+//                bounce: true,
+//                hScrollbar: false,
+//                hideScrollbar: true
+//            });
+//        })
+
+
+    })
+</script>
+</html>

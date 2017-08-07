@@ -33,8 +33,9 @@ define('lehu.h5.page.activitydonatelist', [
 
                 //数组图片
                 this.IMGURL = [
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/20170718155701682.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181557253211.jpg'},
+                    {img: 'images/activityreducelist/WechatIMG301.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG299.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG300.jpeg'},
                 ];
             },
 

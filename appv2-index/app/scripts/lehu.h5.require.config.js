@@ -61,6 +61,7 @@ requirejs.config({
         "lehu.h5.page.introduce": "scripts/page/lehu.h5.page.introduce",
         "lehu.h5.page.goodslist": "scripts/page/lehu.h5.page.goodslist",
         "lehu.h5.page.activitysummer": "scripts/page/lehu.h5.page.activitysummer",
+        "lehu.h5.page.list": "scripts/page/lehu.h5.page.list",
 
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
@@ -76,6 +77,7 @@ requirejs.config({
         "lehu.h5.component.coupondetail": "scripts/component/lehu.h5.component.coupondetail",
         "lehu.h5.component.orderlist": "scripts/component/lehu.h5.component.orderlist",
         "lehu.h5.component.orderDetails": "scripts/component/lehu.h5.component.orderDetails",
+        "lehu.h5.component.list": "scripts/component/lehu.h5.component.list",
 
         "template_page_registerhelp": "templates/page/lehu.h5.page.registerhelp.mustache",
         "template_page_userhelp": "templates/page/lehu.h5.page.userhelp.mustache",
@@ -104,6 +106,7 @@ requirejs.config({
         "template_components_introduce": "templates/components/lehu.h5.components.introduce.mustache",
         "template_components_goodslist": "templates/components/lehu.h5.components.goodslist.mustache",
         "template_components_activitysummer": "templates/components/lehu.h5.components.activitysummer.mustache",
+        "template_components_list": "templates/components/lehu.h5.components.list.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 

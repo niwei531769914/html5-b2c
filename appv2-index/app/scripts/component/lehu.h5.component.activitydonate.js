@@ -157,7 +157,7 @@ define('lehu.h5.component.activitydonate', [
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
                 this.options.data.attr("pageIndex", this.pageIndex);
-                if (data.page.pageAmount && data.page.pageAmount == 1) {
+                if (data.page.pageAmount && data.page.pageAmount == 1 || data.page.pageAmount == 0) {
                     this.options.data.attr("supplement.noData", true);
                 }
                 else {

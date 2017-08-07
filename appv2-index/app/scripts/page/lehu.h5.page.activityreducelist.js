@@ -33,10 +33,12 @@ define('lehu.h5.page.activityreducelist', [
 
                 //数组图片
                 this.IMGURL = [
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291157102264.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/20170629115637945.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155064967.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170629/201706291155572104.jpg'},
+                    {img: 'images/activityreducelist/WechatIMG305.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG316.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG303.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG302.jpeg'},
+                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181622555571.jpg'},
+                    {img: 'images/activityreducelist/WechatIMG304.jpeg'},
                 ];
             },
 

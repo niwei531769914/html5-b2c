@@ -157,7 +157,7 @@ define('lehu.h5.component.activityreduce', [
                 }
                 this.options.data = new can.Map(ACTIVITYLIST);
                 this.options.data.attr("pageIndex", this.pageIndex);
-                if (data.page.pageAmount && data.page.pageAmount == 1) {
+                if (data.page.pageAmount && data.page.pageAmount == 1 || data.page.pageAmount == 0) {
                     this.options.data.attr("supplement.noData", true);
                 }
                 else {
@@ -239,6 +239,7 @@ define('lehu.h5.component.activityreduce', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
+                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
