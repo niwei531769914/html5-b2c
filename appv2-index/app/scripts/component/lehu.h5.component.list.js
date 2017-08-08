@@ -48,8 +48,8 @@ define('lehu.h5.component.list', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -70,7 +70,7 @@ define('lehu.h5.component.list', [
                 };
 
                 var api = new LHAPI({
-                    url: "http://121.196.208.98:28080/mobile-web-user/ws/mobile/v1/activePage/pageDetail",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/activePage/pageDetail",
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });

@@ -37,21 +37,21 @@ define('lehu.h5.page.introduce', [
                     var jsonParams = {
                         'funName': 'title_fun',
                         'params': {
-                            "title": "抢购门店价值400元提货券"
+                            "title": "50购价值200元套券"
                         }
                     };
                     LHHybrid.nativeFun(jsonParams);
                 }
 
-                new LHFooter();
+               // new LHFooter();
             },
 
             '.introduce click': function () {
                 var jsonParams = {
                     'funName': 'goods_detail_fun',
                     'params': {
-                        'goodsId': '11247',
-                        'goodsItemId': '11454'
+                        'goodsId': '11539',
+                        'goodsItemId': '11820'
                     }
                 };
                 LHHybrid.nativeFun(jsonParams);

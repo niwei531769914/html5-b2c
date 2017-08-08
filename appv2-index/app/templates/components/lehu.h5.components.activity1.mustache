@@ -1,0 +1,33 @@
+<!--顶部-->
+<header class="header">
+    <a href="javascript:void (0)" class="back"></a>
+    <h2>{{activity.title}}</h2>
+</header>
+
+<div class="list-content">
+    <!--活动图片-->
+    <div class="list-content-image">
+        <img src="images/big_goods_back.png" data-img="{{activity.activityImg}}" class="fullgive_ad lazyload">
+    </div>
+
+    <!--单品-->
+    <div class="list-content-square">
+        {{#each goods}}
+            <a href="javascript:void (0)"  data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
+                <img data-img="{{goodsItemImg}}" src="images/goods_back.png" class="lazyload">
+                <span>{{goodsName}}</span>
+                <em><i>{{goodsItemPrice}}</i><del>{{promotionPrice}}</del></em>
+                <b><img src="images/activity1/go.png"></b>
+            </a>
+
+        {{/each}}
+
+    </div>
+
+    <div class="foot">
+        <a href="javascript:void (0)">更多内容 敬请期待</a>
+        <span></span>
+    </div>
+
+
+</div>

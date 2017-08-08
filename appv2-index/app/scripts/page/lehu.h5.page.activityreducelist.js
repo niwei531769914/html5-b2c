@@ -26,8 +26,8 @@ define('lehu.h5.page.activityreducelist', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
 
@@ -80,7 +80,6 @@ define('lehu.h5.page.activityreducelist', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceList',
-                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/reduceList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

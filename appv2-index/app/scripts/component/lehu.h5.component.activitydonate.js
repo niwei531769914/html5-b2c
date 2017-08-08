@@ -21,8 +21,6 @@ define('lehu.h5.component.activitydonate', [
         var DEFAULT_PAGE_INDEX = 1;
         var NODATA = false;
 
-        can.route.ready();
-
         return can.Control.extend({
             param: {},
 
@@ -91,8 +89,8 @@ define('lehu.h5.component.activitydonate', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
                  this.shoppingIsfor = false;
@@ -123,7 +121,6 @@ define('lehu.h5.component.activitydonate', [
 
                 var api = new LHAPI({
                     url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
-                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/donateGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
