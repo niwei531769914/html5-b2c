@@ -1,5 +1,5 @@
 define('lehu.h5.component.carousel', [
-        'zepto',
+         'zepto',
         'can',
         'lehu.h5.business.config',
         'lehu.util',
@@ -490,3 +490,4 @@ define('lehu.h5.component.carousel', [
         });
 
     });
+ 

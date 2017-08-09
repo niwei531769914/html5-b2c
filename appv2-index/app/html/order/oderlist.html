@@ -1,170 +1,171 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>订单列表</title>
-    <meta name="description" content="">
-    <meta name="Keywords" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no,email=no">
-    <script src="../common/js/zepto.min.js"></script>
-    <script src="js/order.js"></script>
-    <link href="../common/css/common.css" rel="stylesheet">
-    <link href="css/orderlist.css" rel="stylesheet">
-</head>
-<body>
-<div class="nwrapper">
 
-    <!--top-->
-    <header class="header">
-        <a href="javascript:void (0)" class="back"></a>
-        <h2>我的订单</h2>
-    </header>
+	<head>
+		<meta charset="utf-8">
+		<title>订单列表</title>
+		<meta name="description" content="">
+		<meta name="Keywords" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<script src="../common/js/zepto.min.js"></script>
+		<script src="js/order.js"></script>
+		<link href="../common/css/common.css" rel="stylesheet">
+		<link href="css/orderlist.css" rel="stylesheet">
+	</head>
 
-    <!--list-->
-    <div class="order-list">
+	<body>
+		<div class="nwrapper">
 
-        <!--订单列表-->
-        <div style="display: none" class="order-list-item">
-            <!--name-->
-            <div class="list-item-des">
-                <span class="item-des-name">店铺：乐虎海外直邮中心</span>
-                <a href="javascript:void (0)" class="item-des-go">等待发货</a>
-            </div>
+			<!--top-->
+			<header class="header">
+				<a href="javascript:void (0)" class="back"></a>
+				<h2>我的订单</h2>
+			</header>
 
-            <!--goodslist-->
-            <div class="list-item-goods">
+			<!--list-->
+			<div class="order-list">
 
-                <!--goods-->
-                <div class="item-goods">
-                    <img src="img/goods_03.jpg" class="item-goods-image">
+				<!--订单列表-->
+				<div style="display: none" class="order-list-item">
+					<!--name-->
+					<div class="list-item-des">
+						<span class="item-des-name">店铺：乐虎海外直邮中心</span>
+						<a href="javascript:void (0)" class="item-des-go">等待发货</a>
+					</div>
 
-                    <div class="item-goods-title">
-                        <div class="item-goods-sc">
-                            <span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
-                            <span class="item-goods-price">￥112.30</span>
-                        </div>
+					<!--goodslist-->
+					<div class="list-item-goods">
 
-                    </div>
-                    <span class="item-goods-quantity">×<em>3</em></span>
-                </div>
-            </div>
+						<!--goods-->
+						<div class="item-goods">
+							<img src="img/goods_03.jpg" class="item-goods-image">
 
-            <!--totalPrice-->
-            <div class="list-item-prices">
-                <span>合计:<em>¥180</em>(含运费<b>¥0.00</b>)</span>
-            </div>
+							<div class="item-goods-title">
+								<div class="item-goods-sc">
+									<span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
+									<span class="item-goods-price">￥112.30</span>
+								</div>
 
-            <!--分割线-->
-            <div class="nhr"></div>
-        </div>
+							</div>
+							<span class="item-goods-quantity">×<em>3</em></span>
+						</div>
+					</div>
 
+					<!--totalPrice-->
+					<div class="list-item-prices">
+						<span>合计:<em>¥180</em>(含运费<b>¥0.00</b>)</span>
+					</div>
 
-        <div style="display: none" class="order-list-item">
-            <!--name-->
-            <div class="list-item-des">
-                <span class="item-des-name">店铺：乐虎海外直邮中心</span>
-                <a href="javascript:void (0)" class="item-des-go">等待发货</a>
-            </div>
+					<!--分割线-->
+					<div class="nhr"></div>
+				</div>
 
-            <!--goodslist-->
-            <div class="list-item-goods">
+				<div style="display: none" class="order-list-item">
+					<!--name-->
+					<div class="list-item-des">
+						<span class="item-des-name">店铺：乐虎海外直邮中心</span>
+						<a href="javascript:void (0)" class="item-des-go">等待发货</a>
+					</div>
 
-                <!--goods-->
-                <div class="item-goods">
-                    <img src="img/goods_03.jpg" class="item-goods-image">
+					<!--goodslist-->
+					<div class="list-item-goods">
 
-                    <div class="item-goods-title">
-                        <div class="item-goods-sc">
-                            <span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
-                            <span class="item-goods-price">￥112.30</span>
-                        </div>
+						<!--goods-->
+						<div class="item-goods">
+							<img src="img/goods_03.jpg" class="item-goods-image">
 
-                        <!--guige -->
-                        <div class="item-goods-rulers">
-                            <em>CL01</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                        </div>
+							<div class="item-goods-title">
+								<div class="item-goods-sc">
+									<span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
+									<span class="item-goods-price">￥112.30</span>
+								</div>
 
-                        <span class="item-goods-tax">税费<em>￥15.71</em></span>
+								<!--guige -->
+								<div class="item-goods-rulers">
+									<em>CL01</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+								</div>
 
-                    </div>
-                </div>
+								<span class="item-goods-tax">税费<em>￥15.71</em></span>
 
-                <div class="item-goods">
-                    <img src="img/goods_03.jpg" class="item-goods-image">
+							</div>
+						</div>
 
-                    <div class="item-goods-title">
-                        <div class="item-goods-sc">
-                            <span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
-                            <span class="item-goods-price">￥112.30</span>
-                        </div>
+						<div class="item-goods">
+							<img src="img/goods_03.jpg" class="item-goods-image">
 
-                        <!--guige -->
-                        <div class="item-goods-rulers">
-                            <em>CL01</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                        </div>
+							<div class="item-goods-title">
+								<div class="item-goods-sc">
+									<span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
+									<span class="item-goods-price">￥112.30</span>
+								</div>
 
-                        <span class="item-goods-tax">税费<em>￥15.71</em></span>
+								<!--guige -->
+								<div class="item-goods-rulers">
+									<em>CL01</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+								</div>
 
-                    </div>
-                </div>
+								<span class="item-goods-tax">税费<em>￥15.71</em></span>
 
-                <div class="item-goods">
-                    <img src="img/goods_03.jpg" class="item-goods-image">
+							</div>
+						</div>
 
-                    <div class="item-goods-title">
-                        <div class="item-goods-sc">
-                            <span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
-                            <span class="item-goods-price">￥112.30</span>
-                        </div>
+						<div class="item-goods">
+							<img src="img/goods_03.jpg" class="item-goods-image">
 
-                        <!--guige -->
-                        <div class="item-goods-rulers">
-                            <em>CL01</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                            <em>CL02</em>
-                        </div>
+							<div class="item-goods-title">
+								<div class="item-goods-sc">
+									<span class="item-goods-name">头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳头皮的撒娇可归纳</span>
+									<span class="item-goods-price">￥112.30</span>
+								</div>
 
-                        <span class="item-goods-tax">税费<em>￥15.71</em></span>
+								<!--guige -->
+								<div class="item-goods-rulers">
+									<em>CL01</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+									<em>CL02</em>
+								</div>
 
-                    </div>
-                </div>
+								<span class="item-goods-tax">税费<em>￥15.71</em></span>
 
-            </div>
+							</div>
+						</div>
 
-            <!--totalPrice-->
-            <div class="list-item-prices">
-                <span>合计:<em>¥180</em>(含运费<b>¥0.00</b>)</span>
-            </div>
+					</div>
 
-        </div>
+					<!--totalPrice-->
+					<div class="list-item-prices">
+						<span>合计:<em>¥180</em>(含运费<b>¥0.00</b>)</span>
+					</div>
 
-        <div class="order-no-order">
-            <img src="img/no_order.png">
-            您还没有任何订单哦
-        </div>
+				</div>
 
-    </div>
+				<div class="order-no-order">
+					<img src="img/no_order.png"> 您还没有任何订单哦
+				</div>
 
-</div>
-</body>
+			</div>
+
+		</div>
+	</body>
+
 </html>

@@ -1,4 +1,5 @@
 define('lehu.h5.component.orderDetails', [
+ 
         'zepto',
         'can',
         'lehu.h5.business.config',
@@ -139,3 +140,4 @@ define('lehu.h5.component.orderDetails', [
         });
 
     });
+ 
