@@ -68,7 +68,8 @@ define('lehu.h5.component.orderlist', [
                 };
 
                 $.ajax({
-                    url: 'https://app.lehumall.com/queryorder/myOrderList.do',
+                    //url: 'https://app.lehumall.com/queryorder/myOrderList.do',
+                    url: 'http://120.55.126.211:8082/myOrderList.do',
                     data: params,
                     method: 'get',
                     success: function (data) {

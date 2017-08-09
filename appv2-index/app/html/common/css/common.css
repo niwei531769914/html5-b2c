@@ -39,9 +39,9 @@ html, body {line-height: 1;width: 100%;font-family: "Helvetica Neue", "Hiragino 
 .nwrapper{width: 100%;max-width: 750px;min-width: 320px;margin: 0 auto;}
 
 /*!* 头部 *!*/
-.header{height:.88rem;background:#fff;  color:#323232; font-size:.34rem;line-height:.88rem;box-shadow: 0px 1px 4px 0px rgb( 225, 225, 225 );}
+.header{height:.88rem;background:#fff;  color:#323232; font-size:.34rem;line-height:.88rem;box-shadow: 0px 1px 4px 0px rgb( 225, 225, 225 ); position: relative}
 .header .back{ background:url(../../images/login/login_04.png) no-repeat center center;width:.33rem;height:.33rem; display:block; float:left; padding:.275rem; position:relative;z-index:2; background-size:.33rem;}
-.header h2{overflow:hidden;padding: 0 20%;text-align:center; margin:auto; width:60%; position:absolute; z-index:1;height:.88rem;color:#212121;text-overflow:ellipsis;white-space:nowrap;font-size:.34rem;line-height:.88rem}
+.header h2{overflow:hidden;padding: 0 20%;text-align:center; margin:auto; width:60%; position:absolute; z-index:1;height:.88rem;color:#212121;text-overflow:ellipsis;white-space:nowrap;font-size:.34rem;line-height:.88rem;}
 .header .rightlink{display:block;padding:0;width:auto;height:.88rem;color:#646464;text-align: right;font-size:.3rem;line-height:.88rem; position:relative; z-index:2; width:auto; display:block; float:right; padding:0 .24rem}
 
 

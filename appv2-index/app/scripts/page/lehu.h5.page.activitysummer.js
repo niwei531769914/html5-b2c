@@ -92,6 +92,11 @@ define('lehu.h5.page.activitysummer', [
 
             },
 
+            '.prefecture-list-top click': function () {
+
+                window.location.href = 'https://app.lehumall.com/front/activityreduce.html?hyfrom=app&activityId=242&storeActivityId=11';
+            },
+
             '.back click': function() {
                 history.go(-1);
             }

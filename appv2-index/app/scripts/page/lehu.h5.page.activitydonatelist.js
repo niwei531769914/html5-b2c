@@ -26,15 +26,16 @@ define('lehu.h5.page.activitydonatelist', [
 
             initData: function() {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
 
                 //数组图片
                 this.IMGURL = [
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/20170718155701682.jpg'},
-                    {img: 'https://lehumall.b0.upaiyun.com/upload/image/admin/2017/20170718/201707181557253211.jpg'},
+                    {img: 'images/activityreducelist/WechatIMG301.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG299.jpeg'},
+                    {img: 'images/activityreducelist/WechatIMG300.jpeg'},
                 ];
             },
 
@@ -77,7 +78,6 @@ define('lehu.h5.page.activitydonatelist', [
 
                 var api = new LHAPI({
                     url:  that.URL + '/mobile-web-market/ws/mobile/v1/promotion/donateList',
-                    //url:  'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/donateList',
                     data: JSON.stringify(params),
                     method: 'post'
                 });

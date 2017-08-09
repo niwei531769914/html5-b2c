@@ -1,0 +1,273 @@
+
+.list-content {
+    width: 100%;
+    height: auto;
+    float: left
+}
+
+.list-content .list-content-image {
+    width: 94%;
+    height: auto;
+    float: left;
+    background: #e0e0e0;
+    margin: .2rem 3%
+}
+
+.list-content .list-content-image img{
+    width: 100%;
+    height: auto;
+}
+
+.list-content .list-content-scroll {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: .15rem;
+    margin-top: .15rem;
+}
+
+.list-content .list-content-scroll .content-scroll-top {
+    width: 100%;
+    height: 2.3rem;
+    overflow: hidden;
+    float: left;
+}
+
+.list-content .list-content-scroll .scroll-goods {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: .2rem;
+}
+
+.list-content .list-content-scroll .scroll-goods-items {
+    width: 100%;
+    height: auto;
+    float: left;
+    touch-action: none;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul {
+    display: table;
+    overflow-y: hidden;
+    height: 3rem;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li {
+    width: auto;
+    height: auto;
+    display: block;
+    float: left;
+    margin-left: .225rem;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a {
+    width: 2.2rem;
+    height: auto;
+    display: block;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a img {
+    width: 2.2rem;
+    height: 2.2rem;
+    overflow: hidden;
+    display: block;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a p {
+    width: 2.2rem;
+    height: .6rem;
+    overflow: hidden;
+    display: block;
+    font-size: .24rem;
+    line-height: .32rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: .1rem;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a em {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: .1rem;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a em i {
+    max-width: 100%;
+    height: .3rem;
+    font-size: .26rem;
+    line-height: .3rem;
+    display: block;
+    float: left;
+    color: #f53828;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a em del {
+    max-width: 100%;
+    height: .3rem;
+    color: #bdbdbd;
+    font-size: .2rem;
+    display: block;
+    float: left;
+    margin-left: .1rem;
+    line-height: .34rem;
+    text-decoration: line-through;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.list-content .list-content-square {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.list-content .list-content-square .content-square-title{
+    width: 96%;
+    height: auto;
+    float: left;
+    padding: .2rem 2% 0;
+}
+
+.list-content .list-content-square .content-square-title .square-caption{
+    float: left;
+    width: 100%;
+    height: auto;
+    font-size: .3rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-content .list-content-square .content-square-title .square-subhead{
+    float: left;
+    width: 100%;
+    height: auto;
+    font-size: .22rem;
+    color: #757575;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: .15rem;
+}
+
+.list-content .list-content-square .content-square-items{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-bottom: .1rem;
+}
+
+.list-content .list-content-square .content-square-items .content-square-item {
+    display: block;
+    width: 3.4125rem;
+    height: auto;
+    float: left;
+    margin: .2rem 0 .1rem .225rem;
+}
+.list-content .list-content-square .content-square-items .content-square-item img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.list-content .list-content-square .content-square-items .content-square-item p{
+    width: 100%;
+    height: .6rem;
+    overflow: hidden;
+    display: block;
+    font-size: .24rem;
+    line-height: .32rem;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: .1rem;
+}
+.list-content .list-content-square .content-square-items .content-square-item em{
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: .1rem;
+}
+
+.list-content .list-content-square .content-square-items .content-square-item em i{
+    max-width: 100%;
+    height: .3rem;
+    font-size: .26rem;
+    line-height: .3rem;
+    display: block;
+    float: left;
+    color: #f53828;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.list-content .list-content-square .content-square-items .content-square-item em del{
+    max-width: 100%;
+    height: .3rem;
+    color: #bdbdbd;
+    font-size: .2rem;
+    display: block;
+    float: left;
+    margin-left: .1rem;
+    line-height: .34rem;
+    text-decoration: line-through;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.banner-title{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.banner-title img{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.banner-title p {
+    font-size: .3rem;
+    width: 94%;
+    padding: .2rem 3%;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wealthy{
+    width: 94%;
+    height: auto;
+    float: left;
+    padding: .2rem 3% ;
+    font-size: .24rem;
+    line-height: .34rem;
+}
+.wealthy img{
+    width: 100% !important;
+    height: auto;
+}

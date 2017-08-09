@@ -8,9 +8,8 @@
 .time-limit .time-limit-items .time-limit-item, .activity-list .activity-list-items .activity-list-item , .prefecture-list .prefecture-list-items .prefecture-list-item{ width:3.75rem; height: auto; float: left; display: block; background: #efefef  }
 .time-limit .time-limit-items .time-limit-item img, .activity-list .activity-list-items .activity-list-item img , .prefecture-list .prefecture-list-items .prefecture-list-item img{ width: 100%; height: auto; float: left}
 .activity-goods-list .goods-list-items{ width: 100%; height: auto; float: left; }
-.activity-goods-list .goods-list-items .goods-list-item{ width: 47%; height: auto; float: left; margin-left: 2%; margin-bottom: .1rem; background: #efefef }
-.activity-goods-list .goods-list-items .goods-list-items img{ width: auto; height: auto; display: block}
-
+.activity-goods-list .goods-list-items .goods-list-item{ width: 47%; height: auto; float: left; margin-left: 2%; margin-bottom: .1rem; background: #efefef; position: relative }
+.activity-goods-list .goods-list-items .goods-list-item img{ width: 100%; height: auto; display: block}
 
 /*专区color*/
 .infant{ background: #bed5fe ;}

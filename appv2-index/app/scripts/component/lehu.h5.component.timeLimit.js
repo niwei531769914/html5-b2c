@@ -72,8 +72,8 @@ define('lehu.h5.component.timeLimit', [
 
             initDate: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
+                if (HOST.indexOf("https://") == -1) {
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
 
@@ -86,7 +86,6 @@ define('lehu.h5.component.timeLimit', [
                 var that = this;
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
-                    //url: "http://app.lehumall.com/mobile-web-market/ws/mobile/v1/activity/timelimitDiscount",
                     data: {},
                     method: 'post'
                 });
