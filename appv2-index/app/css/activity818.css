@@ -17,8 +17,8 @@
 	width: 100%;
 	height: auto;
 	float: left;
-	background: #e80000;
 }
+
 .time-limit .time-limit-items,
 .activity-list .activity-list-items,
 .prefecture-list .prefecture-list-items {
@@ -33,7 +33,8 @@
 	width: 3.75rem;
 	height: auto;
 	float: left;
-	display: block
+	display: block;
+	background: #EEEEEE;
 }
 
 .time-limit .time-limit-items .time-limit-item {
@@ -42,6 +43,7 @@
 	float: left;
 	display: block;
 	margin-bottom: .1rem;
+	background: #EEEEEE;
 }
 
 .time-limit .time-limit-items .time-limit-item img,
@@ -59,10 +61,12 @@
 }
 
 .activity-goods-list .goods-list-items .goods-list-item {
-	width: 49.5%;
+	width: 49.3%;
 	height: auto;
 	float: left;
-	margin-top: .1rem
+	margin-top: .1rem;
+	background: #EEEEEE;
+	display: block;
 }
 
 .activity-goods-list .goods-list-items .goods-list-items img {
@@ -96,6 +100,7 @@
 
 .costume {
 	background: #e80000;
+	 
 }
 
 .time-limit-item-list {
@@ -107,5 +112,5 @@
 }
 
 .activity-left {
-	margin-left: 1%;
+	margin-left: 1.4%;
 }

@@ -71,7 +71,7 @@ define('lehu.h5.page.activity818', [
 			},
 
 			//进入商品详情页
-			'.goods-list-item ,.prefecture-list-item ,.time-limit-item click': function(element, event) {
+			'.coupon1 , .goods-list-item , .activity-list-item , .time-limit-item click': function(element, event) {
 				console.log(2);
 				var GOODSID = element.attr('data-goodsid');
 				var GOODSITEMID = element.attr('data-goodsitemid');
