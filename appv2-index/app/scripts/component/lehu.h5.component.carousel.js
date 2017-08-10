@@ -69,9 +69,11 @@ define('lehu.h5.component.carousel', [
                 setTimeout(function () {
                     if (tip == "很遗憾您没有中奖~") {
                         $('.pop_lost').show();
+                        $('.pop_lost_window').addClass('active');
                     }
                     else {
                         $('.pop_win').show();
+                        $('.pop_win_window').addClass('active');
                         $('.pop_win_name').append(tip);
                     }
                 }, 500);
@@ -165,8 +167,8 @@ define('lehu.h5.component.carousel', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("https://") == -1){
-                    HOST = "https://" + HOST;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -295,7 +297,7 @@ define('lehu.h5.component.carousel', [
                     "strToken": this.user.token,
                     "strUserId": this.user.userId,
                     "luckActiveId": this.luckId,
-                    //"initTimeMillis": this.initTimeMillis
+                    "initTimeMillis": this.initTimeMillis
                 };
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-market/ws/mobile/v1/luck/drawLuck",
@@ -444,9 +446,11 @@ define('lehu.h5.component.carousel', [
             //弹窗消失
             '.pop_win a click': function () {
                 $('.pop_win').hide();
+                $('.pop_win_window').removeClass('active');
             },
             '.pop_lost a click': function () {
                 $('.pop_lost').hide();
+                $('.pop_lost_window').removeClass('active');
             },
 
             //分享
