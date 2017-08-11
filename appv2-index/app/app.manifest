@@ -1,6 +1,6 @@
 CACHE MANIFEST
   
-#v1.4.366
+#v1.4.376
   
 CACHE:
 styles/lehu.h5.login.css
@@ -9,6 +9,7 @@ styles/lehu.h5.activitydonate.css
 styles/lehu.h5.activityreduce.css
 styles/lehu.h5.activitydonatelist.css
 styles/lehu.h5.activityreducelist.css
+styles/lehu.h5.activity818.css
 styles/lehu.h5.carousel.css
 styles/lehu.h5.coupondetail.css
 styles/lehu.h5.forgetpassword.css
@@ -40,6 +41,7 @@ scripts/lehu.h5.page.activitydonate.js
 scripts/lehu.h5.page.activityreduce.js
 scripts/lehu.h5.page.activityreducelist.js
 scripts/lehu.h5.page.activitydonatelist.js
+scripts/lehu.h5.page.activity818.js
 scripts/lehu.h5.page.orderlist.js
 scripts/lehu.h5.page.orderDetails.js
 scripts/lehu.h5.page.timeLimit.js

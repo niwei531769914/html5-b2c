@@ -26,6 +26,7 @@
 	width: 100%;
 	height: auto;
 	float: left;
+	background: #e80000;
 }
 
 .activity-list .activity-list-items .activity-list-item,
@@ -33,8 +34,7 @@
 	width: 3.75rem;
 	height: auto;
 	float: left;
-	display: block;
-	background: #EEEEEE;
+	display: block
 }
 
 .time-limit .time-limit-items .time-limit-item {
@@ -43,7 +43,6 @@
 	float: left;
 	display: block;
 	margin-bottom: .1rem;
-	background: #EEEEEE;
 }
 
 .time-limit .time-limit-items .time-limit-item img,
@@ -64,8 +63,7 @@
 	width: 49.2%;
 	height: 5.02rem;
 	float: left;
-	margin-top: 1.6%;
-	background: #EEEEEE;
+	margin-top: 1.6%
 }
 
 .activity-goods-list .goods-list-items .goods-list-item>img {
