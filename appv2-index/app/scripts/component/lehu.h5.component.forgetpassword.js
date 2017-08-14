@@ -78,6 +78,9 @@ define('lehu.h5.component.forgetpassword', [
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
+
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             checkmobile: function (mobile) {
@@ -144,11 +147,12 @@ define('lehu.h5.component.forgetpassword', [
                     'phoneCode': userName,
                     'newpassword': md5(passWord),
                     'identifyingcode': captcha,
-                    'origin': '5'
+                    'origin': '5',
+                    'timeStamp': that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/findpassword',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/findpassword?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -184,12 +188,13 @@ define('lehu.h5.component.forgetpassword', [
                 }
 
                 this.param = {
-                    'phoneCode': userName
+                    'phoneCode': userName,
+                    'timeStamp': that.timeStamp
                 };
 
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -205,6 +210,13 @@ define('lehu.h5.component.forgetpassword', [
                     .fail(function (error) {
                         $(".err-msg").text("短信验证码发送失败").parent().css("display", "block");
                     })
+            },
+
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
             },
 
             '.back click': function () {

@@ -6,14 +6,14 @@ define('lehu.h5.component.coupon', [
         'lehu.h5.api',
         'lehu.hybrid',
         'store',
-
+        'md5',
         //'imagelazyload',
         'lehu.utils.busizutil',
 
         'text!template_components_coupon'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid, store,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, store, md5,
               busizutil,
               template_components_coupon) {
         'use strict';
@@ -78,6 +78,8 @@ define('lehu.h5.component.coupon', [
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             render: function () {
@@ -271,10 +273,11 @@ define('lehu.h5.component.coupon', [
                     "userId": this.user.userId,
                     "strUserId": this.user.userId,
                     "strToken": this.user.token,
-                    "activityId": couponid
+                    "activityId": couponid,
+                    "timeStamp": that.timeStamp
                 };
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getTicket?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -378,6 +381,13 @@ define('lehu.h5.component.coupon', [
                 };
 
                 LHHybrid.nativeRegister(jsonParams);
+            },
+
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
             },
 
             '.back click': function () {

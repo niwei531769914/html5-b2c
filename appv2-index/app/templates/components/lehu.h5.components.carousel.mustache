@@ -1,6 +1,6 @@
 <!--顶部-->
 <header class="header" style="border-bottom: 0px;">
-    <a href="javascript:;" class="back"></a>
+    <a href="javascript:void (0)" class="back"></a>
     <h2>幸运大转盘</h2>
 </header>
 
@@ -75,15 +75,27 @@
         </ul>
     </div>
 
-    <!--恭喜您，中奖啦-->
-    <div class="pop_win" style="display: none">
+    <!--恭喜您，中奖啦 优惠券-->
+    <div class="pop_win coupon-win" style="display: none">
         <div class="pop_win_window">
             <div class="window_title" style=" padding-top: 1.8rem;">
                 <p style="color: #212121; font-size: .32rem ; width: 2.83rem; height: .8rem; overflow: hidden "
                    class="pop_win_name"></p>
-                <p style="color: #756e63; font-size: .24rem">可在<span class="pop_win_coupons">我的优惠券</span>进行查看哦！</p>
+                <p class="pop_win_tip" style="color: #756e63; font-size: .24rem">可在<span class="pop_win_coupons">我的优惠券</span>进行查看哦！</p>
             </div>
-            <a href="javascript:;">知道啦~</a>
+            <a href="javascript:void (0)">知道啦~</a>
+        </div>
+    </div>
+
+    <!--恭喜您，中奖啦 商品-->
+    <div class="pop_win goods-win" style="display: none">
+        <div class="pop_win_window">
+            <div class="window_title" style=" padding-top: 1.8rem;">
+                <p style="color: #212121; font-size: .32rem ; width: 2.83rem; height: .8rem; overflow: hidden "
+                   class="pop_win_name"></p>
+                <p class="pop_win_tip" style="color: #756e63; font-size: .24rem">请等待客服人员与您联系~</p>
+            </div>
+            <a href="javascript:void (0)">知道啦~</a>
         </div>
     </div>
 
@@ -94,7 +106,7 @@
                 <p style="color: #212121; font-size: .32rem; width: 3.2rem">很遗憾没有中奖，换个姿势，再来一次吧~</p>
                 <p style="color: #756e63; font-size: .26rem">谢谢参与！</p>
             </div>
-            <a href="javascript:;">确认</a>
+            <a href="javascript:void (0)">确认</a>
         </div>
     </div>
 </div>

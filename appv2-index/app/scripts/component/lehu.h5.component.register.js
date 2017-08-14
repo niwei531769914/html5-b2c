@@ -76,6 +76,9 @@ define('lehu.h5.component.register', [
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
+
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             /*密码显示按钮*/
@@ -144,11 +147,12 @@ define('lehu.h5.component.register', [
                 }
 
                 this.param = {
-                    'phoneCode': userName
+                    'phoneCode': userName,
+                    'timeStamp': that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode',
+                    url:  that.URL + '/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -209,10 +213,11 @@ define('lehu.h5.component.register', [
                     'identifyingcode': captcha,
                     'phoneToken': '',
                     'origin': '5',
+                    'timeStamp': that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/register?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -227,6 +232,13 @@ define('lehu.h5.component.register', [
                     .fail(function (error) {
                         $(".err-msg").text('注册失败').parent().css("display", "block");
                     })
+            },
+
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
             },
 
             '.back click': function () {

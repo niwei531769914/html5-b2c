@@ -6,14 +6,14 @@ define('lehu.h5.component.list', [
         'lehu.h5.api',
         'lehu.hybrid',
         'store',
-
+        'md5',
         'imgLazyLoad',
         'lehu.utils.busizutil',
 
         'text!template_components_list'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid, store, imagelazyload,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, store, md5, imagelazyload,
               busizutil,
               template_components_list) {
         'use strict';
@@ -41,14 +41,11 @@ define('lehu.h5.component.list', [
                 //渲染页面
                 this.render();
 
-                //滚动加载
-               // this.bindScroll();
-
             },
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
+                if (HOST.indexOf("http://") == -1) {
                     HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
@@ -69,6 +66,8 @@ define('lehu.h5.component.list', [
                     "keyword": params.key
                 };
 
+                console.log(that.timeStamp);
+
                 var api = new LHAPI({
                     url: that.URL + "/mobile-web-user/ws/mobile/v1/activePage/pageDetail",
                     data: JSON.stringify(this.param),
@@ -87,8 +86,8 @@ define('lehu.h5.component.list', [
                             $('title').html(TITLE);
                             $('.header h2').html(TITLE);
 
-                            if(params.hyfrom == 'app'){
-                                if(util.isMobile.iOS()){
+                            if (params.hyfrom == 'app') {
+                                if (util.isMobile.iOS()) {
                                     //ios设置标题
                                     var jsonParams = {
                                         'funName': 'title_fun',
@@ -100,32 +99,32 @@ define('lehu.h5.component.list', [
                                 }
                             }
 
-                        //    render楼层
+                            //    render楼层
                             var FLOORLIST = data.response.floorList;
 
-                             for( var i = 0; i < FLOORLIST.length; i++ ){
-                                 if(FLOORLIST[i].type == 1){
-                                 //    楼层1
-                                     that.TypeFirst(FLOORLIST[i]);
-                                 }
-                                 if(FLOORLIST[i].type ==2){
-                                 //    楼层2
-                                     that.TypeTwo(FLOORLIST[i]);
-                                 }
-                                 if(FLOORLIST[i].type ==3){
-                                 //    楼层3
-                                     that.TypeThree(FLOORLIST[i]);
-                                 }
-                                 if(FLOORLIST[i].type ==4){
-                                 //    楼层4
-                                     that.TypeFour(FLOORLIST[i]);
-                                 }
-                                 if(FLOORLIST[i].type ==5){
-                                 //    楼层5
-                                     that.TypeFive(FLOORLIST[i]);
-                                 }
+                            for (var i = 0; i < FLOORLIST.length; i++) {
+                                if (FLOORLIST[i].type == 1) {
+                                    //    楼层1
+                                    that.TypeFirst(FLOORLIST[i]);
+                                }
+                                if (FLOORLIST[i].type == 2) {
+                                    //    楼层2
+                                    that.TypeTwo(FLOORLIST[i]);
+                                }
+                                if (FLOORLIST[i].type == 3) {
+                                    //    楼层3
+                                    that.TypeThree(FLOORLIST[i]);
+                                }
+                                if (FLOORLIST[i].type == 4) {
+                                    //    楼层4
+                                    that.TypeFour(FLOORLIST[i]);
+                                }
+                                if (FLOORLIST[i].type == 5) {
+                                    //    楼层5
+                                    that.TypeFive(FLOORLIST[i]);
+                                }
 
-                             }
+                            }
                         }
                         else {
                             util.tip(data.msg);
@@ -141,7 +140,7 @@ define('lehu.h5.component.list', [
 
             TypeFirst: function (floorItem) {
                 var html = '';
-                html += '<div data-url = "' + floorItem.url +'" class="list-content-image"><img data-img="' + floorItem.img +'" src="images/big_goods_back.png" class="lazyload"></div>';
+                html += '<div data-url = "' + floorItem.url + '" class="list-content-image"><img data-img="' + floorItem.img + '" src="images/big_goods_back.png" class="lazyload"></div>';
                 html += '<div class="nhr"></div>';
                 $('.list-content').append(html);
 
@@ -151,18 +150,25 @@ define('lehu.h5.component.list', [
 
             TypeTwo: function (floorItem) {
                 var html = '';
-                html += '<div class="list-content-scroll"><img class="content-scroll-top lazyload" data-url = "' + floorItem.url  + '"  data-img="'+ floorItem.img +'" src="images/big_goods_back.png"/><div class="scroll-goods"><div class="scroll-goods-items"><ul>';
+                html += '<div class="list-content-scroll"><img class="content-scroll-top lazyload" data-url = "' + floorItem.url + '"  data-img="' + floorItem.img + '" src="images/big_goods_back.png"/><div class="scroll-goods"><div class="scroll-goods-items"><ul>';
 
                 var RelateGoodsList = floorItem.relateGoodsList;
 
-                //render goods
-                for(var i = 0; i < RelateGoodsList.length; i ++){
-                    html += ' <li data-goodsId = "' + RelateGoodsList[i].productId +'" data-goodsItemId = "' + RelateGoodsList[i].productItemId + '"  ><a href="javascript:void (0)"><img data-img="' + RelateGoodsList[i].imgUrl + '" src="images/goods_back.png" class="lazyload"><p>' + RelateGoodsList[i].productName + '</p><em>';
-                    if(RelateGoodsList[i].price == 0 || RelateGoodsList[i].price == ""){
+                //render goodsa
+                for (var i = 0; i < RelateGoodsList.length; i++) {
+                    html += ' <li data-goodsId = "' + RelateGoodsList[i].productId + '" data-goodsItemId = "' + RelateGoodsList[i].productItemId + '"  ><a href="javascript: void(0)"><div class="goods-item-images" ><img data-img="' + RelateGoodsList[i].imgUrl + '" src="images/goods_back.png" class="item-images-pic lazyload">';
+
+                    //判断商品是否下架 卢明彪 2017-08-14-12.06
+                    if (parseFloat(RelateGoodsList[i].goodsItemStatus) == 21) {
+                        html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
+                    }
+
+                    html += '</div><p>' + RelateGoodsList[i].productName + '</p><em>';
+                    if (RelateGoodsList[i].price == 0 || RelateGoodsList[i].price == "") {
                         html += '<i>¥' + RelateGoodsList[i].originalPrice + '</i>';
                     }
                     else {
-                        html += '<i>¥' + RelateGoodsList[i].price + '</i><del>¥' + RelateGoodsList[i].originalPrice +'</del>';
+                        html += '<i>¥' + RelateGoodsList[i].price + '</i><del>¥' + RelateGoodsList[i].originalPrice + '</del>';
                     }
 
                     html += '</em></a></li>';
@@ -195,17 +201,24 @@ define('lehu.h5.component.list', [
 
             TypeFour: function (floorItem) {
 
-                var html = '<div class="list-content-square"><div class="content-square-title"><p class="square-caption">' + floorItem.title + '</p><span class="square-subhead">'+ floorItem.subtitle + '</span></div><div class="content-square-items">';
+                var html = '<div class="list-content-square"><div class="content-square-title"><p class="square-caption">' + floorItem.title + '</p><span class="square-subhead">' + floorItem.subtitle + '</span></div><div class="content-square-items">';
 
                 var SquareList = floorItem.relateGoodsList;
 
-                for (var i = 0; i < SquareList.length; i ++){
-                    html += '<a data-goodsId="' + SquareList[i].productId + '" data-goodsItemId="' + SquareList[i].productItemId + '" href="javascript:void (0)" class="content-square-item"><img class="lazyload" data-img="' + SquareList[i].imgUrl +'"  src="images/goods_back.png"><p>' + SquareList[i].productName +'</p><em>';
-                    if(SquareList[i].price == 0 || SquareList[i].price == ""){
+                for (var i = 0; i < SquareList.length; i++) {
+                    html += '<a data-goodsId="' + SquareList[i].productId + '" data-goodsItemId="' + SquareList[i].productItemId + '" href="javascript:void (0)" class="content-square-item"><div class="square-item-images"><img class="square-item-pic lazyload" data-img="' + SquareList[i].imgUrl + '"  src="images/goods_back.png">';
+
+                    //判断商品是否下架 卢明彪 2017-08-14-12.06
+                    if (parseFloat(SquareList[i].goodsItemStatus) == 21) {
+                        html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
+                    }
+
+                    html += '</div><p>' + SquareList[i].productName + '</p><em>';
+                    if (SquareList[i].price == 0 || SquareList[i].price == "") {
                         html += '<i>¥' + SquareList[i].originalPrice + '</i>';
                     }
                     else {
-                        html += '<i>¥' + SquareList[i].price + '</i><del>¥' + SquareList[i].originalPrice +'</del>';
+                        html += '<i>¥' + SquareList[i].price + '</i><del>¥' + SquareList[i].originalPrice + '</del>';
                     }
 
                     html += '</em></a>';
@@ -225,7 +238,7 @@ define('lehu.h5.component.list', [
 
                 var html = '';
 
-                html +='<div class="wealthy">' + floorItem.content +'</div>';
+                html += '<div class="wealthy">' + floorItem.content + '</div>';
 
                 html += '<div class="nhr"></div>';
 
@@ -235,50 +248,11 @@ define('lehu.h5.component.list', [
                 $.imgLazyLoad();
             },
 
-            /**
-             * @author niwei
-             * @description 初始化上拉加载数据事件
-             */
-            bindScroll: function () {
-                var that = this;
-
-                //滚动加载
-                var range = 400; //距下边界长度/单位px
-                var huadong = true;
-
-                var totalheight = 0;
-
-                $(window).scroll(function () {
-                    if (that.pageIndex >= that.totalPageNum) {
-                        return;
-                    }
-                    var srollPos = $(window).scrollTop(); //滚动条距顶部距离(页面超出窗口的高度)
-                    totalheight = parseFloat($(window).height()) + parseFloat(srollPos); //滚动条当前位置距顶部距离+浏览器的高度
-
-                    if (($(document).height() == totalheight)) {
-
-                        that.pageIndex++;
-                        that.getCoupon(that.flag,that.pageIndex);
-                    } else {
-                        if (($(document).height() - totalheight) <= range) { //页面底部与滚动条底部的距离<range
-
-                            if (huadong) {
-                                huadong = false;
-                                that.pageIndex++;
-                                that.getCoupon(that.flag,that.pageIndex);
-                            }
-                        } else {
-
-                            huadong = true;
-                        }
-                    }
-                });
-            },
 
             //type 1
             '.list-content-image click': function (element, event) {
                 var DATAURL = $(element).attr('data-url');
-                if(DATAURL == ""){
+                if (DATAURL == "") {
                     return false
                 }
                 else {
@@ -293,10 +267,10 @@ define('lehu.h5.component.list', [
             },
 
             //type2 goods跳转
-            '.scroll-goods ul li, .content-square-item click': function (element,event) {
+            '.scroll-goods ul li, .content-square-item click': function (element, event) {
                 var GOODSID = $(element).attr('data-goodsId');
                 var GOODSITEMID = $(element).attr('data-goodsItemId');
-                this.toDetail(GOODSID,GOODSITEMID);
+                this.toDetail(GOODSID, GOODSITEMID);
             },
 
             //type 3
@@ -322,22 +296,6 @@ define('lehu.h5.component.list', [
                 if (param.hyfrom || util.isMobile.QQ() || util.isMobile.WeChat()) {
                     $('.header').hide();
                 }
-            },
-
-            //分享
-            share: function () {
-                var that = this;
-                var jsonParams = {
-                    'funName': 'shareHandler',
-                    'params': {
-                        "shouldShare": 1,
-                        "shareTitle": '乐虎券优惠大放松',
-                        "shareUrl": that.URL + '/front/coupon.html',
-                        "shareImage": that.URL + '/front/images/Shortcut_114_114.png',
-                        "shareContent": '邀小伙伴一起来汇银乐虎享受全球购物体验 领券下单更优惠哦'
-                    },
-                };
-                LHHybrid.nativeFun(jsonParams);
             },
 
             '.back click': function () {
