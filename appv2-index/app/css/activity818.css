@@ -1,4 +1,5 @@
 .content {
+<<<<<<< HEAD
     width: 100%;
     height: auto;
     float: left;
@@ -9,27 +10,52 @@
     width: 100%;
     height: auto;
     display: block
+=======
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #e80000;
+}
+
+.content img {
+	width: 100%;
+	height: auto;
+	display: block
+>>>>>>> 3c12fdc9b9389a5044646cbca1269486dc16fe35
 }
 
 .time-limit,
 .activity-list,
 .prefecture-list,
 .activity-goods-list {
+<<<<<<< HEAD
     width: 100%;
     height: auto;
     float: left;
+=======
+	width: 100%;
+	height: auto;
+	float: left;
+>>>>>>> 3c12fdc9b9389a5044646cbca1269486dc16fe35
 }
 
 .time-limit .time-limit-items,
 .activity-list .activity-list-items,
 .prefecture-list .prefecture-list-items {
+<<<<<<< HEAD
     width: 100%;
     height: auto;
     float: left;
+=======
+	width: 100%;
+	height: auto;
+	float: left;
+>>>>>>> 3c12fdc9b9389a5044646cbca1269486dc16fe35
 }
 
 .activity-list .activity-list-items .activity-list-item,
 .prefecture-list .prefecture-list-items .prefecture-list-item {
+<<<<<<< HEAD
     width: 3.75rem;
     height: auto;
     float: left;
@@ -44,11 +70,28 @@
     display: block;
     margin-bottom: .1rem;
     background: #EEEEEE;
+=======
+	width: 3.75rem;
+	height: auto;
+	float: left;
+	display: block;
+	background: #EEEEEE;
+}
+
+.time-limit .time-limit-items .time-limit-item {
+	width: 100%;
+	height: auto;
+	float: left;
+	display: block;
+	margin-bottom: .1rem;
+	background: #EEEEEE;
+>>>>>>> 3c12fdc9b9389a5044646cbca1269486dc16fe35
 }
 
 .time-limit .time-limit-items .time-limit-item img,
 .activity-list .activity-list-items .activity-list-item img,
 .prefecture-list .prefecture-list-items .prefecture-list-item img {
+<<<<<<< HEAD
     width: 100%;
     height: auto;
     float: left
@@ -87,4 +130,44 @@
 
 .activity-bottom {
     margin-bottom: .47rem;
+=======
+	width: 100%;
+	height: auto;
+	float: left
+}
+
+.activity-goods-list .goods-list-items {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.activity-goods-list .goods-list-items .goods-list-item {
+	width: 49.2%;
+	height: 5.02rem;
+	float: left;
+	margin-top: 1.6%;
+	background: #EEEEEE;
+}
+
+.activity-goods-list .goods-list-items .goods-list-item>img {
+	width: 100%;
+	height: 100%;
+}
+
+.time-limit-item-list {
+	margin: 0 !important;
+}
+
+.activity-top {
+	margin-top: .47rem;
+}
+
+.activity-left {
+	margin-left: 1.6%;
+}
+
+.activity-bottom {
+	margin-bottom: .47rem;
+>>>>>>> 3c12fdc9b9389a5044646cbca1269486dc16fe35
 }

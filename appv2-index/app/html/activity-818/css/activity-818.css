@@ -1,0 +1,111 @@
+.content {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.content img {
+	width: 100%;
+	height: auto;
+	display: block
+}
+
+.time-limit,
+.activity-list,
+.prefecture-list,
+.activity-goods-list {
+	width: 100%;
+	height: auto;
+	float: left;
+ 
+}
+.time-limit .time-limit-items,
+.activity-list .activity-list-items,
+.prefecture-list .prefecture-list-items {
+	width: 100%;
+	height: auto;
+	float: left;
+	background: #e80000;
+}
+
+.activity-list .activity-list-items .activity-list-item,
+.prefecture-list .prefecture-list-items .prefecture-list-item {
+	width: 3.75rem;
+	height: auto;
+	float: left;
+	display: block
+}
+
+.time-limit .time-limit-items .time-limit-item {
+	width: 100%;
+	height: auto;
+	float: left;
+	display: block;
+	margin-bottom: .1rem;
+}
+
+.time-limit .time-limit-items .time-limit-item img,
+.activity-list .activity-list-items .activity-list-item img,
+.prefecture-list .prefecture-list-items .prefecture-list-item img {
+	width: 100%;
+	height: auto;
+	float: left
+}
+
+.activity-goods-list .goods-list-items {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.activity-goods-list .goods-list-items .goods-list-item {
+	width: 49.5%;
+	height: auto;
+	float: left;
+	margin-top: .1rem
+}
+
+.activity-goods-list .goods-list-items .goods-list-items img {
+	width: auto;
+	height: auto;
+	display: block
+}
+
+
+/*专区color*/
+
+.infant {
+	background: #e80000;
+}
+
+.beauty {
+	background: #e80000;
+}
+
+.foods {
+	background: #e80000;
+}
+
+.health {
+	background: #e80000;
+}
+
+.house {
+	background: #e80000;
+}
+
+.costume {
+	background: #e80000;
+}
+
+.time-limit-item-list {
+	margin: 0 !important;
+}
+
+.activity-top {
+	margin-top: .47rem;
+}
+
+.activity-left {
+	margin-left: 1%;
+}

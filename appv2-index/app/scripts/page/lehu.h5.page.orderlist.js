@@ -8,11 +8,11 @@ define('lehu.h5.page.orderlist', [
 		'lehu.hybrid',
 
 		'lehu.h5.header.footer',
-        'lehu.h5.header.download',
+		'lehu.h5.header.download',
 		'lehu.h5.component.orderlist'
 	],
 
-	function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHFooter, LHDownload ,LHOrderList) {
+	function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHFooter, LHDownload, LHOrderList) {
 		'use strict';
 
 		Fastclick.attach(document.body);
@@ -26,10 +26,9 @@ define('lehu.h5.page.orderlist', [
 			 */
 			init: function(element, options) {
 
-                var param = can.deparam(window.location.search.substr(1));
+				var param = can.deparam(window.location.search.substr(1));
 
-
-                new LHFooter();
+				new LHFooter();
 
 				var orderList = new LHOrderList("#content");
 
