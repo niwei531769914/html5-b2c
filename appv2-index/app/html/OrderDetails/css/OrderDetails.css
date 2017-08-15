@@ -1,0 +1,434 @@
+.nwrapper {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: #F5F5F5;
+}
+
+
+/* 头部 */
+
+.header {
+	height: .88rem;
+	line-height: .88rem;
+	background: #fff;
+	color: #323232;
+	font-size: .34rem;
+	float: left;
+}
+
+.header .back {
+	background: url(../img/ic_arrow_back_black.png) no-repeat center center;
+	width: .33rem;
+	height: .33rem;
+	display: block;
+	float: left;
+	padding: .275rem;
+	position: relative;
+	z-index: 2;
+	background-size: .44rem;
+}
+
+.header h3 {
+	overflow: hidden;
+	padding: 0 20%;
+	text-align: center;
+	margin: auto;
+	width: 60%;
+	position: absolute;
+	z-index: 1;
+	height: .88rem;
+	color: #323232;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: .34rem;
+	line-height: .88rem;
+	font-weight: bold;
+}
+
+.OrderDetails-main {
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+.OrderDetails-state {
+	float: left;
+	width: 100%;
+	height: 0.96rem;
+	line-height: 0.96rem;
+	color: #FFFFFF;
+	font-size: .32rem;
+	text-indent: 0.32rem;
+	background: url(../img/bg_red@2x.png)no-repeat center center;
+}
+
+.OrderDetails-User {
+	margin-top: .08rem;
+	float: left;
+	height: 2.1rem;
+	background: #FFFFFF;
+}
+
+.OrderDetails-User .OrderDetails-User-backimage {
+	width: 100%;
+	height: .08rem;
+	float: left;
+}
+
+.OrderDetails-User .OrderDetails-User-backimage>img {
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+
+.OrderDetails-User-counter {
+	float: left;
+	width: 100%;
+	height: 99%;
+}
+
+.OrderDetails-User-name {
+	width: 100%;
+	height: .36rem;
+	margin-top: .3rem;
+}
+
+.OrderDetails-User-name>span {
+	margin-left: .3rem;
+	color: #000;
+	font-size: .3rem;
+	font-weight: bold;
+	float: left;
+}
+
+.OrderDetails-User-name-img {
+	width: .4rem;
+	height: .26rem;
+	float: left;
+}
+
+.OrderDetails-User-name-img img {
+	width: .4rem;
+	height: .26rem;
+	float: left;
+}
+
+.OrderDetails-User-phone,
+.OrderDetails-User-address {
+	width: 100%;
+	height: 0.3rem;
+	margin-top: .22rem;
+	float: left;
+}
+
+.OrderDetails-User-phone>span,
+.OrderDetails-User-address>span {
+	font-size: .26rem;
+	margin-left: .3rem;
+	float: left;
+}
+
+.OrderDetailsUserPhone,
+.OrderDetailsUserName,
+.OrderDetailsUserAddress {
+	max-width: 60%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*物流单号*/
+
+.OrderDetails-Logistics {
+	width: 100%;
+	height: .6rem;
+	float: left;
+	border-top: .02rem solid #F5F5F5;
+	background: #FFFFFF;
+}
+
+.OrderDetails-Logistics>p {
+	float: left;
+	font-size: .32rem;
+	padding-left: .3rem;
+	padding-top: .14rem;
+	font-weight: 600;
+}
+
+.OrderDetails-Logistics>a {
+	float: right;
+	width: .6rem;
+	height: .6rem;
+	display: inline-block;
+	margin: 0 .18rem;
+}
+
+.OrderDetails-Logistics>a>img {
+	float: left;
+	width: .6rem;
+	height: .6rem;
+}
+
+.OrderDetails-Logistics-number {
+	max-width: 70%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*商品信息*/
+
+.OrderDetails-commodity {
+	width: 100%;
+	float: left;
+	margin-top: .16rem;
+	background: #FFFFFF;
+}
+
+.OrderDetails-commodity .OrderDetails-commodity-title {
+	width: 100%;
+	height: .64rem;
+	float: left;
+	border-bottom: .02rem solid #F5F5F5;
+}
+
+.OrderDetails-commodity .OrderDetails-commodity-title .OrderDetails-commodity-left {
+	float: left;
+	height: 100%;
+}
+
+.OrderDetails-commodity .OrderDetails-commodity-title .OrderDetails-commodity-left>span {
+	height: .64rem;
+	line-height: .64rem;
+	font-size: .32rem;
+	font-weight: 600;
+	float: left;
+	margin-left: .32rem;
+}
+
+.OrderDetails-commodity .OrderDetails-commodity-title .OrderDetails-commodity-right {
+	float: right;
+}
+
+.OrderDetails-commodity .OrderDetails-commodity-title .OrderDetails-commodity-right>span {
+	height: .64rem;
+	line-height: .64rem;
+	float: left;
+	margin-right: .32rem;
+	font-size: .32rem;
+	font-weight: bold;
+}
+
+.OrderDetails-commodity-title-Content {
+	width: 100%;
+	float: left;
+}
+
+.OrderDetails-commodity-Content li {
+	width: 100%;
+	float: left;
+	height: 1.8rem;
+	border-bottom: .02rem solid #F5F5F5;
+}
+
+.OrderDetails-commodity-Content li {
+	width: 100%;
+	float: left;
+	height: 1.8rem;
+	border-bottom: .02rem solid #F5F5F5;
+}
+
+.OrderDetails-commodity-pictures {
+	width: 1.8rem;
+	height: 1.8rem;
+	float: left;
+}
+
+.OrderDetails-commodity-pictures>img {
+	width: 1.4rem;
+	height: 1.4rem;
+	padding: 0.2rem;
+}
+
+.OrderDetails-commodity-information {
+	width: calc(100% - (1.8rem));
+	height: 1.8rem;
+	float: left;
+}
+
+.OrderDetails-commodity-information {
+	height: 1.8rem;
+	float: left;
+}
+
+.OrderDetails-commodity-information-box {
+	width: 100%;
+	float: left;
+	height: .9rem;
+}
+
+.OrderDetails-commodity-information-title {
+	width: 60%;
+	height: .8rem;
+	line-height: .4rem;
+	font-size: .24rem;
+	margin-top: .24rem;
+	color: #000000;
+	float: left;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.OrderDetails-commodity-information-Price {
+	margin-top: .24rem;
+	margin-right: .32rem;
+	font-size: .24rem;
+	float: right;
+}
+
+
+/*规格属性*/
+
+.OrderDetails-commodity-information-Specattr {
+	height: .3rem;
+	font-size: .2rem;
+	color: #858585;
+	float: left;
+	margin-top: .1rem;
+}
+
+.OrderDetails-commodity-information-Specattr>span {
+	height: .3rem;
+	font-size: .2rem;
+	color: #858585;
+	margin-right: .32rem;
+	float: left;
+}
+
+
+/*税费*/
+
+.OrderDetails-commodity-information-Taxabox {
+	width: 100%;
+	height: .3rem;
+	float: left;
+	margin-top: .1rem;
+}
+
+.OrderDetails-commodity-information-Taxabox-left {
+	float: left;
+	color: #858585;
+	font-size: .2rem;
+}
+
+.OrderDetails-commodity-information-Taxation {
+	float: right;
+	font-size: .2rem;
+}
+
+.OrderDetails-commodity-information-Taxabox-right {
+	float: right;
+	font-size: .2rem;
+	margin-right: .32rem;
+	color: #757575;
+}
+
+
+/*全场/订单*/
+
+.OrderDetails-additional,
+.OrderDetails-Order,
+.Total {
+	float: left;
+	width: 100%;
+	margin-top: .16rem;
+	height: 1.92rem;
+	background: #FFFFFF;
+}
+
+.OrderDetails-additional .Full-court,
+.OrderDetails-additional .freight,
+.OrderDetails-additional .Remarks,
+.OrderDetails-Order .Order,
+.OrderDetails-Order .Order-box {
+	height: .64rem;
+	border-bottom: .02rem solid #F5F5F5;
+}
+
+.OrderDetails-additional .Full-court>p,
+.OrderDetails-additional .freight>p,
+.OrderDetails-additional .Remarks>p,
+.OrderDetails-Order .Order>p,
+.OrderDetails-Order .Order-box>p,
+.Total>p {
+	float: left;
+	height: .64rem;
+	line-height: .64rem;
+	font-size: .2rem;
+}
+
+.OrderDetails-additional .Full-court .Full-court-Name,
+.OrderDetails-additional .freight .freight-Name,
+.OrderDetails-additional .Remarks .Remarks-Name,
+.OrderDetails-Order .Order .Order-Name,
+.OrderDetails-Order .Order .Order-Name,
+.OrderDetails-Order .Order-box .Order-box-address,
+.Total .Total-Name {
+	margin-left: .32rem;
+}
+
+.OrderDetails-additional .Full-court .Full-court-content,
+.OrderDetails-additional .freight .freight-content,
+.OrderDetails-Order .Order .Order-content,
+.OrderDetails-Order .Order-box .Order-box-Date {
+	float: right;
+	margin-right: .32rem;
+}
+
+.OrderDetails-additional .Remarks .Remarks-content {
+	float: left;
+}
+
+.OrderDetails-Order {
+	height: 1.28rem;
+}
+
+.OrderDetails-Order .Order,
+.OrderDetails-Order .Order-box {
+	border-bottom: 0;
+}
+
+.Order-box-address,
+.Order-box-Date {
+	color: #707070;
+}
+
+.Order-Order-number {
+	width: 45%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.Total {
+	height: .8rem;
+}
+
+.Total>p {
+	font-size: .3rem;
+	height: .8rem;
+	line-height: .8rem;
+	font-weight: bold;
+}
+
+.Total>p>span {
+	font-size: .3rem;
+	color: #F5301F;
+	font-weight: bold;
+}

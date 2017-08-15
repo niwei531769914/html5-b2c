@@ -1,5 +1,5 @@
 define('lehu.h5.page.activitydonatelist', [
-        'can',
+         'can',
         'zepto',
         'fastclick',
         'lehu.util',
@@ -151,3 +151,4 @@ define('lehu.h5.page.activitydonatelist', [
         new RegisterHelp('#content');
 
     });
+ 
