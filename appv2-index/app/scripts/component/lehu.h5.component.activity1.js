@@ -942,8 +942,7 @@ define('lehu.h5.component.activity1', [
                                 goodsItemId: '75',
                                 goodsItemImg: 'images/activity1/activity6_04.jpg',
                                 goodsName: '【香港直邮】A2三段婴儿奶粉900G',
-                                goodsItemPrice: '¥669',
-                                promotionPrice: '¥689'
+                                goodsItemPrice: '¥738'
                             },
                             {
                                 goodsId: '7907',

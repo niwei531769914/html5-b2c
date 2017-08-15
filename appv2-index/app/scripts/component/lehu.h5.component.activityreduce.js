@@ -97,6 +97,9 @@ define('lehu.h5.component.activityreduce', [
                 }
                 this.URL = HOST;
                 this.shoppingIsfor = false;
+
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             render: function () {
@@ -236,7 +239,6 @@ define('lehu.h5.component.activityreduce', [
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
-                    //url: 'http://app.lehumall.com/mobile-web-market/ws/mobile/v1/promotion/reduceGoodsList',
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -335,11 +337,12 @@ define('lehu.h5.component.activityreduce', [
                     "goodsId": goodsid,
                     "storeId": stroeId,
                     "goodsItemId": goodsitemid,
-                    "quantity": 1
+                    "quantity": 1,
+                    "timeStamp": that.timeStamp
                 }
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add',
+                    url: that.URL + '/mobile-web-trade/ws/mobile/v1/cart/add?sign=' + that.encription(query),
                     data: JSON.stringify(query),
                     method: 'post'
                 });
@@ -364,16 +367,16 @@ define('lehu.h5.component.activityreduce', [
                         }
                         else if (data.code == 1) {
 
-                            util.tip("成功加入购物车！", 3000);
+                            util.tip("成功加入购物车！", 1000);
                             setTimeout(function () {
                                 that.shoppingIsfor = false;
-                            },3000)
+                            },1000)
                         }
                         else {
-                            util.tip(data.msg, 3000);
+                            util.tip(data.msg, 1000);
                             setTimeout(function () {
                                 that.shoppingIsfor = false;
-                            },3000)
+                            },1000)
                         }
                     })
                     .fail(function (error) {
@@ -426,6 +429,13 @@ define('lehu.h5.component.activityreduce', [
                 };
 
                 LHHybrid.nativeRegister(jsonParams);
+            },
+
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
             },
 
             '.back click': function () {

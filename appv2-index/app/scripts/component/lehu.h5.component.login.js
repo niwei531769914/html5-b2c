@@ -88,6 +88,9 @@ define('lehu.h5.component.login', [
                 }
                 this.URL = HOST;
                 this.loginBysms = true;
+
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             '.txt-username keyup': function (element, event) {
@@ -173,11 +176,12 @@ define('lehu.h5.component.login', [
                 }
 
                 this.param = {
-                    'phoneCode': userName
+                    'phoneCode': userName,
+                    'timeStamp': that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/getIdentifyingCode?sign=" + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -208,12 +212,13 @@ define('lehu.h5.component.login', [
                     'identifyingcode': captcha,
                     'type': "1",
                     'origin': '5',
-                    'phoneToken':''
+                    'phoneToken':'',
+                    'timeStamp': that.timeStamp
                 };
 
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login',
+                    url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -264,11 +269,12 @@ define('lehu.h5.component.login', [
                     'password': md5(passWord),
                     'type': '0',
                     'origin': '5',
-                    'phoneToken':''
+                    'phoneToken':'',
+                    'timeStamp': that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/login",
+                    url: that.URL + "/mobile-web-user/ws/mobile/v1/user/login?sign=" +  that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -304,6 +310,12 @@ define('lehu.h5.component.login', [
                 }
             },
 
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
+            },
 
             ".login-free click": function (element, event) {
                 element.toggleClass('login-free-selected');

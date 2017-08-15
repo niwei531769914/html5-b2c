@@ -5,6 +5,7 @@ define('lehu.h5.component.coupondetail', [
         'lehu.util',
         'lehu.h5.api',
         'lehu.hybrid',
+        'md5',
 
         'imgLazyLoad',
         'lehu.utils.busizutil',
@@ -12,7 +13,7 @@ define('lehu.h5.component.coupondetail', [
         'text!template_components_coupondetail'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid,
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, md5,
               imagelazyload, busizutil,
               template_components_coupondetail) {
         'use strict';
@@ -107,6 +108,9 @@ define('lehu.h5.component.coupondetail', [
                     HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
+
+                //获取当前时间戳
+                this.timeStamp = Date.parse(new Date());
             },
 
             render: function () {
@@ -114,11 +118,12 @@ define('lehu.h5.component.coupondetail', [
                 var param = can.deparam(window.location.search.substr(1));
 
                 this.param = {
-                    "activityId": param.id
+                    "activityId": param.id,
+                    "timeStamp": that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/getCouponInfo?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -168,11 +173,12 @@ define('lehu.h5.component.coupondetail', [
                     "userId": user.userId,
                     "strUserId": user.userId,
                     "strToken": user.token,
-                    "activityId": acitveId
+                    "activityId": acitveId,
+                    "timeStamp": that.timeStamp
                 };
 
                 var api = new LHAPI({
-                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon',
+                    url: that.URL + '/mobile-web-market/ws/mobile/v1/ticketCenter/drawCoupon?sign=' + that.encription(this.param),
                     data: JSON.stringify(this.param),
                     method: 'post'
                 });
@@ -195,6 +201,13 @@ define('lehu.h5.component.coupondetail', [
                         util.tip(error.msg);
                         $(".coupons_main").removeClass("disabled");
                     });
+            },
+
+            //md5加密
+            encription: function (params) {
+                var Keyboard = '00BE62201707188DE8A63ZGH66D46yTXNREG1423';
+                var mdName = 'key=' + Keyboard +'&body=' + JSON.stringify(params);
+                return md5(mdName);
             },
 
             ".coupons_main click": function (element, event) {

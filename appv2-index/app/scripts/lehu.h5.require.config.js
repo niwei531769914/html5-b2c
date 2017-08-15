@@ -63,6 +63,7 @@ requirejs.config({
         "lehu.h5.page.activitysummer": "scripts/page/lehu.h5.page.activitysummer",
         "lehu.h5.page.list": "scripts/page/lehu.h5.page.list",
         "lehu.h5.page.activity1": "scripts/page/lehu.h5.page.activity1",
+        "lehu.h5.page.activity818": "scripts/page/lehu.h5.page.activity818",
 
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
@@ -110,6 +111,7 @@ requirejs.config({
         "template_components_activitysummer": "templates/components/lehu.h5.components.activitysummer.mustache",
         "template_components_list": "templates/components/lehu.h5.components.list.mustache",
         "template_components_activity1": "templates/components/lehu.h5.components.activity1.mustache",
+        "template_components_activity818": "templates/components/lehu.h5.components.activity818.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 

@@ -10,7 +10,7 @@
     height: auto;
     float: left;
     background: #e0e0e0;
-    margin: .2rem 3%
+    margin: .2rem 3% 0
 }
 
 .list-content .list-content-image img{
@@ -44,7 +44,6 @@
     width: 100%;
     height: auto;
     float: left;
-    touch-action: none;
 }
 
 .list-content .list-content-scroll .scroll-goods-items ul {
@@ -67,11 +66,26 @@
     display: block;
 }
 
-.list-content .list-content-scroll .scroll-goods-items ul li a img {
+.list-content .list-content-scroll .scroll-goods-items ul li a .goods-item-images{
     width: 2.2rem;
     height: 2.2rem;
     overflow: hidden;
     display: block;
+    position: relative;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a .goods-item-images .item-images-pic {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: block;
+}
+
+.list-content .list-content-scroll .scroll-goods-items ul li a .goods-item-images .item-images-wuxiao{
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: .55rem;
+    left: .6rem;
 }
 
 .list-content .list-content-scroll .scroll-goods-items ul li a p {
@@ -110,7 +124,6 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-weight: 600;
 }
 
 .list-content .list-content-scroll .scroll-goods-items ul li a em del {
@@ -169,7 +182,6 @@
     width: 100%;
     height: auto;
     float: left;
-    margin-bottom: .1rem;
 }
 
 .list-content .list-content-square .content-square-items .content-square-item {
@@ -177,13 +189,31 @@
     width: 3.4125rem;
     height: auto;
     float: left;
-    margin: .2rem 0 .1rem .225rem;
+    margin: .2rem 0 .3rem .225rem;
 }
-.list-content .list-content-square .content-square-items .content-square-item img{
-    width: 100%;
-    height: auto;
+.list-content .list-content-square .content-square-items .content-square-item .square-item-images{
+    width: 3.4125rem;
+    height: 3.4125rem;
+    display: block;
+    position: relative;
+}
+
+.list-content .list-content-square .content-square-items .content-square-item .square-item-images .square-item-pic{
+    width: 3.4125rem;
+    height: 3.4125rem;
     display: block;
 }
+
+.list-content .list-content-square .content-square-items .content-square-item .square-item-images .square-item-wuxiao{
+
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    top: .9rem;
+    left: 1rem;
+
+}
+
 .list-content .list-content-square .content-square-items .content-square-item p{
     width: 100%;
     height: .6rem;
@@ -219,7 +249,6 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-weight: 600;
 }
 
 .list-content .list-content-square .content-square-items .content-square-item em del{
@@ -249,7 +278,7 @@
     height: auto;
     float: left;
 }
-.banner-title p {
+.banner-title p{
     font-size: .3rem;
     width: 94%;
     padding: .2rem 3%;
@@ -257,6 +286,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #757575;
 }
 
 .wealthy{
