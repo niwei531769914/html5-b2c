@@ -175,8 +175,8 @@ define('lehu.h5.component.carousel', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
+                if(HOST.indexOf("https://") == -1){
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -339,7 +339,7 @@ define('lehu.h5.component.carousel', [
                             }, 3000);
 
                             //刷新页面
-                            window.location.reload();
+                            //window.location.reload();
                             return false;
                         }
 

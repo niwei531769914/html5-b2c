@@ -45,8 +45,8 @@ define('lehu.h5.component.list', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
+                if (HOST.indexOf("https://") == -1) {
+                    HOST = "https://" + HOST;
                 }
                 this.URL = HOST;
             },
@@ -159,9 +159,9 @@ define('lehu.h5.component.list', [
                     html += ' <li data-goodsId = "' + RelateGoodsList[i].productId + '" data-goodsItemId = "' + RelateGoodsList[i].productItemId + '"  ><a href="javascript: void(0)"><div class="goods-item-images" ><img data-img="' + RelateGoodsList[i].imgUrl + '" src="images/goods_back.png" class="item-images-pic lazyload">';
 
                     //判断商品是否下架 卢明彪 2017-08-14-12.06
-                    if (parseFloat(RelateGoodsList[i].goodsItemStatus) == 21) {
-                        html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
-                    }
+                    // if (parseFloat(RelateGoodsList[i].goodsItemStatus) == 21) {
+                    //     html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
+                    // }
 
                     html += '</div><p>' + RelateGoodsList[i].productName + '</p><em>';
                     if (RelateGoodsList[i].price == 0 || RelateGoodsList[i].price == "") {
@@ -209,9 +209,9 @@ define('lehu.h5.component.list', [
                     html += '<a data-goodsId="' + SquareList[i].productId + '" data-goodsItemId="' + SquareList[i].productItemId + '" href="javascript:void (0)" class="content-square-item"><div class="square-item-images"><img class="square-item-pic lazyload" data-img="' + SquareList[i].imgUrl + '"  src="images/goods_back.png">';
 
                     //判断商品是否下架 卢明彪 2017-08-14-12.06
-                    if (parseFloat(SquareList[i].goodsItemStatus) == 21) {
-                        html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
-                    }
+                    // if (parseFloat(SquareList[i].goodsItemStatus) == 21) {
+                    //     html += '<img class="square-item-wuxiao" src="images/pic_wuxiao.png">';
+                    // }
 
                     html += '</div><p>' + SquareList[i].productName + '</p><em>';
                     if (SquareList[i].price == 0 || SquareList[i].price == "") {
