@@ -44,7 +44,6 @@
     width: 100%;
     height: auto;
     float: left;
-    touch-action: none;
 }
 
 .list-content .list-content-scroll .scroll-goods-items ul {
