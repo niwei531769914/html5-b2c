@@ -74,8 +74,8 @@ define('lehu.h5.component.coupon', [
 
             initData: function () {
                 var HOST = window.location.host;
-                if(HOST.indexOf("https://") == -1){
-                    HOST = "https://" + HOST;
+                if(HOST.indexOf("http://") == -1){
+                    HOST = "http://" + HOST;
                 }
                 this.URL = HOST;
                 //获取当前时间戳
