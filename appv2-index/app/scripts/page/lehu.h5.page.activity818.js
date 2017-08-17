@@ -48,7 +48,7 @@ define('lehu.h5.page.activity818', [
 						var jsonParams = {
 							'funName': 'title_fun',
 							'params': {
-								"title": "818周年大庆"
+								"title": "818周年庆大促"
 							}
 						};
 						LHHybrid.nativeFun(jsonParams);

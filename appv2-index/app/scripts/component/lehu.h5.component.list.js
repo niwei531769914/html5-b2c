@@ -13,9 +13,7 @@ define('lehu.h5.component.list', [
         'text!template_components_list'
     ],
 
-    function ($, can, LHConfig, util, LHAPI, LHHybrid, store, md5, imagelazyload,
-              busizutil,
-              template_components_list) {
+    function ($, can, LHConfig, util, LHAPI, LHHybrid, store, md5, imagelazyload, busizutil, template_components_list) {
         'use strict';
 
         return can.Control.extend({
