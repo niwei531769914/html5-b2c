@@ -165,12 +165,15 @@ define('lehu.h5.component.list', [
 
 
                     if (RelateGoodsList[i].price != 0 || RelateGoodsList[i].price != "") {
+                        console.log(1);
                         html += '<i>¥' + RelateGoodsList[i].price + '</i><del>¥' + RelateGoodsList[i].originalPrice + '</del>';
                     }
-                    else if(RelateGoodsList[i].goodsVipPrice != 0 || RelateGoodsList[i].price != ""){
+                    else if( (RelateGoodsList[i].goodsVipPrice != 0  || RelateGoodsList[i].goodsVipPrice != "")  && (RelateGoodsList[i].price == "" || RelateGoodsList[i].price == 0) ){
+                        console.log(2);
                         html += '<i>￥' + RelateGoodsList[i].originalPrice + '</i><b>￥' + RelateGoodsList[i].goodsVipPrice + '</b>';
                     }
                     else {
+                        console.log(3);
                         html += '<i>¥' + RelateGoodsList[i].originalPrice + '</i>';
                     }
 
@@ -217,11 +220,17 @@ define('lehu.h5.component.list', [
                     }
 
                     html += '</div><p>' + SquareList[i].productName + '</p><em>';
-                    if (SquareList[i].price == 0 || SquareList[i].price == "") {
-                        html += '<i>¥' + SquareList[i].originalPrice + '</i>';
+                    if (SquareList[i].price != 0 || SquareList[i].price != "") {
+                        console.log(4);
+                        html += '<i>¥' + SquareList[i].price + '</i><del>¥' + SquareList[i].originalPrice + '</del>';
+                    }
+                    else if((SquareList[i].goodsVipPrice != 0  || SquareList[i].goodsVipPrice != "")  && (SquareList[i].price == "" || SquareList[i].price == 0)){
+                        console.log(5);
+                        html += '<i>￥' + SquareList[i].originalPrice + '</i><b>￥' + SquareList[i].goodsVipPrice + '</b>';
                     }
                     else {
-                        html += '<i>¥' + SquareList[i].price + '</i><del>¥' + SquareList[i].originalPrice + '</del>';
+                        console.log(6);
+                        html += '<i>¥' + SquareList[i].originalPrice + '</i>';
                     }
 
                     html += '</em></a>';
