@@ -122,6 +122,17 @@ define('lehu.h5.component.carousel', [
                         return options.inverse(options.contexts || this);
                     }
                 },
+                'lehu-images': function (img) {
+                    if (_.isFunction(img)) {
+                        img = img();
+                    }
+                    if (img.indexOf('http://') > -1) {
+                        return img.replace(/http/, 'https')
+                    }
+                    else {
+                        return img;
+                    }
+                },
 
                 "lehu-lottery": function (list, index) {
                     var lottery = list[index];
