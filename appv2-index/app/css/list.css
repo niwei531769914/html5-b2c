@@ -142,6 +142,25 @@
     overflow: hidden;
 }
 
+.list-content .list-content-scroll .scroll-goods-items ul li a em b {
+    padding-right: .73rem;
+    max-width: 100%;
+    height: .3rem;
+    color: #bdbdbd;
+    font-size: .2rem;
+    display: block;
+    float: left;
+    margin-left: .1rem;
+    line-height: .34rem;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    background: url(../images/huiyuan.png) no-repeat;
+    background-size: .7rem auto;
+    background-position:100% 50%;
+}
+
 .list-content .list-content-square {
     width: 100%;
     height: auto;
@@ -265,6 +284,25 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.list-content .list-content-square .content-square-items .content-square-item em b{
+    padding-right: .73rem;
+    max-width: 100%;
+    height: .3rem;
+    color: #bdbdbd;
+    font-size: .2rem;
+    display: block;
+    float: left;
+    margin-left: .1rem;
+    line-height: .34rem;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    background: url(../images/huiyuan.png) no-repeat;
+    background-size: .7rem auto;
+    background-position:100% 50%;
 }
 
 .banner-title{

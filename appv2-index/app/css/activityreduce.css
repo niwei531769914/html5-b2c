@@ -24,6 +24,8 @@
 .fullgive-sale-tap em{ font-size:.18rem; color: #707070}
 .fullgive-sale-tap em i{ font-size:.3rem; color:#fe0101; margin-left: .08rem; font-weight: 600}
 .fullgive-sale-tap em del{font-size:.18rem; color:#909090; text-decoration:line-through; margin-left: .15rem;}
+.fullgive-sale-tap em b{ font-size:.18rem; color:#909090; margin-left: .15rem;  background: url(../images/huiyuan.png) no-repeat;
+    background-size: .7rem auto; background-position:100% 50%; padding-right: .72rem}
 .fullgive-sale-msg{ width:4.84rem; height:auto; display:block; float:right; position:relative; padding-left: .18rem}
 
 

@@ -14,7 +14,7 @@
         <li class="fullgive-sale-box">
             <div class="fullgive-sale-img">
                 <img class="lazyload" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
-                     data-img="{{lehu-imgs goodsItemImg}}" src="images/goods_back.png">
+                     data-img="{{goodsItemImg}}" src="images/goods_back.png">
             </div>
 
             <div class="fullgive-sale-tap" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
@@ -23,7 +23,12 @@
                     {{{lehu-rulers goodsSpecName}}}
                 </a>
                 {{^lehu-showDis promotionPrice goodsItemPrice}}
-                    <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+                    {{^lehu-show goodsVipPrice goodsItemPrice }}
+                        <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+                    {{/lehu-show}}
+                    {{#lehu-show goodsVipPrice goodsItemPrice}}
+                        <em>乐虎价：<i>¥ {{goodsItemPrice}}</i><b>￥{{goodsVipPrice}}</b></em>
+                    {{/lehu-show}}
                 {{/lehu-showDis}}
                 {{#lehu-showDis promotionPrice goodsItemPrice}}
                     <em>活动价：<i>¥ {{promotionPrice}}</i>

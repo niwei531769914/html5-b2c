@@ -47,15 +47,18 @@ define('lehu.h5.component.activitydonate', [
                         return options.inverse(options.contexts || this);
                     }
                 },
-                'lehu-imgs': function (img) {
-                    if (_.isFunction(img)) {
-                        img = img();
+                'lehu-show': function (vipprice, price, options) {
+                    if (_.isFunction(vipprice)) {
+                        vipprice = vipprice();
                     }
-                    if (img.indexOf('http://') > -1) {
-                        return img.replace(/http/, 'https')
+                    if (_.isFunction(price)) {
+                        price = price();
+                    }
+                    if (parseFloat(vipprice) < parseFloat(price) && vipprice != 0) {
+                        return options.fn(options.contexts || this);
                     }
                     else {
-                        return img;
+                        return options.inverse(options.contexts || this);
                     }
                 }
             },

@@ -34,7 +34,7 @@ define('lehu.h5.component.activityreduce', [
                     }
                     return HTML;
                 },
-                'lehu-showDis': function (discount, price, options) {
+                'lehu-showDis': function (discount, price , options) {
                     if (_.isFunction(discount)) {
                         discount = discount();
                     }
@@ -43,19 +43,23 @@ define('lehu.h5.component.activityreduce', [
                     }
                     if (parseFloat(discount) < parseFloat(price) && discount != 0) {
                         return options.fn(options.contexts || this);
-                    } else {
+                    }
+                    else {
                         return options.inverse(options.contexts || this);
                     }
                 },
-                'lehu-images': function (img) {
-                    if (_.isFunction(img)) {
-                        img = img();
+                'lehu-show': function (vipprice, price, options) {
+                    if (_.isFunction(vipprice)) {
+                        vipprice = vipprice();
                     }
-                    if (img.indexOf('http://') > -1) {
-                        return img.replace(/http/, 'https')
+                    if (_.isFunction(price)) {
+                        price = price();
+                    }
+                    if (parseFloat(vipprice) < parseFloat(price) && vipprice != 0) {
+                        return options.fn(options.contexts || this);
                     }
                     else {
-                        return img;
+                        return options.inverse(options.contexts || this);
                     }
                 }
             },

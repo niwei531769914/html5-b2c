@@ -11,27 +11,32 @@
 <!--列表-->
 <ul class="fullgive-sale">
 
-    {{#each goods}}
-        <li class="fullgive-sale-box">
-            <div class="fullgive-sale-img">
-                <img class="lazyload" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
-                     data-img="{{{lehu-images goodsItemImg}}}" src="images/goods_back.png">
-            </div>
+{{#each goods}}
+    <li class="fullgive-sale-box">
+        <div class="fullgive-sale-img">
+            <img class="lazyload" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}"
+                 data-img="{{{goodsItemImg}}}" src="images/goods_back.png">
+        </div>
 
-            <div class="fullgive-sale-tap" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
-                <a href="javascript:;" class="fullgive-sale-title">{{goodsName}}</a>
-                <a href="javascript:;" class="fullgive-sale-specif">
-                    {{{lehu-rulers goodsSpecName}}}
-                </a>
-                {{^lehu-showDis promotionPrice goodsItemPrice}}
-                    <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
-                {{/lehu-showDis}}
-                {{#lehu-showDis promotionPrice goodsItemPrice}}
-                    <em>活动价：<i>¥ {{promotionPrice}}</i>
-                        <del>￥{{goodsItemPrice}}</del>
-                    </em>
-                {{/lehu-showDis}}
-            </div>
+    <div class="fullgive-sale-tap" data-goodsid="{{goodsId}}" data-goodsitemid="{{goodsItemId}}">
+        <a href="javascript:;" class="fullgive-sale-title">{{goodsName}}</a>
+        <a href="javascript:;" class="fullgive-sale-specif">
+            {{{lehu-rulers goodsSpecName}}}
+        </a>
+        {{^lehu-showDis promotionPrice goodsItemPrice}}
+            {{^lehu-show goodsVipPrice goodsItemPrice }}
+                <em>乐虎价：<i>¥ {{goodsItemPrice}}</i></em>
+            {{/lehu-show}}
+            {{#lehu-show goodsVipPrice goodsItemPrice}}
+            <em>乐虎价：<i>¥ {{goodsItemPrice}}</i><b>￥{{goodsVipPrice}}</b></em>
+            {{/lehu-show}}
+        {{/lehu-showDis}}
+        {{#lehu-showDis promotionPrice goodsItemPrice}}
+                <em>活动价：<i>¥ {{promotionPrice}}</i>
+                    <del>￥{{goodsItemPrice}}</del>
+                </em>
+        {{/lehu-showDis}}
+        </div>
             <div class="fullgive-sale-msg">
 
                 <div class="fullgive-sale-btn">
@@ -43,17 +48,18 @@
 
     {{/each}}
 
-</ul>
+    </ul>
 
-{{#if supplement.onLoadingData}}
-    <div style="font-size: .26rem; text-align: center; width: 100%; height: auto; float: left; padding: .4rem 0">
-        <img src="images/loading51.gif" style="width: .6rem; height: .6rem; margin-right: .1rem; vertical-align: middle">正在加载中....
-    </div>
-{{/if}}
-{{#if supplement.noData}}
-    <div style="font-size: .26rem; text-align: center; width: 100%; height: auto; float: left; padding: .2rem 0">
-        <img src="images/nomore.png" style="width: 1.6rem; height: auto">
-    </div>
-{{/if}}
+    {{#if supplement.onLoadingData}}
+        <div style="font-size: .26rem; text-align: center; width: 100%; height: auto; float: left; padding: .4rem 0">
+            <img src="images/loading51.gif"
+                 style="width: .6rem; height: .6rem; margin-right: .1rem; vertical-align: middle">正在加载中....
+        </div>
+    {{/if}}
+    {{#if supplement.noData}}
+        <div style="font-size: .26rem; text-align: center; width: 100%; height: auto; float: left; padding: .2rem 0">
+            <img src="images/nomore.png" style="width: 1.6rem; height: auto">
+        </div>
+    {{/if}}
 
 

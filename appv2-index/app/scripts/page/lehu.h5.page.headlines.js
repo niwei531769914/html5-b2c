@@ -59,13 +59,14 @@ define('lehu.h5.page.headlines', [
                                 return false;
                             }
                             var CONTENT = data.response;
-                            console.log(CONTENT);
-
                             var html = "";
                             for(var i =0; i <CONTENT.length; i++){
                                 if( CONTENT[i].id == param.id){
                                     html += '<p>' + CONTENT[i].begintime + '</p><p>' + CONTENT[i].articleTitle + '</p>';
                                     $('.line-content-title').empty().append(html);
+                                    if(CONTENT[i].articleContent.indexOf('src="http://') > -1){
+                                        CONTENT[i].articleContent = CONTENT[i].articleContent.replace(/src="http:/,'src="https:');
+                                    }
                                     $('.line-content-detail').html(CONTENT[i].articleContent);
                                     //标题
                                     if(util.isMobile.iOS() || util.isMobile.Android()){

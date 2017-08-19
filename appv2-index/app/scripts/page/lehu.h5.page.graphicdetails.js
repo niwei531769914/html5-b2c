@@ -55,6 +55,14 @@ define('lehu.h5.page.graphicdetails', [
                         if(data.code == 1){
                             var CONTENT = data.response.goodsDetail;
 
+                            if(CONTENT.goodsDesc.indexOf('src="http://') > -1){
+                                CONTENT.goodsDesc = CONTENT.goodsDesc.replace(/src="http:/,'src="https:');
+                            }
+
+                            if(CONTENT.serviceDesc.indexOf('src="http://') > -1){
+                                CONTENT.serviceDesc = CONTENT.serviceDesc.replace(/src="http:/,'src="https:');
+                            }
+
                             $('.graphicdetails').append(CONTENT.goodsDesc);
                             $('.graphicdetails').append(CONTENT.serviceDesc);
                         }
