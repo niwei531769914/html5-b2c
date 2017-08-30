@@ -71,11 +71,7 @@ define('lehu.h5.component.timeLimit', [
             },
 
             initDate: function () {
-                var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
 
                 //页面滚动无法触发页面事件
                 this.TOUCH = false;
@@ -505,11 +501,13 @@ define('lehu.h5.component.timeLimit', [
             //判断图片是否为http或者https
             HTTP_NO: function (img) {
                 if (img.indexOf('http://') > -1) {
-                    return img.replace(/http/, 'https')
+                     img.replace(/http/, 'https')
                 }
-                else {
-                    return img;
+                //安卓支持webp格式，ios不支持webp格式，根据不同应用来判断
+                if(util.isMobile.Android()){
+                    img = img + '!/format/webp';
                 }
+                return img
             },
 
             //判断商品是否存在

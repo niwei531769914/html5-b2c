@@ -55,12 +55,24 @@ define('lehu.h5.component.activityreduce', [
                     if (_.isFunction(price)) {
                         price = price();
                     }
-                    if (parseFloat(vipprice) < parseFloat(price) && vipprice != 0) {
+                    if (parseFloat(vipprice) <= parseFloat(price) && vipprice != 0) {
                         return options.fn(options.contexts || this);
                     }
                     else {
                         return options.inverse(options.contexts || this);
                     }
+                },
+                'lehu-images': function (img) {
+                    if (_.isFunction(img)) {
+                        img = img();
+                    }
+                    //优盘云加webp格式后缀来降低图片体积
+                    if(util.isMobile.Android()){
+                        if(img.indexOf('upaiyun') > -1 && img.indexOf('!/format/webp') < 0 ){
+                            img = img +'!/format/webp';
+                        }
+                    }
+                    return img
                 }
             },
 
@@ -95,11 +107,8 @@ define('lehu.h5.component.activityreduce', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
+
                 this.shoppingIsfor = false;
 
                 //获取当前时间戳

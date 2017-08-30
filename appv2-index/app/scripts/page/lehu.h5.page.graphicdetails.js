@@ -7,13 +7,14 @@ define('lehu.h5.page.graphicdetails', [
         'lehu.h5.business.config',
         'lehu.hybrid',
         'lehu.h5.api',
+        'lehu.utils.busizutil',
 
         'lehu.h5.header.footer',
 
         'text!template_components_graphicdetails'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI, busizutil,
         LHFooter,
         template_page_graphicdetails) {
         'use strict';
@@ -23,11 +24,7 @@ define('lehu.h5.page.graphicdetails', [
         var GraphicDetails = can.Control.extend({
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
             },
             /**
              * [init 初始化]
@@ -61,6 +58,31 @@ define('lehu.h5.page.graphicdetails', [
 
                             if(CONTENT.serviceDesc.indexOf('src="http://') > -1){
                                 CONTENT.serviceDesc = CONTENT.serviceDesc.replace(/src="http:/,'src="https:');
+                            }
+
+                            //安卓引用图片后面加webp格式后缀
+                            if (util.isMobile.Android()) {
+                                if(CONTENT.goodsDesc.indexOf('upaiyun') > -1 && CONTENT.serviceDesc.indexOf('upaiyun') > -1){
+                                    //JPG.PNG.WOFF.GIF
+                                    if(CONTENT.goodsDesc.indexOf('.jpg"') > -1){
+                                        CONTENT.goodsDesc = CONTENT.goodsDesc.replace(/.jpg"/, '.jpg!/format/webp"');
+                                    }
+                                    if(CONTENT.serviceDesc.indexOf('.jpg"') > -1){
+                                        CONTENT.serviceDesc = CONTENT.serviceDesc.replace(/.jpg"/, '.jpg!/format/webp"');
+                                    }
+                                    if(CONTENT.goodsDesc.indexOf('.png"') > -1){
+                                        CONTENT.goodsDesc = CONTENT.goodsDesc.replace(/.png"/, '.png!/format/webp"');
+                                    }
+                                    if(CONTENT.serviceDesc.indexOf('.png"') > -1){
+                                        CONTENT.serviceDesc = CONTENT.serviceDesc.replace(/.png"/, '.png!/format/webp"');
+                                    }
+                                    if(CONTENT.goodsDesc.indexOf('.gif"') > -1){
+                                        CONTENT.goodsDesc = CONTENT.goodsDesc.replace(/.gif"/, '.gif!/format/webp"');
+                                    }
+                                    if(CONTENT.goodsDesc.indexOf('.gif"') > -1){
+                                        CONTENT.goodsDesc = CONTENT.goodsDesc.replace(/.gif"/, '.gif!/format/webp"');
+                                    }
+                                }
                             }
 
                             $('.graphicdetails').append(CONTENT.goodsDesc);

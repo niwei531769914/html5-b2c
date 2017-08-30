@@ -82,11 +82,7 @@ define('lehu.h5.component.login', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
                 this.loginBysms = true;
 
                 //获取当前时间戳
@@ -215,7 +211,6 @@ define('lehu.h5.component.login', [
                     'phoneToken':'',
                     'timeStamp': that.timeStamp
                 };
-
 
                 var api = new LHAPI({
                     url: that.URL + '/mobile-web-user/ws/mobile/v1/user/login?sign=' + that.encription(this.param),

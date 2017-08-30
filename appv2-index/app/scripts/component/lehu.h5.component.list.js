@@ -44,11 +44,7 @@ define('lehu.h5.component.list', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if (HOST.indexOf("http://") == -1) {
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+               this.URL = busizutil.httpgain();
             },
 
             render: function () {
@@ -137,8 +133,9 @@ define('lehu.h5.component.list', [
             },
 
             TypeFirst: function (floorItem) {
+                var that = this;
                 var html = '';
-                html += '<div data-url = "' + floorItem.url + '" class="list-content-image"><img data-img="' + floorItem.img + '" src="images/big_goods_back.png" class="lazyload" /></div>';
+                html += '<div data-url = "' + floorItem.url + '" class="list-content-image"><img data-img="' + that.HTTP_NO(floorItem.img) + '" src="images/big_goods_back.png" class="lazyload" /></div>';
                 html += '<div class="nhr"></div>';
                 $('.list-content').append(html);
 
@@ -147,14 +144,15 @@ define('lehu.h5.component.list', [
             },
 
             TypeTwo: function (floorItem) {
+                var that = this;
                 var html = '';
-                html += '<div class="list-content-scroll"><img class="content-scroll-top lazyload" data-url = "' + floorItem.url + '"  data-img="' + floorItem.img + '" src="images/big_goods_back.png"/><div class="scroll-goods"><div class="scroll-goods-items"><ul>';
+                html += '<div class="list-content-scroll"><img class="content-scroll-top lazyload" data-url = "' + floorItem.url + '"  data-img="' + that.HTTP_NO(floorItem.img) + '" src="images/big_goods_back.png"/><div class="scroll-goods"><div class="scroll-goods-items"><ul>';
 
                 var RelateGoodsList = floorItem.relateGoodsList;
 
                 //render goodsa
                 for (var i = 0; i < RelateGoodsList.length; i++) {
-                    html += ' <li data-goodsId = "' + RelateGoodsList[i].productId + '" data-goodsItemId = "' + RelateGoodsList[i].productItemId + '"  ><a href="javascript: void(0)"><div class="goods-item-images" ><img data-img="' + RelateGoodsList[i].imgUrl + '" src="images/goods_back.png" class="item-images-pic lazyload" />';
+                    html += ' <li data-goodsId = "' + RelateGoodsList[i].productId + '" data-goodsItemId = "' + RelateGoodsList[i].productItemId + '"  ><a href="javascript: void(0)"><div class="goods-item-images" ><img data-img="' + that.HTTP_NO(RelateGoodsList[i].imgUrl) + '" src="images/goods_back.png" class="item-images-pic lazyload" />';
 
                     //判断商品是否下架 卢明彪 2017-08-14-12.06
                     if (parseFloat(RelateGoodsList[i].goodsItemStatus) == 21) {
@@ -165,15 +163,13 @@ define('lehu.h5.component.list', [
 
 
                     if (RelateGoodsList[i].price != 0 || RelateGoodsList[i].price != "") {
-                        console.log(1);
                         html += '<i>¥' + RelateGoodsList[i].price + '</i><del>¥' + RelateGoodsList[i].originalPrice + '</del>';
                     }
-                    else if( (RelateGoodsList[i].goodsVipPrice != 0  || RelateGoodsList[i].goodsVipPrice != "")  && (RelateGoodsList[i].price == "" || RelateGoodsList[i].price == 0) ){
-                        console.log(2);
+                    //会员价
+                    else if ((RelateGoodsList[i].goodsVipPrice != 0 || RelateGoodsList[i].goodsVipPrice != "") && (RelateGoodsList[i].price == "" || RelateGoodsList[i].price == 0)) {
                         html += '<i>￥' + RelateGoodsList[i].originalPrice + '</i><b>￥' + RelateGoodsList[i].goodsVipPrice + '</b>';
                     }
                     else {
-                        console.log(3);
                         html += '<i>¥' + RelateGoodsList[i].originalPrice + '</i>';
                     }
 
@@ -192,9 +188,10 @@ define('lehu.h5.component.list', [
             },
 
             TypeThree: function (floorItem) {
+                var that = this;
 
                 var html = '';
-                html += '<div class="banner-title" data-url="' + floorItem.url + '" ><img class="lazyload" data-img="' + floorItem.img + '"  src="images/big_goods_back.png"/><p>' + floorItem.title + '</p></div>';
+                html += '<div class="banner-title" data-url="' + floorItem.url + '" ><img class="lazyload" data-img="' + that.HTTP_NO(floorItem.img) + '"  src="images/big_goods_back.png"/><p>' + floorItem.title + '</p></div>';
 
                 html += '<div class="nhr"></div>';
 
@@ -206,13 +203,14 @@ define('lehu.h5.component.list', [
             },
 
             TypeFour: function (floorItem) {
+                var that = this;
 
                 var html = '<div class="list-content-square"><div class="content-square-title"><p class="square-caption">' + floorItem.title + '</p><span class="square-subhead">' + floorItem.subtitle + '</span></div><div class="content-square-items">';
 
                 var SquareList = floorItem.relateGoodsList;
 
                 for (var i = 0; i < SquareList.length; i++) {
-                    html += '<a data-goodsId="' + SquareList[i].productId + '" data-goodsItemId="' + SquareList[i].productItemId + '" href="javascript:void (0)" class="content-square-item"><div class="square-item-images"><img class="square-item-pic lazyload" data-img="' + SquareList[i].imgUrl + '"  src="images/goods_back.png">';
+                    html += '<a data-goodsId="' + SquareList[i].productId + '" data-goodsItemId="' + SquareList[i].productItemId + '" href="javascript:void (0)" class="content-square-item"><div class="square-item-images"><img class="square-item-pic lazyload" data-img="' + that.HTTP_NO(SquareList[i].imgUrl) + '"  src="images/goods_back.png">';
 
                     //判断商品是否下架 卢明彪 2017-08-14-12.06
                     if (parseFloat(SquareList[i].goodsItemStatus) == 21) {
@@ -221,15 +219,13 @@ define('lehu.h5.component.list', [
 
                     html += '</div><p>' + SquareList[i].productName + '</p><em>';
                     if (SquareList[i].price != 0 || SquareList[i].price != "") {
-                        console.log(4);
                         html += '<i>¥' + SquareList[i].price + '</i><del>¥' + SquareList[i].originalPrice + '</del>';
                     }
-                    else if((SquareList[i].goodsVipPrice != 0  || SquareList[i].goodsVipPrice != "")  && (SquareList[i].price == "" || SquareList[i].price == 0)){
-                        console.log(5);
+                    //会员价
+                    else if ((SquareList[i].goodsVipPrice != 0 || SquareList[i].goodsVipPrice != "") && (SquareList[i].price == "" || SquareList[i].price == 0)) {
                         html += '<i>￥' + SquareList[i].originalPrice + '</i><b>￥' + SquareList[i].goodsVipPrice + '</b>';
                     }
                     else {
-                        console.log(6);
                         html += '<i>¥' + SquareList[i].originalPrice + '</i>';
                     }
 
@@ -250,6 +246,23 @@ define('lehu.h5.component.list', [
 
                 var html = '';
 
+                if (floorItem.content.indexOf('src="http://') > -1) {
+                    floorItem.content = floorItem.content.replace(/src="http:/, 'src="https:');
+                }
+
+                if (util.isMobile.Android()) {
+                    //JPG.PNG.WOFF.GIF
+                    if(floorItem.content.indexOf('.jpg"') > -1){
+                        floorItem.content = floorItem.content.replace(/.jpg"/, '.jpg!/format/webp"');
+                    }
+                    if(floorItem.content.indexOf('.png"') > -1){
+                        floorItem.content = floorItem.content.replace(/.png"/, '.png!/format/webp"');
+                    }
+                    if(floorItem.content.indexOf('.gif"') > -1){
+                        floorItem.content = floorItem.content.replace(/.gif"/, '.gif!/format/webp"');
+                    }
+                }
+
                 html += '<div class="wealthy">' + floorItem.content + '</div>';
 
                 html += '<div class="nhr"></div>';
@@ -260,6 +273,17 @@ define('lehu.h5.component.list', [
                 $.imgLazyLoad();
             },
 
+            //判断图片是否为http或者https
+            HTTP_NO: function (img) {
+                if (img.indexOf('http://') > -1) {
+                    img.replace(/http/, 'https')
+                }
+                //安卓支持webp格式，ios不支持webp格式，根据不同应用来判断
+                if (util.isMobile.Android()) {
+                    img = img + '!/format/webp';
+                }
+                return img
+            },
 
             //type 1
             '.list-content-image click': function (element, event) {

@@ -127,11 +127,16 @@ define('lehu.h5.component.carousel', [
                         img = img();
                     }
                     if (img.indexOf('http://') > -1) {
-                        return img.replace(/http/, 'https')
+                        img.replace(/http/g, 'https');
                     }
-                    else {
-                        return img;
+                    //优盘云加webp格式后缀来降低图片体积
+                    if(util.isMobile.Android()){
+                        if(img.indexOf('upaiyun') > -1 && img.indexOf('!/format/webp') < 0 ){
+                            img = img +'!/format/webp';
+                        }
                     }
+
+                    return img
                 },
 
                 "lehu-lottery": function (list, index) {
@@ -185,11 +190,7 @@ define('lehu.h5.component.carousel', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
             },
 
             render: function () {
@@ -342,15 +343,20 @@ define('lehu.h5.component.carousel', [
                             }, 2000);
                             return false;
                         }
+                        //刷新页面
+                        else if(data.code == 1500001 || data.code == 1500004 || data.code == 1500006 || data.code == 1500005 ){
+                            util.tip(data.msg, 3000);
+                            setTimeout(function () {
+                                window.location.reload();
+                            },1000);
+                            return false;
+                        }
                         //如果返回code不等于1
-                        if (data.code !== 1) {
+                        else if(data.code != 1){
                             util.tip(data.msg, 3000);
                             setTimeout(function () {
                                 $(".lottery-bt").removeClass("disable");
                             }, 3000);
-
-                            //刷新页面
-                            //window.location.reload();
                             return false;
                         }
 
@@ -411,7 +417,6 @@ define('lehu.h5.component.carousel', [
                             }
                         }
 
-                        console.log(type);
                         // 滚动抽奖
                         if (click) {
                             return false;
