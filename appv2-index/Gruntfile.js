@@ -9,7 +9,7 @@
 // 'test/spec/**/*.js'
 
 module.exports = function(grunt) {
- 
+
 	// Time how long tasks take. Can help when optimizing build times
 	require('time-grunt')(grunt);
 
@@ -1039,15 +1039,12 @@ module.exports = function(grunt) {
 					insertRequire: ['lehu.h5.page.activitysummer']
 				}
 			},
-
 			list: {
 				options: {
 					optimize: 'none',
 					preserveLicenseComments: false,
 					baseUrl: './app/',
-
 					out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.list.js',
-
 					mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
 					paths: {
 						'moment': '../bower_components/momentjs/min/moment.min',
@@ -1055,31 +1052,9 @@ module.exports = function(grunt) {
 					},
 					include: [
 						'lehu.helpers',
-
 						'lehu.h5.page.list'
 					],
 					insertRequire: ['lehu.h5.page.list']
-				}
-			},
-			activity818: {
-				options: {
-					optimize: 'none',
-					preserveLicenseComments: false,
-					baseUrl: './app/',
-
-					out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activity818.js',
-
-					mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
-					paths: {
-						'moment': '../bower_components/momentjs/min/moment.min',
-						'fastclick': '../bower_components/fastclick/lib/fastclick'
-					},
-					include: [
-						'lehu.helpers',
-
-						'lehu.h5.page.activity818'
-					],
-					insertRequire: ['lehu.h5.page.activity818']
 				}
 			},
 			activity1: {
@@ -1098,6 +1073,60 @@ module.exports = function(grunt) {
 						'lehu.h5.page.activity1'
 					],
 					insertRequire: ['lehu.h5.page.activity1']
+				}
+			},
+			activity818: {
+				options: {
+					optimize: 'none',
+					preserveLicenseComments: false,
+					baseUrl: './app/',
+					out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.activity818.js',
+					mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+					paths: {
+						'moment': '../bower_components/momentjs/min/moment.min',
+						'fastclick': '../bower_components/fastclick/lib/fastclick'
+					},
+					include: [
+						'lehu.helpers',
+						'lehu.h5.page.activity818'
+					],
+					insertRequire: ['lehu.h5.page.activity818']
+				}
+			},
+			love: {
+				options: {
+					optimize: 'none',
+					preserveLicenseComments: false,
+					baseUrl: './app/',
+					out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.love.js',
+					mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+					paths: {
+						'moment': '../bower_components/momentjs/min/moment.min',
+						'fastclick': '../bower_components/fastclick/lib/fastclick'
+					},
+					include: [
+						'lehu.helpers',
+						'lehu.h5.page.love'
+					],
+					insertRequire: ['lehu.h5.page.love']
+				}
+			},
+			video: {
+				options: {
+					optimize: 'none',
+					preserveLicenseComments: false,
+					baseUrl: './app/',
+					out: './<%= config.tmp %>/concat/scripts/lehu.h5.page.video.js',
+					mainConfigFile: "./<%= config.app %>/scripts/lehu.h5.require.config.js",
+					paths: {
+						'moment': '../bower_components/momentjs/min/moment.min',
+						'fastclick': '../bower_components/fastclick/lib/fastclick'
+					},
+					include: [
+						'lehu.helpers',
+						'lehu.h5.page.video'
+					],
+					insertRequire: ['lehu.h5.page.video']
 				}
 			},
 		}
@@ -1282,5 +1311,5 @@ module.exports = function(grunt) {
 		'test',
 		'build'
 	]);
- 
+
 };

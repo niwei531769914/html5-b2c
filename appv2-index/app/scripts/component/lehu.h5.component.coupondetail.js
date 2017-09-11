@@ -103,11 +103,7 @@ define('lehu.h5.component.coupondetail', [
             },
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
 
                 //获取当前时间戳
                 this.timeStamp = Date.parse(new Date());

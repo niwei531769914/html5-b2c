@@ -8,12 +8,14 @@ define('lehu.h5.page.stores', [
         'lehu.hybrid',
         'lehu.h5.api',
         'imgLazyLoad',
+        'lehu.utils.busizutil',
         'lehu.h5.header.footer',
+
 
         'text!template_components_stores'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,imgLazyLoad,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,imgLazyLoad, busizutil,
         LHFooter,
         template_page_stores) {
         'use strict';
@@ -23,11 +25,7 @@ define('lehu.h5.page.stores', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
             },
 
             /**

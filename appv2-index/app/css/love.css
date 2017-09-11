@@ -1,0 +1,19 @@
+
+.content{ width: 100%; height: auto; float: left}
+.content img{width: 100%; height: auto; display: block}
+
+.love-list{ width: 100%; height: auto; float: left}
+.love-list .love-list-items{ width: 100%; height: auto; float: left; background: #f73152 }
+.love-list .love-list-items .love-list-item, .love-list .love-list-items .love-list-fc, .love-list .love-list-items .love-list-tc{ width: 3.55rem; height: auto; float: left; margin: 0 .1rem .1rem; display: block;}
+.love-list .love-list-items .love-list-item,.love-list .love-list-items .love-list-fc{ background: #efefef}
+.love-list .love-list-items .love-list-tc img{ margin-left: .125rem; width: 1.65rem; height: auto; float: left; margin-bottom: .155rem}
+.love-list .love-list-manjian{ width: 100%; height: auto; float: left}
+
+.love-list .prefecture-list-items{ width: 100%; height: auto; float: left}
+.love-list .prefecture-list-items .prefecture-list-item{width: 100%; height: auto; float: left}
+
+.love-list .goods-list-items{ width: 100%; height: auto; float: left ; margin-top: .2rem; margin-bottom: .2rem}
+.love-list .goods-list-items .goods-list-item{ width: 3.45rem; height: auto; float: left; margin-left: .2rem ; margin-bottom: .2rem}
+
+.love-list .column-list-items{ width: 98%; height: auto; float: left; padding: .12rem 1% .5rem; background: #f6314f}
+.love-list .column-list-items .column-list-item{ width: 31%; height: auto; float: left; margin-bottom: .12rem; margin-left: 1.75% ; background: #efefef }

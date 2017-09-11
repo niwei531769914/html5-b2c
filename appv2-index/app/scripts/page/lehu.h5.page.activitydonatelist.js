@@ -8,6 +8,7 @@ define('lehu.h5.page.activitydonatelist', [
         'lehu.hybrid',
         'lehu.h5.api',
         "imgLazyLoad",
+        'lehu.utils.busizutil',
 
         'lehu.h5.header.footer',
         'lehu.h5.header.download',
@@ -15,7 +16,7 @@ define('lehu.h5.page.activitydonatelist', [
         'text!template_components_activitydonatelist'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,imgLazyLoad,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,imgLazyLoad, busizutil,
         LHFooter,LHDownload,
         template_page_activitydonatelist) {
         'use strict';
@@ -25,11 +26,7 @@ define('lehu.h5.page.activitydonatelist', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
 
                 //数组图片
                 this.IMGURL = [

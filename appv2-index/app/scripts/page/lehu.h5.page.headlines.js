@@ -7,13 +7,14 @@ define('lehu.h5.page.headlines', [
         'lehu.h5.business.config',
         'lehu.hybrid',
         'lehu.h5.api',
+        'lehu.utils.busizutil',
 
         'lehu.h5.header.footer',
 
         'text!template_components_headlines'
     ],
 
-    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI,
+    function(can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI, busizutil,
         LHFooter,
         template_page_headlines) {
         'use strict';
@@ -23,11 +24,7 @@ define('lehu.h5.page.headlines', [
         var RegisterHelp = can.Control.extend({
 
             initData: function() {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
             },
 
             /**
@@ -64,8 +61,25 @@ define('lehu.h5.page.headlines', [
                                 if( CONTENT[i].id == param.id){
                                     html += '<p>' + CONTENT[i].begintime + '</p><p>' + CONTENT[i].articleTitle + '</p>';
                                     $('.line-content-title').empty().append(html);
+
                                     if(CONTENT[i].articleContent.indexOf('src="http://') > -1){
                                         CONTENT[i].articleContent = CONTENT[i].articleContent.replace(/src="http:/,'src="https:');
+                                    }
+                                    //安卓引用图片后面加webp格式后缀
+                                    if (util.isMobile.Android()) {
+
+                                        if(CONTENT[i].articleContent.indexOf('upaiyun') > -1){
+                                            //JPG.PNG.WOFF.GIF
+                                            if(CONTENT[i].articleContent.indexOf('.jpg"') > -1){
+                                                CONTENT[i].articleContent = CONTENT[i].articleContent.replace(/.jpg"/, '.jpg!/format/webp"');
+                                            }
+                                            if(CONTENT[i].articleContent.indexOf('.png"') > -1){
+                                                CONTENT[i].articleContent = CONTENT[i].articleContent.replace(/.png"/, '.png!/format/webp"');
+                                            }
+                                            if(CONTENT[i].articleContent.indexOf('.gif"') > -1){
+                                                CONTENT[i].articleContent = CONTENT[i].articleContent.replace(/.gif"/, '.gif!/format/webp"');
+                                            }
+                                        }
                                     }
                                     $('.line-content-detail').html(CONTENT[i].articleContent);
                                     //标题

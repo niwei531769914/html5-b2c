@@ -8,6 +8,7 @@ define('lehu.h5.page.activityreducelist', [
         'lehu.hybrid',
         'lehu.h5.api',
         "imgLazyLoad",
+        'lehu.utils.busizutil',
 
         'lehu.h5.header.footer',
         'lehu.h5.header.download',
@@ -15,7 +16,7 @@ define('lehu.h5.page.activityreducelist', [
         'text!template_components_activityreducelist'
     ],
 
-    function (can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI, ImgLazyLoad,
+    function (can, $, Fastclick, util, LHFrameworkComm, LHConfig, LHHybrid, LHAPI, ImgLazyLoad, busizutil,
               LHFooter, LHDownload,
               template_page_activityreducelist) {
         'use strict';
@@ -25,11 +26,7 @@ define('lehu.h5.page.activityreducelist', [
         var RegisterHelp = can.Control.extend({
 
             initData: function () {
-                var HOST = window.location.host;
-                if(HOST.indexOf("http://") == -1){
-                    HOST = "http://" + HOST;
-                }
-                this.URL = HOST;
+                this.URL = busizutil.httpgain();
 
                 //数组图片
                 this.IMGURL = [
