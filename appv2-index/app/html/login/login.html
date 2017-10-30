@@ -1,101 +1,94 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>汇银乐虎 登录</title>
-    <meta name="description" content="">
-    <meta name="Keywords" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no,email=no">
-    <link href="../common/css/common.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-    <script src="../common/js/zepto.min.js"></script>
-    <script src="js/login.js"></script>
-    </head>
-<body>
 
-<div class="nwrapper">
-    <!-- 顶部 -->
-    <header class="header">
-        <a href="javascript:;" class="back"></a>
+	<head>
+		<meta charset="utf-8">
+		<title>汇银乐虎 登录</title>
+		<meta name="description" content="">
+		<meta name="Keywords" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<link href="../common/css/common.css" rel="stylesheet">
+		<link href="css/login.css" rel="stylesheet">
+		<script src="../common/js/zepto.min.js"></script>
+		<script src="js/login.js"></script>
+	</head>
 
-        <!-- 密码登录/验证码登录切换 -->
-        <h2>登录</h2>
-        <!--<div class="login-tab">-->
-            <!--<span class="login-tab-psd active">密码登录</span>-->
-            <!--<span class="login-tab-sms">验证码登录</span>-->
-        <!--</div>-->
-    </header>
+	<body>
 
-    <!--中间-->
-    <section class="login-main">
+		<div class="nwrapper">
+			<!-- 顶部 -->
+			<header class="header">
+				<a href="javascript:;" class="back"></a>
 
-        <div class="login-protrait">
-            <img src="img/logo.png">
-            <p>汇银乐虎全球家</p>
-        </div>
+				<!-- 密码登录/验证码登录切换 -->
+				<h2>登录</h2>
+				<!--<div class="login-tab">-->
+				<!--<span class="login-tab-psd active">密码登录</span>-->
+				<!--<span class="login-tab-sms">验证码登录</span>-->
+				<!--</div>-->
+			</header>
 
-        <!--错误信息提示-->
-        <div class="item item-tips">
-            <div class="error-msg">用户名不存在</div>
-        </div>
+			<!--中间-->
+			<section class="login-main">
 
-        <!--登录表单-->
-        <div class="login-form">
+				<div class="login-protrait">
+					<img src="img/logo.png">
+					<p>汇银乐虎全球家</p>
+				</div>
 
-            <div class="item item-username">
-                <!--<i class="icon-tel"></i>-->
-                <input class="txt-input txt-username" type="number" pattern="\d*" placeholder="您的手机号码" >
-            </div>
+				<!--错误信息提示-->
+				<div class="item item-tips">
+					<div class="error-msg">用户名不存在</div>
+				</div>
 
-            <div class="item item-password">
-                <!--<i class="icon-pwd"></i>-->
-                <input class="txt-input txt-password" type="password" autocomplete="off" placeholder="请输入密码">
-                <b class="tp-btn btn-off"></b>
-            </div>
+				<!--登录表单-->
+				<div class="login-form">
 
-            <div class="item item-tab item-sms-captcha">
-                <!--<i class="icon-sms"></i>-->
-                <input class="txt-input txt-sms-captcha" type="tel" autocomplete="off" placeholder="请输入验证码">
-                <a href="javascript:;" class="btn-retransmit">获取验证码</a>
-            </div>
-            <div class="item item-login-option">
-              <span class="retrieve-password">
-                  <a href="forgetpassword.html">忘记密码？</a>
-              </span>
-            </div>
-            <div class="item item-btns item-login">
-                <a class="btn-login btn-disabled" href="javascript:;">开启环球购物</a>
-            </div>
+					<div class="item item-username">
+						<!--<i class="icon-tel"></i>-->
+						<input class="txt-input txt-username" type="number" pattern="\d*" placeholder="您的手机号码">
+					</div>
 
-            <!--<div class="item item-res">-->
-                <!--<a class="btn-res btn-disabled" href="javascript:;">注册</a>-->
-            <!--</div>-->
+					<div class="item item-password">
+						<!--<i class="icon-pwd"></i>-->
+						<input class="txt-input txt-password" type="password" autocomplete="off" placeholder="请输入密码">
+						<b class="tp-btn btn-off"></b>
+					</div>
 
-            <div class="item item-res">
-              <span class="retrieve-res">
+					<div class="item item-tab item-sms-captcha">
+						<!--<i class="icon-sms"></i>-->
+						<input class="txt-input txt-sms-captcha" type="tel" autocomplete="off" placeholder="请输入验证码">
+						<a href="javascript:;" class="btn-retransmit">获取验证码</a>
+					</div>
+					<div class="item item-login-option">
+						<span class="retrieve-password"> <a href="forgetpassword.html">忘记密码？</a></span>
+					</div>
+					<!--错误信息提示-->
+					<div class="item item-tips">
+						<div class="error-msg">用户名不存在</div>
+					</div>
+					<div class="item item-btns item-login">
+						<a class="btn-login btn-disabled" href="javascript:;">开启环球购物</a>
+					</div>
+					<div class="item item-res">
+						<span class="retrieve-res">
                   <a class="btn-res btn-disabled" href="javascript:;">立即注册</a>
               </span>
-                <span class="retrieve-sms">
+						<span class="retrieve-sms">
                   <a class="login-tabs login-tab-psd" href="javascript:;">验证码登录</a>
               </span>
-            </div>
-            <!--<div class="item item-login-option">-->
-              <!--<span class="retrieve-password">-->
-                  <!--<a href="forgetpassword.html">忘记密码？</a>-->
-              <!--</span>-->
-            <!--</div>-->
+					</div>
 
-        </div>
+				</div>
 
+			</section>
 
-    </section>
+		</div>
 
+	</body>
 
-</div>
-
-</body>
 </html>
