@@ -66,6 +66,11 @@ requirejs.config({
         "lehu.h5.page.activity818": "scripts/page/lehu.h5.page.activity818",
         "lehu.h5.page.love": "scripts/page/lehu.h5.page.love",
         "lehu.h5.page.video": "scripts/page/lehu.h5.page.video",
+        "lehu.h5.page.outlogin": "scripts/page/lehu.h5.page.outlogin",
+        "lehu.h5.page.test": "scripts/page/lehu.h5.page.test",
+        "lehu.h5.page.vip": "scripts/page/lehu.h5.page.vip",
+        "lehu.h5.page.activity101": "scripts/page/lehu.h5.page.activity101",
+        "lehu.h5.page.notice": "scripts/page/lehu.h5.page.notice",
 
 
         "lehu.h5.component.login": "scripts/component/lehu.h5.component.login",
@@ -116,6 +121,11 @@ requirejs.config({
         "template_components_activity818": "templates/components/lehu.h5.components.activity818.mustache",
         "template_components_love": "templates/components/lehu.h5.components.love.mustache",
         "template_components_video": "templates/components/lehu.h5.components.video.mustache",
+        "template_components_outlogin": "templates/components/lehu.h5.components.outlogin.mustache",
+        "template_components_test": "templates/components/lehu.h5.components.test.mustache",
+        "template_components_vip": "templates/components/lehu.h5.components.vip.mustache",
+        "template_components_activity101": "templates/components/lehu.h5.components.activity101.mustache",
+        "template_components_notice": "templates/components/lehu.h5.components.notice.mustache",
 
         'lehu.utils.busizutil': 'scripts/utils/lehu.utils.busizutil',
 

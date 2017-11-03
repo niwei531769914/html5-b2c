@@ -1,0 +1,88 @@
+.nwrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.hy-manjian {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.hy-manjian .hy-manjian-left {
+  width: 3.69rem;
+  height: auto;
+  float: left;
+}
+.hy-manjian .hy-manjian-right {
+  width: 3.81rem;
+  height: auto;
+  float: left;
+}
+.hy-manzeng {
+  width: 7.435rem;
+  height: auto;
+  float: left;
+  background: #f6ca01;
+  padding: 0 .065rem;
+}
+.hy-manzeng a {
+  width: 2.39rem;
+  height: auto;
+  float: left;
+  margin-left: .05rem;
+}
+.hy-sift {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.hy-sift .hy-sift-list {
+  width: 100%;
+  height: auto;
+}
+.hy-sift .hy-sift-list a {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+.hy-hot {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.hy-hot a {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.hy-hot .hy-hot-list {
+  width: 100%;
+  height: auto;
+  float: left;
+  background: #f6ca01;
+}
+.hy-hot .hy-hot-list a {
+  width: 3.75rem;
+  height: 4.8rem;
+  float: left;
+  background: #f6ca01;
+  overflow: hidden;
+}
+.hy-prefecture {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.hy-prefecture .hy-prefecture-list {
+  width: 100%;
+  height: auto;
+  float: left;
+  background: #f6ca01;
+}
+.hy-prefecture .hy-prefecture-list a {
+  width: 2.4rem;
+  height: auto;
+  float: left;
+  margin-left: .075rem;
+  margin-bottom: .08rem;
+}

@@ -15,26 +15,21 @@
     <link href="images/Shortcut_114_114.png" rel="Shortcut Icon" type="image/x-icon">
     <style type="text/css">
         *{ margin: 0 ; padding: 0}
-        .download{ width: 100%; height: auto;}
-        .download img{ display: block; width: 100%; height: auto}
     </style>
 </head>
 <body>
-<a href="javascript: void (0)">
-    <div class="download">
-        <img src="https://lehumall.b0.upaiyun.com/upload/image/store/2017/20170808/201708081813574529.jpg">
-    </div>
+<a href="javascript: void (0)" id="app">
+
 </a>
 
 </body>
 <script type="text/javascript">
     window.onload=function(){
-        if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            alert(1);
+        if(/iPhone|iPod/i.test(navigator.userAgent)) {
+            window.location.href = 'https://itunes.apple.com/cn/app/%E6%B1%87%E9%93%B6%E4%B9%90%E8%99%8E%E5%85%A8%E7%90%83%E8%B4%AD/id990919284?mt=8';
             return false;
-
         } else {
-            window.location.href = "http://www.yukicomic.com/web/index/indexPage/index";
+            window.location.href = "http://116.62.131.208/apk/hylhapp-release.apk";
         }
     }
 </script>

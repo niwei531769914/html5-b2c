@@ -112,7 +112,7 @@ define('lehu.utils.busizutil', [
                 userId: userId,
                 token: token,
                 phone: phone
-            }
+            };
             return user;
         }
 

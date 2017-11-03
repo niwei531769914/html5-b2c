@@ -1,0 +1,120 @@
+body{ background: #f89e20}
+.top{
+  width: 96%;
+  height: auto;
+  text-align: center;
+  margin: 0 2%;
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+.login{
+  width: 6.1rem;
+  height: 5.9rem;
+  background: url(../images/btnback.png) no-repeat;
+  background-size: 6.1rem 5.9rem;
+  margin: .5rem auto 0;
+  text-align: center;
+  .item{
+    width: 4.3rem;
+    height: auto;
+    float: left;
+    input{ background: #eeeeee; border-radius: 6px; width: auto; height: .7rem; font-size: .26rem}
+    .user-phone,.user-password{ width: 97%; padding-left: 3%; float: left}
+    .txt-input{ width: 2.27rem; float: left; padding-left: .13rem}
+    .btn-retransmit{ width: 1.7rem; height: .7rem; background: #f89e20; border-radius: 6px; display: block; float: right; font-size: .3rem; color: #ffffff; text-align: center; line-height: .7rem}
+  }
+  .item-tips{  height: .3rem; font-size: .26rem; color: #f53828; text-align: left; margin: .6rem .9rem 0}
+  .item-username{ margin: 0 .9rem 0 ; }
+  .item-password{ margin: .4rem .9rem 0 ; }
+  .item-catpach{ margin: .4rem .9rem 0}
+  .item-reg-option{
+    font-size: .26rem;
+    margin: .3rem .9rem 0;
+    .reg-protocol{
+       width: 100%;
+      height: .4rem;
+      line-height:.4rem;
+      display: block;
+      text-align: left;
+      i{ width: .3rem; height: .3rem; background: url(../images/inline.png) no-repeat center; background-size: .3rem ; display: inline-block; position: relative; top: .04rem}
+      .active{ background: url(../images/outline.png)  no-repeat center; background-size: .3rem ;}
+    }
+
+  }
+  .item-btns{
+    width: 100%;
+    height: auto;
+    a{
+      width: 4.3rem;
+      height: .74rem;
+      display: block;
+      background: url(../images/btn.png) no-repeat;
+      background-size: 4.3rem .74rem;
+      font-size: .28rem;
+      color: #fff;
+      margin: .2rem auto 0;
+      line-height: .74rem;
+    }
+  }
+
+}
+
+.load{
+  width: 3.8rem;
+  height: 1.1rem;
+  background: url(../images/load.png)  no-repeat;
+  background-size: 3.8rem 1.1rem;
+  margin: 1.2rem auto 0;
+}
+
+/*注册成功*/
+.register-success{
+  width: 5.8rem;
+  height: 5.7rem;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 999;
+  position: fixed;
+  text-align: center;
+  top: 4rem;
+  left: .85rem;
+  .register-image{
+    width: 2.3rem;
+    height:auto;
+    font-size: .34em;
+    color: #f53828;
+    margin: 1rem auto .3rem;
+    text-align: center;
+    img{
+      width: 100%;
+      height: auto;
+      margin-bottom: .2rem;
+    }
+  }
+  .load-sc{
+    padding: .2rem .3rem;
+    margin: 0 auto;
+    font-size: .3rem;
+    background: #f53828;
+    color: #fff;
+    border-radius: 10px;
+  }
+  .close{
+    width: .7rem;
+    height: .7rem;
+    position: absolute;
+    display: block;
+    bottom: -1rem;
+    left: 2.55rem;
+    img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+
+.cover{ position: fixed; width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 888; top: 0; left: 0}

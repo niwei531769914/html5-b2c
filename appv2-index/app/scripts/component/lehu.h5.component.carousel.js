@@ -35,8 +35,7 @@ define('lehu.h5.component.carousel', [
                     this.obj = $lottery;
                     this.count = $units.length;
                     // $lottery.find(".lottery-unit-" + this.index).addClass("active");
-                }
-                ;
+                };
             },
             roll: function () {
                 var index = this.index;
