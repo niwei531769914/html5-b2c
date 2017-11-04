@@ -1,0 +1,45 @@
+body {
+    background: #fffaf4;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+}
+.vip-header, .vip-enter {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.vip-title {
+    width: 100%;
+    height: auto;
+    margin-top: .3rem;
+}
+
+.vip-title .vip-title-on {
+    font-size: .34rem;
+    line-height: .6rem;
+    color: #fd6c51;
+    text-align: center;
+}
+
+.vip-title .vip-title-tw {
+    font-size: .24rem;
+    line-height: .4rem;
+    color: #ff6a51;
+    text-align: center;
+}
+
+.vip-list {
+    width: 100%;
+    height: auto;
+    margin-top: .4rem;
+}
+
+.vip-list .vip-goods {
+    width: 100%;
+    height: auto;
+    display: block;
+}
